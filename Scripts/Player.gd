@@ -44,12 +44,13 @@ func CheckForCollisions(collisions):
 	if collisions:
 		print("Collision: ", collisions.collider.name)
 		if collisions.collider.name == "EndBlock":
-			if EndBlockRef.PointCollected:
-				EndBlockRef.OnPlayerEndBlockHit("res://Scenes/MainMenu.tscn")
+			# if EndBlockRef.PointCollected:
+			EndBlockRef.OnPlayerEndBlockHit("res://Scenes/MainMenu.tscn")
 		elif collisions.collider.name == "Blocks":
 			restart()
 		elif collisions.collider.name == "Point":
-			emit_signal("PointCollected")
+			# emit_signal("PointCollected")
+			pass
 	
 func restart():
 	# This is the correct way to get the X and Y coords. At least I think
