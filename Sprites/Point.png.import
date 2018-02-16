@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Point.png-20be45dcd7183917b8986b0a52507079.stex"
+path="res://.import/Point.png-9259951b09fa7abada99c7e11f322d21.stex"
 
 [deps]
 
-source_file="res://Point.png"
+source_file="res://Sprites/Point.png"
 source_md5="480f5c0bdf9a5d1de593f0b032d539e4"
 
-dest_files=[ "res://.import/Point.png-20be45dcd7183917b8986b0a52507079.stex" ]
+dest_files=[ "res://.import/Point.png-9259951b09fa7abada99c7e11f322d21.stex" ]
 dest_md5="b48e3a232a08c394a26ff5653eb8e23a"
 
 [params]

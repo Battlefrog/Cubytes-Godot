@@ -34,7 +34,7 @@ func _process(delta):
 	if collision_info:
 		print("Collision: ", collision_info.collider.name)
 		if collision_info.collider.name == "EndBlock":
-			EndBlockRef.OnPlayerEndBlockHit("res://MainMenu.tscn")
+			EndBlockRef.OnPlayerEndBlockHit("res://Scenes/MainMenu.tscn")
 		elif collision_info.collider.name == "Blocks":
 			restart()
 		
