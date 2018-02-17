@@ -7,19 +7,22 @@ export (int) var PlayerSpeed
 # Okay so after failing for about an hour this is 
 # how to get a node at your hierarchial level.
 onready var EndBlockRef = get_node("../EndBlock")
+onready var PointRef = get_node("../Point")
 
 var Velocity = Vector2()
 var ScreenSize
 var StartPos
 
 func _ready():
+	# null = NOT in the scene
+	if PointRef == null:
+		EndBlockRef.PointCollected = true
+	
 	StartPos = get_transform()
 	ScreenSize = get_viewport_rect().size
 	
 	$WallHitSFX.stream.loop = false
 	$RespawnSFX.stream.loop = false
-	$LevelCompleteSFX.stream.loop = false
-	$PointHitSFX.stream.loop = false
 	
 func _process(delta):
 	Velocity = Vector2()
@@ -49,15 +52,13 @@ func CheckForCollisions(collisions):
 	if collisions:
 		print("Collision: ", collisions.collider.name)
 		if collisions.collider.name == "EndBlock":
-			$LevelCompleteSFX.play()
-			# Wait for some time...
 			EndBlockRef.OnPlayerEndBlockHit("res://Scenes/MainMenu.tscn")
 		elif collisions.collider.name == "Blocks":
 			$WallHitSFX.play()
 			restart()
 		elif collisions.collider.name == "Point":
-			$PointHitSFX.play()
-			pass
+			EndBlockRef.PointCollected = true
+			PointRef.PlayerPointCollected()
 	
 func restart():
 	$RespawnSFX.play()

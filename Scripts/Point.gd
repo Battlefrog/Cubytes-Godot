@@ -1,10 +1,8 @@
 extends Sprite
 
 func _ready():
-	Player.connect("PointCollected", Player, "PlayerPointCollected")
+	$PointHitSFX.stream.loop = false
 
 func PlayerPointCollected():
-	# Play sound
-	
-	# RIP
+	$PointHitSFX.play()
 	queue_free()

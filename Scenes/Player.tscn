@@ -1,18 +1,16 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player.png" type="Texture" id=2]
 [ext_resource path="res://Sounds/playerRespawn.ogg" type="AudioStream" id=3]
-[ext_resource path="res://Sounds/completeLevel.ogg" type="AudioStream" id=4]
-[ext_resource path="res://Sounds/pointPickup.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Sounds/intoWall.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Sounds/intoWall.ogg" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -37,25 +35,9 @@ autoplay = false
 mix_target = 0
 bus = "SFX"
 
-[node name="LevelCompleteSFX" type="AudioStreamPlayer" parent="." index="3"]
+[node name="WallHitSFX" type="AudioStreamPlayer" parent="." index="3"]
 
 stream = ExtResource( 4 )
-volume_db = 0.0
-autoplay = false
-mix_target = 0
-bus = "SFX"
-
-[node name="PointHitSFX" type="AudioStreamPlayer" parent="." index="4"]
-
-stream = ExtResource( 5 )
-volume_db = 0.0
-autoplay = false
-mix_target = 0
-bus = "SFX"
-
-[node name="WallHitSFX" type="AudioStreamPlayer" parent="." index="5"]
-
-stream = ExtResource( 6 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
