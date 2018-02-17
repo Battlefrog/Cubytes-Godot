@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/intoWall.ogg-02272507a759f296d189185f432a99cb.oggstr"
+
+[deps]
+
+source_file="res://Sounds/intoWall.ogg"
+source_md5="21fa09f8e305b06500a6e5e3d9295c46"
+
+dest_files=[ "res://.import/intoWall.ogg-02272507a759f296d189185f432a99cb.oggstr" ]
+dest_md5="e5f7e98d153d313c0ead19809af764c3"
+
+[params]
+
+loop=true
+loop_offset=0
