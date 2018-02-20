@@ -13,6 +13,7 @@ extents = Vector2( 32, 32 )
 
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
+NextLevelName = "Null"
 
 [node name="EndBlock" type="StaticBody2D" parent="." index="0"]
 

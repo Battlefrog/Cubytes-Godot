@@ -43,19 +43,16 @@ func _process(delta):
 	# Checking for certain collisions
 	CheckForCollisions(collision_info)
 		
-	# Stop the player from going off the screen
 	position += Velocity * delta
-	position.x = clamp(position.x, 0, ScreenSize.x)
-	position.y = clamp(position.y, 0, ScreenSize.y)
 	
 func CheckForCollisions(collisions):
 	if collisions:
 		print("Collision: ", collisions.collider.name)
 		if collisions.collider.name == "EndBlock":
-			EndBlockRef.OnPlayerEndBlockHit("res://Scenes/MainMenu.tscn")
+			EndBlockRef.OnPlayerEndBlockHit()
 		elif collisions.collider.name == "Blocks":
 			$WallHitSFX.play()
-			restart()
+			restart()	
 		elif collisions.collider.name == "Point":
 			EndBlockRef.PointCollected = true
 			PointRef.PlayerPointCollected()
@@ -66,13 +63,3 @@ func restart():
 	position = StartPos.get_origin()
 	show()
 	$CollisionShape2D.disabled = false
-	
-func Wait(sec):
-	var t = Timer.new()
-	t.set_wait_time(sec)
-	t.set_one_shot(true)
-	self.add_child(t)
-	t.start()
-	yield(t, "timeout")
-	t.queue_free()
-	pass

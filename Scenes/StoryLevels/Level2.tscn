@@ -17,6 +17,7 @@ PlayerSpeed = 750
 
 position = Vector2( 1080, 120 )
 _sections_unfolded = [ "Transform" ]
+NextLevelName = "Level3"
 
 [node name="Blocks" type="TileMap" parent="." index="2"]
 
