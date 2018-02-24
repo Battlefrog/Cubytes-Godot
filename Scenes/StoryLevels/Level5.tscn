@@ -10,9 +10,9 @@
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 120, 400 )
+position = Vector2( 420, 520 )
 _sections_unfolded = [ "Transform" ]
-PlayerSpeed = 750
+PlayerSpeed = 900
 
 [node name="EndBlock" parent="." index="1" instance=ExtResource( 2 )]
 

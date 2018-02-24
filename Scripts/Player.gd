@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 signal PointCollected
 
-export (int) var PlayerSpeed
+export (int) var PlayerSpeed = 900
 
 # Okay so after failing for about an hour this is 
 # how to get a node at your hierarchial level.

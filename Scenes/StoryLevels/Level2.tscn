@@ -11,7 +11,7 @@
 
 position = Vector2( 150, 510 )
 _sections_unfolded = [ "Transform" ]
-PlayerSpeed = 750
+PlayerSpeed = 900
 
 [node name="EndBlock" parent="." index="1" instance=ExtResource( 2 )]
 
