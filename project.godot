@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Cubytes"
-run/main_scene="res://Scenes/StoryLevels/Testies.tscn"
+run/main_scene="res://Scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [display]
