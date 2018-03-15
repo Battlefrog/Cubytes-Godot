@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
+extents = Vector2( 32, 30 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 
@@ -17,7 +17,7 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-PlayerSpeed = null
+PlayerSpeed = 900
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -25,6 +25,8 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+position = Vector2( 0.138121, -0.113528 )
+scale = Vector2( 0.503694, 0.532464 )
 shape = SubResource( 1 )
 
 [node name="RespawnSFX" type="AudioStreamPlayer" parent="." index="2"]
@@ -33,7 +35,7 @@ stream = ExtResource( 3 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
-bus = "SFX"
+bus = "Master"
 
 [node name="WallHitSFX" type="AudioStreamPlayer" parent="." index="3"]
 
@@ -41,6 +43,6 @@ stream = ExtResource( 4 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
-bus = "SFX"
+bus = "Master"
 
 

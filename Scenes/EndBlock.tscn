@@ -27,6 +27,8 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndBlock" index="0"]
 
+position = Vector2( -4.76837e-07, -9.53674e-07 )
+scale = Vector2( 0.571429, 0.571429 )
 shape = SubResource( 1 )
 
 [node name="CompleteLevelSFX" type="AudioStreamPlayer" parent="." index="1"]

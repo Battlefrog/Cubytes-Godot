@@ -7,10 +7,10 @@ path="res://.import/Block.png-20730aed078a8b8898d394e95f7fff1f.stex"
 [deps]
 
 source_file="res://Sprites/Block.png"
-source_md5="9e8efd2345c3051bcf248202a156bea1"
+source_md5="a7e888e97f1e40118da4a9a44e39de19"
 
 dest_files=[ "res://.import/Block.png-20730aed078a8b8898d394e95f7fff1f.stex" ]
-dest_md5="7949fe61724b6a9ae35ddc1a6e65c0df"
+dest_md5="e25ef621f64a0b182e25e1370fb90097"
 
 [params]
 

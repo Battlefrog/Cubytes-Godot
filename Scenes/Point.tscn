@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 16, 16 )
+extents = Vector2( 10, 10 )
 
 [node name="Point" type="Sprite"]
 
@@ -26,6 +26,8 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Point" index="0"]
 
+position = Vector2( 0.0613383, -0.0214111 )
+scale = Vector2( 1.19388, 1.19923 )
 shape = SubResource( 1 )
 
 [node name="PointHitSFX" type="AudioStreamPlayer" parent="." index="1"]

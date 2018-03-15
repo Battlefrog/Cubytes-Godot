@@ -10,6 +10,6 @@ stream = ExtResource( 1 )
 volume_db = 0.0
 autoplay = true
 mix_target = 0
-bus = "Music"
+bus = "Master"
 
 
