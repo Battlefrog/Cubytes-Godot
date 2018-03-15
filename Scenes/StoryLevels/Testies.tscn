@@ -2,20 +2,20 @@
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/EndBlock.tscn" type="PackedScene" id=2]
-[ext_resource path="res://BlockTiles.tres" type="TileSet" id=3]
-[ext_resource path="res://Scenes/MusicPlayer.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Point.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Fonts/NovaFlat.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Scenes/MusicPlayer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Point.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fonts/NovaFlat.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://BlockTiles.tres" type="TileSet" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 29
 use_mipmaps = false
 use_filter = true
-font_data = ExtResource( 6 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
@@ -26,7 +26,6 @@ __meta__ = {
 
 position = Vector2( 120, 400 )
 _sections_unfolded = [ "Transform" ]
-PlayerSpeed = 900
 
 [node name="EndBlock" parent="." index="1" instance=ExtResource( 2 )]
 
@@ -34,11 +33,42 @@ position = Vector2( 1130, 400 )
 _sections_unfolded = [ "Transform" ]
 NextLevelName = "Testies"
 
-[node name="Blocks" type="TileMap" parent="." index="2"]
+[node name="MusicPlayer" parent="." index="2" instance=ExtResource( 3 )]
+
+[node name="Point" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 800, 230 )
+
+[node name="Label" type="Label" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 70.0
+margin_top = 20.0
+margin_right = 1246.0
+margin_bottom = 190.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "THIS SHOULDN'T BE VISIBLE. IF YOU ARE SEEING THIS PLEASE GIVE ME A LECTURE!
+
+-Broc"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="TileMap" type="TileMap" parent="." index="5"]
 
 mode = 0
-tile_set = ExtResource( 3 )
-cell_size = Vector2( 64, 64 )
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 cell_half_offset = 2
@@ -52,37 +82,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 131082, 0, 0, 131086, 0, 0, 196618, 0, 0, 196622, 0, 0, 262145, -1073741824, 0, 262146, -1073741824, 0, 262147, -1073741824, 0, 262148, -1073741824, 0, 262149, -1073741824, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, -1073741824, 0, 262161, -1073741824, 0, 262162, -1073741824, 0, 327680, -1073741824, 0, 327699, -1073741824, 0, 393216, -1073741824, 0, 393235, -1073741824, 0, 458752, -1073741824, 0, 458771, -1073741824, 0, 524289, -1073741824, 0, 524290, -1073741824, 0, 524291, -1073741824, 0, 524292, -1073741824, 0, 524293, -1073741824, 0, 524294, -1073741824, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, -1073741824, 0, 524302, -1073741824, 0, 524303, -1073741824, 0, 524304, -1073741824, 0, 524305, -1073741824, 0, 524306, -1073741824, 0 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="MusicPlayer" parent="." index="3" instance=ExtResource( 4 )]
-
-[node name="Point" parent="." index="4" instance=ExtResource( 5 )]
-
-position = Vector2( 800, 230 )
-
-[node name="Label" type="Label" parent="." index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 70.0
-margin_top = 20.0
-margin_right = 1246.0
-margin_bottom = 190.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
-text = "THIS SHOULDN'T BE VISIBLE. IF YOU ARE SEEING THIS PLEASE GIVE ME A LECTURE!
-
--Broc"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+tile_data = PoolIntArray( 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 327704, 0, 0, 327705, 0, 0, 327706, 0, 0, 327707, 0, 0, 327708, 0, 0, 327709, 0, 0, 327710, 0, 0, 327711, 0, 0, 327712, 0, 0, 327713, 0, 0, 327714, 0, 0, 327715, 0, 0, 327716, 0, 0, 393217, 0, 0, 393252, 0, 0, 458753, 0, 0, 458788, 0, 0, 524289, 0, 0, 524324, 0, 0, 589825, 0, 0, 589860, 0, 0, 655361, 0, 0, 655396, 0, 0, 720897, 0, 0, 720932, 0, 0, 786433, 0, 0, 786468, 0, 0, 851969, 0, 0, 852004, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917533, 0, 0, 917534, 0, 0, 917535, 0, 0, 917536, 0, 0, 917537, 0, 0, 917538, 0, 0, 917539, 0, 0, 917540, 0, 0 )
+_sections_unfolded = [ "Cell" ]
 
 
