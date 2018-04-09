@@ -182,6 +182,8 @@ _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_fon
 
 [connection signal="pressed" from="ButtonPanel/PlayButton" to="ButtonPanel" method="_on_PlayButton_pressed"]
 
+[connection signal="pressed" from="ButtonPanel/OptionsButton" to="ButtonPanel" method="_on_OptionsButton_pressed"]
+
 [connection signal="pressed" from="ButtonPanel/QuitButton" to="ButtonPanel" method="_on_QuitButton_pressed"]
 
 
