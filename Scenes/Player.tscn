@@ -25,8 +25,8 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0.138121, -0.113528 )
-scale = Vector2( 0.503694, 0.532464 )
+position = Vector2( -0.00997016, -0.120767 )
+scale = Vector2( 0.499463, 0.532245 )
 shape = SubResource( 1 )
 
 [node name="RespawnSFX" type="AudioStreamPlayer" parent="." index="2"]
