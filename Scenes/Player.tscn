@@ -8,9 +8,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 32, 30 )
+extents = Vector2( 16.0346, 16.0203 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -23,13 +23,7 @@ PlayerSpeed = 900
 
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
-position = Vector2( -0.00997016, -0.120767 )
-scale = Vector2( 0.499463, 0.532245 )
-shape = SubResource( 1 )
-
-[node name="RespawnSFX" type="AudioStreamPlayer" parent="." index="2"]
+[node name="RespawnSFX" type="AudioStreamPlayer" parent="." index="1"]
 
 stream = ExtResource( 3 )
 volume_db = 0.0
@@ -37,12 +31,17 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="WallHitSFX" type="AudioStreamPlayer" parent="." index="3"]
+[node name="WallHitSFX" type="AudioStreamPlayer" parent="." index="2"]
 
 stream = ExtResource( 4 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 

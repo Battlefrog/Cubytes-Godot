@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scenes/ButtonPanel.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/ButtonPanel.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/NovaFlat.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Sprites/EmptyImage.png" type="Texture" id=3]
 
@@ -12,7 +12,7 @@ use_filter = true
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 [node name="ButtonPanel" type="Panel" parent="." index="0"]
 
@@ -139,6 +139,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = 100.0
 margin_top = 370.0
 margin_right = 490.0
 margin_bottom = 428.0
