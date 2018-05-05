@@ -1,7 +1,9 @@
 # Cubytes-Godot
 
+## Media
+https://github.com/Battlefrog/Cubytes-Godot/blob/master/media/screenshot_1.png "Screenshot"
 ## Description
-Essentially a remake of Cubytes with Godot 3.0.2, instead of the Chili Framework. I'll be adding new features to it as time goes on and hopefully by the end of it create a full-featured game.
+A remake of Cubytes with Godot 3.0.2, instead of the Chili Framework. I'll be adding new features to it as time goes on and hopefully by the end of it create a full-featured game.
 
 ## Running
 To run it, open the **"project.godot"** file in Godot 3.0.2+. Should bulid itself, provided I didn't screw everything up.
