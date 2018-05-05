@@ -14,6 +14,10 @@ config/name="Cubytes"
 run/main_scene="res://Scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[debug]
+
+settings/crash_handler/message="Please include this when reporting the bug on https://github.com/Battlefrog/Cubytes-Godot/issues"
+
 [display]
 
 window/size/width=1280

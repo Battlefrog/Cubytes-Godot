@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Bomb.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Point.tscn" type="PackedScene" id=6]
 
-[node name="root" type="Node" index="0"]
+[node name="root" type="Node"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -18,7 +18,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 920, 470 )
 _sections_unfolded = [ "Transform" ]
-NextLevelName = "Level2"
+NextLevelName = "Testies"
 
 [node name="MusicPlayer" parent="." index="2" instance=ExtResource( 3 )]
 

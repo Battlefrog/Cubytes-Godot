@@ -1,21 +1,15 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Sprites/EndBlock.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/EndBlock.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/EndBlock.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/EndBlock.png" type="Texture" id=2]
 [ext_resource path="res://Sounds/completeLevel.ogg" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
+extents = Vector2( 16, 16 )
 
-[node name="Sprite" type="Sprite" index="0"]
-
-texture = ExtResource( 1 )
-script = ExtResource( 2 )
-NextLevelName = "Null"
-
-[node name="EndBlock" type="StaticBody2D" parent="." index="0"]
+[node name="EndBlock" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -24,14 +18,18 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+script = ExtResource( 1 )
+NextLevelName = null
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EndBlock" index="0"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( -4.76837e-07, -9.53674e-07 )
-scale = Vector2( 0.571429, 0.571429 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
 shape = SubResource( 1 )
 
-[node name="CompleteLevelSFX" type="AudioStreamPlayer" parent="." index="1"]
+[node name="CompleteLevelSFX" type="AudioStreamPlayer" parent="." index="2"]
 
 stream = ExtResource( 3 )
 volume_db = 0.0

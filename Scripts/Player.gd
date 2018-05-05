@@ -1,14 +1,11 @@
 extends KinematicBody2D
 
-signal PointCollected
-
 export (int) var PlayerSpeed = 900
 
 # Okay so after failing for about an hour this is 
 # how to get a node at your hierarchial level.
 onready var EndBlockRef = get_node("../EndBlock")
 onready var PointRef = get_node("../Point")
-onready var BombRef = get_node("../Bomb")
 
 var Velocity = Vector2()
 var ScreenSize
@@ -51,13 +48,13 @@ func CheckForCollisions(collisions):
 	if collisions:
 		print("Collision: ", collisions.collider.name)
 		if collisions.collider.name == "EndBlock":
-			EndBlockRef.OnPlayerEndBlockHit()
+			collisions.collider.call("OnPlayerEndBlockHit")
 		elif collisions.collider.name == "Blocks":
 			$WallHitSFX.play()
 			die()	
 		elif collisions.collider.name == "Point":
 			EndBlockRef.PointCollected = true
-			PointRef.PlayerPointCollected()
+			collisions.collider.call("PlayerPointCollected")
 		elif collisions.collider.name.begins_with("Bomb"):
 			collisions.collider.call("Blowup")
 			position = StartPos.get_origin()

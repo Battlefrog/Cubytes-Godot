@@ -1,4 +1,4 @@
-extends Sprite
+extends StaticBody2D
 
 export (String) var NextLevelName
 var PointCollected = false
