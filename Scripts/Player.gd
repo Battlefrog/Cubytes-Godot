@@ -8,6 +8,7 @@ export (int) var PlayerSpeed = 900
 # how to get a node at your hierarchial level.
 onready var EndBlockRef = get_node("../EndBlock")
 onready var PointRef = get_node("../Point")
+onready var BombRef = get_node("../Bomb")
 
 var Velocity = Vector2()
 var ScreenSize
@@ -56,8 +57,12 @@ func CheckForCollisions(collisions):
 		elif collisions.collider.name == "Point":
 			EndBlockRef.PointCollected = true
 			PointRef.PlayerPointCollected()
+		elif collisions.collider.name == "Bomb":
+			BombRef.Blowup()
+			position = StartPos.get_origin()
 	
 func restart():
+	# TODO: Maybe play a particle effect or something?
 	$RespawnSFX.play()
 	# This is the correct way to get the X and Y coords. At least I think
 	position = StartPos.get_origin()
