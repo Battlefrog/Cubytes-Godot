@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 signal PointCollected
+signal RanIntoBomb
 
 export (int) var PlayerSpeed = 900
 
@@ -47,6 +48,7 @@ func _process(delta):
 	position += Velocity * delta
 	
 func CheckForCollisions(collisions):
+	# If there's any collisions in the first place...
 	if collisions:
 		print("Collision: ", collisions.collider.name)
 		if collisions.collider.name == "EndBlock":
@@ -58,7 +60,7 @@ func CheckForCollisions(collisions):
 			EndBlockRef.PointCollected = true
 			PointRef.PlayerPointCollected()
 		elif collisions.collider.name == "Bomb":
-			BombRef.Blowup()
+			emit_signal("RanIntoBomb")
 			position = StartPos.get_origin()
 	
 func restart():
