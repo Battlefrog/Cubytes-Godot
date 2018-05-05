@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 signal PointCollected
-signal RanIntoBomb
 
 export (int) var PlayerSpeed = 900
 
@@ -55,15 +54,15 @@ func CheckForCollisions(collisions):
 			EndBlockRef.OnPlayerEndBlockHit()
 		elif collisions.collider.name == "Blocks":
 			$WallHitSFX.play()
-			restart()	
+			die()	
 		elif collisions.collider.name == "Point":
 			EndBlockRef.PointCollected = true
 			PointRef.PlayerPointCollected()
-		elif collisions.collider.name == "Bomb":
-			emit_signal("RanIntoBomb")
+		elif collisions.collider.name.begins_with("Bomb"):
+			collisions.collider.call("Blowup")
 			position = StartPos.get_origin()
 	
-func restart():
+func die():
 	# TODO: Maybe play a particle effect or something?
 	$RespawnSFX.play()
 	# This is the correct way to get the X and Y coords. At least I think
