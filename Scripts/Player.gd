@@ -57,7 +57,7 @@ func CheckForCollisions(collisions):
 			collisions.collider.call("PlayerPointCollected")
 		elif collisions.collider.name.begins_with("Bomb"):
 			collisions.collider.call("Blowup")
-			position = StartPos.get_origin()
+			die()
 	
 func die():
 	# TODO: Maybe play a particle effect or something?
