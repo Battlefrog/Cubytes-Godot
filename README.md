@@ -1,7 +1,7 @@
 # Cubytes-Godot
 
 ## Media
-![alt text](https://github.com/Battlefrog/Cubytes-Godot/blob/master/media/screenshot_1.png "Level 5")
+![](https://github.com/Battlefrog/Cubytes-Godot/blob/master/media/screenshot_1.png)
 ## Description
 A remake of Cubytes with Godot 3.0.2, instead of the Chili Framework. I'll be adding new features to it as time goes on and hopefully by the end of it create a full-featured game.
 
