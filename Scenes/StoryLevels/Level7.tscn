@@ -18,7 +18,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 920, 470 )
 _sections_unfolded = [ "Transform" ]
-NextLevelName = "Testies"
+NextLevelName = "Level8"
 
 [node name="MusicPlayer" parent="." index="2" instance=ExtResource( 3 )]
 

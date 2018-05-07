@@ -9,5 +9,5 @@ func Blowup():
 	if !Exploded:
 		$ExplosionSFX.play()
 		$Sprite.hide()
-		Exploded = true
 		$CollisionShape2D.set_disabled(true)
+		Exploded = true

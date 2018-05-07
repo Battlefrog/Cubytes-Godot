@@ -1,0 +1,135 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/EndBlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/MusicPlayer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://BlockTiles2.tres" type="TileSet" id=4]
+[ext_resource path="res://Scenes/Bomb.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Point.tscn" type="PackedScene" id=6]
+
+[node name="root" type="Node"]
+
+[node name="Player" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 330, 230 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="EndBlock" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 544, 224 )
+_sections_unfolded = [ "Transform" ]
+NextLevelName = "Win"
+
+[node name="MusicPlayer" parent="." index="2" instance=ExtResource( 3 )]
+
+[node name="Blocks" type="TileMap" parent="." index="3"]
+
+position = Vector2( 20, -100 )
+mode = 0
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = true
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 0, 0, 524311, 0, 0, 589831, 0, 0, 589838, 0, 0, 589847, 0, 0, 655367, 0, 0, 655374, 0, 0, 655383, 0, 0, 720903, 0, 0, 720910, 0, 0, 720919, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786446, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 851975, 0, 0, 851982, 0, 0, 851994, 0, 0, 917511, 0, 0, 917518, 0, 0, 917530, 0, 0, 983047, 0, 0, 983054, 0, 0, 983066, 0, 0, 1048583, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048602, 0, 0, 1114119, 0, 0, 1114138, 0, 0, 1179655, 0, 0, 1179674, 0, 0, 1245191, 0, 0, 1245210, 0, 0, 1310727, 0, 0, 1310728, 0, 0, 1310729, 0, 0, 1310730, 0, 0, 1310731, 0, 0, 1310732, 0, 0, 1310733, 0, 0, 1310734, 0, 0, 1310735, 0, 0, 1310736, 0, 0, 1310737, 0, 0, 1310738, 0, 0, 1310739, 0, 0, 1310740, 0, 0, 1310741, 0, 0, 1310742, 0, 0, 1310743, 0, 0, 1310744, 0, 0, 1310745, 0, 0, 1310746, 0, 0 )
+_sections_unfolded = [ "Cell", "Collision", "Material", "Occluder", "Visibility" ]
+
+[node name="Bomb" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 608, 224 )
+
+[node name="Bomb2" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 640, 224 )
+
+[node name="Bomb3" parent="." index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 608, 256 )
+
+[node name="Bomb4" parent="." index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 640, 256 )
+
+[node name="Bomb5" parent="." index="8" instance=ExtResource( 5 )]
+
+position = Vector2( 608, 288 )
+
+[node name="Bomb6" parent="." index="9" instance=ExtResource( 5 )]
+
+position = Vector2( 640, 288 )
+
+[node name="Bomb7" parent="." index="10" instance=ExtResource( 5 )]
+
+position = Vector2( 608, 320 )
+
+[node name="Bomb8" parent="." index="11" instance=ExtResource( 5 )]
+
+position = Vector2( 640, 320 )
+
+[node name="Bomb11" parent="." index="12" instance=ExtResource( 5 )]
+
+position = Vector2( 672, 224 )
+
+[node name="Bomb12" parent="." index="13" instance=ExtResource( 5 )]
+
+position = Vector2( 672, 256 )
+
+[node name="Bomb13" parent="." index="14" instance=ExtResource( 5 )]
+
+position = Vector2( 672, 288 )
+
+[node name="Bomb14" parent="." index="15" instance=ExtResource( 5 )]
+
+position = Vector2( 672, 320 )
+
+[node name="Bomb16" parent="." index="16" instance=ExtResource( 5 )]
+
+position = Vector2( 336, 400 )
+
+[node name="Bomb17" parent="." index="17" instance=ExtResource( 5 )]
+
+position = Vector2( 368, 400 )
+
+[node name="Bomb18" parent="." index="18" instance=ExtResource( 5 )]
+
+position = Vector2( 400, 400 )
+
+[node name="Bomb19" parent="." index="19" instance=ExtResource( 5 )]
+
+position = Vector2( 336, 432 )
+
+[node name="Bomb20" parent="." index="20" instance=ExtResource( 5 )]
+
+position = Vector2( 368, 432 )
+
+[node name="Bomb21" parent="." index="21" instance=ExtResource( 5 )]
+
+position = Vector2( 400, 432 )
+
+[node name="Bomb22" parent="." index="22" instance=ExtResource( 5 )]
+
+position = Vector2( 368, 464 )
+
+[node name="Bomb23" parent="." index="23" instance=ExtResource( 5 )]
+
+position = Vector2( 336, 496 )
+
+[node name="Bomb24" parent="." index="24" instance=ExtResource( 5 )]
+
+position = Vector2( 400, 496 )
+
+[node name="Point" parent="." index="25" instance=ExtResource( 6 )]
+
+position = Vector2( 720, 224 )
+
+

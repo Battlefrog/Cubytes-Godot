@@ -55,6 +55,7 @@ func CheckForCollisions(collisions):
 		elif collisions.collider.name == "Point":
 			EndBlockRef.PointCollected = true
 			collisions.collider.call("PlayerPointCollected")
+		# begins_with to allow for multiple bombs
 		elif collisions.collider.name.begins_with("Bomb"):
 			collisions.collider.call("Blowup")
 			die()
