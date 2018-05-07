@@ -21,6 +21,9 @@ func _ready():
 	
 	$WallHitSFX.stream.loop = false
 	$RespawnSFX.stream.loop = false
+	$CollisionShape2D.disabled = false
+	show()
+	set_process(true)
 	
 func _process(delta):
 	Velocity = Vector2()
@@ -67,3 +70,6 @@ func die():
 	position = StartPos.get_origin()
 	show()
 	$CollisionShape2D.disabled = false
+	
+func end_of_level():
+	set_process(false)

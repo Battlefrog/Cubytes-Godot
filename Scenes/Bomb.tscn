@@ -1,13 +1,17 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Bomb.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Bomb.png" type="Texture" id=2]
-[ext_resource path="res://Sounds/explosion.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/explosion.ogg" type="AudioStream" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 16, 16 )
+
+[sub_resource type="StreamTexture" id=2]
+
+flags = 0
+load_path = "res://.import/Bomb.png-6390bb4e15be30d7d53b794053bcba48.stex"
 
 [node name="Bomb" type="StaticBody2D"]
 
@@ -26,11 +30,11 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-texture = ExtResource( 2 )
+texture = SubResource( 2 )
 
 [node name="ExplosionSFX" type="AudioStreamPlayer" parent="." index="2"]
 
-stream = ExtResource( 3 )
+stream = ExtResource( 2 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
