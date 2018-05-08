@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Win.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/NovaFlat.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Misc/UITheme.tres" type="Theme" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -11,7 +12,7 @@ use_filter = true
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 
 size = 28
 use_mipmaps = false
@@ -27,7 +28,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="WinScreenForAlpha" type="Node2D"]
+[node name="WinScreenForAlpha" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -70,7 +71,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 text = "You've reached the end of Alpha 2!
 
 Stay tuned for the release of Alpha 3!"
@@ -97,6 +98,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -105,7 +107,7 @@ group = null
 text = "To Main Menu"
 flat = false
 align = 1
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+_sections_unfolded = [ "Theme", "custom_colors", "custom_fonts" ]
 
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
 
