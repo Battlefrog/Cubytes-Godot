@@ -16,7 +16,7 @@ use_filter = true
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="root" type="Node" index="0"]
+[node name="root" type="Node"]
 
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
