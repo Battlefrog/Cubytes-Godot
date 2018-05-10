@@ -70,6 +70,11 @@ func die():
 	position = StartPos.get_origin()
 	show()
 	$CollisionShape2D.disabled = false
+
+# I'll have to think about bombs and if they should restart the level...
+func restart():
+	$RespawnSFX.play()
+	get_tree().reload_current_scene()
 	
 func end_of_level():
 	set_process(false)
