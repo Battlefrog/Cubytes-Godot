@@ -28,7 +28,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="WinScreenForAlpha" type="Node2D" index="0"]
+[node name="WinScreenForAlpha" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -38,9 +38,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 10.0
+margin_top = 40.0
 margin_right = 1280.0
-margin_bottom = 70.0
+margin_bottom = 100.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -62,7 +62,6 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 170.0
 margin_right = 1280.0
 margin_bottom = 720.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -76,6 +75,7 @@ text = "You've reached the end of Alpha 2!
 
 Stay tuned for the release of Alpha 3!"
 align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

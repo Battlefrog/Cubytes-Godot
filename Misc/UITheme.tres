@@ -3,18 +3,42 @@
 [ext_resource path="res://Fonts/TextFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scripts/UITheme.gd" type="Script" id=2]
 
-[sub_resource type="StreamTexture" id=4]
+[sub_resource type="StreamTexture" id=1]
 
-flags = 0
+flags = 4
 load_path = "res://.import/button_focus.png-4d0f090f0c559f6263bfcd1d6033e611.stex"
 
-[sub_resource type="StyleBoxTexture" id=1]
+[sub_resource type="StyleBoxTexture" id=2]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
-texture = SubResource( 4 )
+texture = SubResource( 1 )
+region_rect = Rect2( 0, 0, 16, 16 )
+margin_left = 0.0
+margin_right = 0.0
+margin_top = 0.0
+margin_bottom = 0.0
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+modulate_color = Color( 1, 1, 1, 1 )
+draw_center = true
+
+[sub_resource type="StreamTexture" id=3]
+
+flags = 4
+load_path = "res://.import/button_normal.png-f7df7d38fa6d15997d6275cb40ac590b.stex"
+
+[sub_resource type="StyleBoxTexture" id=4]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+texture = SubResource( 3 )
 region_rect = Rect2( 0, 0, 16, 16 )
 margin_left = 0.0
 margin_right = 0.0
@@ -29,40 +53,16 @@ draw_center = true
 
 [sub_resource type="StreamTexture" id=5]
 
-flags = 0
-load_path = "res://.import/button_normal.png-f7df7d38fa6d15997d6275cb40ac590b.stex"
+flags = 4
+load_path = "res://.import/button_pressed.png-36b20c9854df3037cade8d1ea8f243a6.stex"
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=6]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
 texture = SubResource( 5 )
-region_rect = Rect2( 0, 0, 16, 16 )
-margin_left = 0.0
-margin_right = 0.0
-margin_top = 0.0
-margin_bottom = 0.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-
-[sub_resource type="StreamTexture" id=6]
-
-flags = 0
-load_path = "res://.import/button_pressed.png-36b20c9854df3037cade8d1ea8f243a6.stex"
-
-[sub_resource type="StyleBoxTexture" id=3]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-texture = SubResource( 6 )
 region_rect = Rect2( 0, 0, 16, 16 )
 margin_left = 0.0
 margin_right = 0.0
@@ -83,12 +83,12 @@ Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
 Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 30
-Button/fonts/font = null
+Button/fonts/font = ExtResource( 1 )
 Button/styles/disabled = null
-Button/styles/focus = SubResource( 1 )
-Button/styles/hover = SubResource( 1 )
-Button/styles/normal = SubResource( 2 )
-Button/styles/pressed = SubResource( 3 )
+Button/styles/focus = SubResource( 2 )
+Button/styles/hover = SubResource( 2 )
+Button/styles/normal = SubResource( 4 )
+Button/styles/pressed = SubResource( 6 )
 script = ExtResource( 2 )
-_sections_unfolded = [ "Button", "Button/colors", "Resource" ]
+_sections_unfolded = [ "Button", "Button/colors", "Button/fonts", "Resource" ]
 
