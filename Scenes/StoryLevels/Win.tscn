@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Win.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/NovaFlat.ttf" type="DynamicFontData" id=2]
@@ -13,14 +13,6 @@ font_data = ExtResource( 2 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=2]
-
-size = 28
-use_mipmaps = false
-use_filter = true
-font_data = ExtResource( 2 )
-_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=3]
 
 size = 28
 use_mipmaps = false
@@ -70,16 +62,16 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 2 )
-text = "You've reached the end of Alpha 2!
+theme = ExtResource( 3 )
+text = "You've reached the end of Alpha 3!
 
-Stay tuned for the release of Alpha 3!"
+Stay tuned for the release of Alpha 4!"
 align = 1
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "BBCode", "custom_fonts" ]
+_sections_unfolded = [ "BBCode", "Theme", "custom_fonts" ]
 
 [node name="MainMenuButton" type="Button" parent="." index="2"]
 
@@ -99,7 +91,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 theme = ExtResource( 3 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
