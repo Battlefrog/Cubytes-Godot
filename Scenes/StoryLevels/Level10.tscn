@@ -11,12 +11,12 @@
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 300, 186 )
+position = Vector2( 320, 196 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="EndBlock" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 990, 186 )
+position = Vector2( 1010, 196 )
 _sections_unfolded = [ "Transform" ]
 NextLevelName = "Level11"
 
@@ -24,7 +24,7 @@ NextLevelName = "Level11"
 
 [node name="Blocks" type="TileMap" parent="." index="3"]
 
-position = Vector2( 62, -102 )
+position = Vector2( 82, -92 )
 mode = 0
 tile_set = ExtResource( 4 )
 cell_size = Vector2( 32, 32 )
@@ -46,34 +46,34 @@ _sections_unfolded = [ "Cell", "Collision", "Material", "Occluder", "Visibility"
 
 [node name="Bomb" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 510, 336 )
+position = Vector2( 530, 346 )
 
 [node name="Bomb2" parent="." index="5" instance=ExtResource( 5 )]
 
-position = Vector2( 510, 416 )
+position = Vector2( 530, 426 )
 
 [node name="Bomb6" parent="." index="6" instance=ExtResource( 5 )]
 
-position = Vector2( 610, 196 )
+position = Vector2( 630, 206 )
 
 [node name="Bomb7" parent="." index="7" instance=ExtResource( 5 )]
 
-position = Vector2( 700, 196 )
+position = Vector2( 720, 206 )
 
 [node name="Bomb8" parent="." index="8" instance=ExtResource( 5 )]
 
-position = Vector2( 900, 226 )
+position = Vector2( 920, 236 )
 
 [node name="Bomb9" parent="." index="9" instance=ExtResource( 5 )]
 
-position = Vector2( 900, 186 )
+position = Vector2( 920, 196 )
 
 [node name="Bomb10" parent="." index="10" instance=ExtResource( 5 )]
 
-position = Vector2( 840, 416 )
+position = Vector2( 860, 426 )
 
 [node name="Point" parent="." index="11" instance=ExtResource( 6 )]
 
-position = Vector2( 660, 266 )
+position = Vector2( 680, 276 )
 
 
