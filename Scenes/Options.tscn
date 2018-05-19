@@ -13,7 +13,7 @@ use_filter = true
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
@@ -121,9 +121,10 @@ anchor_bottom = 0.0
 margin_left = 180.0
 margin_top = 20.0
 margin_right = 204.0
-margin_bottom = 44.0
+margin_bottom = 50.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+hint_tooltip = "Toggle fullscreen"
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -136,9 +137,63 @@ group = null
 flat = false
 align = 0
 script = ExtResource( 4 )
+_sections_unfolded = [ "Hint" ]
+
+[node name="V-Sync" type="Label" parent="Panel" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 60.0
+margin_right = 189.0
+margin_bottom = 120.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "V-Sync"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_fonts" ]
+
+[node name="CheckBox" type="CheckBox" parent="Panel/V-Sync" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 180.0
+margin_top = 20.0
+margin_right = 204.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Toggle fullscreen"
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 0
+script = ExtResource( 4 )
+_sections_unfolded = [ "Hint" ]
 
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 
 [connection signal="toggled" from="Panel/Fullscreen/CheckBox" to="." method="_on_Fullscreen_toggled"]
+
+[connection signal="toggled" from="Panel/V-Sync/CheckBox" to="." method="_on_VSync_toggled"]
 
 

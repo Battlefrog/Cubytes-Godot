@@ -7,3 +7,6 @@ func _on_BackButton_pressed():
 	
 func _on_Fullscreen_toggled(button_pressed):
 	OS.set_window_fullscreen(button_pressed)
+
+func _on_VSync_toggled(button_pressed):
+	OS.set_use_vsync(button_pressed)
