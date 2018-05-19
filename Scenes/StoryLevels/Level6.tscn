@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/EndBlock.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/MusicPlayer.tscn" type="PackedScene" id=3]
-[ext_resource path="res://BlockTiles2.tres" type="TileSet" id=4]
-[ext_resource path="res://Scenes/Bomb.tscn" type="PackedScene" id=5]
+[ext_resource path="res://BlockTiles2.tres" type="TileSet" id=3]
+[ext_resource path="res://Scenes/Bomb.tscn" type="PackedScene" id=4]
 
 [node name="root" type="Node"]
 
@@ -19,13 +18,11 @@ position = Vector2( 1060, 312 )
 _sections_unfolded = [ "Transform" ]
 NextLevelName = "Level7"
 
-[node name="MusicPlayer" parent="." index="2" instance=ExtResource( 3 )]
-
-[node name="Blocks" type="TileMap" parent="." index="3"]
+[node name="Blocks" type="TileMap" parent="." index="2"]
 
 position = Vector2( -60, -88 )
 mode = 0
-tile_set = ExtResource( 4 )
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -43,23 +40,23 @@ format = 1
 tile_data = PoolIntArray( 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 655390, 0, 0, 655391, 0, 0, 655392, 0, 0, 655393, 0, 0, 655394, 0, 0, 655395, 0, 0, 655396, 0, 0, 655397, 0, 0, 720902, 0, 0, 720933, 0, 0, 786438, 0, 0, 786469, 0, 0, 851974, 0, 0, 852005, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917534, 0, 0, 917535, 0, 0, 917536, 0, 0, 917537, 0, 0, 917538, 0, 0, 917539, 0, 0, 917540, 0, 0, 917541, 0, 0, 983053, 0, 0, 983057, 0, 0, 983058, 0, 0, 983059, 0, 0, 983060, 0, 0, 983061, 0, 0, 983062, 0, 0, 983063, 0, 0, 983064, 0, 0, 983065, 0, 0, 983066, 0, 0, 983070, 0, 0, 1048589, 0, 0, 1048606, 0, 0, 1114125, 0, 0, 1114142, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 0, 0, 1179671, 0, 0, 1179672, 0, 0, 1179673, 0, 0, 1179674, 0, 0, 1179675, 0, 0, 1179676, 0, 0, 1179677, 0, 0, 1179678, 0, 0 )
 _sections_unfolded = [ "Cell", "Collision", "Material", "Occluder", "Visibility" ]
 
-[node name="Bomb" parent="." index="4" instance=ExtResource( 5 )]
+[node name="Bomb" parent="." index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 650, 312 )
 
-[node name="Bomb2" parent="." index="5" instance=ExtResource( 5 )]
+[node name="Bomb2" parent="." index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 570, 312 )
 
-[node name="Bomb3" parent="." index="6" instance=ExtResource( 5 )]
+[node name="Bomb3" parent="." index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 720, 312 )
 
-[node name="Bomb4" parent="." index="7" instance=ExtResource( 5 )]
+[node name="Bomb4" parent="." index="6" instance=ExtResource( 4 )]
 
 position = Vector2( 500, 312 )
 
-[node name="Bomb5" parent="." index="8" instance=ExtResource( 5 )]
+[node name="Bomb5" parent="." index="7" instance=ExtResource( 4 )]
 
 position = Vector2( 790, 312 )
 

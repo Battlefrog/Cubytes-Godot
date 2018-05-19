@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Bomb.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/EndBlock.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/MusicPlayer.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Point.tscn" type="PackedScene" id=5]
-[ext_resource path="res://BlockTiles2.tres" type="TileSet" id=6]
+[ext_resource path="res://Scenes/Point.tscn" type="PackedScene" id=4]
+[ext_resource path="res://BlockTiles2.tres" type="TileSet" id=5]
 
 [node name="root" type="Node"]
 
@@ -69,17 +68,15 @@ position = Vector2( 570, 330 )
 _sections_unfolded = [ "Transform" ]
 NextLevelName = "Level15"
 
-[node name="MusicPlayer" parent="." index="13" instance=ExtResource( 4 )]
-
-[node name="Point" parent="." index="14" instance=ExtResource( 5 )]
+[node name="Point" parent="." index="13" instance=ExtResource( 4 )]
 
 position = Vector2( 990, 460 )
 
-[node name="Blocks" type="TileMap" parent="." index="15"]
+[node name="Blocks" type="TileMap" parent="." index="14"]
 
 position = Vector2( 192, 12 )
 mode = 0
-tile_set = ExtResource( 6 )
+tile_set = ExtResource( 5 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
