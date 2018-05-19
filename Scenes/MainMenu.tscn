@@ -13,7 +13,7 @@ use_filter = true
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 [node name="ButtonPanel" type="Panel" parent="." index="0"]
 
@@ -47,6 +47,7 @@ margin_right = 340.0
 margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+hint_tooltip = "Play the game."
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -74,6 +75,7 @@ margin_right = 340.0
 margin_bottom = 260.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+hint_tooltip = "Options"
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -87,7 +89,7 @@ group = null
 text = "Options"
 flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Hint", "custom_fonts" ]
 
 [node name="HelpButton" type="Button" parent="ButtonPanel" index="2"]
 
@@ -101,6 +103,7 @@ margin_right = 340.0
 margin_bottom = 400.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+hint_tooltip = "Help"
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -114,7 +117,7 @@ group = null
 text = "Help"
 flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Hint", "Mouse", "custom_fonts" ]
 
 [node name="QuitButton" type="Button" parent="ButtonPanel" index="3"]
 
@@ -128,6 +131,7 @@ margin_right = 340.0
 margin_bottom = 550.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+hint_tooltip = "Quit the game."
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -141,7 +145,7 @@ group = null
 text = "Quit"
 flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Hint", "custom_fonts" ]
 
 [node name="TmpImg" type="TextureRect" parent="." index="1"]
 
@@ -192,9 +196,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 580.0
 margin_top = 60.0
-margin_right = 760.0
+margin_right = 1340.0
 margin_bottom = 120.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false

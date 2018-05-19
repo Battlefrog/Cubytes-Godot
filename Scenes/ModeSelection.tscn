@@ -12,7 +12,7 @@ use_filter = true
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -22,10 +22,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 160.0
-margin_top = 250.0
-margin_right = 1150.0
-margin_bottom = 380.0
+margin_left = 170.0
+margin_top = 260.0
+margin_right = 1160.0
+margin_bottom = 390.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -47,6 +47,7 @@ margin_right = 370.0
 margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+hint_tooltip = "Play the Story Mode."
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -60,7 +61,7 @@ group = null
 text = "Story"
 flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Hint", "custom_fonts" ]
 
 [node name="ArcadeModeButton" type="Button" parent="ButtonPanel" index="1"]
 
@@ -74,6 +75,7 @@ margin_right = 950.0
 margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+hint_tooltip = "Play the Arcade Mode. *NOTE: Currently not implimented*"
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -87,7 +89,7 @@ group = null
 text = "Arcade"
 flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Hint", "custom_fonts" ]
 
 [node name="BackButton" type="Button" parent="ButtonPanel" index="2"]
 
@@ -95,12 +97,13 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 290.0
-margin_top = 270.0
-margin_right = 640.0
-margin_bottom = 360.0
+margin_left = 320.0
+margin_top = 290.0
+margin_right = 670.0
+margin_bottom = 380.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+hint_tooltip = "Go back to the Main Menu."
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -114,7 +117,7 @@ group = null
 text = "Back"
 flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Focus", "Hint", "custom_fonts" ]
 
 [node name="Title" type="Label" parent="." index="1"]
 
@@ -122,10 +125,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 540.0
-margin_top = 10.0
-margin_right = 759.0
-margin_bottom = 70.0
+margin_top = 60.0
+margin_right = 1340.0
+margin_bottom = 120.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
