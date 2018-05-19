@@ -166,6 +166,7 @@ size_flags_vertical = 1
 texture = ExtResource( 4 )
 expand = true
 stretch_mode = 0
+_sections_unfolded = [ "Hint" ]
 
 [node name="Copyright" type="Label" parent="TmpImg" index="0"]
 
@@ -176,7 +177,7 @@ anchor_bottom = 0.0
 margin_left = 120.0
 margin_top = 370.0
 margin_right = 510.0
-margin_bottom = 428.0
+margin_bottom = 410.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
