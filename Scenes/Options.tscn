@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Options.gd" type="Script" id=1]
 [ext_resource path="res://Misc/UITheme.tres" type="Theme" id=2]
 [ext_resource path="res://Fonts/NovaFlat.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scenes/Fullscreen.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -12,7 +13,7 @@ use_filter = true
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
@@ -134,6 +135,7 @@ shortcut = null
 group = null
 flat = false
 align = 0
+script = ExtResource( 4 )
 
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 
