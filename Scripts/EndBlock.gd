@@ -13,4 +13,4 @@ func OnPlayerEndBlockHit():
 		$CompleteLevelSFX.play()
 		PlayerRef.end_of_level()
 		yield(get_tree().create_timer(0.5), "timeout")
-		get_tree().change_scene("res://Scenes/StoryLevels/" + NextLevelName + ".tscn")
+		get_node("/root/global").goto_scene("res://Scenes/StoryLevels/" + NextLevelName + ".tscn")

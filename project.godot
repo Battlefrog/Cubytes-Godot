@@ -14,6 +14,11 @@ config/name="Cubytes"
 run/main_scene="res://Scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+global="*res://Scripts/global.gd"
+MusicPlayer="*res://Scenes/MusicPlayer.tscn"
+
 [debug]
 
 settings/crash_handler/message="Please include this when reporting the bug on https://github.com/Battlefrog/Cubytes-Godot/issues"
@@ -30,3 +35,4 @@ window/stretch/aspect="keep"
 quality/2d/use_pixel_snap=true
 environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"
+quality/dynamic_fonts/use_oversampling=true
