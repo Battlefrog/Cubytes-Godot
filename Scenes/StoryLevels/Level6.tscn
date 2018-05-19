@@ -5,22 +5,22 @@
 [ext_resource path="res://BlockTiles2.tres" type="TileSet" id=3]
 [ext_resource path="res://Scenes/Bomb.tscn" type="PackedScene" id=4]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 200, 312 )
+position = Vector2( 260, 302 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="EndBlock" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 1060, 312 )
+position = Vector2( 1120, 302 )
 _sections_unfolded = [ "Transform" ]
 NextLevelName = "Level7"
 
 [node name="Blocks" type="TileMap" parent="." index="2"]
 
-position = Vector2( -60, -88 )
+position = Vector2( 0, -98 )
 mode = 0
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 32, 32 )
@@ -42,22 +42,22 @@ _sections_unfolded = [ "Cell", "Collision", "Material", "Occluder", "Visibility"
 
 [node name="Bomb" parent="." index="3" instance=ExtResource( 4 )]
 
-position = Vector2( 650, 312 )
+position = Vector2( 710, 302 )
 
 [node name="Bomb2" parent="." index="4" instance=ExtResource( 4 )]
 
-position = Vector2( 570, 312 )
+position = Vector2( 630, 302 )
 
 [node name="Bomb3" parent="." index="5" instance=ExtResource( 4 )]
 
-position = Vector2( 720, 312 )
+position = Vector2( 780, 302 )
 
 [node name="Bomb4" parent="." index="6" instance=ExtResource( 4 )]
 
-position = Vector2( 500, 312 )
+position = Vector2( 560, 302 )
 
 [node name="Bomb5" parent="." index="7" instance=ExtResource( 4 )]
 
-position = Vector2( 790, 312 )
+position = Vector2( 850, 302 )
 
 

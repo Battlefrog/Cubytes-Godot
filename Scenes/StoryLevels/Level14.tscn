@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/Point.tscn" type="PackedScene" id=4]
 [ext_resource path="res://BlockTiles2.tres" type="TileSet" id=5]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
@@ -15,66 +15,66 @@ __meta__ = {
 
 [node name="Bomb" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 610, 280 )
+position = Vector2( 700, 280 )
 
 [node name="Bomb2" parent="." index="1" instance=ExtResource( 1 )]
 
-position = Vector2( 830, 280 )
+position = Vector2( 920, 280 )
 
 [node name="Bomb3" parent="." index="2" instance=ExtResource( 1 )]
 
-position = Vector2( 570, 400 )
+position = Vector2( 660, 400 )
 
 [node name="Bomb4" parent="." index="3" instance=ExtResource( 1 )]
 
-position = Vector2( 510, 400 )
+position = Vector2( 600, 400 )
 
 [node name="Bomb5" parent="." index="4" instance=ExtResource( 1 )]
 
-position = Vector2( 450, 400 )
+position = Vector2( 540, 400 )
 
 [node name="Bomb6" parent="." index="5" instance=ExtResource( 1 )]
 
-position = Vector2( 390, 400 )
+position = Vector2( 480, 400 )
 
 [node name="Bomb7" parent="." index="6" instance=ExtResource( 1 )]
 
-position = Vector2( 480, 370 )
+position = Vector2( 570, 370 )
 
 [node name="Bomb8" parent="." index="7" instance=ExtResource( 1 )]
 
-position = Vector2( 420, 370 )
+position = Vector2( 510, 370 )
 
 [node name="Bomb9" parent="." index="8" instance=ExtResource( 1 )]
 
-position = Vector2( 360, 370 )
+position = Vector2( 450, 370 )
 
 [node name="Bomb10" parent="." index="9" instance=ExtResource( 1 )]
 
-position = Vector2( 330, 400 )
+position = Vector2( 420, 400 )
 
 [node name="Bomb11" parent="." index="10" instance=ExtResource( 1 )]
 
-position = Vector2( 540, 370 )
+position = Vector2( 630, 370 )
 
 [node name="Player" parent="." index="11" instance=ExtResource( 2 )]
 
-position = Vector2( 290, 240 )
+position = Vector2( 380, 240 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="EndBlock" parent="." index="12" instance=ExtResource( 3 )]
 
-position = Vector2( 570, 330 )
+position = Vector2( 660, 330 )
 _sections_unfolded = [ "Transform" ]
 NextLevelName = "Level15"
 
 [node name="Point" parent="." index="13" instance=ExtResource( 4 )]
 
-position = Vector2( 990, 460 )
+position = Vector2( 1080, 460 )
 
 [node name="Blocks" type="TileMap" parent="." index="14"]
 
-position = Vector2( 192, 12 )
+position = Vector2( 282, 12 )
 mode = 0
 tile_set = ExtResource( 5 )
 cell_size = Vector2( 32, 32 )

@@ -5,22 +5,22 @@
 [ext_resource path="res://BlockTiles2.tres" type="TileSet" id=3]
 [ext_resource path="res://Scenes/Point.tscn" type="PackedScene" id=4]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 268, 194 )
+position = Vector2( 318, 214 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="EndBlock" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 1020, 200 )
+position = Vector2( 1070, 220 )
 _sections_unfolded = [ "Transform" ]
 NextLevelName = "Level6"
 
 [node name="Blocks" type="TileMap" parent="." index="2"]
 
-position = Vector2( 764, 432 )
+position = Vector2( 814, 452 )
 mode = 0
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 32, 32 )
@@ -42,6 +42,6 @@ _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="Point" parent="." index="3" instance=ExtResource( 4 )]
 
-position = Vector2( 790, 290 )
+position = Vector2( 840, 310 )
 
 
