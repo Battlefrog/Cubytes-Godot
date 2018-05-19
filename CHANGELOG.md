@@ -11,6 +11,3 @@
 - Changed Levels 4, 5, 6, 7, 8.
 - Changed UI placement slightly.
 - Fixed MusicPlayer resetting on level loads.
-
-
-
