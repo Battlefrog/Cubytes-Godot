@@ -11,7 +11,7 @@
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 350, 476 )
+position = Vector2( 340, 320 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="EndBlock" parent="." index="1" instance=ExtResource( 2 )]
@@ -42,30 +42,26 @@ format = 1
 tile_data = PoolIntArray( 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 0, 0, 524311, 0, 0, 524312, 0, 0, 524313, 0, 0, 524314, 0, 0, 524315, 0, 0, 524316, 0, 0, 524317, 0, 0, 589830, 0, 0, 589853, 0, 0, 655366, 0, 0, 655389, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 720925, 0, 0, 786438, 0, 0, 786443, 0, 0, 786448, 0, 0, 786456, 0, 0, 786461, 0, 0, 851974, 0, 0, 851979, 0, 0, 851984, 0, 0, 851992, 0, 0, 851997, 0, 0, 917510, 0, 0, 917515, 0, 0, 917520, 0, 0, 917528, 0, 0, 917533, 0, 0, 983046, 0, 0, 983051, 0, 0, 983056, 0, 0, 983064, 0, 0, 983065, 0, 0, 983066, 0, 0, 983069, 0, 0, 1048582, 0, 0, 1048592, 0, 0, 1048602, 0, 0, 1048605, 0, 0, 1114118, 0, 0, 1114128, 0, 0, 1114138, 0, 0, 1114141, 0, 0, 1179654, 0, 0, 1179664, 0, 0, 1179674, 0, 0, 1179677, 0, 0, 1245190, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245210, 0, 0, 1245211, 0, 0, 1245212, 0, 0, 1245213, 0, 0 )
 _sections_unfolded = [ "Cell", "Collision", "Material", "Occluder", "Visibility" ]
 
-[node name="Bomb" parent="." index="3" instance=ExtResource( 4 )]
-
-position = Vector2( 420, 376 )
-
-[node name="Bomb2" parent="." index="4" instance=ExtResource( 4 )]
+[node name="Bomb2" parent="." index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 500, 316 )
 
-[node name="Bomb3" parent="." index="5" instance=ExtResource( 4 )]
+[node name="Bomb3" parent="." index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 560, 476 )
 
-[node name="Bomb4" parent="." index="6" instance=ExtResource( 4 )]
+[node name="Bomb4" parent="." index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 920, 366 )
 
-[node name="Bomb5" parent="." index="7" instance=ExtResource( 4 )]
+[node name="Bomb5" parent="." index="6" instance=ExtResource( 4 )]
 
 position = Vector2( 990, 226 )
 
-[node name="Point" parent="." index="8" instance=ExtResource( 5 )]
+[node name="Point" parent="." index="7" instance=ExtResource( 5 )]
 
 position = Vector2( 350, 226 )
 
-[node name="Node" parent="." index="9" instance=ExtResource( 6 )]
+[node name="Node" parent="." index="8" instance=ExtResource( 6 )]
 
 
