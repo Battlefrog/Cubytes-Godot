@@ -1,13 +1,8 @@
-extends Node
+extends Label
 
-func _ready():
+func _process(delta):
 	var d = ProjectSettings.get_setting("PLAYER_DEATHS")
 	
-	$DeathDisplay.set_text("Deaths: " + str(d))
-
-func _process():
-	var d = ProjectSettings.get_setting("PLAYER_DEATHS")
-	
-	$DeathDisplay.set_text("Deaths: " + str(d))
+	self.set_text("Deaths: " + str(d))
 	
 	print(str(d))
