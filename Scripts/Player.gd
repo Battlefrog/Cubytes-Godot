@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export (int) var PlayerSpeed = 900
+export (int) var PlayerSpeed
 
 # Okay so after failing for about an hour this is 
 # how to get a node at your hierarchial level.
@@ -64,8 +64,12 @@ func CheckForCollisions(collisions):
 			die()
 	
 func die():
+	var death = ProjectSettings.get_setting("PLAYER_DEATHS")
+	ProjectSettings.set_setting("PLAYER_DEATHS", death + 1)
+	
 	# TODO: Maybe play a particle effect or something?
 	$RespawnSFX.play()
+	
 	# This is the correct way to get the X and Y coords. At least I think
 	position = StartPos.get_origin()
 	show()

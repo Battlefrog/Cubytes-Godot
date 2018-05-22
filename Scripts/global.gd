@@ -3,6 +3,8 @@ extends Node
 var current_scene = null
 
 func _ready():
+	ProjectSettings.set_setting("PLAYER_DEATHS", 0)
+	
 	var root = get_tree().get_root()
 	# Getting the current scene
 	current_scene = root.get_child(root.get_child_count() - 1)
@@ -14,21 +16,16 @@ func goto_scene(path):
 
     # The way around this is deferring the load to a later time, when
     # it is ensured that no code from the current scene is running:
-
-    call_deferred("_deferred_goto_scene",path)
-
+    call_deferred("_deferred_goto_scene", path)
 
 func _deferred_goto_scene(path):
-
-    # Free the current scene
-    current_scene.free()
+	current_scene.free()
 
     # Load new scene
-    var s = ResourceLoader.load(path)
-
-    # Instance the new scene
-    current_scene = s.instance()
-
-    # Add it to the active scene, as child of root
-    get_tree().get_root().add_child(current_scene)
-    get_tree().set_current_scene( current_scene )
+	var s = ResourceLoader.load(path)
+	
+	current_scene = s.instance()
+	
+	# Add it to the active scene, as child of root
+	get_tree().get_root().add_child(current_scene)
+	get_tree().set_current_scene(current_scene)
