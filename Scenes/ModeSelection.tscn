@@ -12,7 +12,7 @@ use_filter = true
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -75,7 +75,7 @@ margin_right = 950.0
 margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-hint_tooltip = "Play the Arcade Mode. *NOTE: Currently not implimented*"
+hint_tooltip = "Play the Arcade Mode."
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0

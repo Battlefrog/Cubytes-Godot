@@ -20,7 +20,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -85,6 +85,7 @@ margin_right = 850.0
 margin_bottom = 700.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+hint_tooltip = "Go to the Main Menu."
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -99,7 +100,7 @@ group = null
 text = "To Main Menu"
 flat = false
 align = 1
-_sections_unfolded = [ "Theme", "custom_colors", "custom_fonts" ]
+_sections_unfolded = [ "Hint", "Theme", "custom_colors", "custom_fonts" ]
 
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
 

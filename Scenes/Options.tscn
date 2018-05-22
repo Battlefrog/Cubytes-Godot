@@ -29,6 +29,7 @@ margin_right = 860.0
 margin_bottom = 690.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+hint_tooltip = "Go back to the Main Menu."
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -43,7 +44,7 @@ group = null
 text = "Back"
 flat = false
 align = 1
-_sections_unfolded = [ "Theme", "custom_fonts", "custom_styles" ]
+_sections_unfolded = [ "Hint", "Theme", "custom_fonts", "custom_styles" ]
 
 [node name="Title" type="Label" parent="." index="1"]
 
@@ -123,7 +124,7 @@ margin_right = 204.0
 margin_bottom = 50.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-hint_tooltip = "Toggle fullscreen"
+hint_tooltip = "Toggle fullscreen."
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -173,7 +174,7 @@ margin_right = 204.0
 margin_bottom = 50.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-hint_tooltip = "Toggle fullscreen"
+hint_tooltip = "Toggle V-Sync."
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0

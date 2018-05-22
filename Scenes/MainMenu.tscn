@@ -13,7 +13,7 @@ use_filter = true
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 [node name="ButtonPanel" type="Panel" parent="." index="0"]
 
@@ -75,7 +75,7 @@ margin_right = 340.0
 margin_bottom = 260.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-hint_tooltip = "Options"
+hint_tooltip = "Configure the game."
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -89,7 +89,7 @@ group = null
 text = "Options"
 flat = false
 align = 1
-_sections_unfolded = [ "Hint", "custom_fonts" ]
+_sections_unfolded = [ "Focus", "Hint", "custom_fonts" ]
 
 [node name="HelpButton" type="Button" parent="ButtonPanel" index="2"]
 
@@ -103,7 +103,7 @@ margin_right = 340.0
 margin_bottom = 400.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-hint_tooltip = "Help"
+hint_tooltip = "Information on the game."
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
