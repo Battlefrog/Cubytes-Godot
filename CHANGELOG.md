@@ -12,3 +12,12 @@
 - Changed Levels 4, 5, 6, 7, 8.
 - Changed UI placement slightly.
 - Fixed MusicPlayer resetting on level loads.
+
+## Alpha 4
+
+- Added a Death Counter.
+- Changed sound levels (Attempted more balance between SFX and music).
+- Changed Levels 6, 7, 8, 9, 10, 14, 15.
+- Changed Bomb behavior (They no longer self-destruct).
+- Changed Tooltip time (From 0.6sec to 0.2 sec).
+- Changed the Player's speed (From 900 to 750).
