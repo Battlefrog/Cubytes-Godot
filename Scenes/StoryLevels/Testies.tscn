@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/EndBlock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Point.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Fonts/NovaFlat.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://BlockTiles2.tres" type="TileSet" id=6]
+[ext_resource path="res://Misc/BlockTiles2.tres" type="TileSet" id=6]
 [ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
@@ -16,7 +16,7 @@ use_filter = true
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
@@ -142,5 +142,7 @@ tile_data = PoolIntArray( 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0
 _sections_unfolded = [ "Cell" ]
 
 [node name="Node" parent="." index="19" instance=ExtResource( 7 )]
+
+CurrentLevelNum = -999
 
 

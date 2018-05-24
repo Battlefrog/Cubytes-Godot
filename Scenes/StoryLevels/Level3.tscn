@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/EndBlock.tscn" type="PackedScene" id=2]
-[ext_resource path="res://BlockTiles2.tres" type="TileSet" id=3]
+[ext_resource path="res://Misc/BlockTiles2.tres" type="TileSet" id=3]
 [ext_resource path="res://Scenes/Point.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=5]
 
@@ -46,5 +46,7 @@ _sections_unfolded = [ "Cell", "Collision", "Material", "Occluder", "Visibility"
 position = Vector2( 670, 244 )
 
 [node name="Node" parent="." index="4" instance=ExtResource( 5 )]
+
+CurrentLevelNum = 3
 
 

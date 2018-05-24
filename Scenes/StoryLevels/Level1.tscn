@@ -2,10 +2,10 @@
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/EndBlock.tscn" type="PackedScene" id=2]
-[ext_resource path="res://BlockTiles2.tres" type="TileSet" id=3]
+[ext_resource path="res://Misc/BlockTiles2.tres" type="TileSet" id=3]
 [ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=4]
 
-[node name="root" type="Node" index="0"]
+[node name="root" type="Node"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -41,5 +41,7 @@ tile_data = PoolIntArray( 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0
 _sections_unfolded = [ "Cell", "Collision", "Material", "Occluder", "Visibility" ]
 
 [node name="Node" parent="." index="3" instance=ExtResource( 4 )]
+
+CurrentLevelNum = 1
 
 
