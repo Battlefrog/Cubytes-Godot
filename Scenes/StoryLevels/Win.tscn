@@ -20,7 +20,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -63,9 +63,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 theme = ExtResource( 3 )
-text = "You've reached the end of Alpha 3!
+text = "You've reached the end of Alpha 4!
 
-Stay tuned for the release of Alpha 4!"
+Stay tuned for the release of Alpha 5!"
 align = 1
 valign = 1
 percent_visible = 1.0
