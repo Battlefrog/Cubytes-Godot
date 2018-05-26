@@ -11,6 +11,8 @@ var Velocity = Vector2()
 var ScreenSize
 var StartPos
 
+var Shrunk
+
 func _ready():
 	# null = NOT in the scene
 	if PointRef == null:
@@ -18,10 +20,13 @@ func _ready():
 	
 	StartPos = get_transform()
 	ScreenSize = get_viewport_rect().size
+	Shrunk = false
 	
 	$WallHitSFX.stream.loop = false
 	$RespawnSFX.stream.loop = false
-	$CollisionShape2D.disabled = false
+	$BigCollisionShape2D.disabled = false
+	$SmallCollisionShape2D.disabled = true
+	$SmallSprite.visible = true
 	show()
 	set_process(true)
 	
@@ -62,6 +67,9 @@ func CheckForCollisions(collisions):
 		elif collisions.collider.name.begins_with("Bomb"):
 			collisions.collider.call("Blowup")
 			die()
+		elif collisions.collider.name.begins_with("DecreaseSize"):
+			collisions.collider.call("Shrink")
+			shrink()
 	
 func die():
 	var death = ProjectSettings.get_setting("PLAYER_DEATHS")
@@ -73,7 +81,8 @@ func die():
 	# This is the correct way to get the X and Y coords. At least I think
 	position = StartPos.get_origin()
 	show()
-	$CollisionShape2D.disabled = false
+	$BigCollisionShape2D.disabled = false
+	$SmallCollisionShape2D.disabled = true
 
 # I'll have to think about bombs and if they should restart the level...
 func restart():
@@ -82,3 +91,21 @@ func restart():
 	
 func end_of_level():
 	set_process(false)
+	
+func shrink():
+	Shrunk = true
+	PlayerSpeed = 600
+	
+	$BigSprite.visible = false
+	$SmallSprite.visible = true
+	$BigCollisionShape2D.disabled = false
+	$SmallCollisionShape2D.disabled = true
+	
+func grow():
+	Shrunk = false
+	PlayerSpeed = 750
+	
+	$BigSprite.visible = true
+	$SmallSprite.visible = false
+	$BigCollisionShape2D.disabled = true
+	$SmallCollisionShape2D.disabled = false
