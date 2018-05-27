@@ -7,10 +7,10 @@ path="res://.import/explosion.ogg-c269aab232bdc9c8f09468ebe2b15738.oggstr"
 [deps]
 
 source_file="res://Sounds/explosion.ogg"
-source_md5="b5c255c0b93a20657de43035ff8f97eb"
+source_md5="fb8ca48eeda30125d667a6ff51219d01"
 
 dest_files=[ "res://.import/explosion.ogg-c269aab232bdc9c8f09468ebe2b15738.oggstr" ]
-dest_md5="a0567a07c49c81c44cf3906a8b8f0143"
+dest_md5="63d04bfa4dd17a155dba4cef9d840728"
 
 [params]
 
