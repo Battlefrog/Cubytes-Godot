@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal player_death	
+
 export (int) var PlayerSpeed
 
 # Okay so after failing for about an hour this is 
@@ -24,9 +26,10 @@ func _ready():
 	
 	$WallHitSFX.stream.loop = false
 	$RespawnSFX.stream.loop = false
+	$BigSprite.visible = true
 	$BigCollisionShape2D.disabled = false
 	$SmallCollisionShape2D.disabled = true
-	$SmallSprite.visible = true
+	$SmallSprite.visible = false
 	show()
 	set_process(true)
 	
@@ -74,6 +77,9 @@ func CheckForCollisions(collisions):
 func die():
 	var death = ProjectSettings.get_setting("PLAYER_DEATHS")
 	ProjectSettings.set_setting("PLAYER_DEATHS", death + 1)
+	death = ProjectSettings.get_setting("PLAYER_DEATHS")
+	
+	emit_signal("player_death", death)
 	
 	# TODO: Maybe play a particle effect or something?
 	$RespawnSFX.play()
