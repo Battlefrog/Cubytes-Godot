@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Point.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=6]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -18,7 +18,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 1010, 196 )
 _sections_unfolded = [ "Transform" ]
-NextLevelName = "Level11"
+next_level_name = "Level11"
 
 [node name="Blocks" type="TileMap" parent="." index="2"]
 
@@ -62,8 +62,8 @@ position = Vector2( 860, 426 )
 
 position = Vector2( 680, 276 )
 
-[node name="Node" parent="." index="8" instance=ExtResource( 6 )]
+[node name="GameUI" parent="." index="8" instance=ExtResource( 6 )]
 
-CurrentLevelNum = 10
+current_level_num = 10
 
 

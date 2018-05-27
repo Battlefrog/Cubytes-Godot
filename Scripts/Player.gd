@@ -1,28 +1,25 @@
 extends KinematicBody2D
 
-signal player_death	
+signal player_died
 
-export (int) var PlayerSpeed
+export (int) var player_speed = 750
 
 # Okay so after failing for about an hour this is 
 # how to get a node at your hierarchial level.
 onready var EndBlockRef = get_node("../EndBlock")
 onready var PointRef = get_node("../Point")
 
-var Velocity = Vector2()
-var ScreenSize
-var StartPos
+var velocity = Vector2()
+var start_position
 
-var Shrunk
+var shrunk
 
 func _ready():
-	# null = NOT in the scene
 	if PointRef == null:
-		EndBlockRef.PointCollected = true
+		EndBlockRef.point_collected = true
 	
-	StartPos = get_transform()
-	ScreenSize = get_viewport_rect().size
-	Shrunk = false
+	start_position = get_transform()
+	shrunk = false
 	
 	$WallHitSFX.stream.loop = false
 	$RespawnSFX.stream.loop = false
@@ -30,45 +27,46 @@ func _ready():
 	$BigCollisionShape2D.disabled = false
 	$SmallCollisionShape2D.disabled = true
 	$SmallSprite.visible = false
+	
 	show()
 	set_process(true)
 	
 func _process(delta):
-	Velocity = Vector2()
+	velocity = Vector2()
 	
 	# Detecting Movement
 	if Input.is_action_pressed("ui_right"):
-		Velocity.x += 1
+		velocity.x += 1
 	if Input.is_action_pressed("ui_left"):
-		Velocity.x -= 1
+		velocity.x -= 1
 	if Input.is_action_pressed("ui_up"):
-		Velocity.y -= 1
+		velocity.y -= 1
 	if Input.is_action_pressed("ui_down"):
-		Velocity.y += 1
+		velocity.y += 1
 	
 	# Applying Movement
-	var collision_info = move_and_collide(Velocity.normalized() * PlayerSpeed * delta)
+	var collision_info = move_and_collide(velocity.normalized() * player_speed * delta)
 	
 	# Checking for certain collisions
 	CheckForCollisions(collision_info)
 		
-	position += Velocity * delta
+	position += velocity * delta
 	
 func CheckForCollisions(collisions):
 	# If there's any collisions in the first place...
 	if collisions:
 		print("Collision: ", collisions.collider.name)
 		if collisions.collider.name == "EndBlock":
-			collisions.collider.call("OnPlayerEndBlockHit")
+			collisions.collider.call("on_player_hit")
 		elif collisions.collider.name == "Blocks":
 			$WallHitSFX.play()
 			die()	
 		elif collisions.collider.name == "Point":
-			EndBlockRef.PointCollected = true
-			collisions.collider.call("PlayerPointCollected")
+			EndBlockRef.point_collected = true
+			collisions.collider.call("on_player_hit")
 		# begins_with to allow for multiple bombs
 		elif collisions.collider.name.begins_with("Bomb"):
-			collisions.collider.call("Blowup")
+			collisions.collider.call("on_player_hit")
 			die()
 		elif collisions.collider.name.begins_with("DecreaseSize"):
 			collisions.collider.call("Shrink")
@@ -79,13 +77,13 @@ func die():
 	ProjectSettings.set_setting("PLAYER_DEATHS", death + 1)
 	death = ProjectSettings.get_setting("PLAYER_DEATHS")
 	
-	emit_signal("player_death", death)
+	emit_signal("player_died", death)
 	
 	# TODO: Maybe play a particle effect or something?
 	$RespawnSFX.play()
 	
 	# This is the correct way to get the X and Y coords. At least I think
-	position = StartPos.get_origin()
+	position = start_position.get_origin()
 	show()
 	$BigCollisionShape2D.disabled = false
 	$SmallCollisionShape2D.disabled = true
@@ -99,8 +97,8 @@ func end_of_level():
 	set_process(false)
 	
 func shrink():
-	Shrunk = true
-	PlayerSpeed = 600
+	shrunk = true
+	player_speed = 600
 	
 	$BigSprite.visible = false
 	$SmallSprite.visible = true
@@ -108,8 +106,8 @@ func shrink():
 	$SmallCollisionShape2D.disabled = true
 	
 func grow():
-	Shrunk = false
-	PlayerSpeed = 750
+	shrunk = false
+	player_speed = 750
 	
 	$BigSprite.visible = true
 	$SmallSprite.visible = false

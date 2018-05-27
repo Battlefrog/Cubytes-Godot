@@ -6,7 +6,7 @@
 [node name="Node" type="Node" index="0"]
 
 script = ExtResource( 1 )
-CurrentLevelNum = null
+current_level_num = null
 
 [node name="DeathDisplay" type="Label" parent="." index="0"]
 

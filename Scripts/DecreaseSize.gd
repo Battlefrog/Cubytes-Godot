@@ -1,14 +1,14 @@
 extends StaticBody2D
 
-var Collected = false
+var collected = false
 
 func _ready():
 	$ShrinkSFX.stream.loop = false
 
-func Shrink():
-	if !Collected:
+func on_player_hit():
+	if !collected:
 		$ShrinkSFX.play()
 		$CollisionShape2D.disabled = true
 		set_process(false)
 		hide()
-		Collected = true
+		collected = true

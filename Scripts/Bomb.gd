@@ -1,9 +1,9 @@
 extends StaticBody2D
 
-var Exploded = false
+var exploded = false
 
 func _ready():
 	$ExplosionSFX.stream.loop = false
 	
-func Blowup():	
+func on_player_hit():	
 	$ExplosionSFX.play()
