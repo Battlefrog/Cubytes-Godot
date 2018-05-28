@@ -13,3 +13,4 @@ export_presets.cfg
 .directory
 *~
 *.import
+.vscode/settings.json
