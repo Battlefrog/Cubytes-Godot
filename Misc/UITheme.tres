@@ -1,7 +1,6 @@
-[gd_resource type="Theme" load_steps=9 format=2]
+[gd_resource type="Theme" load_steps=8 format=2]
 
 [ext_resource path="res://Fonts/TextFont.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Scripts/UITheme.gd" type="Script" id=2]
 
 [sub_resource type="StreamTexture" id=1]
 
@@ -89,6 +88,5 @@ Button/styles/focus = SubResource( 2 )
 Button/styles/hover = SubResource( 2 )
 Button/styles/normal = SubResource( 4 )
 Button/styles/pressed = SubResource( 6 )
-script = ExtResource( 2 )
 _sections_unfolded = [ "Button", "Button/colors", "Button/fonts", "Resource" ]
 
