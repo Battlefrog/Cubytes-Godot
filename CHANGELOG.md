@@ -16,6 +16,11 @@
 ## Alpha 4
 
 - Added a Death Counter.
+- Added a Level display.
+- Added a FPS display.
+- Added a 'DecreaseSize' block.
+- Changed the WallHit, and Explosion SFX.
+- Changed the Win Scene. (Now correctly displays current Alpha).
 - Changed sound levels (Attempted more balance between SFX and music).
 - Changed Levels 6, 7, 8, 9, 10, 14, 15.
 - Changed Bomb behavior (They no longer self-destruct).

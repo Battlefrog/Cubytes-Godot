@@ -69,7 +69,7 @@ func CheckForCollisions(collisions):
 			collisions.collider.call("on_player_hit")
 			die()
 		elif collisions.collider.name.begins_with("DecreaseSize"):
-			collisions.collider.call("Shrink")
+			collisions.collider.call("on_player_hit")
 			shrink()
 	
 func die():

@@ -16,7 +16,7 @@ use_filter = true
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
@@ -32,7 +32,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 1120, 500 )
 _sections_unfolded = [ "Transform" ]
-next_level_name = null
+next_level_name = "Testies"
 
 [node name="Point" parent="." index="2" instance=ExtResource( 3 )]
 
