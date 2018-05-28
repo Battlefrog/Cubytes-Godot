@@ -10,7 +10,7 @@ source_file="res://Sprites/Block.png"
 source_md5="a7e888e97f1e40118da4a9a44e39de19"
 
 dest_files=[ "res://.import/Block.png-20730aed078a8b8898d394e95f7fff1f.stex" ]
-dest_md5="e25ef621f64a0b182e25e1370fb90097"
+dest_md5="7429eaced60dbf36c4fdd3a9d993d6bc"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

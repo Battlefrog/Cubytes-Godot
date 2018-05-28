@@ -10,7 +10,7 @@ source_file="res://Sprites/Bomb.png"
 source_md5="6c592696755c3f7d0f64d74c49af4145"
 
 dest_files=[ "res://.import/Bomb.png-6390bb4e15be30d7d53b794053bcba48.stex" ]
-dest_md5="00dbcac845ce973f58f6ed7eb368d945"
+dest_md5="a5b195041fbeb94d2a33e966d7ea3a59"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

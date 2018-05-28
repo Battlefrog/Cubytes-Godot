@@ -10,7 +10,7 @@ source_file="res://Sprites/EndBlock.png"
 source_md5="4f30a28e79c8533b6078b042572ab644"
 
 dest_files=[ "res://.import/EndBlock.png-11cecec34e02272ae2dceeab348513bf.stex" ]
-dest_md5="2cbd99ece0ea2d8f7aefaf8b9f915a61"
+dest_md5="251151f9e000a883a38f4a2608b7426a"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
