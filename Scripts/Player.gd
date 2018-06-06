@@ -4,8 +4,6 @@ signal player_died
 
 export (int) var player_speed = 750
 
-# Okay so after failing for about an hour this is 
-# how to get a node at your hierarchial level.
 onready var EndBlockRef = get_node("../EndBlock")
 onready var PointRef = get_node("../Point")
 
@@ -29,6 +27,7 @@ func _ready():
 	$SmallSprite.visible = false
 	
 	show()
+	
 	set_process(true)
 	
 func _process(delta):
@@ -79,16 +78,13 @@ func die():
 	
 	emit_signal("player_died", death)
 	
-	# TODO: Maybe play a particle effect or something?
 	$RespawnSFX.play()
 	
-	# This is the correct way to get the X and Y coords. At least I think
 	position = start_position.get_origin()
 	show()
 	$BigCollisionShape2D.disabled = false
 	$SmallCollisionShape2D.disabled = true
 
-# I'll have to think about bombs and if they should restart the level...
 func restart():
 	$RespawnSFX.play()
 	get_tree().reload_current_scene()
@@ -98,12 +94,12 @@ func end_of_level():
 	
 func shrink():
 	shrunk = true
-	player_speed = 600
+	player_speed = 500
 	
 	$BigSprite.visible = false
 	$SmallSprite.visible = true
-	$BigCollisionShape2D.disabled = false
-	$SmallCollisionShape2D.disabled = true
+	$BigCollisionShape2D.disabled = true
+	$SmallCollisionShape2D.disabled = false
 	
 func grow():
 	shrunk = false
@@ -111,5 +107,5 @@ func grow():
 	
 	$BigSprite.visible = true
 	$SmallSprite.visible = false
-	$BigCollisionShape2D.disabled = true
-	$SmallCollisionShape2D.disabled = false
+	$BigCollisionShape2D.disabled = false
+	$SmallCollisionShape2D.disabled = true

@@ -15,14 +15,18 @@
 
 ## Alpha 4
 
-- Added a Death Counter.
+- Added a Death counter display.
 - Added a Level display.
 - Added a FPS display.
-- Added a 'DecreaseSize' block.
-- Changed the WallHit, and Explosion SFX.
-- Changed the Win Scene. (Now correctly displays current Alpha).
-- Changed sound levels (Attempted more balance between SFX and music).
+- Added a 'Shrink' block.
+- Added a Shrink block hit SFX.
+- Added Levels 16, 17, 18, 19, 20.
+- Changed the WallHit and Explosion SFX.
+- Changed the Win Scene Alpha text.
+- Changed sound level balancing.
 - Changed Levels 6, 7, 8, 9, 10, 14, 15.
 - Changed Bomb behavior (They no longer self-destruct).
-- Changed Tooltip time (From 0.6sec to 0.2 sec).
-- Changed the Player's speed (From 900 to 750).
+- Changed Tooltip appearance time (From 0.6 sec to 0.2 sec).
+- Changed the Player's normal movement speed (From 900 to 750 units per second).
+- Changed Help Screen to remove the Shooter and add a reference to the Shrink Block.
+- Fixed images appearing as fuzzy.

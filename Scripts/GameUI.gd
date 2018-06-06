@@ -5,6 +5,9 @@ export (int) var current_level_num
 func _ready():
 	get_node("../Player").connect("player_died", self, "update_death_display")
 	
+	var death = ProjectSettings.get_setting("PLAYER_DEATHS")
+	update_death_display(death)
+	
 func _process(delta):
 	$LevelDisplay.set_text("Level: " + str(current_level_num))
 	
