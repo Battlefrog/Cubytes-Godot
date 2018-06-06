@@ -19,3 +19,5 @@ Cubytes-Godot is under a MIT license. This means that you can share the program,
 **Alpha 2:** [Download - Windows Only](https://github.com/Battlefrog/Cubytes-Godot/releases/download/v0.0.2/Cubytes.-.Alpha.2.zip)
 
 **Alpha 3:** [Download - Windows Only](https://github.com/Battlefrog/Cubytes-Godot/releases/download/v.0.03/Cubytes.-.Alpha.3.zip)
+
+**Alpha 4:** [Download - Windows](https://github.com/Battlefrog/Cubytes-Godot/releases/download/v0.04/Cubytes.-.Alpha.4.zip)
