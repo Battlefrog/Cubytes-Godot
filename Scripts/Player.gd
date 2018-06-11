@@ -48,7 +48,7 @@ func _process(delta):
 	
 	# Checking for certain collisions
 	CheckForCollisions(collision_info)
-		
+	
 	position += velocity * delta
 	
 func CheckForCollisions(collisions):
@@ -76,6 +76,11 @@ func die():
 	ProjectSettings.set_setting("PLAYER_DEATHS", death + 1)
 	death = ProjectSettings.get_setting("PLAYER_DEATHS")
 	
+	set_process(false)
+	
+	# Little bit of a breather before anything happens.
+	yield(get_tree().create_timer(0.40), "timeout")
+	
 	emit_signal("player_died", death)
 	
 	$RespawnSFX.play()
@@ -84,6 +89,7 @@ func die():
 	show()
 	$BigCollisionShape2D.disabled = false
 	$SmallCollisionShape2D.disabled = true
+	set_process(true)
 
 func restart():
 	$RespawnSFX.play()
