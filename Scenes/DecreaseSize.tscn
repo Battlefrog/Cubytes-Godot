@@ -10,7 +10,7 @@ extents = Vector2( 16, 16 )
 
 [sub_resource type="StreamTexture" id=2]
 
-flags = 0
+flags = 4
 load_path = "res://.import/DecreaseSize.png-fbddac18f9d354a4c9d1d1e95a23d094.stex"
 
 [node name="DecreaseSize" type="StaticBody2D"]

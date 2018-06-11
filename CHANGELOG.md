@@ -30,3 +30,10 @@
 - Changed the Player's normal movement speed (From 900 to 750 units per second).
 - Changed Help Screen to remove the Shooter and add a reference to the Shrink Block.
 - Fixed images appearing as fuzzy.
+
+## Alpha 5
+
+- Added WSAD Movement (in addition to the Arrow Keys).
+- Changed Help screen to add reference to WSAD movement.
+- Changed Player Respawning.
+- Changed Levels 11.
