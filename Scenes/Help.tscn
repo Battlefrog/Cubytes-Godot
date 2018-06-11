@@ -16,7 +16,7 @@ use_filter = true
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Node2D" type="Control"]
+[node name="Node2D" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -110,7 +110,7 @@ If you run into a [i]Shrink[/i] block (Figure 3), your Player will shrink for th
 
 After doing all of that, go to the [i]End Block[/i] (Figure 4) and voila.
 
-Use the arrow keys to move."
+Use the arrow keys or the WSAD keys to move."
 visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
@@ -123,7 +123,7 @@ If you run into a Shrink block (Figure 3), your Player will shrink for the rest 
 
 After doing all of that, go to the End Block (Figure 4) and voila.
 
-Use the arrow keys to move."
+Use the arrow keys or the WSAD keys to move."
 scroll_active = false
 scroll_following = false
 selection_enabled = false
