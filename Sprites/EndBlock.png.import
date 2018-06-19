@@ -7,10 +7,7 @@ path="res://.import/EndBlock.png-11cecec34e02272ae2dceeab348513bf.stex"
 [deps]
 
 source_file="res://Sprites/EndBlock.png"
-source_md5="4f30a28e79c8533b6078b042572ab644"
-
 dest_files=[ "res://.import/EndBlock.png-11cecec34e02272ae2dceeab348513bf.stex" ]
-dest_md5="251151f9e000a883a38f4a2608b7426a"
 
 [params]
 

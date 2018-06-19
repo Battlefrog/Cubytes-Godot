@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Options.gd" type="Script" id=1]
-[ext_resource path="res://Misc/UITheme.tres" type="Theme" id=2]
+[ext_resource path="res://Misc/ui_theme.tres" type="Theme" id=2]
 [ext_resource path="res://Fonts/NovaFlat.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Sprites/Point.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Bomb.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/DecreaseSize.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/EndBlock.png" type="Texture" id=7]
+[ext_resource path="res://Fonts/TitleFont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Fonts/TextFont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Sprites/Point.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Bomb.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/DecreaseSize.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/EndBlock.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -29,7 +31,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
-_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+_sections_unfolded = [ "Material", "Theme", "Transform", "Visibility" ]
 
 [node name="BackButton" type="Button" parent="." index="0"]
 
@@ -66,16 +68,16 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 60.0
+margin_top = 40.0
 margin_right = 1340.0
-margin_bottom = 120.0
+margin_bottom = 100.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 4 )
 text = "Help"
 align = 1
 valign = 1
@@ -91,16 +93,18 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 250.0
-margin_top = 170.0
+margin_top = 140.0
 margin_right = 1060.0
-margin_bottom = 540.0
+margin_bottom = 560.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 2 )
+custom_fonts/italics_font = ExtResource( 5 )
+custom_fonts/bold_font = ExtResource( 5 )
+custom_fonts/normal_font = ExtResource( 5 )
 bbcode_enabled = true
 bbcode_text = "The objective of Cubytes is to [b]get to the end of the level as quickly as possible[/b].
 
@@ -128,7 +132,7 @@ scroll_active = false
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
-_sections_unfolded = [ "BBCode", "Theme" ]
+_sections_unfolded = [ "BBCode", "Theme", "custom_fonts" ]
 
 [node name="Panel" type="Panel" parent="." index="3"]
 
@@ -136,9 +140,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1170.0
+margin_left = 1140.0
 margin_top = 70.0
-margin_right = 1310.0
+margin_right = 1300.0
 margin_bottom = 620.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -154,16 +158,16 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 30.0
-margin_top = 20.0
+margin_top = 10.0
 margin_right = 120.0
-margin_bottom = 110.0
+margin_bottom = 100.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 4 )
+texture = ExtResource( 6 )
 expand = true
 stretch_mode = 0
 
@@ -173,22 +177,23 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = -6.0
 margin_top = 90.0
-margin_right = 90.0
-margin_bottom = 120.0
+margin_right = 98.0
+margin_bottom = 126.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 5 )
 text = "Figure 1"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Theme" ]
+_sections_unfolded = [ "Rect", "Theme", "custom_fonts" ]
 
 [node name="Figure2" type="TextureRect" parent="Panel" index="1"]
 
@@ -206,7 +211,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 expand = true
 stretch_mode = 0
 
@@ -216,22 +221,23 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = -6.0
 margin_top = 90.0
-margin_right = 93.0
-margin_bottom = 120.0
+margin_right = 107.0
+margin_bottom = 126.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 5 )
 text = "Figure 2"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Theme" ]
+_sections_unfolded = [ "Rect", "Theme", "custom_fonts" ]
 
 [node name="Figure3" type="TextureRect" parent="Panel" index="2"]
 
@@ -249,7 +255,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 expand = true
 stretch_mode = 0
 
@@ -259,22 +265,23 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = -6.0
 margin_top = 90.0
-margin_right = 93.0
-margin_bottom = 120.0
+margin_right = 107.0
+margin_bottom = 126.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 5 )
 text = "Figure 3"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Theme" ]
+_sections_unfolded = [ "Rect", "Theme", "custom_fonts" ]
 
 [node name="Figure4" type="TextureRect" parent="Panel" index="3"]
 
@@ -292,7 +299,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 expand = true
 stretch_mode = 0
 
@@ -302,22 +309,23 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = -6.0
 margin_top = 90.0
-margin_right = 91.0
-margin_bottom = 120.0
+margin_right = 105.0
+margin_bottom = 126.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 5 )
 text = "Figure 4"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Theme" ]
+_sections_unfolded = [ "Rect", "Theme", "custom_fonts" ]
 
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 

@@ -13,7 +13,7 @@ extents = Vector2( 16, 16 )
 flags = 0
 load_path = "res://.import/Bomb.png-6390bb4e15be30d7d53b794053bcba48.stex"
 
-[node name="Bomb" type="StaticBody2D"]
+[node name="Bomb" type="StaticBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -36,6 +36,7 @@ texture = SubResource( 2 )
 
 stream = ExtResource( 2 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"

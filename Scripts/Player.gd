@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 signal player_died
+signal pause_game
 
 export (int) var player_speed = 750
 
@@ -43,6 +44,10 @@ func _process(delta):
 	if Input.is_action_pressed("ui_down"):
 		velocity.y += 1
 	
+	# Pausing game
+	if Input.is_action_pressed("ui_cancel"):
+		emit_signal("pause_game")
+	
 	# Applying Movement
 	var collision_info = move_and_collide(velocity.normalized() * player_speed * delta)
 	
@@ -78,7 +83,6 @@ func die():
 	
 	set_process(false)
 	
-	# Little bit of a breather before anything happens.
 	yield(get_tree().create_timer(0.40), "timeout")
 	
 	emit_signal("player_died", death)
@@ -106,12 +110,3 @@ func shrink():
 	$SmallSprite.visible = true
 	$BigCollisionShape2D.disabled = true
 	$SmallCollisionShape2D.disabled = false
-	
-func grow():
-	shrunk = false
-	player_speed = 750
-	
-	$BigSprite.visible = true
-	$SmallSprite.visible = false
-	$BigCollisionShape2D.disabled = false
-	$SmallCollisionShape2D.disabled = true

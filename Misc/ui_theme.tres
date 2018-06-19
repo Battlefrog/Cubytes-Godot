@@ -1,0 +1,41 @@
+[gd_resource type="Theme" load_steps=6 format=2]
+
+[ext_resource path="res://Misc/button_hover_style.tres" type="StyleBox" id=1]
+[ext_resource path="res://Misc/button_normal_style.tres" type="StyleBox" id=2]
+[ext_resource path="res://Misc/button_pressed_style.tres" type="StyleBox" id=3]
+[ext_resource path="res://Misc/panel_style.tres" type="StyleBox" id=4]
+[ext_resource path="res://Fonts/TextFont.tres" type="DynamicFont" id=5]
+
+[resource]
+
+default_font = ExtResource( 5 )
+Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = ExtResource( 1 )
+Button/styles/normal = ExtResource( 2 )
+Button/styles/pressed = ExtResource( 3 )
+CheckBox/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
+CheckBox/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+CheckBox/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
+CheckBox/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+CheckBox/constants/check_vadjust = 0
+CheckBox/constants/hseparation = 4
+CheckBox/fonts/font = null
+CheckBox/icons/checked = null
+CheckBox/icons/radio_checked = null
+CheckBox/icons/radio_unchecked = null
+CheckBox/icons/unchecked = null
+CheckBox/styles/disabled = null
+CheckBox/styles/focus = null
+CheckBox/styles/hover = null
+CheckBox/styles/normal = null
+CheckBox/styles/pressed = null
+PopupPanel/styles/panel = ExtResource( 4 )
+_sections_unfolded = [ "Button/constants", "Button/fonts", "Button/styles", "CheckBox/styles", "Panel", "Panel/styles" ]
+

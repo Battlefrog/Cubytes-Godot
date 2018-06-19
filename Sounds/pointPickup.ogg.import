@@ -7,12 +7,9 @@ path="res://.import/pointPickup.ogg-9a25e593d6f928b05716443421ea41a3.oggstr"
 [deps]
 
 source_file="res://Sounds/pointPickup.ogg"
-source_md5="52f1231e23e5f51a658499c91d675736"
-
 dest_files=[ "res://.import/pointPickup.ogg-9a25e593d6f928b05716443421ea41a3.oggstr" ]
-dest_md5="99d244f1cf429894ca3d70eda8d7063d"
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

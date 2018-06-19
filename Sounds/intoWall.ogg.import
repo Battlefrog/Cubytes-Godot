@@ -7,12 +7,9 @@ path="res://.import/intoWall.ogg-02272507a759f296d189185f432a99cb.oggstr"
 [deps]
 
 source_file="res://Sounds/intoWall.ogg"
-source_md5="38d872d2961723b05e259b39d8eea8e1"
-
 dest_files=[ "res://.import/intoWall.ogg-02272507a759f296d189185f432a99cb.oggstr" ]
-dest_md5="a14e54ebec5db8ad8cb4d69f170c8f87"
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

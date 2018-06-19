@@ -7,12 +7,9 @@ path="res://.import/completeLevel.ogg-1700a767b0ecc39185778e200f80096d.oggstr"
 [deps]
 
 source_file="res://Sounds/completeLevel.ogg"
-source_md5="a0543a6835a313c7bf14155d40245bc0"
-
 dest_files=[ "res://.import/completeLevel.ogg-1700a767b0ecc39185778e200f80096d.oggstr" ]
-dest_md5="bc99ef3ea37d0a9af6c6fcfb84881e08"
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

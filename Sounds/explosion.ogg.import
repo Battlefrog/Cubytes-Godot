@@ -7,12 +7,9 @@ path="res://.import/explosion.ogg-c269aab232bdc9c8f09468ebe2b15738.oggstr"
 [deps]
 
 source_file="res://Sounds/explosion.ogg"
-source_md5="fb8ca48eeda30125d667a6ff51219d01"
-
 dest_files=[ "res://.import/explosion.ogg-c269aab232bdc9c8f09468ebe2b15738.oggstr" ]
-dest_md5="63d04bfa4dd17a155dba4cef9d840728"
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

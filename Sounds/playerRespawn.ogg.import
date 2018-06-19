@@ -7,12 +7,9 @@ path="res://.import/playerRespawn.ogg-15b428cebb11af49e89e7b105fcb6433.oggstr"
 [deps]
 
 source_file="res://Sounds/playerRespawn.ogg"
-source_md5="4f39177f32b103997c74bbec58394387"
-
 dest_files=[ "res://.import/playerRespawn.ogg-15b428cebb11af49e89e7b105fcb6433.oggstr" ]
-dest_md5="359c9ea8bbe1331000670dd63f00a309"
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
