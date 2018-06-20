@@ -31,9 +31,12 @@
 - Changed Help Screen to remove the Shooter and add a reference to the Shrink Block.
 - Fixed images appearing as fuzzy.
 
-## Alpha 5
+## Alpha 4.5
 
+- Added MacOS and Linux/X11 bulids.
 - Added WSAD Movement (in addition to the Arrow Keys).
 - Changed Help screen to add reference to WSAD movement.
-- Changed Player Respawning.
+- Changed Player Respawning (Added a slight pause).
 - Changed Levels 11.
+- Changed UI
+- Changed the Title font size.
