@@ -22,14 +22,17 @@ func update_death_display(death):
 	$DeathDisplay.set_text("Deaths: " + str(death))
 	
 func pause_game():
+	get_node("/root/MusicPlayer").stop_music()
 	$pause.popup()
 	get_tree().set_pause(true)
 
 func _on_ResumeButton_pressed():
+	get_node("/root/MusicPlayer").play_level_music()
 	$pause.hide()
 	get_tree().set_pause(false)
 
 func _on_MainMenuButton_pressed():
 	# So the Main Menu doesn't get paused!
 	get_tree().set_pause(false)
+	get_node("/root/MusicPlayer").play_menu_music()
 	get_node("/root/global").goto_scene("res://Scenes/MainMenu.tscn")
