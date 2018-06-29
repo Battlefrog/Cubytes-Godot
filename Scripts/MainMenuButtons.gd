@@ -1,5 +1,8 @@
 extends Panel
 
+func _ready():
+	get_node("/root/SFXPlayer").play_sfx("SFXAccept")
+
 func _on_PlayButton_pressed():
 	get_node("/root/global").goto_scene("res://Scenes/ModeSelection.tscn")
 
