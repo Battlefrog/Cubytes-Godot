@@ -44,3 +44,12 @@
 - Changed running application icon.
 - Reduced SFX volume.
 - Increased music volume.
+
+## Alpha 5
+
+- Added Shooter Shoot, Story Mode Start, UI Accept, and UI Back SFX.
+- Added Arcade Mode.
+- Added SFX for the UI.
+- Changed Levels 7, 10, 18.
+- Changed version to Alpha 5.
+- Fixed small Player having the wrong hitbox.
