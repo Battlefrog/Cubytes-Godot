@@ -1,5 +1,6 @@
 extends Control
 
+# Actual buttons
 var fullscreen
 var vsync
 
