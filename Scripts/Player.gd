@@ -91,8 +91,14 @@ func die():
 	
 	position = start_position.get_origin()
 	show()
-	$BigCollisionShape2D.disabled = false
-	$SmallCollisionShape2D.disabled = true
+	
+	if !shrunk:
+		$BigCollisionShape2D.disabled = false
+		$SmallCollisionShape2D.disabled = true
+	else:
+		$BigCollisionShape2D.disabled = true
+		$SmallCollisionShape2D.disabled = false
+		
 	set_process(true)
 
 func restart():
