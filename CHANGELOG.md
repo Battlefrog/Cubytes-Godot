@@ -33,10 +33,14 @@
 
 ## Alpha 4.5
 
-- Added MacOS and Linux/X11 bulids.
+- Added MacOS and Linux bulids.
 - Added WSAD Movement (in addition to the Arrow Keys).
+- Changed the Player Respawn, Point Pickup, and Level End SFX.
 - Changed Help screen to add reference to WSAD movement.
 - Changed Player Respawning (Added a slight pause).
-- Changed Levels 11.
-- Changed UI
+- Changed Level 11.
+- Changed UI theme.
 - Changed the Title font size.
+- Changed running application icon.
+- Reduced SFX volume.
+- Increased music volume.

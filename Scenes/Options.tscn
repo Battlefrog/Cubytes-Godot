@@ -149,7 +149,7 @@ flat = false
 align = 0
 _sections_unfolded = [ "Hint", "Theme" ]
 
-[node name="V-Sync" type="Label" parent="Panel" index="1"]
+[node name="VSync" type="Label" parent="Panel" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -174,7 +174,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_fonts" ]
 
-[node name="VsyncToggle" type="CheckBox" parent="Panel/V-Sync" index="0"]
+[node name="VsyncToggle" type="CheckBox" parent="Panel/VSync" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -201,8 +201,12 @@ _sections_unfolded = [ "Hint" ]
 
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 
+[connection signal="draw" from="Panel/Fullscreen/FullScreenToggle" to="." method="_on_FullScreenToggle_draw"]
+
 [connection signal="toggled" from="Panel/Fullscreen/FullScreenToggle" to="." method="_on_Fullscreen_toggled"]
 
-[connection signal="toggled" from="Panel/V-Sync/VsyncToggle" to="." method="_on_VSync_toggled"]
+[connection signal="draw" from="Panel/VSync/VsyncToggle" to="." method="_on_VsyncToggle_draw"]
+
+[connection signal="toggled" from="Panel/VSync/VsyncToggle" to="." method="_on_VSync_toggled"]
 
 
