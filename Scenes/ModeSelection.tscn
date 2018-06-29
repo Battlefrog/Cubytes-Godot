@@ -145,6 +145,8 @@ _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_fon
 
 [connection signal="pressed" from="ButtonPanel/StoryModeButton" to="." method="_on_StoryModeButton_pressed"]
 
+[connection signal="pressed" from="ButtonPanel/ArcadeModeButton" to="." method="_on_ArcadeModeButton_pressed"]
+
 [connection signal="pressed" from="ButtonPanel/BackButton" to="." method="_on_BackButton_pressed"]
 
 
