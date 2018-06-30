@@ -18,7 +18,7 @@ use_filter = true
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Node2D" type="Control" index="0"]
+[node name="Node2D" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -60,7 +60,7 @@ group = null
 text = "Back"
 flat = false
 align = 1
-_sections_unfolded = [ "Hint", "Theme", "custom_fonts", "custom_styles" ]
+_sections_unfolded = [ "Hint", "Rect", "Theme", "custom_fonts", "custom_styles" ]
 
 [node name="Title" type="Label" parent="." index="1"]
 

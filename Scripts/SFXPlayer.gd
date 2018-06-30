@@ -9,9 +9,13 @@ var SFX = {
 
 func play_sfx(var fx):
 	if SFX.has(fx):
+		print("SFXPlayer playing '" + fx + "' currently.")
+		
 		# Prevent multiple sounds from playing
 		$AudioStreamPlayer.stop()
 		$AudioStreamPlayer.stream = null
 		
 		$AudioStreamPlayer.stream = SFX[fx]
 		$AudioStreamPlayer.play()
+	else:
+		printerr(fx + " is not a correct SFX.")
