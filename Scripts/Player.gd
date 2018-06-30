@@ -23,8 +23,6 @@ func _ready():
 	start_position = get_transform()
 	shrunk = false
 	
-	$WallHitSFX.stream.loop = false
-	$RespawnSFX.stream.loop = false
 	$BigSprite.visible = true
 	$BigCollisionShape2D.disabled = false
 	$SmallCollisionShape2D.disabled = true
@@ -68,7 +66,7 @@ func CheckForCollisions(collisions):
 		if collisions.collider.name == "EndBlock":
 			collisions.collider.call("on_player_hit")
 		elif collisions.collider.name == "Blocks":
-			$WallHitSFX.play()
+			get_node("/root/SFXPlayer").play_sfx("SFXIntoWall")
 			die()	
 		elif collisions.collider.name == "Point":
 			EndBlockRef.point_collected = true
@@ -95,7 +93,7 @@ func die():
 	
 	emit_signal("player_died", death)
 	
-	$RespawnSFX.play()
+	get_node("/root/SFXPlayer").play_sfx("SFXPlayerRespawn")
 	
 	position = start_position.get_origin()
 	show()

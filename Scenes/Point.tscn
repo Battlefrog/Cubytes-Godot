@@ -1,15 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Point.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Point.png" type="Texture" id=2]
-[ext_resource path="res://Sounds/pointPickup.ogg" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 12, 12 )
 
-[node name="Point" type="StaticBody2D"]
+[node name="Point" type="StaticBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -27,13 +26,5 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
-
-[node name="PointHitSFX" type="AudioStreamPlayer" parent="." index="2"]
-
-stream = ExtResource( 3 )
-volume_db = 0.0
-autoplay = false
-mix_target = 0
-bus = "Master"
 
 

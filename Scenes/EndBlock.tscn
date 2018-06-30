@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/EndBlock.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/EndBlock.png" type="Texture" id=2]
-[ext_resource path="res://Sounds/completeLevel.ogg" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -28,14 +27,5 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
-
-[node name="CompleteLevelSFX" type="AudioStreamPlayer" parent="." index="2"]
-
-stream = ExtResource( 3 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
 
 
