@@ -81,6 +81,8 @@ func die():
 	ProjectSettings.set_setting("PLAYER_DEATHS", death + 1)
 	death = ProjectSettings.get_setting("PLAYER_DEATHS")
 	
+	$PlayerDeathAnim.emitting = true
+	
 	set_process(false)
 	
 	yield(get_tree().create_timer(0.40), "timeout")
