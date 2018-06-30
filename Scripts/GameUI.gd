@@ -8,19 +8,20 @@ func _ready():
 	get_node("../Player").connect("player_died", self, "update_death_display")
 	get_node("../Player").connect("pause_game", self, "pause_game")
 	
+	# To make sure that the deaths are shown when the level is loaded
 	var death = ProjectSettings.get_setting("PLAYER_DEATHS")
 	update_death_display(death)
 	
 	$pause.hide()
 	$pause.set_exclusive(true)
-	
+
 func _process(delta):
 	$LevelDisplay.set_text("Level: " + str(current_level_num))
 	$FPSDisplay.set_text("FPS: " + str(Performance.get_monitor(Performance.TIME_FPS)))
-	
+
 func update_death_display(death):
 	$DeathDisplay.set_text("Deaths: " + str(death))
-	
+
 func pause_game():
 	get_node("/root/MusicPlayer").stop_music()
 	$pause.popup()

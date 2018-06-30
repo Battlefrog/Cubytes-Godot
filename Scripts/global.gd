@@ -6,6 +6,7 @@ func _ready():
 	ProjectSettings.set_setting("PLAYER_DEATHS", 0)
 	
 	var root = get_tree().get_root()
+	
 	# Getting the current scene
 	current_scene = root.get_child(root.get_child_count() - 1)
 

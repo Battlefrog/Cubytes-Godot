@@ -2,9 +2,7 @@ extends StaticBody2D
 
 var collected = false
 
-func _ready():
-	$PointHitSFX.stream.loop = false
-
+# TODO: Add particle effect
 func on_player_hit():
 	if !collected:
 		$PointHitSFX.play()

@@ -56,7 +56,7 @@ group = null
 text = "Back"
 flat = false
 align = 1
-_sections_unfolded = [ "Hint", "Theme", "custom_fonts", "custom_styles" ]
+_sections_unfolded = [ "Hint", "Rect", "Theme", "custom_fonts", "custom_styles" ]
 
 [node name="Title" type="Label" parent="." index="1"]
 

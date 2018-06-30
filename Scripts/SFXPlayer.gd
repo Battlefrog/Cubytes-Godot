@@ -1,5 +1,6 @@
 extends Node
 
+# Dictionary for all SFX - Replacement for SampleLibrary in Godot 2
 var SFX = {
 	"SFXAccept": preload("res://Sounds/UIAccept.ogg"),
 	"SFXBack": preload("res://Sounds/UIBack.ogg"),
@@ -8,6 +9,9 @@ var SFX = {
 
 func play_sfx(var fx):
 	if SFX.has(fx):
+		# Prevent multiple sounds from playing
+		$AudioStreamPlayer.stop()
 		$AudioStreamPlayer.stream = null
+		
 		$AudioStreamPlayer.stream = SFX[fx]
 		$AudioStreamPlayer.play()

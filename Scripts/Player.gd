@@ -6,6 +6,8 @@ signal pause_game
 export (int) var player_speed = 750
 
 onready var EndBlockRef = get_node("../EndBlock")
+
+# Should be a var because point's aren't always going to be there
 onready var PointRef = get_node("../Point")
 
 var velocity = Vector2()
@@ -14,6 +16,7 @@ var start_position
 var shrunk
 
 func _ready():
+	# Not the best way to do things.
 	if PointRef == null:
 		EndBlockRef.point_collected = true
 	
@@ -48,14 +51,16 @@ func _process(delta):
 	if Input.is_action_pressed("ui_cancel"):
 		emit_signal("pause_game")
 	
-	# Applying Movement
+	# Getting collisions
 	var collision_info = move_and_collide(velocity.normalized() * player_speed * delta)
 	
-	# Checking for certain collisions
+	# Responding to certain collisions
 	CheckForCollisions(collision_info)
 	
+	# Applying Movement
 	position += velocity * delta
-	
+
+# Responding to any collisions
 func CheckForCollisions(collisions):
 	# If there's any collisions in the first place...
 	if collisions:
@@ -72,10 +77,11 @@ func CheckForCollisions(collisions):
 		elif collisions.collider.name.begins_with("Bomb"):
 			collisions.collider.call("on_player_hit")
 			die()
-		elif collisions.collider.name.begins_with("DecreaseSize"):
+		elif collisions.collider.name == "DecreaseSize":
 			collisions.collider.call("on_player_hit")
 			shrink()
-	
+
+# When the Player dies
 func die():
 	var death = ProjectSettings.get_setting("PLAYER_DEATHS")
 	ProjectSettings.set_setting("PLAYER_DEATHS", death + 1)
@@ -100,16 +106,14 @@ func die():
 	else:
 		$BigCollisionShape2D.disabled = true
 		$SmallCollisionShape2D.disabled = false
-		
+	
 	set_process(true)
 
-func restart():
-	$RespawnSFX.play()
-	get_tree().reload_current_scene()
-	
+# What happens to the player at the end of the level
 func end_of_level():
 	set_process(false)
-	
+
+# Shrink the Player
 func shrink():
 	shrunk = true
 	player_speed = 500
