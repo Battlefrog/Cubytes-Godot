@@ -100,65 +100,16 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Theme" ]
 
-[node name="Fullscreen" type="Label" parent="Panel" index="0"]
+[node name="VSync" type="Label" parent="Panel" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 10.0
-margin_right = 160.0
-margin_bottom = 69.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 5 )
-text = "Fullscreen"
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_fonts" ]
-
-[node name="FullScreenToggle" type="CheckBox" parent="Panel/Fullscreen" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 170.0
-margin_right = 194.0
-margin_bottom = 69.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-hint_tooltip = "Toggle fullscreen."
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 0
-_sections_unfolded = [ "Hint", "Theme" ]
-
-[node name="VSync" type="Label" parent="Panel" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 10.0
-margin_top = 60.0
+margin_top = 260.0
 margin_right = 120.0
-margin_bottom = 129.0
+margin_bottom = 329.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -192,6 +143,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = true
+pressed = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
@@ -199,14 +151,37 @@ flat = false
 align = 0
 _sections_unfolded = [ "Hint" ]
 
+[node name="FullscreenToggle" type="Button" parent="Panel" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 20.0
+margin_right = 200.0
+margin_bottom = 100.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Fullscreen"
+flat = false
+align = 1
+_sections_unfolded = [ "Theme" ]
+
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 
-[connection signal="draw" from="Panel/Fullscreen/FullScreenToggle" to="." method="_on_FullScreenToggle_draw"]
-
-[connection signal="toggled" from="Panel/Fullscreen/FullScreenToggle" to="." method="_on_Fullscreen_toggled"]
-
-[connection signal="draw" from="Panel/VSync/VsyncToggle" to="." method="_on_VsyncToggle_draw"]
-
 [connection signal="toggled" from="Panel/VSync/VsyncToggle" to="." method="_on_VSync_toggled"]
+
+[connection signal="pressed" from="Panel/FullscreenToggle" to="." method="_on_FullscreenToggle_pressed"]
 
 
