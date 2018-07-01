@@ -89,7 +89,7 @@ func die():
 	
 	set_process(false)
 	
-	yield(get_tree().create_timer(0.40), "timeout")
+	yield(get_tree().create_timer(0.50), "timeout")
 	
 	emit_signal("player_died", death)
 	
