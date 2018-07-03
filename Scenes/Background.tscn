@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Background.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Cubes_BIG.tscn" type="PackedScene" id=2]
+
+[node name="Background" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="Cubes_BIG" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="Cubes_BIG2" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 1439.29, 558.514 )
+amount = 250
+
+[node name="Cubes_BIG3" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 1437.44, 155.078 )
+amount = 250
+
+
