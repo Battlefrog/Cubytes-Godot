@@ -5,10 +5,10 @@ signal pause_game
 
 export (int) var player_speed = 750
 
+# The EndBlock is always going to be there with the Player
 onready var EndBlockRef = get_node("../EndBlock")
 
-# Should be a var because point's aren't always going to be there
-onready var PointRef = get_node("../Point")
+onready var PointRef = has_node("../Point")
 
 var velocity = Vector2()
 var start_position
@@ -16,8 +16,7 @@ var start_position
 var shrunk
 
 func _ready():
-	# Not the best way to do things.
-	if PointRef == null:
+	if PointRef == false:
 		EndBlockRef.point_collected = true
 	
 	start_position = get_transform()
