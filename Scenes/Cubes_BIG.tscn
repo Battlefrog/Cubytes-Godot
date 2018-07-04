@@ -3,13 +3,13 @@
 [ext_resource path="res://Misc/Cubes_BIG.tres" type="Material" id=1]
 [ext_resource path="res://Sprites/cubytes_player_death.png" type="Texture" id=2]
 
-[node name="Cubes_BIG" type="Particles2D"]
+[node name="Cubes_BIG" type="Particles2D" index="0"]
 
 position = Vector2( 1437.44, 356.796 )
 rotation = 1.5708
 emitting = true
 amount = 500
-lifetime = 7.0
+lifetime = 6.5
 one_shot = false
 preprocess = 0.0
 speed_scale = 1.0
@@ -17,7 +17,7 @@ explosiveness = 0.2
 randomness = 0.3
 fixed_fps = 0
 fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
+visibility_rect = Rect2( -500, 0, 1000, 1500 )
 local_coords = true
 draw_order = 0
 process_material = ExtResource( 1 )
