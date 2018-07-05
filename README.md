@@ -28,7 +28,5 @@ A remake of Cubytes with Godot 3.0.4, instead of the Chili Framework. I'll be ad
 To run it, open the **"project.godot"** file in Godot 3.0+. Should bulid itself, provided I didn't screw everything up.
 
 ## License
-Cubytes-Godot is under a MIT license. This means that you can share the program, but please keep in mind that:
-* The only place for the source code is here.
-* I (Battlefrog) still maintain the copyright, so you should respect it.
+Cubytes-Godot is under the GNU license.
 
