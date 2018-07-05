@@ -50,7 +50,9 @@
 - Added Shooter Shoot, Story Mode Start, UI Accept, and UI Back SFX.
 - Added Arcade Mode.
 - Added SFX for the UI.
+- Added Background effects.
 - Added a Player Death Particle Effect.
+- Changed Panel transparency and color.
 - Changed Options Menu.
 - Changed Levels 7, 10, 18.
 - Changed version to Alpha 5.
