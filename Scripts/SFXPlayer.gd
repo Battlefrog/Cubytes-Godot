@@ -27,3 +27,7 @@ func play_sfx(var fx):
 		$AudioStreamPlayer.play()
 	else:
 		printerr(fx + " is not a correct SFX.")
+
+func playing_sfx(var fx):
+	if SFX.has(fx):
+		return ($AudioStreamPlayer.stream == SFX[fx] and $AudioStreamPlayer.is_playing())

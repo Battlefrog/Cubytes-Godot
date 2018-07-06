@@ -61,9 +61,11 @@ func _process(delta):
 func CheckForCollisions(collisions):
 	# If there's any collisions in the first place...
 	if collisions:
-		print("Collision: ", collisions.collider.name)
 		if collisions.collider.name == "EndBlock":
-			collisions.collider.call("on_player_hit")
+			if EndBlockRef.point_collected:
+				collisions.collider.call("on_player_hit")
+			else:
+				collisions.collider.call("on_player_hit")
 		elif collisions.collider.name == "Blocks":
 			get_node("/root/SFXPlayer").play_sfx("SFXIntoWall")
 			die()	

@@ -21,4 +21,7 @@ func on_player_hit():
 		# log_highscore(time)
 		get_node("/root/global").goto_scene("res://Scenes/ArcadeMode.tscn")
 	else:
-		get_node("/root/SFXPlayer").play_sfx("SFXEndBlockRefusal")
+		if get_node("/root/SFXPlayer").playing_sfx("SFXEndBlockRefusal"):
+			return
+		else:
+			get_node("/root/SFXPlayer").play_sfx("SFXEndBlockRefusal")
