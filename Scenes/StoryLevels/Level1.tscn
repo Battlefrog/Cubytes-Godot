@@ -5,7 +5,7 @@
 [ext_resource path="res://Misc/BlockTiles2.tres" type="TileSet" id=3]
 [ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=4]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -17,6 +17,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 1150, 392 )
 _sections_unfolded = [ "Transform" ]
 next_level_name = "Level2"
+arcade_mode = null
 
 [node name="Blocks" type="TileMap" parent="." index="2"]
 
