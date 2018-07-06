@@ -47,13 +47,15 @@
 
 ## Alpha 5
 
-- Added Shooter Shoot, Story Mode Start, UI Accept, and UI Back SFX.
+- Added Shooter Shoot, Story Mode Start, UI Accept, UI Back, and End Block Refusal SFX.
 - Added Arcade Mode.
 - Added SFX for the UI.
-- Added Background effects.
+- Added Background particle effects.
 - Added a Player Death Particle Effect.
+- Changed the Shrink block spriten entirely.
+- Changed colors for some Sprites.
 - Changed Panel transparency and color.
 - Changed Options Menu.
-- Changed Levels 7, 10, 18.
+- Changed Levels 1, 7, 10, 17, 18.
 - Changed version to Alpha 5.
 - Fixed small Player having the wrong hitbox.
