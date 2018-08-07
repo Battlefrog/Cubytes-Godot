@@ -82,6 +82,7 @@ func CheckForCollisions(collisions):
 
 # When the Player dies
 func die():
+	# Update death count
 	var death = ProjectSettings.get_setting("PLAYER_DEATHS")
 	ProjectSettings.set_setting("PLAYER_DEATHS", death + 1)
 	death = ProjectSettings.get_setting("PLAYER_DEATHS")
@@ -90,6 +91,7 @@ func die():
 	
 	set_process(false)
 	
+	# Stopping player from moving
 	yield(get_tree().create_timer(0.50), "timeout")
 	
 	emit_signal("player_died", death)
