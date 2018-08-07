@@ -44,7 +44,7 @@ func _process(delta):
 	if Input.is_action_pressed("ui_down"):
 		velocity.y += 1
 	
-	# Pausing game
+	# Pausing game TODO: Why is this in the player? Make another node for UI related process events.
 	if Input.is_action_pressed("ui_cancel"):
 		emit_signal("pause_game")
 	
