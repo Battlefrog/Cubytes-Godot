@@ -5,7 +5,7 @@ signal pause_game
 
 export (int) var player_speed = 750
 
-# The EndBlock is always going to be there with the Player
+# The EndBlock is always going to be in the level with the Player
 onready var EndBlockRef = get_node("../EndBlock")
 
 onready var PointRef = has_node("../Point")
@@ -22,13 +22,14 @@ func _ready():
 	start_position = get_transform()
 	shrunk = false
 	
+	# Starting as 'big' by default
 	$BigSprite.visible = true
 	$BigCollisionShape2D.disabled = false
 	$SmallCollisionShape2D.disabled = true
 	$SmallSprite.visible = false
 	
+	# Activate
 	show()
-	
 	set_process(true)
 	
 func _process(delta):
@@ -52,20 +53,17 @@ func _process(delta):
 	var collision_info = move_and_collide(velocity.normalized() * player_speed * delta)
 	
 	# Responding to certain collisions
-	CheckForCollisions(collision_info)
+	collision_check(collision_info)
 	
 	# Applying Movement
 	position += velocity * delta
 
 # Responding to any collisions
-func CheckForCollisions(collisions):
+func collision_check(collisions):
 	# If there's any collisions in the first place...
 	if collisions:
 		if collisions.collider.name == "EndBlock":
-			if EndBlockRef.point_collected:
-				collisions.collider.call("on_player_hit")
-			else:
-				collisions.collider.call("on_player_hit")
+			collisions.collider.call("on_player_hit")
 		elif collisions.collider.name == "Blocks":
 			get_node("/root/SFXPlayer").play_sfx("SFXIntoWall")
 			die()	
@@ -81,6 +79,7 @@ func CheckForCollisions(collisions):
 			shrink()
 
 # When the Player dies
+# FIX: Particles don't play if the player dies too rapidly
 func die():
 	# Update death count
 	var death = ProjectSettings.get_setting("PLAYER_DEATHS")
@@ -99,7 +98,6 @@ func die():
 	get_node("/root/SFXPlayer").play_sfx("SFXPlayerRespawn")
 	
 	position = start_position.get_origin()
-	show()
 	
 	if !shrunk:
 		$BigCollisionShape2D.disabled = false
@@ -107,10 +105,10 @@ func die():
 	else:
 		$BigCollisionShape2D.disabled = true
 		$SmallCollisionShape2D.disabled = false
-	
+		
+	show()
 	set_process(true)
 
-# What happens to the player at the end of the level
 func end_of_level():
 	set_process(false)
 
