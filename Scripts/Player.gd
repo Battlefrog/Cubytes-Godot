@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 signal player_died
 signal pause_game
+signal block_tutorial
 
 export (int) var player_speed = 750
 
@@ -48,6 +49,9 @@ func _process(delta):
 	# Pausing game TODO: Why is this in the player? Make another node for UI related process events.
 	if Input.is_action_pressed("ui_cancel"):
 		emit_signal("pause_game")
+	
+	if Input.is_key_pressed(KEY_ALT):
+		emit_signal("block_tutorial", "RedBlock")
 	
 	# Getting collisions
 	var collision_info = move_and_collide(velocity.normalized() * player_speed * delta)
