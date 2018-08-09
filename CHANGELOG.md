@@ -48,14 +48,19 @@
 ## Alpha 5
 
 - Added Shooter Shoot, Story Mode Start, UI Accept, UI Back, and End Block Refusal SFX.
-- Added Arcade Mode.
 - Added SFX for the UI.
 - Added Background particle effects.
 - Added a Player Death Particle Effect.
-- Changed the Shrink block spriten entirely.
+- Added tutorial prompts for introducing new blocktypes.
+- Added Levels 21.
+- Changed UI placement slightly.
+- Changed checkbox design from the default godot theme.
+- Changed tooltip design from the default godot theme.
+- Changed the Shrink block sprite entirely.
 - Changed colors for some Sprites.
-- Changed Panel transparency and color.
+- Changed Panel design.
 - Changed Options Menu.
 - Changed Levels 1, 7, 10, 17, 18.
 - Changed version to Alpha 5.
 - Fixed small Player having the wrong hitbox.
+- Fixed sound buses not being used.
