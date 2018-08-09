@@ -52,6 +52,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 410, 310 )
 _sections_unfolded = [ "Transform" ]
 next_level_name = "Level16"
+arcade_mode = null
 
 [node name="Point" parent="." index="9" instance=ExtResource( 4 )]
 

@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/EndBlock.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Misc/BlockTiles2.tres" type="TileSet" id=3]
 [ext_resource path="res://Scenes/Point.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/BlockTutorial.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sprites/Point.png" type="Texture" id=7]
 
 [node name="root" type="Node"]
 
@@ -18,6 +20,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 1180, 444 )
 _sections_unfolded = [ "Transform" ]
 next_level_name = "Level4"
+arcade_mode = null
 
 [node name="Blocks" type="TileMap" parent="." index="2"]
 
@@ -48,5 +51,13 @@ position = Vector2( 670, 244 )
 [node name="GameUI" parent="." index="4" instance=ExtResource( 5 )]
 
 current_level_num = 3
+
+[node name="BlockTutorial" parent="." index="5" instance=ExtResource( 6 )]
+
+ui_name = "The 'Point' Block"
+ui_text = "This block is required to collect before completing the level.
+
+Else you'll be rejected by the End Block."
+ui_picture_path = ExtResource( 7 )
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/EndBlock.tscn" type="PackedScene" id=2]
@@ -6,8 +6,10 @@
 [ext_resource path="res://Misc/BlockTiles2.tres" type="TileSet" id=4]
 [ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/DecreaseSize.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/BlockTutorial.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sprites/DecreaseSize.png" type="Texture" id=8]
 
-[node name="root" type="Node" index="0"]
+[node name="root" type="Node"]
 
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
@@ -24,6 +26,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 1120, 500 )
 _sections_unfolded = [ "Transform" ]
 next_level_name = "Level17"
+arcade_mode = null
 
 [node name="Point" parent="." index="2" instance=ExtResource( 3 )]
 
@@ -57,5 +60,11 @@ current_level_num = 16
 [node name="DecreaseSize" parent="." index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 660, 500 )
+
+[node name="BlockTutorial" parent="." index="6" instance=ExtResource( 7 )]
+
+ui_name = "The 'Shrink' Block"
+ui_text = "This block shrinks the Player down to a smaller size and also decreases its speed. Use it to get into tight spots."
+ui_picture_path = ExtResource( 8 )
 
 

@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/GameUI.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/TextFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Misc/ui_theme.tres" type="Theme" id=3]
 [ext_resource path="res://Fonts/TitleFont.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Sprites/EmptyImage.png" type="Texture" id=5]
+[ext_resource path="res://Fonts/TooltipFont.tres" type="DynamicFont" id=6]
 
-[node name="Node" type="Control" index="0"]
+[node name="Node" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -216,9 +217,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 220.0
-margin_top = 60.0
+margin_top = 50.0
 margin_right = 990.0
-margin_bottom = 210.0
+margin_bottom = 200.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -259,9 +260,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 940.0
-margin_top = 180.0
-margin_right = 991.0
+margin_left = 877.0
+margin_top = 198.0
+margin_right = 995.0
 margin_bottom = 216.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -269,11 +270,13 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "***"
+custom_fonts/font = ExtResource( 6 )
+text = "Click to continue."
 align = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="BlockName" type="Label" parent="BlockTutorial" index="3"]
 
