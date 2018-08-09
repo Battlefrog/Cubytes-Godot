@@ -72,11 +72,11 @@ Panel/styles/panel = SubResource( 1 )
 Panel/styles/panelf = SubResource( 1 )
 Panel/styles/panelnc = SubResource( 1 )
 PopupPanel/styles/panel = ExtResource( 6 )
-TooltipLabel/colors/font_color = Color( 0, 0, 0, 1 )
-TooltipLabel/colors/font_color_shadow = Color( 0, 0, 0, 0.1 )
+TooltipLabel/colors/font_color = Color( 0.902344, 0.902344, 0.902344, 1 )
+TooltipLabel/colors/font_color_shadow = Color( 0, 0, 0, 0.281765 )
 TooltipLabel/constants/shadow_offset_x = 1
 TooltipLabel/constants/shadow_offset_y = 1
 TooltipLabel/fonts/font = ExtResource( 7 )
 TooltipPanel/styles/panel = ExtResource( 2 )
-_sections_unfolded = [ "Button", "Button/constants", "Button/fonts", "Button/styles", "Panel/styles", "PopupPanel/styles", "TooltipLabel/fonts", "TooltipPanel/styles" ]
+_sections_unfolded = [ "Button/constants", "Button/fonts", "Button/styles", "Panel/styles", "PopupPanel/styles", "TooltipLabel", "TooltipLabel/colors", "TooltipLabel/fonts", "TooltipPanel/styles" ]
 
