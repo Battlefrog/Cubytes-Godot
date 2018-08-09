@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/BlockTutorial.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/EndBlock.png" type="Texture" id=6]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -50,9 +50,7 @@ current_level_num = 1
 [node name="BlockTutorial" parent="." index="4" instance=ExtResource( 5 )]
 
 ui_name = "The 'End' Block"
-ui_text = "If you touch this block, you end the level, provided you do some certain things.
-
-But those aren't important right now."
+ui_text = "If you touch this block, you end the level, provided you do some certain things. But those things aren't important right now, just rush towards it."
 ui_picture_path = ExtResource( 6 )
 
 
