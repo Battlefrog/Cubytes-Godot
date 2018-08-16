@@ -6,7 +6,7 @@
 [ext_resource path="res://Sprites/EmptyImage.png" type="Texture" id=4]
 [ext_resource path="res://Fonts/TitleFont.tres" type="DynamicFont" id=5]
 
-[node name="Node2D" type="Control" index="0"]
+[node name="Node2D" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -160,10 +160,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -530.0
-margin_top = -245.0
-margin_right = -40.0
-margin_bottom = 115.0
+margin_left = -531.0
+margin_top = -244.0
+margin_right = -41.0
+margin_bottom = 116.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -172,7 +172,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 4 )
 expand = true
-stretch_mode = 0
+stretch_mode = 6
 
 [node name="Copyright" type="Label" parent="TmpImg" index="0"]
 

@@ -13,6 +13,7 @@ onready var PointRef = has_node("../Point")
 
 var velocity = Vector2()
 var start_position
+var respawn_position
 
 var shrunk
 
@@ -21,6 +22,7 @@ func _ready():
 		EndBlockRef.point_collected = true
 	
 	start_position = get_transform()
+	respawn_position = start_position
 	shrunk = false
 	
 	# Starting as 'big' by default
@@ -78,6 +80,9 @@ func collision_check(collisions):
 		elif collisions.collider.name == "DecreaseSize":
 			collisions.collider.call("on_player_hit")
 			shrink()
+		elif collisions.collider.name == "Flag":
+			collisions.collider.call("on_player_hit")
+			change_respawn_position()
 
 # When the Player dies
 # FIX: Particles don't play if the player dies too rapidly
@@ -98,7 +103,7 @@ func die():
 	
 	get_node("/root/SFXPlayer").play_sfx("SFXPlayerRespawn")
 	
-	position = start_position.get_origin()
+	position = respawn_position.get_origin()
 	
 	if !shrunk:
 		$BigCollisionShape2D.disabled = false
@@ -122,3 +127,7 @@ func shrink():
 	$SmallSprite.visible = true
 	$BigCollisionShape2D.disabled = true
 	$SmallCollisionShape2D.disabled = false
+
+func change_respawn_position():
+	var pos = get_transform()
+	respawn_position = pos

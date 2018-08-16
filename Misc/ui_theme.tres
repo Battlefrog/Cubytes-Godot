@@ -78,5 +78,5 @@ TooltipLabel/constants/shadow_offset_x = 1
 TooltipLabel/constants/shadow_offset_y = 1
 TooltipLabel/fonts/font = ExtResource( 7 )
 TooltipPanel/styles/panel = ExtResource( 3 )
-_sections_unfolded = [ "Button", "Button/constants", "Button/fonts", "Button/styles", "Panel/styles", "PopupPanel/styles", "TooltipLabel/colors", "TooltipLabel/fonts", "TooltipPanel/styles" ]
+_sections_unfolded = [ "Button", "Button/constants", "Button/fonts", "Button/styles", "Panel/styles", "PopupPanel/styles", "TooltipLabel", "TooltipLabel/colors", "TooltipLabel/fonts", "TooltipPanel", "TooltipPanel/styles" ]
 
