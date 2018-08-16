@@ -80,7 +80,7 @@ func collision_check(collisions):
 		elif collisions.collider.name == "DecreaseSize":
 			collisions.collider.call("on_player_hit")
 			shrink()
-		elif collisions.collider.name == "Flag":
+		elif collisions.collider.name.begins_with("Flag"):
 			collisions.collider.call("on_player_hit")
 			change_respawn_position()
 
