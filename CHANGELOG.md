@@ -49,10 +49,11 @@
 
 - Added Shooter Shoot, Story Mode Start, UI Accept, UI Back, and End Block Refusal SFX.
 - Added SFX for the UI.
+- Added a flag / 'Checkpoint'.
 - Added Background particle effects.
 - Added a Player Death Particle Effect.
-- Added tutorial prompts for introducing new blocktypes.
-- Added Levels 21.
+- Added tutorial prompts for introducing new blocktypes / features.
+- Added Levels 21, 22, 23.
 - Changed UI placement slightly.
 - Changed checkbox design from the default godot theme.
 - Changed tooltip design from the default godot theme.
@@ -62,5 +63,5 @@
 - Changed Options Menu.
 - Changed Levels 1, 7, 10, 17, 18.
 - Changed version to Alpha 5.
-- Fixed small Player having the wrong hitbox.
+- Fixed small Player having the wrong hitbox (MAJOR ISSUE).
 - Fixed sound buses not being used.
