@@ -18,7 +18,6 @@ config/icon="res://icon.png"
 
 global="*res://Scripts/global.gd"
 MusicPlayer="*res://Scenes/MusicPlayer.tscn"
-PostProcess="*res://Scenes/PostProcess.tscn"
 SFXPlayer="*res://Scenes/SFXPlayer.tscn"
 Background="*res://Scenes/Background.tscn"
 
