@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/EndBlock.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/DecreaseSize.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Bomb.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Point.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Flag.tscn" type="PackedScene" id=8]
 
 [node name="root" type="Node" index="0"]
 
@@ -24,7 +25,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 215, 595 )
 _sections_unfolded = [ "Transform" ]
-next_level_name = "Level24"
+next_level_name = "Level29"
 arcade_mode = null
 
 [node name="Blocks" type="TileMap" parent="." index="2"]
@@ -50,7 +51,7 @@ tile_data = PoolIntArray( -524266, 0, 0, -524265, 0, 0, -524264, 0, 0, -524263, 
 
 [node name="GameUI" parent="." index="3" instance=ExtResource( 4 )]
 
-current_level_num = 23
+current_level_num = 28
 
 [node name="DecreaseSize" parent="." index="4" instance=ExtResource( 5 )]
 
@@ -115,5 +116,9 @@ position = Vector2( 1030, 175 )
 [node name="Point" parent="." index="19" instance=ExtResource( 7 )]
 
 position = Vector2( 965, 175 )
+
+[node name="Flag" parent="." index="20" instance=ExtResource( 8 )]
+
+position = Vector2( 950, 330 )
 
 

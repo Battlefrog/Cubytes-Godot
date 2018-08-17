@@ -49,11 +49,11 @@
 
 - Added Shooter Shoot, Story Mode Start, UI Accept, UI Back, and End Block Refusal SFX.
 - Added SFX for the UI.
-- Added a flag / 'Checkpoint'.
+- Added a Checkpoint for respawning (They're stackable!).
 - Added Background particle effects.
 - Added a Player Death Particle Effect.
 - Added tutorial prompts for introducing new blocktypes / features.
-- Added Levels 21, 22, 23.
+- Added Levels 21, 22, 23, 24, 25, 26, 27, 28.
 - Changed UI placement slightly.
 - Changed checkbox design from the default godot theme.
 - Changed tooltip design from the default godot theme.

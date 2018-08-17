@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Point.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=6]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -19,6 +19,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 1034, 182 )
 _sections_unfolded = [ "Transform" ]
 next_level_name = "Level14"
+arcade_mode = null
 
 [node name="Blocks" type="TileMap" parent="." index="2"]
 
