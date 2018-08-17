@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/cubytes_player_death.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Cubes_BIG.tscn" type="PackedScene" id=3]
 
-[node name="Background" type="Node2D" index="0"]
+[node name="Background" type="Node2D"]
 
 script = ExtResource( 1 )
 
