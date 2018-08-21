@@ -21,6 +21,9 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
 _sections_unfolded = [ "Theme" ]
+__meta__ = {
+"_edit_lock_": true
+}
 current_level_num = null
 
 [node name="DeathDisplay" type="Label" parent="." index="0"]
@@ -192,6 +195,7 @@ _sections_unfolded = [ "Pause", "Rect", "Theme" ]
 
 [node name="BlockTutorial" type="PopupPanel" parent="." index="4"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0

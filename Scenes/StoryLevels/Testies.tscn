@@ -17,7 +17,7 @@ use_filter = true
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="root" type="Node" index="0"]
+[node name="root" type="Node"]
 
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
@@ -97,23 +97,27 @@ current_level_num = -999
 
 position = Vector2( 935, 630 )
 
-[node name="Bomb" parent="." index="7" instance=ExtResource( 8 )]
+[node name="Flag2" parent="." index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 475, 300 )
+
+[node name="Bomb" parent="." index="8" instance=ExtResource( 8 )]
 
 position = Vector2( 565, 360 )
 
-[node name="Bomb2" parent="." index="8" instance=ExtResource( 8 )]
+[node name="Bomb2" parent="." index="9" instance=ExtResource( 8 )]
 
 position = Vector2( 690, 360 )
 
-[node name="Bomb3" parent="." index="9" instance=ExtResource( 8 )]
+[node name="Bomb3" parent="." index="10" instance=ExtResource( 8 )]
 
 position = Vector2( 745, 360 )
 
-[node name="Bomb4" parent="." index="10" instance=ExtResource( 8 )]
+[node name="Bomb4" parent="." index="11" instance=ExtResource( 8 )]
 
 position = Vector2( 800, 360 )
 
-[node name="Bomb5" parent="." index="11" instance=ExtResource( 8 )]
+[node name="Bomb5" parent="." index="12" instance=ExtResource( 8 )]
 
 position = Vector2( 855, 360 )
 
