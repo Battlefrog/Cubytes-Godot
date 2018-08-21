@@ -82,7 +82,7 @@ func collision_check(collisions):
 			shrink()
 		elif collisions.collider.name.begins_with("Flag"):
 			collisions.collider.call("on_player_hit")
-			change_respawn_position()
+			change_respawn_position(collisions.collider)
 
 # When the Player dies
 # FIX: Particles don't play if the player dies too rapidly
@@ -128,6 +128,6 @@ func shrink():
 	$BigCollisionShape2D.disabled = true
 	$SmallCollisionShape2D.disabled = false
 
-func change_respawn_position():
-	var pos = get_transform()
+func change_respawn_position(object):
+	var pos = object.get_transform()
 	respawn_position = pos

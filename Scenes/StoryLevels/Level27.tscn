@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/Flag.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Bomb.tscn" type="PackedScene" id=7]
 
-[node name="root" type="Node" index="0"]
+[node name="root" type="Node"]
 
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
