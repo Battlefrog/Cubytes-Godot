@@ -12,7 +12,8 @@ var SFX = {
 	"SFXDecreaseSize": preload("res://Sounds/DecreaseSizeHit.ogg"),
 	"SFXCompleteLevel": preload("res://Sounds/completeLevel.ogg"),
 	"SFXShooterShoot": preload("res://Sounds/ShooterShoot.ogg"),
-	"SFXEndBlockRefusal": preload("res://Sounds/EndBlockRefusal.ogg")
+	"SFXEndBlockRefusal": preload("res://Sounds/EndBlockRefusal.ogg"),
+	"SFXFlagHit": preload("res://Sounds/FlagHit.ogg")
 }
 
 func play_sfx(var fx):
