@@ -8,8 +8,8 @@ func play_level_music():
 	$LevelMusic.play($LevelMusic.get_playback_position())
 
 func play_menu_music():
-	$MenuMusic.play($MenuMusic.get_playback_position())
 	$LevelMusic.stop()
+	$MenuMusic.play($MenuMusic.get_playback_position())
 
 func stop_music():
 	$MenuMusic.stop()

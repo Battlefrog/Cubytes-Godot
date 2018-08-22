@@ -47,14 +47,15 @@
 
 ## Alpha 5
 
-- Added Shooter Shoot, Story Mode Start, UI Accept, UI Back, and End Block Refusal SFX.
+- Added Shooter Shoot, Story Mode Start, UI Accept, UI Back, End Block Refusal SFX, and Flag hit SFX.
 - Added SFX for the UI.
 - Added a Checkpoint for respawning (They're stackable!).
 - Added Background particle effects.
 - Added a Player Death Particle Effect.
 - Added tutorial prompts for introducing new blocktypes / features.
-- Added Levels 21, 22, 23, 24, 25, 26, 27, 28.
+- Added Levels 21, 22, 23, 24, 25, 26, 27, 28, 29, 30.
 - Changed UI placement slightly.
+- Changed Help menu to more of a general help (Just listing controls.)
 - Changed checkbox design from the default godot theme.
 - Changed tooltip design from the default godot theme.
 - Changed the Shrink block sprite entirely.
