@@ -6,7 +6,7 @@
 [ext_resource path="res://Sprites/EmptyImage.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/MenuHeader.tscn" type="PackedScene" id=5]
 
-[node name="Node2D" type="Control"]
+[node name="Node2D" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -18,48 +18,67 @@ rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+_sections_unfolded = [ "Size Flags", "Theme" ]
+
+[node name="Panel" type="Panel" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 50.0
+margin_top = 120.0
+margin_right = 460.0
+margin_bottom = 715.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 theme = ExtResource( 1 )
 _sections_unfolded = [ "Theme" ]
 
-[node name="MainMenuButtons" type="Panel" parent="." index="0"]
+[node name="MainMenuButtons" type="VBoxContainer" parent="Panel" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.5
 anchor_right = 0.1
 anchor_bottom = 0.5
 margin_left = 20.0
-margin_top = -244.0
-margin_right = 261.4
-margin_bottom = 326.0
+margin_top = -282.5
+margin_right = 354.0
+margin_bottom = 287.5
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 0
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_constants/separation = 30
+alignment = 0
 script = ExtResource( 2 )
-_sections_unfolded = [ "Anchor", "Theme", "custom_styles" ]
+_sections_unfolded = [ "Anchor", "Theme", "custom_constants", "custom_styles" ]
 
-[node name="PlayButton" type="Button" parent="MainMenuButtons" index="0"]
+[node name="PlayButton" type="Button" parent="Panel/MainMenuButtons" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 10.0
-margin_top = 20.0
-margin_right = 360.0
-margin_bottom = 110.0
+margin_right = 375.0
+margin_bottom = 120.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 hint_tooltip = "Play the game."
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = ExtResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -69,25 +88,27 @@ text = "Play"
 flat = false
 align = 1
 _sections_unfolded = [ "Focus", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="OptionsButton" type="Button" parent="MainMenuButtons" index="1"]
+[node name="OptionsButton" type="Button" parent="Panel/MainMenuButtons" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 10.0
-margin_top = 176.0
-margin_right = 360.0
-margin_bottom = 266.0
+margin_top = 150.0
+margin_right = 375.0
+margin_bottom = 270.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 hint_tooltip = "Configure the game."
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = ExtResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -97,25 +118,27 @@ text = "Options"
 flat = false
 align = 1
 _sections_unfolded = [ "Focus", "Rect", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="HelpButton" type="Button" parent="MainMenuButtons" index="2"]
+[node name="HelpButton" type="Button" parent="Panel/MainMenuButtons" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 10.0
-margin_top = 320.0
-margin_right = 360.0
-margin_bottom = 410.0
+margin_top = 300.0
+margin_right = 375.0
+margin_bottom = 420.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 hint_tooltip = "Information on the game."
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = ExtResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -125,25 +148,27 @@ text = "Help"
 flat = false
 align = 1
 _sections_unfolded = [ "Hint", "Mouse", "Rect", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="QuitButton" type="Button" parent="MainMenuButtons" index="3"]
+[node name="QuitButton" type="Button" parent="Panel/MainMenuButtons" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 10.0
-margin_top = 460.0
-margin_right = 360.0
-margin_bottom = 550.0
+margin_top = 450.0
+margin_right = 375.0
+margin_bottom = 570.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 hint_tooltip = "Quit the game."
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = ExtResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -153,17 +178,20 @@ text = "Quit"
 flat = false
 align = 1
 _sections_unfolded = [ "Hint", "Rect", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="TmpImg" type="TextureRect" parent="." index="1"]
 
 anchor_left = 1.0
-anchor_top = 0.5
+anchor_top = 0.0
 anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -531.0
-margin_top = -244.0
-margin_right = -41.0
-margin_bottom = 116.0
+anchor_bottom = 1.0
+margin_left = -596.0
+margin_top = 125.0
+margin_right = -60.0
+margin_bottom = -248.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -180,10 +208,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 100.0
-margin_top = 360.0
-margin_right = 490.0
-margin_bottom = 400.0
+margin_left = 145.0
+margin_top = 395.0
+margin_right = 535.0
+margin_bottom = 435.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -224,12 +252,12 @@ _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_fon
 
 text = "Cubytes"
 
-[connection signal="pressed" from="MainMenuButtons/PlayButton" to="MainMenuButtons" method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="Panel/MainMenuButtons/PlayButton" to="Panel/MainMenuButtons" method="_on_PlayButton_pressed"]
 
-[connection signal="pressed" from="MainMenuButtons/OptionsButton" to="MainMenuButtons" method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="Panel/MainMenuButtons/OptionsButton" to="Panel/MainMenuButtons" method="_on_OptionsButton_pressed"]
 
-[connection signal="pressed" from="MainMenuButtons/HelpButton" to="MainMenuButtons" method="_on_HelpButton_pressed"]
+[connection signal="pressed" from="Panel/MainMenuButtons/HelpButton" to="Panel/MainMenuButtons" method="_on_HelpButton_pressed"]
 
-[connection signal="pressed" from="MainMenuButtons/QuitButton" to="MainMenuButtons" method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="Panel/MainMenuButtons/QuitButton" to="Panel/MainMenuButtons" method="_on_QuitButton_pressed"]
 
 

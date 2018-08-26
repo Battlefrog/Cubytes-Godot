@@ -1,4 +1,4 @@
-extends Panel
+extends VBoxContainer
 
 func _on_PlayButton_pressed():
 	get_node("/root/SFXPlayer").play_sfx("SFXAccept")
