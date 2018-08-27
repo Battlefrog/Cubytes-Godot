@@ -1,8 +1,8 @@
 extends Control
 
 func _ready():
-	$Panel/VsyncToggle.pressed = OS.is_vsync_enabled()
-	$Panel/FullscreenToggle.pressed = OS.is_window_fullscreen()
+	$TabContainer/Window/VsyncToggle.pressed = OS.is_vsync_enabled()
+	$TabContainer/Window/FullscreenToggle.pressed = OS.is_window_fullscreen()
 
 func _on_BackButton_pressed():
 	get_node("/root/SFXPlayer").play_sfx("SFXBack")
@@ -13,3 +13,9 @@ func _on_VSync_toggled(button_pressed):
 
 func _on_FullscreenToggle_pressed():
 	OS.window_fullscreen = !OS.window_fullscreen
+
+func _on_slider_changed(value, slider_id):
+	AudioServer.set_bus_volume_db(slider_id, value)
+	
+	if (value == -12):
+		AudioServer.set_bus_mute(slider_id, !AudioServer.is_bus_mute(slider_id))

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/SFXPlayer.gd" type="Script" id=1]
 
-[node name="SFXPlayer" type="Node"]
+[node name="SFXPlayer" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -13,7 +13,7 @@ volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "SFX"
 _sections_unfolded = [ "Pause" ]
 
 

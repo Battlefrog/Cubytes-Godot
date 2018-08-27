@@ -30,6 +30,9 @@ size_flags_vertical = 1
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Theme", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="BackButton" type="Button" parent="." index="0"]
 
@@ -59,34 +62,67 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Panel" type="Panel" parent="." index="1"]
+[node name="Header" parent="." index="1" instance=ExtResource( 4 )]
+
+text = "Options"
+
+[node name="TabContainer" type="TabContainer" parent="." index="2"]
 
 anchor_left = 0.0
-anchor_top = 0.5
+anchor_top = 0.0
 anchor_right = 0.0
-anchor_bottom = 0.5
-margin_left = 163.0
-margin_top = -175.0
-margin_right = 373.0
-margin_bottom = 175.0
+anchor_bottom = 0.0
+margin_left = 180.0
+margin_top = 100.0
+margin_right = 1160.0
+margin_bottom = 620.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Theme" ]
+tab_align = 0
+tabs_visible = true
+_sections_unfolded = [ "custom_constants" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="VsyncToggle" type="CheckBox" parent="Panel" index="0"]
+[node name="Window" type="Tabs" parent="TabContainer" index="0"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+tab_align = 1
+scrolling_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="VsyncToggle" type="CheckBox" parent="TabContainer/Window" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 10.0
-margin_top = 80.0
-margin_right = 200.0
-margin_bottom = 149.0
+margin_left = 56.0
+margin_top = 136.0
+margin_right = 246.0
+margin_bottom = 205.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 hint_tooltip = "Toggle V-Sync."
@@ -104,16 +140,16 @@ flat = true
 align = 0
 _sections_unfolded = [ "Hint" ]
 
-[node name="FullscreenToggle" type="CheckBox" parent="Panel" index="1"]
+[node name="FullscreenToggle" type="CheckBox" parent="TabContainer/Window" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 200.0
-margin_bottom = 90.0
+margin_left = 56.0
+margin_top = 66.0
+margin_right = 246.0
+margin_bottom = 146.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 hint_tooltip = "Toggle fullscreen."
@@ -132,14 +168,468 @@ flat = true
 align = 0
 _sections_unfolded = [ "Hint" ]
 
-[node name="Header" parent="." index="2" instance=ExtResource( 4 )]
+[node name="Resolution" type="Label" parent="TabContainer/Window" index="2"]
 
-text = "Options"
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 636.0
+margin_top = 86.0
+margin_right = 916.0
+margin_bottom = 122.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Resolutions"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ResolutionList" type="VBoxContainer" parent="TabContainer/Window" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 636.0
+margin_top = 126.0
+margin_right = 916.0
+margin_bottom = 366.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="res" type="Button" parent="TabContainer/Window/ResolutionList" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 280.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "1920x1080"
+flat = false
+align = 1
+
+[node name="res3" type="Button" parent="TabContainer/Window/ResolutionList" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 48.0
+margin_right = 280.0
+margin_bottom = 92.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "1600x900"
+flat = false
+align = 1
+
+[node name="res4" type="Button" parent="TabContainer/Window/ResolutionList" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 96.0
+margin_right = 280.0
+margin_bottom = 140.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "1336x768"
+flat = false
+align = 1
+
+[node name="res2" type="Button" parent="TabContainer/Window/ResolutionList" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 144.0
+margin_right = 280.0
+margin_bottom = 188.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "1280x720"
+flat = false
+align = 1
+
+[node name="res5" type="Button" parent="TabContainer/Window/ResolutionList" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 192.0
+margin_right = 280.0
+margin_bottom = 236.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "640x480"
+flat = false
+align = 1
+
+[node name="Sound" type="Tabs" parent="TabContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+tab_align = 1
+scrolling_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MasterText" type="Label" parent="TabContainer/Sound" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 76.0
+margin_top = 86.0
+margin_right = 296.0
+margin_bottom = 122.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Master Volume"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="MasterSlider" type="HSlider" parent="TabContainer/Sound/MasterText" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 240.0
+margin_right = 476.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = -12.0
+max_value = 0.0
+step = 0.2
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = true
+focus_mode = 2
+
+[node name="MusicText" type="Label" parent="TabContainer/Sound" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 76.0
+margin_top = 206.0
+margin_right = 296.0
+margin_bottom = 242.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Music Volume"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="MusicSlider" type="HSlider" parent="TabContainer/Sound/MusicText" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 240.0
+margin_right = 476.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = -12.0
+max_value = 0.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = true
+focus_mode = 2
+
+[node name="SFXText" type="Label" parent="TabContainer/Sound" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 76.0
+margin_top = 146.0
+margin_right = 296.0
+margin_bottom = 182.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "SFX Volume"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="SFXSlider" type="HSlider" parent="TabContainer/Sound/SFXText" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 240.0
+margin_right = 476.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = -12.0
+max_value = 0.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = true
+focus_mode = 2
+
+[node name="Gameplay" type="Tabs" parent="TabContainer" index="2"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+tab_align = 1
+scrolling_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CheatEnter" type="LineEdit" parent="TabContainer/Gameplay" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 36.0
+margin_top = 206.0
+margin_right = 456.0
+margin_bottom = 252.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+secret = true
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+
+[node name="CheatText" type="Label" parent="TabContainer/Gameplay" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 36.0
+margin_top = 166.0
+margin_right = 456.0
+margin_bottom = 202.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Enter a cheat:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="CheatViewerPanelText" type="Label" parent="TabContainer/Gameplay" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 576.0
+margin_top = 26.0
+margin_right = 936.0
+margin_bottom = 62.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Active Cheats"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="CheatViewerPanel" type="Panel" parent="TabContainer/Gameplay/CheatViewerPanelText" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 40.0
+margin_right = 360.0
+margin_bottom = 400.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="ActiveCheats" type="VBoxContainer" parent="TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 360.0
+margin_bottom = 360.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
 
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 
-[connection signal="toggled" from="Panel/VsyncToggle" to="." method="_on_VSync_toggled"]
+[connection signal="toggled" from="TabContainer/Window/VsyncToggle" to="." method="_on_VSync_toggled"]
 
-[connection signal="pressed" from="Panel/FullscreenToggle" to="." method="_on_FullscreenToggle_pressed"]
+[connection signal="pressed" from="TabContainer/Window/FullscreenToggle" to="." method="_on_FullscreenToggle_pressed"]
+
+[connection signal="value_changed" from="TabContainer/Sound/MasterText/MasterSlider" to="." method="_on_slider_changed" binds= [ 0 ]]
+
+[connection signal="value_changed" from="TabContainer/Sound/MusicText/MusicSlider" to="." method="_on_slider_changed" binds= [ 2 ]]
+
+[connection signal="value_changed" from="TabContainer/Sound/SFXText/SFXSlider" to="." method="_on_slider_changed" binds= [ 1 ]]
 
 

@@ -24,5 +24,8 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 
