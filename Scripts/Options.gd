@@ -21,6 +21,6 @@ func _on_slider_changed(value, slider_id):
 		AudioServer.set_bus_mute(slider_id, !AudioServer.is_bus_mute(slider_id))
 
 func _on_resolution_changed(width, height):
-	OS.set_window_size(Vector2(width, height))
 	if (!OS.is_window_fullscreen()):
+		OS.set_window_size(Vector2(width, height))
 		OS.center_window()
