@@ -1,9 +1,11 @@
 extends Node
 
 var current_scene = null
+var audio_bus = preload("res://Misc/default_bus_layout.tres")
 
 func _ready():
 	ProjectSettings.set_setting("PLAYER_DEATHS", 0)
+	AudioServer.set_bus_layout(audio_bus)
 	
 	var root = get_tree().get_root()
 	
