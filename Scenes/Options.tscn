@@ -91,8 +91,6 @@ __meta__ = {
 
 [node name="Window" type="Tabs" parent="TabContainer" index="0"]
 
-editor/display_folded = true
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -208,7 +206,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="res" type="Button" parent="TabContainer/Window/ResolutionList" index="0"]
+[node name="res0" type="Button" parent="TabContainer/Window/ResolutionList" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -231,15 +229,15 @@ text = "1920x1080"
 flat = false
 align = 1
 
-[node name="res3" type="Button" parent="TabContainer/Window/ResolutionList" index="1"]
+[node name="res1" type="Button" parent="TabContainer/Window/ResolutionList" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 48.0
+margin_top = 50.0
 margin_right = 280.0
-margin_bottom = 92.0
+margin_bottom = 94.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -255,7 +253,7 @@ text = "1600x900"
 flat = false
 align = 1
 
-[node name="res4" type="Button" parent="TabContainer/Window/ResolutionList" index="2"]
+[node name="res2" type="Button" parent="TabContainer/Window/ResolutionList" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -279,7 +277,7 @@ text = "1336x768"
 flat = false
 align = 1
 
-[node name="res2" type="Button" parent="TabContainer/Window/ResolutionList" index="3"]
+[node name="res3" type="Button" parent="TabContainer/Window/ResolutionList" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -303,7 +301,7 @@ text = "1280x720"
 flat = false
 align = 1
 
-[node name="res5" type="Button" parent="TabContainer/Window/ResolutionList" index="4"]
+[node name="res4" type="Button" parent="TabContainer/Window/ResolutionList" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -329,6 +327,8 @@ align = 1
 
 [node name="Sound" type="Tabs" parent="TabContainer" index="1"]
 
+editor/display_folded = true
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -625,6 +625,16 @@ alignment = 0
 [connection signal="toggled" from="TabContainer/Window/VsyncToggle" to="." method="_on_VSync_toggled"]
 
 [connection signal="pressed" from="TabContainer/Window/FullscreenToggle" to="." method="_on_FullscreenToggle_pressed"]
+
+[connection signal="pressed" from="TabContainer/Window/ResolutionList/res0" to="." method="_on_resolution_changed" binds= [ 1920, 1080 ]]
+
+[connection signal="pressed" from="TabContainer/Window/ResolutionList/res1" to="." method="_on_resolution_changed" binds= [ 1600, 900 ]]
+
+[connection signal="pressed" from="TabContainer/Window/ResolutionList/res2" to="." method="_on_resolution_changed" binds= [ 1336, 768 ]]
+
+[connection signal="pressed" from="TabContainer/Window/ResolutionList/res3" to="." method="_on_resolution_changed" binds= [ 1280, 720 ]]
+
+[connection signal="pressed" from="TabContainer/Window/ResolutionList/res4" to="." method="_on_resolution_changed" binds= [ 640, 480 ]]
 
 [connection signal="value_changed" from="TabContainer/Sound/MasterText/MasterSlider" to="." method="_on_slider_changed" binds= [ 0 ]]
 
