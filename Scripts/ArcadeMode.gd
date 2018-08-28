@@ -6,5 +6,7 @@ func _on_BackButton_pressed():
 
 
 func level_pressed(num, description):
+	get_node("/root/SFXPlayer").play_sfx("SFXAccept")
+	
 	$LevelDetails/LevelName.set_text("Level " + str(num))
 	$LevelDetails/LevelDescription.set_text(description)

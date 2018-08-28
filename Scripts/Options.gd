@@ -3,6 +3,10 @@ extends Control
 func _ready():
 	$TabContainer/Graphics/VsyncToggle.pressed = OS.is_vsync_enabled()
 	$TabContainer/Graphics/FullscreenToggle.pressed = OS.is_window_fullscreen()
+	
+	$TabContainer/Audio/MasterText/MasterSlider.set_value(AudioServer.get_bus_volume_db(0))
+	$TabContainer/Audio/MusicText/MusicSlider.set_value(AudioServer.get_bus_volume_db(2))
+	$TabContainer/Audio/SFXText/SFXSlider.set_value(AudioServer.get_bus_volume_db(1))
 
 func _on_BackButton_pressed():
 	get_node("/root/SFXPlayer").play_sfx("SFXBack")
@@ -17,7 +21,7 @@ func _on_FullscreenToggle_pressed():
 func _on_slider_changed(value, slider_id):
 	AudioServer.set_bus_volume_db(slider_id, value)
 	
-	if (value == -12):
+	if (value == -24):
 		AudioServer.set_bus_mute(slider_id, true)
 	else:
 		AudioServer.set_bus_mute(slider_id, false)

@@ -68,3 +68,9 @@
 - Changed resolution scaling (No more weird scaling, everything should look the same).
 - Fixed small Player having the wrong hitbox (MAJOR ISSUE).
 - Fixed sound buses not being used (oops).
+
+## Alpha 5.1
+
+- Decreased the low decibel for volume sliders.
+- Fixed volume sliders not showing current value.
+- Fixed buttons in Arcade Mode not having click noises.
