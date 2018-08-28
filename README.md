@@ -9,9 +9,9 @@ A remake of Cubytes with Godot 3.0.6, instead of the Chili Framework. I'll be ad
 ## Releases
 
 ### **Alpha 5:** 
-- [Windows](https://github.com/Battlefrog/Cubytes-Godot/releases/download/v0.0.5/Cubytes_Alpha5_Windows64.zip)
-- [MacOS](https://github.com/Battlefrog/Cubytes-Godot/releases/download/v0.0.5/Cubytes_Alpha5_MacOS.zip)
-- [Linux](https://github.com/Battlefrog/Cubytes-Godot/releases/download/v0.0.5/Cubytes_Alpha5_Linux.zip)
+- [Windows](https://github.com/Battlefrog/Cubytes-Godot/releases/download/0.0.51/Cubytes_Alpha5.1_Windows64.zip)
+- [MacOS](https://github.com/Battlefrog/Cubytes-Godot/releases/download/0.0.51/Cubytes_Alpha5.1_MacOS.zip)
+- [Linux](https://github.com/Battlefrog/Cubytes-Godot/releases/download/0.0.51/Cubytes_Alpha5.1_Linux.zip)
 
 ### **Alpha 4.5:** 
 - [Windows](https://github.com/Battlefrog/Cubytes-Godot/releases/download/v0.045/Cubytes_Alpha4.5_Windows.zip)
