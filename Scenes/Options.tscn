@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Misc/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Scripts/Options.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/NovaFlat.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Scenes/MenuHeader.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fonts/TooltipFont.tres" type="DynamicFont" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -88,10 +89,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Window" type="Tabs" parent="TabContainer" index="0"]
+[node name="Graphics" type="Tabs" parent="TabContainer" index="0"]
 
 editor/display_folded = true
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -112,7 +112,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="VsyncToggle" type="CheckBox" parent="TabContainer/Window" index="0"]
+[node name="VsyncToggle" type="CheckBox" parent="TabContainer/Graphics" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -139,7 +139,7 @@ flat = true
 align = 0
 _sections_unfolded = [ "Hint" ]
 
-[node name="FullscreenToggle" type="CheckBox" parent="TabContainer/Window" index="1"]
+[node name="FullscreenToggle" type="CheckBox" parent="TabContainer/Graphics" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -167,7 +167,7 @@ flat = true
 align = 0
 _sections_unfolded = [ "Hint" ]
 
-[node name="Resolution" type="Label" parent="TabContainer/Window" index="2"]
+[node name="Resolution" type="Label" parent="TabContainer/Graphics" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -189,7 +189,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="ResolutionList" type="VBoxContainer" parent="TabContainer/Window" index="3"]
+[node name="ResolutionList" type="VBoxContainer" parent="TabContainer/Graphics" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -207,7 +207,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="res0" type="Button" parent="TabContainer/Window/ResolutionList" index="0"]
+[node name="res0" type="Button" parent="TabContainer/Graphics/ResolutionList" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -230,7 +230,7 @@ text = "1920x1080"
 flat = false
 align = 1
 
-[node name="res1" type="Button" parent="TabContainer/Window/ResolutionList" index="1"]
+[node name="res1" type="Button" parent="TabContainer/Graphics/ResolutionList" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -254,7 +254,7 @@ text = "1600x900"
 flat = false
 align = 1
 
-[node name="res2" type="Button" parent="TabContainer/Window/ResolutionList" index="2"]
+[node name="res2" type="Button" parent="TabContainer/Graphics/ResolutionList" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -278,7 +278,7 @@ text = "1336x768"
 flat = false
 align = 1
 
-[node name="res3" type="Button" parent="TabContainer/Window/ResolutionList" index="3"]
+[node name="res3" type="Button" parent="TabContainer/Graphics/ResolutionList" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -302,7 +302,7 @@ text = "1280x720"
 flat = false
 align = 1
 
-[node name="res4" type="Button" parent="TabContainer/Window/ResolutionList" index="4"]
+[node name="res4" type="Button" parent="TabContainer/Graphics/ResolutionList" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -326,8 +326,10 @@ text = "640x480"
 flat = false
 align = 1
 
-[node name="Sound" type="Tabs" parent="TabContainer" index="1"]
+[node name="Audio" type="Tabs" parent="TabContainer" index="1"]
 
+editor/display_folded = true
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -348,7 +350,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="MasterText" type="Label" parent="TabContainer/Sound" index="0"]
+[node name="MasterText" type="Label" parent="TabContainer/Audio" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -369,7 +371,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="MasterSlider" type="HSlider" parent="TabContainer/Sound/MasterText" index="0"]
+[node name="MasterSlider" type="HSlider" parent="TabContainer/Audio/MasterText" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -397,56 +399,7 @@ tick_count = 0
 ticks_on_borders = true
 focus_mode = 2
 
-[node name="MusicText" type="Label" parent="TabContainer/Sound" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 76.0
-margin_top = 206.0
-margin_right = 296.0
-margin_bottom = 242.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Music Volume"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="MusicSlider" type="HSlider" parent="TabContainer/Sound/MusicText" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 240.0
-margin_right = 476.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 0
-min_value = -12.0
-max_value = 0.0
-step = 0.25
-page = 0.0
-value = 0.0
-exp_edit = true
-rounded = false
-editable = true
-tick_count = 0
-ticks_on_borders = true
-focus_mode = 2
-
-[node name="SFXText" type="Label" parent="TabContainer/Sound" index="2"]
+[node name="MusicText" type="Label" parent="TabContainer/Audio" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -462,12 +415,61 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+text = "Music Volume"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="MusicSlider" type="HSlider" parent="TabContainer/Audio/MusicText" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 240.0
+margin_right = 476.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = -12.0
+max_value = 0.0
+step = 0.25
+page = 0.0
+value = 0.0
+exp_edit = true
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = true
+focus_mode = 2
+
+[node name="SFXText" type="Label" parent="TabContainer/Audio" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 76.0
+margin_top = 206.0
+margin_right = 296.0
+margin_bottom = 242.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
 text = "SFX Volume"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="SFXSlider" type="HSlider" parent="TabContainer/Sound/SFXText" index="0"]
+[node name="SFXSlider" type="HSlider" parent="TabContainer/Audio/SFXText" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -497,7 +499,6 @@ focus_mode = 2
 
 [node name="Gameplay" type="Tabs" parent="TabContainer" index="2"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -619,28 +620,51 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
+[node name="Label" type="Label" parent="TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 362.0
+margin_bottom = 360.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "This feature is under construction!"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 
 [connection signal="tab_selected" from="TabContainer" to="." method="_on_TabContainer_tab_selected"]
 
-[connection signal="toggled" from="TabContainer/Window/VsyncToggle" to="." method="_on_VSync_toggled"]
+[connection signal="toggled" from="TabContainer/Graphics/VsyncToggle" to="." method="_on_VSync_toggled"]
 
-[connection signal="pressed" from="TabContainer/Window/FullscreenToggle" to="." method="_on_FullscreenToggle_pressed"]
+[connection signal="pressed" from="TabContainer/Graphics/FullscreenToggle" to="." method="_on_FullscreenToggle_pressed"]
 
-[connection signal="pressed" from="TabContainer/Window/ResolutionList/res0" to="." method="_on_resolution_changed" binds= [ 1920, 1080 ]]
+[connection signal="pressed" from="TabContainer/Graphics/ResolutionList/res0" to="." method="_on_resolution_changed" binds= [ 1920, 1080 ]]
 
-[connection signal="pressed" from="TabContainer/Window/ResolutionList/res1" to="." method="_on_resolution_changed" binds= [ 1600, 900 ]]
+[connection signal="pressed" from="TabContainer/Graphics/ResolutionList/res1" to="." method="_on_resolution_changed" binds= [ 1600, 900 ]]
 
-[connection signal="pressed" from="TabContainer/Window/ResolutionList/res2" to="." method="_on_resolution_changed" binds= [ 1336, 768 ]]
+[connection signal="pressed" from="TabContainer/Graphics/ResolutionList/res2" to="." method="_on_resolution_changed" binds= [ 1336, 768 ]]
 
-[connection signal="pressed" from="TabContainer/Window/ResolutionList/res3" to="." method="_on_resolution_changed" binds= [ 1280, 720 ]]
+[connection signal="pressed" from="TabContainer/Graphics/ResolutionList/res3" to="." method="_on_resolution_changed" binds= [ 1280, 720 ]]
 
-[connection signal="pressed" from="TabContainer/Window/ResolutionList/res4" to="." method="_on_resolution_changed" binds= [ 640, 480 ]]
+[connection signal="pressed" from="TabContainer/Graphics/ResolutionList/res4" to="." method="_on_resolution_changed" binds= [ 640, 480 ]]
 
-[connection signal="value_changed" from="TabContainer/Sound/MasterText/MasterSlider" to="." method="_on_slider_changed" binds= [ 0 ]]
+[connection signal="value_changed" from="TabContainer/Audio/MasterText/MasterSlider" to="." method="_on_slider_changed" binds= [ 0 ]]
 
-[connection signal="value_changed" from="TabContainer/Sound/MusicText/MusicSlider" to="." method="_on_slider_changed" binds= [ 2 ]]
+[connection signal="value_changed" from="TabContainer/Audio/MusicText/MusicSlider" to="." method="_on_slider_changed" binds= [ 2 ]]
 
-[connection signal="value_changed" from="TabContainer/Sound/SFXText/SFXSlider" to="." method="_on_slider_changed" binds= [ 1 ]]
+[connection signal="value_changed" from="TabContainer/Audio/SFXText/SFXSlider" to="." method="_on_slider_changed" binds= [ 1 ]]
 
 

@@ -50,10 +50,11 @@
 - Added Shooter Shoot, Story Mode Start, UI Accept, UI Back, End Block Refusal SFX, and Flag hit SFX.
 - Added SFX for the UI.
 - Added a Checkpoint for respawning (They're stackable!).
-- Added Background particle effects.
+- Added Background particle effects (WIP, subject to change).
 - Added a Player Death Particle Effect.
 - Added tutorial prompts for introducing new blocktypes / features.
 - Added Levels 21, 22, 23, 24, 25, 26, 27, 28, 29, 30.
+- Added a Arcade Mode Menu (not playable).
 - Changed UI placement slightly.
 - Changed Help menu to more of a general help (Just listing controls.)
 - Changed checkbox design from the default godot theme.
@@ -61,8 +62,9 @@
 - Changed the Shrink block sprite entirely.
 - Changed colors for some Sprites.
 - Changed Panel design.
-- Changed Options Menu.
+- Changed Options Menu significantly.
 - Changed Levels 1, 7, 10, 17, 18.
 - Changed version to Alpha 5.
+- Changed resolution scaling (No more weird scaling, everything should look the same).
 - Fixed small Player having the wrong hitbox (MAJOR ISSUE).
-- Fixed sound buses not being used.
+- Fixed sound buses not being used (oops).
