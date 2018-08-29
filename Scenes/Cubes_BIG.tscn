@@ -3,7 +3,7 @@
 [ext_resource path="res://Misc/Cubes_BIG.tres" type="Material" id=1]
 [ext_resource path="res://Sprites/cubytes_player_death.png" type="Texture" id=2]
 
-[node name="Cubes_BIG" type="Particles2D" index="0"]
+[node name="Cubes_BIG" type="Particles2D"]
 
 position = Vector2( 1437.44, 356.796 )
 rotation = 1.5708
