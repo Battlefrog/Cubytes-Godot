@@ -27,7 +27,7 @@ damping = 0.0
 damping_random = 0.0
 angle = 360.0
 angle_random = 1.0
-scale = 8.0
+scale = 4.0
 scale_random = 0.3
 color = Color( 0.726563, 0.414368, 0.414368, 1 )
 hue_variation = 0.0
@@ -37,5 +37,5 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Orbit Velocity" ]
+_sections_unfolded = [ "Orbit Velocity", "Scale" ]
 

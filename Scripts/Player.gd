@@ -131,3 +131,15 @@ func shrink():
 func change_respawn_position(object):
 	var pos = object.get_transform()
 	respawn_position = pos
+
+func decrease_speed():
+	if shrunk:
+		player_speed = 300
+	else:
+		player_speed = 500
+
+func normalize_speed():
+	if shrunk:
+		player_speed = 500
+	else:
+		player_speed = 750

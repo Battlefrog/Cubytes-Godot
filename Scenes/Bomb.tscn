@@ -12,7 +12,7 @@ extents = Vector2( 16, 16 )
 flags = 0
 load_path = "res://.import/Bomb.png-6390bb4e15be30d7d53b794053bcba48.stex"
 
-[node name="Bomb" type="StaticBody2D" index="0"]
+[node name="Bomb" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 1
