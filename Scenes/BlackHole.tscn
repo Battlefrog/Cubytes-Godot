@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/BlackHole.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/BlackHoleSmear.png" type="Texture" id=2]
@@ -9,6 +9,11 @@
 
 custom_solver_bias = 0.0
 extents = Vector2( 30, 30 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 6, 6 )
 
 [node name="BlackHole" type="Area2D"]
 
@@ -53,10 +58,26 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
+[node name="Area2D" type="Area2D" parent="." index="5"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+shape = SubResource( 2 )
+
 [connection signal="body_entered" from="." to="." method="_on_BlackHole_entered"]
 
 [connection signal="body_exited" from="." to="." method="_on_BlackHole_exited"]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_entered"]
 
 
