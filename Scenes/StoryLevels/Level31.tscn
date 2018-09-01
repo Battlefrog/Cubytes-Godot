@@ -8,7 +8,7 @@
 [ext_resource path="res://Sprites/BlackHole.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/BlackHole.tscn" type="PackedScene" id=7]
 
-[node name="root" type="Node" index="0"]
+[node name="root" type="Node"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -57,6 +57,6 @@ ui_picture_path = ExtResource( 6 )
 
 [node name="BlackHole" parent="." index="5" instance=ExtResource( 7 )]
 
-position = Vector2( 652, 412 )
+position = Vector2( 640, 420 )
 
 
