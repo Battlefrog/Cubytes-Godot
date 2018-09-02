@@ -1,0 +1,116 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/EndBlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Misc/BlockTiles2.tres" type="TileSet" id=3]
+[ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/BlackHole.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Flag.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Point.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/DecreaseSize.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Bomb.tscn" type="PackedScene" id=9]
+
+[node name="root" type="Node" index="0"]
+
+[node name="Player" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 458, 234 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="EndBlock" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 938, 214 )
+_sections_unfolded = [ "Transform" ]
+next_level_name = "Level37"
+
+[node name="Blocks" type="TileMap" parent="." index="2"]
+
+position = Vector2( 586, -242 )
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = true
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 851961, 0, 0, 851962, 0, 0, 851963, 0, 0, 851964, 0, 0, 851965, 0, 0, 851966, 0, 0, 851967, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 917497, 0, 0, 851972, 0, 0, 851976, 0, 0, 851981, 0, 0, 983033, 0, 0, 917508, 0, 0, 917512, 0, 0, 917517, 0, 0, 1048569, 0, 0, 983044, 0, 0, 983048, 0, 0, 983053, 0, 0, 1114105, 0, 0, 1048580, 0, 0, 1048584, 0, 0, 1048589, 0, 0, 1179641, 0, 0, 1114120, 0, 0, 1114125, 0, 0, 1245177, 0, 0, 1179656, 0, 0, 1179661, 0, 0, 1310713, 0, 0, 1245192, 0, 0, 1245197, 0, 0, 1376249, 0, 0, 1376250, 0, 0, 1376251, 0, 0, 1376252, 0, 0, 1376253, 0, 0, 1376254, 0, 0, 1376255, 0, 0, 1310720, 0, 0, 1310721, 0, 0, 1310722, 0, 0, 1310728, 0, 0, 1310733, 0, 0, 1441785, 0, 0, 1376269, 0, 0, 1507321, 0, 0, 1441805, 0, 0, 1572857, 0, 0, 1507341, 0, 0, 1638393, 0, 0, 1572869, 0, 0, 1572870, 0, 0, 1572871, 0, 0, 1572872, 0, 0, 1572873, 0, 0, 1572874, 0, 0, 1572875, 0, 0, 1572876, 0, 0, 1572877, 0, 0, 1703929, 0, 0, 1638405, 0, 0, 1769465, 0, 0, 1703941, 0, 0, 1835001, 0, 0, 1835002, 0, 0, 1835003, 0, 0, 1835004, 0, 0, 1835005, 0, 0, 1835006, 0, 0, 1835007, 0, 0, 1769472, 0, 0, 1769473, 0, 0, 1769474, 0, 0, 1769475, 0, 0, 1769476, 0, 0, 1769477, 0, 0 )
+_sections_unfolded = [ "Cell", "Collision", "Material", "Occluder", "Visibility" ]
+
+[node name="GameUI" parent="." index="3" instance=ExtResource( 4 )]
+
+current_level_num = 36
+
+[node name="BlackHole" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 658, 234 )
+
+[node name="BlackHole2" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 568, 484 )
+
+[node name="Flag" parent="." index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 768, 454 )
+
+[node name="Point" parent="." index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 438, 474 )
+
+[node name="DecreaseSize" parent="." index="8" instance=ExtResource( 8 )]
+
+position = Vector2( 798, 214 )
+
+[node name="Bomb" parent="." index="9" instance=ExtResource( 9 )]
+
+position = Vector2( 428, 364 )
+
+[node name="Bomb2" parent="." index="10" instance=ExtResource( 9 )]
+
+position = Vector2( 498, 364 )
+
+[node name="Bomb3" parent="." index="11" instance=ExtResource( 9 )]
+
+position = Vector2( 568, 364 )
+
+[node name="Bomb4" parent="." index="12" instance=ExtResource( 9 )]
+
+position = Vector2( 638, 364 )
+
+[node name="Bomb5" parent="." index="13" instance=ExtResource( 9 )]
+
+position = Vector2( 428, 594 )
+
+[node name="Bomb6" parent="." index="14" instance=ExtResource( 9 )]
+
+position = Vector2( 498, 594 )
+
+[node name="Bomb7" parent="." index="15" instance=ExtResource( 9 )]
+
+position = Vector2( 568, 594 )
+
+[node name="Bomb8" parent="." index="16" instance=ExtResource( 9 )]
+
+position = Vector2( 638, 594 )
+
+[node name="Bomb9" parent="." index="17" instance=ExtResource( 9 )]
+
+position = Vector2( 708, 594 )
+
+[node name="Bomb10" parent="." index="18" instance=ExtResource( 9 )]
+
+position = Vector2( 908, 364 )
+
+[node name="Bomb11" parent="." index="19" instance=ExtResource( 9 )]
+
+position = Vector2( 978, 274 )
+
+
