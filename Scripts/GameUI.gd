@@ -20,6 +20,8 @@ func _ready():
 	
 	$BlockTutorial.hide()
 	$BlockTutorial.set_exclusive(false)
+	
+	$PauseFade.hide()
 
 func _process(delta):
 	$LevelDisplay.set_text("Level: " + str(current_level_num))
@@ -29,20 +31,35 @@ func update_death_display(death):
 	$DeathDisplay.set_text("Deaths: " + str(death))
 
 func pause_game():
+	$PauseFade.show()
 	get_node("/root/MusicPlayer").stop_music()
 	$pause.popup()
 	get_tree().set_pause(true)
 
 func _on_ResumeButton_pressed():
+	$PauseFade.hide()
 	get_node("/root/MusicPlayer").play_level_music()
 	$pause.hide()
 	get_tree().set_pause(false)
 
 func _on_MainMenuButton_pressed():
+	$PauseFade.hide()
 	# So the Main Menu doesn't get paused!
 	get_tree().set_pause(false)
 	get_node("/root/MusicPlayer").play_menu_music()
 	get_node("/root/global").goto_scene("res://Scenes/MainMenu.tscn")
+
+func _on_RestartButton_pressed():
+	var root = get_tree().get_root()
+	
+	# Getting the current scene
+	var current_scene = root.get_child(root.get_child_count() - 1)
+	
+	$PauseFade.hide()
+	get_node("/root/MusicPlayer").play_level_music()
+	$pause.hide()
+	get_tree().set_pause(false)
+	get_node("/root/global").goto_scene(get_tree().get_current_scene().get_filename())
 
 func show_block_tutorial(block_text, texture_path, block_name):
 	$BlockTutorial/BlockText.text = block_text
