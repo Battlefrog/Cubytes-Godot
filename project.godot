@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 global="*res://Scripts/global.gd"
+Settings="*res://Scripts/Settings.gd"
 MusicPlayer="*res://Scenes/MusicPlayer.tscn"
 SFXPlayer="*res://Scenes/SFXPlayer.tscn"
 Background="*res://Scenes/Background.tscn"
