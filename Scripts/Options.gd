@@ -1,5 +1,12 @@
 extends Control
 
+var cheats = {
+	"debug_mode": 0,
+	"click_teleport": 1
+}
+
+var cheat = preload("res://Scenes/CheatDisplay.tscn")
+
 func _ready():
 	$TabContainer/Graphics/VsyncToggle.pressed = OS.is_vsync_enabled()
 	$TabContainer/Graphics/FullscreenToggle.pressed = OS.is_window_fullscreen()
@@ -34,3 +41,18 @@ func _on_resolution_changed(width, height):
 
 func _on_TabContainer_tab_selected(tab):
 	get_node("/root/SFXPlayer").play_sfx("SFXAccept")
+
+func _on_Cheat_text_entered(new_text):
+	if cheats.has(new_text):
+			var cheat_instance = cheat.instance()
+			cheat_instance.set_text(new_text)
+			cheat_instance.set_name(new_text)
+			print(cheat_instance.get_name())
+			get_node("TabContainer/Gameplay/CheatEnter").clear()
+			if !(has_node("TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats/debug_mode") or !has_node("TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats/debug_mode")):
+				get_node("TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats").add_child(cheat_instance)
+				print(get_tree().get_nodes_in_group("Cheats"))
+				get_node("TabContainer/Gameplay/IncorrectCheatText").hide()
+	else:
+		get_node("TabContainer/Gameplay/IncorrectCheatText").show()
+		get_node("TabContainer/Gameplay/CheatEnter").clear()
