@@ -8,7 +8,6 @@ export (int) var player_speed = 750
 
 # The EndBlock is always going to be in the level with the Player
 onready var EndBlockRef = get_node("../EndBlock")
-
 onready var PointRef = has_node("../Point")
 
 var velocity = Vector2()

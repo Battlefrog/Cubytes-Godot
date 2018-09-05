@@ -5,11 +5,12 @@ var audio_bus = preload("res://Misc/default_bus_layout.tres")
 
 func _ready():
 	ProjectSettings.set_setting("PLAYER_DEATHS", 0)
+	ProjectSettings.set_setting("ARCADE_MODE", false)
+	
 	AudioServer.set_bus_layout(audio_bus)
 	
-	var root = get_tree().get_root()
-	
 	# Getting the current scene
+	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
 
 func goto_scene(path):

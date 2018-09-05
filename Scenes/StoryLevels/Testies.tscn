@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/EndBlock.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/BlackHole.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/DecreaseSize.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/ArcadeModeTimer.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -17,7 +18,7 @@ use_filter = true
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
@@ -34,7 +35,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 935, 295 )
 _sections_unfolded = [ "Transform" ]
 next_level_name = "Testies"
-arcade_mode = null
+arcade_mode = true
 
 [node name="Point" parent="." index="2" instance=ExtResource( 3 )]
 
@@ -100,5 +101,7 @@ position = Vector2( 780, 375 )
 [node name="DecreaseSize" parent="." index="7" instance=ExtResource( 8 )]
 
 position = Vector2( 610, 470 )
+
+[node name="ArcadeModeTimer" parent="." index="8" instance=ExtResource( 9 )]
 
 
