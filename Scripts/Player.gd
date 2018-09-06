@@ -91,7 +91,8 @@ func die():
 	ProjectSettings.set_setting("PLAYER_DEATHS", death + 1)
 	death = ProjectSettings.get_setting("PLAYER_DEATHS")
 	
-	$PlayerDeathAnim.emitting = true
+	#$PlayerDeathAnim.emitting = true
+	get_node("/root/ParticlePlayer").play_ptx("PTXPlayerDeath", get_transform())
 	
 	set_process(false)
 	

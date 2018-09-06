@@ -38,9 +38,9 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-text = "You've reached the end of Alpha 5!
+text = "You've reached the end of Alpha 6!
 
-Stay tuned for the release of Alpha 6!"
+Stay tuned for the release of Alpha 7!"
 align = 1
 valign = 1
 percent_visible = 1.0

@@ -20,6 +20,7 @@ global="*res://Scripts/global.gd"
 Settings="*res://Scripts/Settings.gd"
 MusicPlayer="*res://Scenes/MusicPlayer.tscn"
 SFXPlayer="*res://Scenes/SFXPlayer.tscn"
+ParticlePlayer="*res://Scripts/ParticlePlayer.gd"
 Background="*res://Scenes/Background.tscn"
 
 [debug]
