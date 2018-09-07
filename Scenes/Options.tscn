@@ -13,7 +13,7 @@ use_filter = true
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Node2D" type="Control" index="0"]
+[node name="Node2D" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -88,7 +88,327 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Graphics" type="Tabs" parent="TabContainer" index="0"]
+[node name="Audio" type="Tabs" parent="TabContainer" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+tab_align = 1
+scrolling_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MasterText" type="Label" parent="TabContainer/Audio" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 76.0
+margin_top = 86.0
+margin_right = 296.0
+margin_bottom = 122.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Master Volume"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="MasterSlider" type="HSlider" parent="TabContainer/Audio/MasterText" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 240.0
+margin_right = 476.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = -24.0
+max_value = 0.0
+step = 0.05
+page = 0.0
+value = 0.0
+exp_edit = true
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = true
+focus_mode = 2
+
+[node name="MusicText" type="Label" parent="TabContainer/Audio" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 76.0
+margin_top = 146.0
+margin_right = 296.0
+margin_bottom = 182.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Music Volume"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="MusicSlider" type="HSlider" parent="TabContainer/Audio/MusicText" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 240.0
+margin_right = 476.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = -24.0
+max_value = 0.0
+step = 0.05
+page = 0.0
+value = 0.0
+exp_edit = true
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = true
+focus_mode = 2
+
+[node name="SFXText" type="Label" parent="TabContainer/Audio" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 76.0
+margin_top = 206.0
+margin_right = 296.0
+margin_bottom = 242.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "SFX Volume"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="SFXSlider" type="HSlider" parent="TabContainer/Audio/SFXText" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 240.0
+margin_right = 476.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = -24.0
+max_value = 0.0
+step = 0.05
+page = 0.0
+value = 0.0
+exp_edit = true
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = true
+focus_mode = 2
+
+[node name="Gameplay" type="Tabs" parent="TabContainer" index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+tab_align = 1
+scrolling_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CheatEnter" type="LineEdit" parent="TabContainer/Gameplay" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 36.0
+margin_top = 206.0
+margin_right = 456.0
+margin_bottom = 252.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+secret = true
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+
+[node name="CheatText" type="Label" parent="TabContainer/Gameplay" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 36.0
+margin_top = 166.0
+margin_right = 456.0
+margin_bottom = 202.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Enter a cheat:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="IncorrectCheatText" type="Label" parent="TabContainer/Gameplay" index="2"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 36.0
+margin_top = 256.0
+margin_right = 456.0
+margin_bottom = 317.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Incorrect cheat!"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors" ]
+
+[node name="CheatViewerPanelText" type="Label" parent="TabContainer/Gameplay" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 576.0
+margin_top = 26.0
+margin_right = 936.0
+margin_bottom = 62.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Active Cheats"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="CheatViewerPanel" type="Panel" parent="TabContainer/Gameplay/CheatViewerPanelText" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 40.0
+margin_right = 360.0
+margin_bottom = 400.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="ActiveCheats" type="VBoxContainer" parent="TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 360.0
+margin_bottom = 360.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 5
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="Graphics" type="Tabs" parent="TabContainer" index="2"]
 
 editor/display_folded = true
 visible = false
@@ -326,329 +646,17 @@ text = "640x480"
 flat = false
 align = 1
 
-[node name="Audio" type="Tabs" parent="TabContainer" index="1"]
-
-editor/display_folded = true
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 54.0
-margin_right = -4.0
-margin_bottom = -4.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-tab_align = 1
-scrolling_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="MasterText" type="Label" parent="TabContainer/Audio" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 76.0
-margin_top = 86.0
-margin_right = 296.0
-margin_bottom = 122.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Master Volume"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="MasterSlider" type="HSlider" parent="TabContainer/Audio/MasterText" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 240.0
-margin_right = 476.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 0
-min_value = -24.0
-max_value = 0.0
-step = 0.05
-page = 0.0
-value = 0.0
-exp_edit = true
-rounded = false
-editable = true
-tick_count = 0
-ticks_on_borders = true
-focus_mode = 2
-
-[node name="MusicText" type="Label" parent="TabContainer/Audio" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 76.0
-margin_top = 146.0
-margin_right = 296.0
-margin_bottom = 182.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Music Volume"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="MusicSlider" type="HSlider" parent="TabContainer/Audio/MusicText" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 240.0
-margin_right = 476.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 0
-min_value = -24.0
-max_value = 0.0
-step = 0.05
-page = 0.0
-value = 0.0
-exp_edit = true
-rounded = false
-editable = true
-tick_count = 0
-ticks_on_borders = true
-focus_mode = 2
-
-[node name="SFXText" type="Label" parent="TabContainer/Audio" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 76.0
-margin_top = 206.0
-margin_right = 296.0
-margin_bottom = 242.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "SFX Volume"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="SFXSlider" type="HSlider" parent="TabContainer/Audio/SFXText" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 240.0
-margin_right = 476.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 0
-min_value = -24.0
-max_value = 0.0
-step = 0.05
-page = 0.0
-value = 0.0
-exp_edit = true
-rounded = false
-editable = true
-tick_count = 0
-ticks_on_borders = true
-focus_mode = 2
-
-[node name="Gameplay" type="Tabs" parent="TabContainer" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 54.0
-margin_right = -4.0
-margin_bottom = -4.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-tab_align = 1
-scrolling_enabled = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CheatEnter" type="LineEdit" parent="TabContainer/Gameplay" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 36.0
-margin_top = 206.0
-margin_right = 456.0
-margin_bottom = 252.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-secret = true
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
-
-[node name="CheatText" type="Label" parent="TabContainer/Gameplay" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 36.0
-margin_top = 166.0
-margin_right = 456.0
-margin_bottom = 202.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Enter a cheat:"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="IncorrectCheatText" type="Label" parent="TabContainer/Gameplay" index="2"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 36.0
-margin_top = 256.0
-margin_right = 456.0
-margin_bottom = 317.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_colors/font_color = Color( 1, 0, 0, 1 )
-text = "Incorrect cheat!"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors" ]
-
-[node name="CheatViewerPanelText" type="Label" parent="TabContainer/Gameplay" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 576.0
-margin_top = 26.0
-margin_right = 936.0
-margin_bottom = 62.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Active Cheats"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="CheatViewerPanel" type="Panel" parent="TabContainer/Gameplay/CheatViewerPanelText" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 40.0
-margin_right = 360.0
-margin_bottom = 400.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="ActiveCheats" type="VBoxContainer" parent="TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 360.0
-margin_bottom = 360.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_constants/separation = 5
-alignment = 0
-_sections_unfolded = [ "custom_constants" ]
-
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 
 [connection signal="tab_selected" from="TabContainer" to="." method="_on_TabContainer_tab_selected"]
+
+[connection signal="value_changed" from="TabContainer/Audio/MasterText/MasterSlider" to="." method="_on_slider_changed" binds= [ 0 ]]
+
+[connection signal="value_changed" from="TabContainer/Audio/MusicText/MusicSlider" to="." method="_on_slider_changed" binds= [ 2 ]]
+
+[connection signal="value_changed" from="TabContainer/Audio/SFXText/SFXSlider" to="." method="_on_slider_changed" binds= [ 1 ]]
+
+[connection signal="text_entered" from="TabContainer/Gameplay/CheatEnter" to="." method="_on_Cheat_text_entered"]
 
 [connection signal="toggled" from="TabContainer/Graphics/VsyncToggle" to="." method="_on_VSync_toggled"]
 
@@ -663,13 +671,5 @@ _sections_unfolded = [ "custom_constants" ]
 [connection signal="pressed" from="TabContainer/Graphics/ResolutionList/res3" to="." method="_on_resolution_changed" binds= [ 1280, 720 ]]
 
 [connection signal="pressed" from="TabContainer/Graphics/ResolutionList/res4" to="." method="_on_resolution_changed" binds= [ 640, 480 ]]
-
-[connection signal="value_changed" from="TabContainer/Audio/MasterText/MasterSlider" to="." method="_on_slider_changed" binds= [ 0 ]]
-
-[connection signal="value_changed" from="TabContainer/Audio/MusicText/MusicSlider" to="." method="_on_slider_changed" binds= [ 2 ]]
-
-[connection signal="value_changed" from="TabContainer/Audio/SFXText/SFXSlider" to="." method="_on_slider_changed" binds= [ 1 ]]
-
-[connection signal="text_entered" from="TabContainer/Gameplay/CheatEnter" to="." method="_on_Cheat_text_entered"]
 
 
