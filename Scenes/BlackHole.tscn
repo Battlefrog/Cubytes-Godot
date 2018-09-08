@@ -5,7 +5,7 @@
 [ext_resource path="res://Sprites/BlackHole.png" type="Texture" id=3]
 [ext_resource path="res://Sounds/black_hole.ogg" type="AudioStream" id=4]
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 45.0
@@ -38,7 +38,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="." index="3"]
 
@@ -72,6 +72,15 @@ audio_bus_name = "Master"
 
 shape = SubResource( 2 )
 
+[node name="Tween" type="Tween" parent="." index="6"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
 [connection signal="body_entered" from="." to="." method="_on_BlackHole_entered"]
 
 [connection signal="body_exited" from="." to="." method="_on_BlackHole_exited"]
@@ -79,5 +88,7 @@ shape = SubResource( 2 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_entered"]
+
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_completed"]
 
 

@@ -10,7 +10,7 @@ func _on_BlackHole_exited(body):
 	if body.is_in_group("Player"):
 		body.call("normalize_speed")
 		$Timer.stop()
-		$AudioStreamPlayer2D.stop()
+		fade_out($AudioStreamPlayer2D)
 
 func _on_Timer_timeout():
 	for body in get_overlapping_bodies():
@@ -25,4 +25,13 @@ func kill_player(player):
 	$Timer.stop()
 	player.call("die")
 	get_node("/root/SFXPlayer").play_sfx("SFXShooterShoot")
-	$AudioStreamPlayer2D.stop()
+	fade_out($AudioStreamPlayer2D)
+
+# Fade out SFX
+func fade_out(stream):
+	$Tween.interpolate_property(stream, "volume_db", 0, -80, 0.1, Tween.TRANS_QUAD, Tween.EASE_IN, 0)
+	$Tween.start()
+
+func _on_Tween_completed(object, key):
+	$Tween.stop(object, key)
+	$AudioStreamPlayer2D.set_volume_db(0.0)
