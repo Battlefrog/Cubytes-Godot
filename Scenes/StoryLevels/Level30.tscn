@@ -25,8 +25,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 1115, 250 )
 _sections_unfolded = [ "Transform" ]
-next_level_name = "Win"
-arcade_mode = null
+next_level_name = "Level31"
 
 [node name="Blocks" type="TileMap" parent="." index="2"]
 

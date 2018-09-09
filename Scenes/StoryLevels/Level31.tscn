@@ -8,7 +8,7 @@
 [ext_resource path="res://Sprites/BlackHole.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/BlackHole.tscn" type="PackedScene" id=7]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -20,7 +20,6 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 1182, 416 )
 _sections_unfolded = [ "Transform" ]
 next_level_name = "Level32"
-arcade_mode = null
 
 [node name="Blocks" type="TileMap" parent="." index="2"]
 
