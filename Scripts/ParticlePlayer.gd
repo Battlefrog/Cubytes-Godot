@@ -2,7 +2,8 @@ extends Node
 
 var PTX = {
 	"PTXPlayerDeath": preload("res://Scenes/PlayerDeathAnim.tscn"),
-	"PTXExplosion": preload("res://Scenes/BombExplosion.tscn")
+	"PTXExplosion": preload("res://Scenes/BombExplosion.tscn"),
+	"PTXEndBlockEnding": preload("res://Scenes/EndBlockEnding.tscn")
 }
 
 func _process(delta):

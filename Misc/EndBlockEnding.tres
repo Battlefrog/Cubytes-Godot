@@ -1,0 +1,56 @@
+[gd_resource type="ParticlesMaterial" load_steps=3 format=2]
+
+[sub_resource type="Curve" id=1]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.752601, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.24445 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+
+flags = 4
+width = 2048
+curve = SubResource( 1 )
+
+[resource]
+
+render_priority = 0
+trail_divisor = 3
+trail_size_modifier = SubResource( 2 )
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 180.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 30.0
+initial_velocity_random = 0.0
+angular_velocity = 0.18
+angular_velocity_random = 0.0
+orbit_velocity = 0.26
+orbit_velocity_random = 0.05
+linear_accel = 0.05
+linear_accel_random = 0.01
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 5.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 360.0
+angle_random = 1.0
+scale = 0.5
+scale_random = 0.2
+color = Color( 1, 1, 0, 1 )
+hue_variation = 0.0
+hue_variation_random = 1.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Emission Shape", "Flags", "Hue Variation", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Scale", "Spread", "Tangential Accel", "Trail" ]
+

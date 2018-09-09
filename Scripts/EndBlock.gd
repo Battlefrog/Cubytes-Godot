@@ -20,12 +20,14 @@ func on_player_hit():
 	if point_collected and not arcade_mode:
 		PlayerRef.end_of_level()
 		get_node("/root/SFXPlayer").play_sfx("SFXCompleteLevel")
+		get_node("/root/ParticlePlayer").play_ptx("PTXEndBlockEnding", get_transform())
 		yield(get_tree().create_timer(1.2), "timeout")
 		get_node("/root/global").goto_scene("res://Scenes/StoryLevels/" + next_level_name + ".tscn")
 	elif point_collected and arcade_mode:
 		ArcadeTimerRef.call("on_level_complete")
 		PlayerRef.end_of_level()
 		get_node("/root/SFXPlayer").play_sfx("SFXCompleteLevel")
+		get_node("/root/ParticlePlayer").play_ptx("PTXEndBlockEnding", get_transform())
 		yield(get_tree().create_timer(1.2), "timeout")
 		get_node("/root/global").goto_scene("res://Scenes/ArcadeMode.tscn")
 	else:
