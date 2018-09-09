@@ -38,6 +38,7 @@ func pause_game():
 
 func _on_ResumeButton_pressed():
 	$PauseFade.hide()
+	get_node("/root/SFXPlayer").play_sfx("SFXAccept")
 	get_node("/root/MusicPlayer").play_level_music()
 	$pause.hide()
 	get_tree().set_pause(false)
@@ -46,18 +47,15 @@ func _on_MainMenuButton_pressed():
 	$PauseFade.hide()
 	# So the Main Menu doesn't get paused!
 	get_tree().set_pause(false)
+	get_node("/root/SFXPlayer").play_sfx("SFXBack")
 	get_node("/root/MusicPlayer").play_menu_music()
 	get_node("/root/global").goto_scene("res://Scenes/MainMenu.tscn")
 
 func _on_RestartButton_pressed():
-	var root = get_tree().get_root()
-	
-	# Getting the current scene
-	var current_scene = root.get_child(root.get_child_count() - 1)
-	
 	$PauseFade.hide()
-	get_node("/root/MusicPlayer").play_level_music()
 	$pause.hide()
+	get_node("/root/MusicPlayer").play_level_music()
+	get_node("/root/SFXPlayer").play_sfx("SFXAccept")
 	get_tree().set_pause(false)
 	get_node("/root/global").goto_scene(get_tree().get_current_scene().get_filename())
 
