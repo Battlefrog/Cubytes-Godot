@@ -47,7 +47,6 @@ func activate_cheat(cheat):
 	$TabContainer/Gameplay/IncorrectCheatText.hide()
 	
 	ProjectSettings.set_setting(cheat.get_name(), true)
-	print(ProjectSettings.get_setting(cheat.get_name()))
 
 func _on_Cheat_text_entered(new_text):
 	if cheats.has(new_text):

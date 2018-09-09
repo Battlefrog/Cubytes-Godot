@@ -12,6 +12,7 @@ func _ready():
 
 # TODO: Games longer than an hour will break and display the wrong time
 # TODO: Add ms support
+# TODO: This doesn't fucking work
 func on_level_complete():
 	ending_time = OS.get_time()
 	ending_time = ending_time.values()

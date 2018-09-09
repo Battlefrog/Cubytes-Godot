@@ -8,6 +8,7 @@ func _ready():
 	ProjectSettings.set_setting("ARCADE_MODE", false)
 	ProjectSettings.set_setting("debug_mode", false)
 	ProjectSettings.set_setting("click_teleport", false)
+	ProjectSettings.set_setting("completed_story_mode", false)
 	
 	AudioServer.set_bus_layout(audio_bus)
 	
