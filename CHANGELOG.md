@@ -74,3 +74,15 @@
 - Decreased the low decibel for volume sliders.
 - Fixed volume sliders not showing current value.
 - Fixed buttons in Arcade Mode not having click noises.
+
+## Alpha 6
+
+- Added a black hole SFX.
+- Added black holes.
+- Added an additional background effect.
+- Added Explosion and Endblock particle effects.
+- Added Levels 31, 32, 33, 34, 35, 36, 37.
+- Changed version to Alpha 6.
+- Changed Pause Menu.
+- Fixed Player Death particles not playing everytime.
+- Increased Music Volume.
