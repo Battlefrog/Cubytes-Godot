@@ -1,0 +1,507 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/EndBlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Point.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Misc/BlockTiles2.tres" type="TileSet" id=4]
+[ext_resource path="res://Scenes/GameUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/BlackHole.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/DecreaseSize.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/ArcadeModeTimer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Flag.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Bomb.tscn" type="PackedScene" id=10]
+
+[node name="root" type="Node" index="0"]
+
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="Player" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 90, 165 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="EndBlock" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 1225, 175 )
+_sections_unfolded = [ "Transform" ]
+next_level_name = ""
+arcade_mode = true
+
+[node name="Point" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 210, 175 )
+
+[node name="Blocks" type="TileMap" parent="." index="3"]
+
+position = Vector2( 20, 100 )
+mode = 0
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 32, 0, 0, 33, 0, 0, 34, 0, 0, 35, 0, 0, 36, 0, 0, 37, 0, 0, 38, 0, 0, 39, 0, 0, 65536, 0, 0, 65575, 0, 0, 131072, 0, 0, 131111, 0, 0, 196608, 0, 0, 196647, 0, 0, 262144, 0, 0, 262183, 0, 0, 327680, 0, 0, 327719, 0, 0, 393216, 0, 0, 393255, 0, 0, 458752, 0, 0, 458791, 0, 0, 524288, 0, 0, 524327, 0, 0, 589824, 0, 0, 589863, 0, 0, 655360, 0, 0, 655399, 0, 0, 720896, 0, 0, 720935, 0, 0, 786432, 0, 0, 786471, 0, 0, 851968, 0, 0, 852007, 0, 0, 917504, 0, 0, 917543, 0, 0, 983040, 0, 0, 983079, 0, 0, 1048576, 0, 0, 1048615, 0, 0, 1114112, 0, 0, 1114146, 0, 0, 1114147, 0, 0, 1114148, 0, 0, 1114149, 0, 0, 1114150, 0, 0, 1114151, 0, 0, 1179648, 0, 0, 1179682, 0, 0, 1245184, 0, 0, 1245185, 0, 0, 1245186, 0, 0, 1245187, 0, 0, 1245188, 0, 0, 1245189, 0, 0, 1245190, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245203, 0, 0, 1245204, 0, 0, 1245205, 0, 0, 1245206, 0, 0, 1245207, 0, 0, 1245208, 0, 0, 1245209, 0, 0, 1245210, 0, 0, 1245211, 0, 0, 1245212, 0, 0, 1245213, 0, 0, 1245214, 0, 0, 1245215, 0, 0, 1245216, 0, 0, 1245217, 0, 0, 1245218, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="GameUI" parent="." index="4" instance=ExtResource( 5 )]
+
+current_level_num = -999
+
+[node name="BlackHole" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 1095, 285 )
+
+[node name="BlackHole2" parent="." index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 1025, 285 )
+
+[node name="DecreaseSize" parent="." index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 620, 280 )
+
+[node name="ArcadeModeTimer" parent="." index="8" instance=ExtResource( 8 )]
+
+[node name="Flag" parent="." index="9" instance=ExtResource( 9 )]
+
+position = Vector2( 660, 440 )
+
+[node name="Bomb" parent="." index="10" instance=ExtResource( 10 )]
+
+position = Vector2( 155, 165 )
+
+[node name="Bomb26" parent="." index="11" instance=ExtResource( 10 )]
+
+position = Vector2( 1162, 162 )
+
+[node name="Bomb2" parent="." index="12" instance=ExtResource( 10 )]
+
+position = Vector2( 155, 210 )
+
+[node name="Bomb41" parent="." index="13" instance=ExtResource( 10 )]
+
+position = Vector2( 1162, 207 )
+
+[node name="Bomb3" parent="." index="14" instance=ExtResource( 10 )]
+
+position = Vector2( 155, 255 )
+
+[node name="Bomb43" parent="." index="15" instance=ExtResource( 10 )]
+
+position = Vector2( 1162, 252 )
+
+[node name="Bomb4" parent="." index="16" instance=ExtResource( 10 )]
+
+position = Vector2( 155, 300 )
+
+[node name="Bomb42" parent="." index="17" instance=ExtResource( 10 )]
+
+position = Vector2( 1162, 297 )
+
+[node name="Bomb5" parent="." index="18" instance=ExtResource( 10 )]
+
+position = Vector2( 155, 345 )
+
+[node name="Bomb44" parent="." index="19" instance=ExtResource( 10 )]
+
+position = Vector2( 1162, 342 )
+
+[node name="Bomb6" parent="." index="20" instance=ExtResource( 10 )]
+
+position = Vector2( 155, 390 )
+
+[node name="Bomb45" parent="." index="21" instance=ExtResource( 10 )]
+
+position = Vector2( 1162, 387 )
+
+[node name="Bomb7" parent="." index="22" instance=ExtResource( 10 )]
+
+position = Vector2( 155, 435 )
+
+[node name="Bomb46" parent="." index="23" instance=ExtResource( 10 )]
+
+position = Vector2( 1162, 432 )
+
+[node name="Bomb8" parent="." index="24" instance=ExtResource( 10 )]
+
+position = Vector2( 155, 480 )
+
+[node name="Bomb50" parent="." index="25" instance=ExtResource( 10 )]
+
+position = Vector2( 1162, 477 )
+
+[node name="Bomb40" parent="." index="26" instance=ExtResource( 10 )]
+
+position = Vector2( 210, 480 )
+
+[node name="Bomb87" parent="." index="27" instance=ExtResource( 10 )]
+
+position = Vector2( 210, 435 )
+
+[node name="Bomb9" parent="." index="28" instance=ExtResource( 10 )]
+
+position = Vector2( 155, 525 )
+
+[node name="Bomb47" parent="." index="29" instance=ExtResource( 10 )]
+
+position = Vector2( 1162, 522 )
+
+[node name="Bomb39" parent="." index="30" instance=ExtResource( 10 )]
+
+position = Vector2( 210, 525 )
+
+[node name="Bomb10" parent="." index="31" instance=ExtResource( 10 )]
+
+position = Vector2( 155, 570 )
+
+[node name="Bomb53" parent="." index="32" instance=ExtResource( 10 )]
+
+position = Vector2( 210, 570 )
+
+[node name="Bomb56" parent="." index="33" instance=ExtResource( 10 )]
+
+position = Vector2( 260, 570 )
+
+[node name="Bomb48" parent="." index="34" instance=ExtResource( 10 )]
+
+position = Vector2( 1162, 567 )
+
+[node name="Bomb11" parent="." index="35" instance=ExtResource( 10 )]
+
+position = Vector2( 155, 615 )
+
+[node name="Bomb54" parent="." index="36" instance=ExtResource( 10 )]
+
+position = Vector2( 210, 615 )
+
+[node name="Bomb55" parent="." index="37" instance=ExtResource( 10 )]
+
+position = Vector2( 260, 615 )
+
+[node name="Bomb12" parent="." index="38" instance=ExtResource( 10 )]
+
+position = Vector2( 335, 675 )
+
+[node name="Bomb32" parent="." index="39" instance=ExtResource( 10 )]
+
+position = Vector2( 340, 500 )
+
+[node name="Bomb99" parent="." index="40" instance=ExtResource( 10 )]
+
+position = Vector2( 447, 162 )
+
+[node name="Bomb111" parent="." index="41" instance=ExtResource( 10 )]
+
+position = Vector2( 445, 220 )
+
+[node name="Bomb74" parent="." index="42" instance=ExtResource( 10 )]
+
+position = Vector2( 340, 455 )
+
+[node name="Bomb112" parent="." index="43" instance=ExtResource( 10 )]
+
+position = Vector2( 385, 160 )
+
+[node name="Bomb119" parent="." index="44" instance=ExtResource( 10 )]
+
+position = Vector2( 327, 162 )
+
+[node name="Bomb122" parent="." index="45" instance=ExtResource( 10 )]
+
+position = Vector2( 267, 162 )
+
+[node name="Bomb113" parent="." index="46" instance=ExtResource( 10 )]
+
+position = Vector2( 385, 220 )
+
+[node name="Bomb120" parent="." index="47" instance=ExtResource( 10 )]
+
+position = Vector2( 327, 222 )
+
+[node name="Bomb121" parent="." index="48" instance=ExtResource( 10 )]
+
+position = Vector2( 267, 222 )
+
+[node name="Bomb84" parent="." index="49" instance=ExtResource( 10 )]
+
+position = Vector2( 340, 405 )
+
+[node name="Bomb13" parent="." index="50" instance=ExtResource( 10 )]
+
+position = Vector2( 395, 675 )
+
+[node name="Bomb31" parent="." index="51" instance=ExtResource( 10 )]
+
+position = Vector2( 397, 502 )
+
+[node name="Bomb98" parent="." index="52" instance=ExtResource( 10 )]
+
+position = Vector2( 507, 162 )
+
+[node name="Bomb110" parent="." index="53" instance=ExtResource( 10 )]
+
+position = Vector2( 504, 219 )
+
+[node name="Bomb73" parent="." index="54" instance=ExtResource( 10 )]
+
+position = Vector2( 400, 455 )
+
+[node name="Bomb14" parent="." index="55" instance=ExtResource( 10 )]
+
+position = Vector2( 455, 675 )
+
+[node name="Bomb33" parent="." index="56" instance=ExtResource( 10 )]
+
+position = Vector2( 457, 502 )
+
+[node name="Bomb90" parent="." index="57" instance=ExtResource( 10 )]
+
+position = Vector2( 567, 162 )
+
+[node name="Bomb105" parent="." index="58" instance=ExtResource( 10 )]
+
+position = Vector2( 625, 220 )
+
+[node name="Bomb65" parent="." index="59" instance=ExtResource( 10 )]
+
+position = Vector2( 455, 455 )
+
+[node name="Bomb15" parent="." index="60" instance=ExtResource( 10 )]
+
+position = Vector2( 515, 675 )
+
+[node name="Bomb30" parent="." index="61" instance=ExtResource( 10 )]
+
+position = Vector2( 517, 502 )
+
+[node name="Bomb93" parent="." index="62" instance=ExtResource( 10 )]
+
+position = Vector2( 627, 162 )
+
+[node name="Bomb107" parent="." index="63" instance=ExtResource( 10 )]
+
+position = Vector2( 555, 325 )
+
+[node name="Bomb123" parent="." index="64" instance=ExtResource( 10 )]
+
+position = Vector2( 555, 275 )
+
+[node name="Bomb68" parent="." index="65" instance=ExtResource( 10 )]
+
+position = Vector2( 520, 455 )
+
+[node name="Bomb16" parent="." index="66" instance=ExtResource( 10 )]
+
+position = Vector2( 575, 675 )
+
+[node name="Bomb34" parent="." index="67" instance=ExtResource( 10 )]
+
+position = Vector2( 577, 502 )
+
+[node name="Bomb94" parent="." index="68" instance=ExtResource( 10 )]
+
+position = Vector2( 687, 162 )
+
+[node name="Bomb101" parent="." index="69" instance=ExtResource( 10 )]
+
+position = Vector2( 684, 219 )
+
+[node name="Bomb114" parent="." index="70" instance=ExtResource( 10 )]
+
+position = Vector2( 660, 350 )
+
+[node name="Bomb115" parent="." index="71" instance=ExtResource( 10 )]
+
+position = Vector2( 610, 350 )
+
+[node name="Bomb117" parent="." index="72" instance=ExtResource( 10 )]
+
+position = Vector2( 565, 220 )
+
+[node name="Bomb116" parent="." index="73" instance=ExtResource( 10 )]
+
+position = Vector2( 710, 350 )
+
+[node name="Bomb118" parent="." index="74" instance=ExtResource( 10 )]
+
+position = Vector2( 760, 350 )
+
+[node name="Bomb17" parent="." index="75" instance=ExtResource( 10 )]
+
+position = Vector2( 635, 675 )
+
+[node name="Bomb38" parent="." index="76" instance=ExtResource( 10 )]
+
+position = Vector2( 637, 502 )
+
+[node name="Bomb89" parent="." index="77" instance=ExtResource( 10 )]
+
+position = Vector2( 747, 162 )
+
+[node name="Bomb106" parent="." index="78" instance=ExtResource( 10 )]
+
+position = Vector2( 744, 219 )
+
+[node name="Bomb18" parent="." index="79" instance=ExtResource( 10 )]
+
+position = Vector2( 695, 675 )
+
+[node name="Bomb36" parent="." index="80" instance=ExtResource( 10 )]
+
+position = Vector2( 697, 502 )
+
+[node name="Bomb92" parent="." index="81" instance=ExtResource( 10 )]
+
+position = Vector2( 807, 162 )
+
+[node name="Bomb109" parent="." index="82" instance=ExtResource( 10 )]
+
+position = Vector2( 804, 219 )
+
+[node name="Bomb19" parent="." index="83" instance=ExtResource( 10 )]
+
+position = Vector2( 755, 675 )
+
+[node name="Bomb35" parent="." index="84" instance=ExtResource( 10 )]
+
+position = Vector2( 757, 502 )
+
+[node name="Bomb88" parent="." index="85" instance=ExtResource( 10 )]
+
+position = Vector2( 867, 162 )
+
+[node name="Bomb104" parent="." index="86" instance=ExtResource( 10 )]
+
+position = Vector2( 864, 219 )
+
+[node name="Bomb20" parent="." index="87" instance=ExtResource( 10 )]
+
+position = Vector2( 815, 675 )
+
+[node name="Bomb37" parent="." index="88" instance=ExtResource( 10 )]
+
+position = Vector2( 817, 502 )
+
+[node name="Bomb96" parent="." index="89" instance=ExtResource( 10 )]
+
+position = Vector2( 927, 162 )
+
+[node name="Bomb108" parent="." index="90" instance=ExtResource( 10 )]
+
+position = Vector2( 924, 219 )
+
+[node name="Bomb71" parent="." index="91" instance=ExtResource( 10 )]
+
+position = Vector2( 817, 447 )
+
+[node name="Bomb21" parent="." index="92" instance=ExtResource( 10 )]
+
+position = Vector2( 875, 675 )
+
+[node name="Bomb27" parent="." index="93" instance=ExtResource( 10 )]
+
+position = Vector2( 877, 502 )
+
+[node name="Bomb95" parent="." index="94" instance=ExtResource( 10 )]
+
+position = Vector2( 987, 162 )
+
+[node name="Bomb102" parent="." index="95" instance=ExtResource( 10 )]
+
+position = Vector2( 984, 219 )
+
+[node name="Bomb70" parent="." index="96" instance=ExtResource( 10 )]
+
+position = Vector2( 877, 447 )
+
+[node name="Bomb22" parent="." index="97" instance=ExtResource( 10 )]
+
+position = Vector2( 935, 675 )
+
+[node name="Bomb29" parent="." index="98" instance=ExtResource( 10 )]
+
+position = Vector2( 937, 502 )
+
+[node name="Bomb97" parent="." index="99" instance=ExtResource( 10 )]
+
+position = Vector2( 1047, 162 )
+
+[node name="Bomb100" parent="." index="100" instance=ExtResource( 10 )]
+
+position = Vector2( 1044, 219 )
+
+[node name="Bomb72" parent="." index="101" instance=ExtResource( 10 )]
+
+position = Vector2( 937, 447 )
+
+[node name="Bomb76" parent="." index="102" instance=ExtResource( 10 )]
+
+position = Vector2( 937, 397 )
+
+[node name="Bomb78" parent="." index="103" instance=ExtResource( 10 )]
+
+position = Vector2( 937, 352 )
+
+[node name="Bomb23" parent="." index="104" instance=ExtResource( 10 )]
+
+position = Vector2( 995, 675 )
+
+[node name="Bomb28" parent="." index="105" instance=ExtResource( 10 )]
+
+position = Vector2( 997, 502 )
+
+[node name="Bomb51" parent="." index="106" instance=ExtResource( 10 )]
+
+position = Vector2( 1052, 502 )
+
+[node name="Bomb91" parent="." index="107" instance=ExtResource( 10 )]
+
+position = Vector2( 1107, 162 )
+
+[node name="Bomb103" parent="." index="108" instance=ExtResource( 10 )]
+
+position = Vector2( 1104, 219 )
+
+[node name="Bomb66" parent="." index="109" instance=ExtResource( 10 )]
+
+position = Vector2( 997, 447 )
+
+[node name="Bomb67" parent="." index="110" instance=ExtResource( 10 )]
+
+position = Vector2( 997, 397 )
+
+[node name="Bomb75" parent="." index="111" instance=ExtResource( 10 )]
+
+position = Vector2( 1052, 447 )
+
+[node name="Bomb77" parent="." index="112" instance=ExtResource( 10 )]
+
+position = Vector2( 1052, 397 )
+
+[node name="Bomb24" parent="." index="113" instance=ExtResource( 10 )]
+
+position = Vector2( 1055, 675 )
+
+[node name="Bomb25" parent="." index="114" instance=ExtResource( 10 )]
+
+position = Vector2( 1055, 625 )
+
+[node name="Bomb52" parent="." index="115" instance=ExtResource( 10 )]
+
+position = Vector2( 1055, 580 )
+
+
