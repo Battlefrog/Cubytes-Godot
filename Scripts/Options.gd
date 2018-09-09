@@ -42,17 +42,30 @@ func _on_resolution_changed(width, height):
 func _on_TabContainer_tab_selected(tab):
 	get_node("/root/SFXPlayer").play_sfx("SFXAccept")
 
+func activate_cheat(cheat):
+	$TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats.add_child(cheat)
+	$TabContainer/Gameplay/IncorrectCheatText.hide()
+	
+	ProjectSettings.set_setting(cheat.get_name(), true)
+	print(ProjectSettings.get_setting(cheat.get_name()))
+
 func _on_Cheat_text_entered(new_text):
 	if cheats.has(new_text):
+			$TabContainer/Gameplay/IncorrectCheatText.hide()
 			var cheat_instance = cheat.instance()
-			cheat_instance.set_text(new_text)
 			cheat_instance.set_name(new_text)
-			print(cheat_instance.get_name())
-			get_node("TabContainer/Gameplay/CheatEnter").clear()
-			if !(has_node("TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats/debug_mode") or !has_node("TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats/debug_mode")):
-				get_node("TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats").add_child(cheat_instance)
-				print(get_tree().get_nodes_in_group("Cheats"))
-				get_node("TabContainer/Gameplay/IncorrectCheatText").hide()
+			cheat_instance.set_text(new_text)
+			
+			if $TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats.get_children().size() == 0:
+				activate_cheat(cheat_instance)
+			else:
+				for child in $TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats.get_children():
+					if child.get_text() == "debug_mode" and new_text == "debug_mode":
+						break
+					elif child.get_text() == "click_teleport" and new_text == "click_teleport":
+						break
+					else:
+						activate_cheat(cheat_instance)
 	else:
-		get_node("TabContainer/Gameplay/IncorrectCheatText").show()
-		get_node("TabContainer/Gameplay/CheatEnter").clear()
+		$TabContainer/Gameplay/IncorrectCheatText.show()
+	$TabContainer/Gameplay/CheatEnter.clear()

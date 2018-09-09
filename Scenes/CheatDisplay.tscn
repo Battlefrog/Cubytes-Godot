@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Fonts/TextFont.tres" type="DynamicFont" id=1]
 
-[node name="cheat" type="Label" groups=[
+[node name="cheat" type="Label" index="0" groups=[
 "Cheats",
 ]]
 
