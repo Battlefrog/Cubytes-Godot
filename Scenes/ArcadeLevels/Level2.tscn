@@ -55,7 +55,7 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 65536, 0, 0, 65539
 
 [node name="GameUI" parent="." index="4" instance=ExtResource( 5 )]
 
-current_level_num = -999
+current_level_num = 2
 
 [node name="DecreaseSize" parent="." index="5" instance=ExtResource( 6 )]
 

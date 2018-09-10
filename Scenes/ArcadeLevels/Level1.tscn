@@ -60,7 +60,7 @@ __meta__ = {
 
 [node name="GameUI" parent="." index="4" instance=ExtResource( 5 )]
 
-current_level_num = -999
+current_level_num = 1
 
 [node name="BlackHole" parent="." index="5" instance=ExtResource( 6 )]
 
