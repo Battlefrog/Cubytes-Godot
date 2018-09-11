@@ -10,7 +10,7 @@
 [ext_resource path="res://Scenes/DecreaseSize.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Bomb.tscn" type="PackedScene" id=9]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -21,7 +21,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 1028, 514 )
 _sections_unfolded = [ "Transform" ]
-next_level_name = "Win"
+next_level_name = "Level38"
 
 [node name="Blocks" type="TileMap" parent="." index="2"]
 
