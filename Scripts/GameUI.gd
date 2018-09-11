@@ -56,8 +56,8 @@ func _on_RestartButton_pressed():
 	$pause.hide()
 	get_node("/root/MusicPlayer").play_level_music()
 	get_node("/root/SFXPlayer").play_sfx("SFXAccept")
-	get_tree().set_pause(false)
 	get_node("/root/global").goto_scene(get_tree().get_current_scene().get_filename())
+	get_tree().set_pause(false)
 
 func show_block_tutorial(block_text, texture_path, block_name):
 	$BlockTutorial/BlockText.text = block_text

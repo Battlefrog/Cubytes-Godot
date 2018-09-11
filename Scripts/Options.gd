@@ -7,15 +7,48 @@ var cheats = {
 
 var cheat = preload("res://Scenes/CheatDisplay.tscn")
 
-func _ready():
-	$TabContainer/Graphics/VsyncToggle.pressed = OS.is_vsync_enabled()
-	$TabContainer/Graphics/FullscreenToggle.pressed = OS.is_window_fullscreen()
+# TODO: Make this get the SAVE_PATH from Settings
+var config_file = "res://user_settings.cfg"
+var config = ConfigFile.new()
+
+var vsync
+var fullscreen
+var master_slider
+var music_slider
+var sfx_slider
+var resolution
+
+func load_config():
+	config.load(config_file)
+
+func save_config():
+	config.set_value("window", "v-sync", get_node("TabContainer/Graphics/VsyncToggle").is_pressed())
+	config.set_value("window", "fullscreen", get_node("TabContainer/Graphics/FullscreenToggle").is_pressed())
+	config.set_value("audio", "master_volume", get_node("TabContainer/Audio/MasterText/MasterSlider").get_value())
+	config.set_value("audio", "music_volume", get_node("TabContainer/Audio/MusicText/MusicSlider").get_value())
+	config.set_value("audio", "sfx_volume", get_node("TabContainer/Audio/SFXText/SFXSlider").get_value())
 	
-	$TabContainer/Audio/MasterText/MasterSlider.set_value(AudioServer.get_bus_volume_db(0))
-	$TabContainer/Audio/MusicText/MusicSlider.set_value(AudioServer.get_bus_volume_db(2))
-	$TabContainer/Audio/SFXText/SFXSlider.set_value(AudioServer.get_bus_volume_db(1))
+	config.save(config_file)
+
+func _ready():
+	load_config()
+	
+	vsync = config.get_value("window", "v-sync")
+	fullscreen = config.get_value("window", "fullscreen")
+	master_slider = config.get_value("audio", "master_volume")
+	music_slider = config.get_value("audio", "music_volume")
+	sfx_slider = config.get_value("audio", "sfx_volume")
+	
+	$TabContainer/Graphics/VsyncToggle.pressed = vsync
+	$TabContainer/Graphics/FullscreenToggle.pressed = fullscreen
+	
+	$TabContainer/Audio/MasterText/MasterSlider.set_value(master_slider)
+	$TabContainer/Audio/MusicText/MusicSlider.set_value(music_slider)
+	$TabContainer/Audio/SFXText/SFXSlider.set_value(sfx_slider)
 
 func _on_BackButton_pressed():
+	save_config()
+	
 	get_node("/root/SFXPlayer").play_sfx("SFXBack")
 	get_node("/root/global").goto_scene("res://Scenes/MainMenu.tscn")
 
@@ -33,7 +66,6 @@ func _on_slider_changed(value, slider_id):
 	else:
 		AudioServer.set_bus_mute(slider_id, false)
 
-# TODO: Allow multiple fullscreen resolutions.
 func _on_resolution_changed(width, height):
 	if (!OS.is_window_fullscreen()):
 		OS.set_window_size(Vector2(width, height))

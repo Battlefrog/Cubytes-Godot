@@ -2,7 +2,12 @@ extends Node
 
 const SAVE_PATH = "res://user_settings.cfg"
 
+var directory = Directory.new()
+var fileExists = directory.file_exists(SAVE_PATH)
+
 var config_file = ConfigFile.new()
+
+# Default settings, also what the file looks like
 var settings = {
 	"audio": {
 		"master_volume": 0.0,
@@ -17,8 +22,11 @@ var settings = {
 }
 
 func _ready():
-	save_settings()
-	load_settings()
+	if not fileExists:
+		save_settings()
+		load_settings()
+	else:
+		load_settings()
 
 func save_settings():
 	for section in settings.keys():
