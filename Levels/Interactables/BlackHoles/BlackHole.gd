@@ -22,10 +22,11 @@ func _on_Area2D_entered(body):
 		kill_player(body)
 
 func kill_player(player):
-	$Timer.stop()
-	player.call("die")
-	get_node("/root/SFXPlayer").play_sfx("SFXShooterShoot")
-	fade_out($AudioStreamPlayer2D)
+	if not player.dead:
+		$Timer.stop()
+		player.call("die")
+		get_node("/root/SFXPlayer").play_sfx("SFXShooterShoot")
+		fade_out($AudioStreamPlayer2D)
 
 # Fade out SFX
 func fade_out(stream):

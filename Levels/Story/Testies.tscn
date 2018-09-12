@@ -9,20 +9,7 @@
 [ext_resource path="res://Levels/Interactables/DecreaseSize/DecreaseSize.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Levels/ArcadeModeTimer.tscn" type="PackedScene" id=8]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 __meta__ = {
 "_edit_horizontal_guides_": [  ],

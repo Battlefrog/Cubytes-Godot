@@ -3,10 +3,11 @@
 [ext_resource path="res://UI/UITheme.tres" type="Theme" id=1]
 [ext_resource path="res://UI/Menus/ArcadeMode.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/TitleFont.tres" type="DynamicFont" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://Misc/icon.png" type="Texture" id=4]
 [ext_resource path="res://Fonts/TextFont.tres" type="DynamicFont" id=5]
 [ext_resource path="res://UI/Menus/MenuHeader.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/DarkPanel.tres" type="StyleBox" id=7]
+
 
 
 

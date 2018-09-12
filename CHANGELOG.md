@@ -77,12 +77,17 @@
 
 ## Alpha 6
 
+- Added Arcade Mode.
+- Added a completed game flag.
+- Added (but not implemented) Cheat Codes.
 - Added a black hole SFX.
 - Added black holes.
 - Added an additional background effect.
 - Added Explosion and Endblock particle effects.
-- Added Levels 31, 32, 33, 34, 35, 36, 37.
+- Added Levels 31, 32, 33, 34, 35, 36, 37, 38, 39.
+- Added Arcade Levels 1, 2, 3, 4, 5.
 - Changed version to Alpha 6.
 - Changed Pause Menu.
 - Fixed Player Death particles not playing everytime.
 - Increased Music Volume.
+- Switched Levels 23 and 25.

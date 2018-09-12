@@ -13,6 +13,7 @@ onready var PointRef = has_node("../Point")
 var velocity = Vector2()
 var start_position
 var respawn_position
+var dead
 
 var shrunk
 
@@ -23,6 +24,7 @@ func _ready():
 	start_position = get_transform()
 	respawn_position = start_position
 	shrunk = false
+	dead = false
 	
 	# Starting as 'big' by default
 	$BigSprite.visible = true
@@ -86,6 +88,8 @@ func collision_check(collisions):
 # When the Player dies
 # FIX: Particles don't play if the player dies too rapidly
 func die():
+	dead = true
+	
 	# Update death count
 	var death = ProjectSettings.get_setting("PLAYER_DEATHS")
 	ProjectSettings.set_setting("PLAYER_DEATHS", death + 1)
@@ -114,6 +118,7 @@ func die():
 		
 	show()
 	set_process(true)
+	dead = false
 
 func end_of_level():
 	set_process(false)

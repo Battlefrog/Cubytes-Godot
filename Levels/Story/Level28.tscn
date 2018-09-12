@@ -9,20 +9,6 @@
 [ext_resource path="res://Levels/Interactables/Points/Point.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Levels/Interactables/Flags/Flag.tscn" type="PackedScene" id=8]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [node name="root" type="Node"]
 
 __meta__ = {
@@ -40,7 +26,6 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 215, 595 )
 _sections_unfolded = [ "Transform" ]
 next_level_name = "Level29"
-arcade_mode = null
 
 [node name="Blocks" type="TileMap" parent="." index="2"]
 

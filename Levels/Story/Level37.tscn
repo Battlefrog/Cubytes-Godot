@@ -9,21 +9,7 @@
 [ext_resource path="res://Levels/Interactables/Bombs/Bomb.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Levels/Interactables/Flags/Flag.tscn" type="PackedScene" id=8]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[node name="root" type="Node" index="0"]
+[node name="root" type="Node"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 

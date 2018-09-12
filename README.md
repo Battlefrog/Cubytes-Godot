@@ -1,7 +1,7 @@
 # Cubytes-Godot
 
 ## Media
-![](media/screenshot_1.png)
+![](media/Screenshot.png)
 
 ## Description
 A remake of Cubytes with Godot 3.0.6, instead of the Chili Framework. I'll be adding new features to it as time goes on and hopefully by the end of it create a full-featured game.

@@ -10,21 +10,6 @@
 [ext_resource path="res://Levels/Interactables/DecreaseSize/DecreaseSize.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Levels/Interactables/Bombs/Bomb.tscn" type="PackedScene" id=9]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [node name="root" type="Node" index="0"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]

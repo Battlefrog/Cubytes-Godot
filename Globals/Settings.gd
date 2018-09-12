@@ -45,3 +45,4 @@ func load_settings():
 	for section in settings.keys():
 		for key in settings[section]:
 			settings[section][key] = config_file.set_value(section, key, null)
+			print(settings[section][key])
