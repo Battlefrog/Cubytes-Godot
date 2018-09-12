@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/In-Game/BlockTutorial.gd" type="Script" id=1]
+[ext_resource path="res://Effects/DefaultParticle.png" type="Texture" id=2]
+
+
+
+
+
+[node name="BlockTutorial" type="Node2D"]
+
+script = ExtResource( 1 )
+ui_name = "a block"
+ui_text = "n/a"
+ui_picture_path = ExtResource( 2 )
+
+

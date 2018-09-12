@@ -1,0 +1,83 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Levels/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Interactables/EndBlock/EndBlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Interactables/Points/Point.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/BlockTiles.tres" type="TileSet" id=4]
+[ext_resource path="res://UI/In-Game/GameUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Interactables/DecreaseSize/DecreaseSize.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/ArcadeModeTimer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/Interactables/Flags/Flag.tscn" type="PackedScene" id=8]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[node name="root" type="Node" index="0"]
+
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="Player" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 282, 197 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="EndBlock" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 997, 502 )
+_sections_unfolded = [ "Transform" ]
+next_level_name = ""
+arcade_mode = true
+
+[node name="Point" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 747, 402 )
+
+[node name="Blocks" type="TileMap" parent="." index="3"]
+
+position = Vector2( 212, 132 )
+mode = 0
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 65536, 0, 0, 65539, 0, 0, 131072, 0, 0, 131075, 0, 0, 196608, 0, 0, 196611, 0, 0, 262144, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 262165, 0, 0, 262166, 0, 0, 262167, 0, 0, 262168, 0, 0, 262169, 0, 0, 262170, 0, 0, 262171, 0, 0, 262172, 0, 0, 327680, 0, 0, 327683, 0, 0, 327708, 0, 0, 393216, 0, 0, 393219, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 393239, 0, 0, 393240, 0, 0, 393241, 0, 0, 393242, 0, 0, 393244, 0, 0, 458752, 0, 0, 458755, 0, 0, 458758, 0, 0, 458762, 0, 0, 458770, 0, 0, 458772, 0, 0, 458778, 0, 0, 458780, 0, 0, 524288, 0, 0, 524291, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524306, 0, 0, 524308, 0, 0, 524314, 0, 0, 524316, 0, 0, 589824, 0, 0, 589827, 0, 0, 589830, 0, 0, 589834, 0, 0, 589842, 0, 0, 589844, 0, 0, 589846, 0, 0, 589847, 0, 0, 589848, 0, 0, 589850, 0, 0, 589852, 0, 0, 655360, 0, 0, 655363, 0, 0, 655370, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655380, 0, 0, 655382, 0, 0, 655386, 0, 0, 655388, 0, 0, 720896, 0, 0, 720899, 0, 0, 720908, 0, 0, 720914, 0, 0, 720916, 0, 0, 720918, 0, 0, 720922, 0, 0, 720924, 0, 0, 786432, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786450, 0, 0, 786452, 0, 0, 786454, 0, 0, 786458, 0, 0, 786460, 0, 0, 851968, 0, 0, 851988, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 851996, 0, 0, 917504, 0, 0, 917524, 0, 0, 917532, 0, 0, 983040, 0, 0, 983041, 0, 0, 983042, 0, 0, 983043, 0, 0, 983044, 0, 0, 983045, 0, 0, 983046, 0, 0, 983047, 0, 0, 983048, 0, 0, 983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 983052, 0, 0, 983053, 0, 0, 983054, 0, 0, 983055, 0, 0, 983056, 0, 0, 983057, 0, 0, 983058, 0, 0, 983059, 0, 0, 983060, 0, 0, 983061, 0, 0, 983062, 0, 0, 983063, 0, 0, 983064, 0, 0, 983065, 0, 0, 983066, 0, 0, 983067, 0, 0, 983068, 0, 0 )
+
+[node name="GameUI" parent="." index="4" instance=ExtResource( 5 )]
+
+current_level_num = 2
+
+[node name="DecreaseSize" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 662, 517 )
+
+[node name="ArcadeModeTimer" parent="." index="6" instance=ExtResource( 7 )]
+
+[node name="Flag" parent="." index="7" instance=ExtResource( 8 )]
+
+position = Vector2( 757, 517 )
+
+

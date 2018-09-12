@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Effects/Background/BigCubes.tres" type="Material" id=1]
+[ext_resource path="res://Effects/DefaultParticle.png" type="Texture" id=2]
+
+
+
+
+
+
+
+
+[node name="Cubes_BIG" type="Particles2D"]
+
+position = Vector2( 1437.44, 356.796 )
+rotation = 1.5708
+emitting = true
+amount = 500
+lifetime = 6.5
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.2
+randomness = 0.3
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -500, 0, 1000, 1500 )
+local_coords = true
+draw_order = 0
+process_material = ExtResource( 1 )
+texture = ExtResource( 2 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform" ]
+
+

@@ -11,17 +11,17 @@ config_version=3
 [application]
 
 config/name="Cubytes"
-run/main_scene="res://Scenes/MainMenu.tscn"
+run/main_scene="res://UI/Menus/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-global="*res://Scripts/global.gd"
-Settings="*res://Scripts/Settings.gd"
-MusicPlayer="*res://Scenes/MusicPlayer.tscn"
-SFXPlayer="*res://Scenes/SFXPlayer.tscn"
-ParticlePlayer="*res://Scripts/ParticlePlayer.gd"
-Background="*res://Scenes/Background.tscn"
+global="*res://Globals/global.gd"
+Settings="*res://Globals/Settings.gd"
+SFXPlayer="*res://Globals/SFXPlayer.tscn"
+MusicPlayer="*res://Globals/MusicPlayer.tscn"
+ParticlePlayer="*res://Globals/ParticlePlayer.gd"
+Background="*res://Effects/Background/Background.tscn"
 
 [debug]
 

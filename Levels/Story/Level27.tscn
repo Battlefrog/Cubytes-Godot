@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Levels/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Interactables/EndBlock/EndBlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Interactables/Points/Point.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/BlockTiles.tres" type="TileSet" id=4]
+[ext_resource path="res://UI/In-Game/GameUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Interactables/Flags/Flag.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Interactables/Bombs/Bomb.tscn" type="PackedScene" id=7]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[node name="root" type="Node"]
+
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="Player" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 277, 417 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="EndBlock" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 1072, 212 )
+_sections_unfolded = [ "Transform" ]
+next_level_name = "Level28"
+arcade_mode = null
+
+[node name="Point" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 267, 542 )
+
+[node name="Blocks" type="TileMap" parent="." index="3"]
+
+position = Vector2( 157, 17 )
+mode = 0
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 262165, 0, 0, 262166, 0, 0, 262167, 0, 0, 262168, 0, 0, 262169, 0, 0, 262170, 0, 0, 262171, 0, 0, 262172, 0, 0, 262173, 0, 0, 262174, 0, 0, 327692, 0, 0, 327710, 0, 0, 393228, 0, 0, 393246, 0, 0, 458764, 0, 0, 458770, 0, 0, 458771, 0, 0, 458782, 0, 0, 524300, 0, 0, 524306, 0, 0, 524307, 0, 0, 524318, 0, 0, 589836, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 589854, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655390, 0, 0, 720897, 0, 0, 720926, 0, 0, 786433, 0, 0, 786462, 0, 0, 851969, 0, 0, 851998, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917534, 0, 0, 983041, 0, 0, 983059, 0, 0, 983070, 0, 0, 1048577, 0, 0, 1048606, 0, 0, 1114113, 0, 0, 1114121, 0, 0, 1114142, 0, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 0, 0, 1179671, 0, 0, 1179672, 0, 0, 1179673, 0, 0, 1179674, 0, 0, 1179675, 0, 0, 1179676, 0, 0, 1179677, 0, 0, 1179678, 0, 0 )
+
+[node name="GameUI" parent="." index="4" instance=ExtResource( 5 )]
+
+current_level_num = 27
+
+[node name="Flag" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 1072, 547 )
+
+[node name="Bomb" parent="." index="6" instance=ExtResource( 7 )]
+
+position = Vector2( 702, 277 )
+
+[node name="Bomb2" parent="." index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 827, 277 )
+
+[node name="Bomb3" parent="." index="8" instance=ExtResource( 7 )]
+
+position = Vector2( 882, 277 )
+
+[node name="Bomb4" parent="." index="9" instance=ExtResource( 7 )]
+
+position = Vector2( 937, 277 )
+
+[node name="Bomb5" parent="." index="10" instance=ExtResource( 7 )]
+
+position = Vector2( 992, 277 )
+
+

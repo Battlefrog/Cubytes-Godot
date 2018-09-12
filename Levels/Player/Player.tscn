@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Levels/Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Levels/Player/Player.png" type="Texture" id=2]
+[ext_resource path="res://Levels/Player/PlayerSmall.png" type="Texture" id=3]
+
+
+
+
+
+
+[sub_resource type="Shader" id=1]
+
+code = "shader_type canvas_item;"
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="ShaderMaterial" id=2]
+
+render_priority = 0
+shader = SubResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" index="0" groups=[
+"Player",
+]]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+player_speed = 750
+
+[node name="BigSprite" type="Sprite" parent="." index="0"]
+
+material = SubResource( 2 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Material" ]
+
+[node name="BigCollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="SmallSprite" type="Sprite" parent="." index="2"]
+
+visible = false
+texture = ExtResource( 3 )
+
+[node name="SmallCollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+
+visible = false
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+
