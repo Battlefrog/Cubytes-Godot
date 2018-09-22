@@ -5,7 +5,6 @@ var audio_bus = preload("res://Misc/default_bus_layout.tres")
 
 func _ready():
 	ProjectSettings.set_setting("PLAYER_DEATHS", 0)
-	ProjectSettings.set_setting("ARCADE_MODE", false)
 	ProjectSettings.set_setting("debug_mode", false)
 	ProjectSettings.set_setting("click_teleport", false)
 	ProjectSettings.set_setting("completed_story_mode", false)

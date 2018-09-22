@@ -37,6 +37,11 @@ func _ready():
 	set_process(true)
 	
 func _process(delta):
+	if ProjectSettings.get_setting("click_teleport"):
+		var mouse_pos = get_viewport().get_mouse_position()
+		if Input.is_mouse_button_pressed(BUTTON_LEFT):
+			position = mouse_pos
+	
 	velocity = Vector2()
 	
 	# Detecting Movement
