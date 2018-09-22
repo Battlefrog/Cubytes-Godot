@@ -1,18 +1,14 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Levels/Interactables/Bombs/Bomb.gd" type="Script" id=1]
+[ext_resource path="res://Levels/Interactables/Bombs/Bomb.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 16, 16 )
 
-[sub_resource type="StreamTexture" id=2]
-
-flags = 0
-load_path = "res://.import/Bomb.png-6390bb4e15be30d7d53b794053bcba48.stex"
-
-[node name="Bomb" type="StaticBody2D"]
+[node name="Bomb" type="StaticBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -30,7 +26,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
 z_index = -1
-texture = SubResource( 2 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
 

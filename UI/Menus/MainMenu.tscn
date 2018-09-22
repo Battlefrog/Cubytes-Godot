@@ -22,6 +22,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 1 )
 _sections_unfolded = [ "Size Flags", "Theme" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Panel" type="Panel" parent="." index="0"]
 
@@ -32,7 +35,7 @@ anchor_bottom = 0.0
 margin_left = 50.0
 margin_top = 120.0
 margin_right = 460.0
-margin_bottom = 715.0
+margin_bottom = 725.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0

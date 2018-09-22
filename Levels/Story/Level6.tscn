@@ -8,7 +8,7 @@
 [ext_resource path="res://UI/Menus/BlockTutorial.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Levels/Interactables/Bombs/Bomb.png" type="Texture" id=7]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
