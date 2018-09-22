@@ -37,3 +37,6 @@ func on_player_hit():
 			return
 		else:
 			get_node("/root/SFXPlayer").play_sfx("SFXEndBlockRefusal")
+
+func get_next_level():
+	return next_level_name

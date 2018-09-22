@@ -6,6 +6,8 @@ var is_paused = false
 var block_tutorial_active = false
 
 func _ready():
+	get_tree().set_pause(false)
+	
 	get_node("../Player").connect("player_died", self, "update_death_display")
 	get_node("../Player").connect("pause_game", self, "pause_game")
 	
@@ -31,6 +33,10 @@ func _process(delta):
 	if block_tutorial_active:
 		if Input.is_action_pressed("ui_accept"):
 			$BlockTutorial.hide()
+	
+	if Input.is_action_just_pressed("debug_mode_nextlevel"):
+		if ProjectSettings.get_setting("debug_mode"):
+			get_node("/root/global").goto_scene("res://Levels/Story/" + get_node("../EndBlock").get_next_level() + ".tscn")
 
 func update_death_display(death):
 	$DeathDisplay.set_text("Deaths: " + str(death))

@@ -256,6 +256,7 @@ _sections_unfolded = [ "Pause", "Rect", "Size Flags", "Theme" ]
 
 [node name="BlockTutorial" type="PopupPanel" parent="." index="5"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
