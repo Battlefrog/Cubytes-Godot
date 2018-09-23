@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Levels/Interactables/Laser/Laser.gd" type="Script" id=1]
+[ext_resource path="res://Levels/Interactables/Laser/Laser.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16, 16 )
+
+[sub_resource type="Gradient" id=2]
+
+offsets = PoolRealArray( 0, 1 )
+colors = PoolColorArray( 1, 0.984375, 0, 1, 1, 0.984314, 0.416667, 1 )
+
+[sub_resource type="SegmentShape2D" id=3]
+
+custom_solver_bias = 0.0
+a = Vector2( 0, 0 )
+b = Vector2( 0, 0 )
+
+[node name="Laser" type="StaticBody2D"]
+
+position = Vector2( 400, 600 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+laser_direction = 2
+laser_length = 20
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+[node name="Laser" type="Line2D" parent="." index="2"]
+
+points = PoolVector2Array(  )
+width = 6.0
+default_color = Color( 0.798437, 1, 0.4, 1 )
+gradient = SubResource( 2 )
+joint_mode = 2
+begin_cap_mode = 1
+end_cap_mode = 2
+sharp_limit = 2.0
+round_precision = 8
+_sections_unfolded = [ "Border", "Capping" ]
+
+[node name="LaserCollision" type="Area2D" parent="." index="3"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="LaserCollisionShape" type="CollisionShape2D" parent="LaserCollision" index="0"]
+
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[connection signal="body_entered" from="LaserCollision" to="." method="_on_body_entered"]
+
+
