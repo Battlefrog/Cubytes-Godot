@@ -19,7 +19,7 @@ custom_solver_bias = 0.0
 a = Vector2( 0, 0 )
 b = Vector2( 0, 0 )
 
-[node name="Laser" type="StaticBody2D"]
+[node name="Laser" type="StaticBody2D" index="0"]
 
 position = Vector2( 400, 600 )
 input_pickable = false
@@ -36,7 +36,9 @@ laser_length = 20
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+z_index = -1
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
@@ -44,6 +46,7 @@ shape = SubResource( 1 )
 
 [node name="Laser" type="Line2D" parent="." index="2"]
 
+z_index = -1
 points = PoolVector2Array(  )
 width = 6.0
 default_color = Color( 0.798437, 1, 0.4, 1 )
@@ -53,7 +56,7 @@ begin_cap_mode = 1
 end_cap_mode = 2
 sharp_limit = 2.0
 round_precision = 8
-_sections_unfolded = [ "Border", "Capping" ]
+_sections_unfolded = [ "Border", "Capping", "Z Index" ]
 
 [node name="LaserCollision" type="Area2D" parent="." index="3"]
 
