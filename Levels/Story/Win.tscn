@@ -4,10 +4,6 @@
 [ext_resource path="res://UI/Menus/Win.gd" type="Script" id=2]
 [ext_resource path="res://UI/Menus/MenuHeader.tscn" type="PackedScene" id=3]
 
-
-
-
-
 [node name="Node2D" type="Control" index="0"]
 
 anchor_left = 0.0
@@ -42,9 +38,9 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-text = "You've reached the end of Alpha 6!
+text = "You've reached the end of Alpha 7!
 
-Stay tuned for the release of Alpha 7!"
+Stay tuned for the release of Alpha 8!"
 align = 1
 valign = 1
 percent_visible = 1.0
