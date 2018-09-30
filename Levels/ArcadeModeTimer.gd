@@ -7,25 +7,14 @@ var level_time_min
 var level_time_sec
 
 func _ready():
-	starting_time = OS.get_time()
-	starting_time = starting_time.values()
+	starting_time = OS.get_unix_time()
 
 # TODO: Games longer than an hour will break and display the wrong time
 # TODO: Add ms support
 # TODO: This doesn't fucking work
 func on_level_complete():
-	ending_time = OS.get_time()
-	ending_time = ending_time.values()
+	ending_time = OS.get_unix_time()
 	
-	var s_min = starting_time[1]
-	var e_min = ending_time[1]
+	var finished_unix_time = ending_time - starting_time
 	
-	var s_sec = starting_time[2]
-	var e_sec = ending_time[2]
-	
-	level_time_min = e_min - s_min
-	level_time_sec = e_sec - s_sec
-	
-	print("min: " + str(level_time_min))
-	print("sec: " + str(level_time_sec))
-	
+	print("Ending Unix Time: " + str(finished_unix_time))
