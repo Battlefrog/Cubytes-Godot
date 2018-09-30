@@ -9,9 +9,7 @@ var level_time_sec
 func _ready():
 	starting_time = OS.get_unix_time()
 
-# TODO: Games longer than an hour will break and display the wrong time
-# TODO: Add ms support
-# TODO: This doesn't fucking work
+# TODO: Add ms support.
 func on_level_complete():
 	ending_time = OS.get_unix_time()
 	

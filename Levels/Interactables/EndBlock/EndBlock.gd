@@ -9,15 +9,9 @@ onready var PlayerRef = get_node("../Player")
 onready var ArcadeTimerRef = has_node("../ArcadeModeTimer")
 
 func _ready():
-	if arcade_mode:
-		ProjectSettings.set_setting("ARCADE_MODE", true)
-	else:
-		ProjectSettings.set_setting("ARCADE_NODE", false)
-	
 	if ArcadeTimerRef:
 		ArcadeTimerRef = get_node("../ArcadeModeTimer")
 
-# TODO: Play particle effect
 func on_player_hit():
 	if point_collected and not arcade_mode:
 		PlayerRef.end_of_level()

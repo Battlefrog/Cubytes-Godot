@@ -3,7 +3,6 @@ extends KinematicBody2D
 signal player_died
 signal pause_game
 
-# Doesn't need to be an export, though having it not a constant opens up some fun mechanics
 export (int) var player_speed = 750
 
 # The EndBlock is always going to be in the level with the Player
@@ -20,30 +19,30 @@ var shrunk
 func _ready():
 	if PointRef == false:
 		EndBlockRef.point_collected = true
-	
+
 	start_position = get_transform()
 	respawn_position = start_position
 	shrunk = false
 	dead = false
-	
+
 	# Starting as 'big' by default
 	$BigSprite.visible = true
 	$BigCollisionShape2D.disabled = false
 	$SmallCollisionShape2D.disabled = true
 	$SmallSprite.visible = false
-	
+
 	# Activate
 	show()
 	set_process(true)
-	
+
 func _process(delta):
 	if ProjectSettings.get_setting("click_teleport"):
 		var mouse_pos = get_viewport().get_mouse_position()
 		if Input.is_mouse_button_pressed(BUTTON_LEFT):
 			position = mouse_pos
-	
+
 	velocity = Vector2()
-	
+
 	# Detecting Movement
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
@@ -53,17 +52,18 @@ func _process(delta):
 		velocity.y -= 1
 	if Input.is_action_pressed("ui_down"):
 		velocity.y += 1
-	
-	# Pausing game TODO: Why is this in the player? Make another node for UI related process events.
+
+	# Pausing game
+	# TODO: Why is this in the player? Make another node for UI related process events, or just use the GameUI
 	if Input.is_action_pressed("ui_cancel"):
 		emit_signal("pause_game")
-	
+
 	# Getting collisions
 	var collision_info = move_and_collide(velocity.normalized() * player_speed * delta)
-	
+
 	# Responding to certain collisions
 	collision_check(collision_info)
-	
+
 	# Applying Movement
 	position += velocity * delta
 
@@ -75,7 +75,7 @@ func collision_check(collisions):
 			collisions.collider.call("on_player_hit")
 		elif collisions.collider.name == "Blocks":
 			get_node("/root/SFXPlayer").play_sfx("SFXIntoWall")
-			die()	
+			die()
 		elif collisions.collider.name == "Point":
 			EndBlockRef.point_collected = true
 			collisions.collider.call("on_player_hit")
@@ -94,33 +94,33 @@ func collision_check(collisions):
 # FIX: Particles don't play if the player dies too rapidly
 func die():
 	dead = true
-	
+
 	# Update death count
 	var death = ProjectSettings.get_setting("PLAYER_DEATHS")
 	ProjectSettings.set_setting("PLAYER_DEATHS", death + 1)
 	death = ProjectSettings.get_setting("PLAYER_DEATHS")
-	
+
 	#$PlayerDeathAnim.emitting = true
 	get_node("/root/ParticlePlayer").play_ptx("PTXPlayerDeath", get_transform())
-	
+
 	set_process(false)
-	
+
 	# Stopping player from moving
 	yield(get_tree().create_timer(0.50), "timeout")
-	
+
 	emit_signal("player_died", death)
-	
+
 	get_node("/root/SFXPlayer").play_sfx("SFXPlayerRespawn")
-	
+
 	position = respawn_position.get_origin()
-	
+
 	if !shrunk:
 		$BigCollisionShape2D.disabled = false
 		$SmallCollisionShape2D.disabled = true
 	else:
 		$BigCollisionShape2D.disabled = true
 		$SmallCollisionShape2D.disabled = false
-		
+
 	show()
 	set_process(true)
 	dead = false
@@ -128,11 +128,10 @@ func die():
 func end_of_level():
 	set_process(false)
 
-# Shrink the Player
 func shrink():
 	shrunk = true
 	player_speed = 500
-	
+
 	$BigSprite.visible = false
 	$SmallSprite.visible = true
 	$BigCollisionShape2D.disabled = true
