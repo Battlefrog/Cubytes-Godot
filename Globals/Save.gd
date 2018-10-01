@@ -28,6 +28,6 @@ func save_game():
 
 func load_game():
 	pass
-	
+
 func delete_save():
 	directory.remove(SAVE_PATH)
