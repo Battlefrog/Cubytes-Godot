@@ -17,7 +17,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 965, 380 )
 _sections_unfolded = [ "Transform" ]
-next_level_name = "Level41"
+next_level_name = "Level42"
 
 [node name="Blocks" type="TileMap" parent="." index="2"]
 
