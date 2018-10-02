@@ -5,13 +5,24 @@ const SEGMENT_LENGTH = 16
 
 export(DIRECTIONS) var laser_direction
 export(int) var laser_length
+export(bool) var timed_laser
+export(float) var timed_laser_time
 
 var x_offset = 0
 var y_offset = 0
 var x_change = 0
 var y_change = 0
 
+var laser_on = true
+
+var collision_shape
+
 func _ready():
+	if timed_laser == true:
+		$Laser.set_gradient(preload("res://Levels/Interactables/Laser/TimedLaserGradient.tres"))
+		$Sprite.set_texture(preload("res://Levels/Interactables/Laser/TimedLaser.png"))
+		$TimedTimer.set_wait_time(timed_laser_time)
+	
 	# Setting offset based on direction
 	if laser_direction == DIRECTIONS.Left:
 		x_offset = -SEGMENT_LENGTH
@@ -28,10 +39,7 @@ func _ready():
 		x_change += x_offset
 		y_change += y_offset
 	
-	var shape = SegmentShape2D.new()
-	shape.set_a(Vector2(self.x_change, self.y_change))
-	shape.set_b(Vector2(0, 0))
-	$LaserCollision.shape_owner_add_shape($LaserCollision.create_shape_owner(self), shape)
+	add_collision()
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
@@ -41,3 +49,27 @@ func kill_player(player):
 	if not player.dead:
 		player.call("die")
 		get_node("/root/SFXPlayer").play_sfx("SFXShooterShoot")
+
+func _on_timeout():
+	if timed_laser == true:
+		laser_on = !laser_on
+		
+		if laser_on:
+			$Laser.set_visible(true)
+			$LaserCollision.shape_owner_set_disabled(collision_shape, false)
+			
+		else:
+			$Laser.set_visible(false)
+			$LaserCollision.shape_owner_set_disabled(collision_shape, true)
+		
+		$TimedTimer.stop()
+		$TimedTimer.start()
+
+func add_collision():
+	var shape = SegmentShape2D.new()
+	shape.set_a(Vector2(self.x_change, self.y_change))
+	shape.set_b(Vector2(0, 0))
+	
+	collision_shape = $LaserCollision.create_shape_owner(self)
+	$LaserCollision.shape_owner_add_shape(collision_shape, shape)
+	

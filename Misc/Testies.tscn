@@ -57,5 +57,6 @@ current_level_num = -999
 
 position = Vector2( 690, 470 )
 laser_length = 10
+timed_laser = true
 
 

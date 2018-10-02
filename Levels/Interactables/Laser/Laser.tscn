@@ -2,16 +2,12 @@
 
 [ext_resource path="res://Levels/Interactables/Laser/Laser.gd" type="Script" id=1]
 [ext_resource path="res://Levels/Interactables/Laser/Laser.png" type="Texture" id=2]
+[ext_resource path="res://Levels/Interactables/Laser/LaserGradient.tres" type="Gradient" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 16, 16 )
-
-[sub_resource type="Gradient" id=2]
-
-offsets = PoolRealArray( 0, 1 )
-colors = PoolColorArray( 1, 0.984375, 0, 1, 1, 0.984314, 0.416667, 1 )
 
 [node name="Laser" type="StaticBody2D"]
 
@@ -27,6 +23,8 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 laser_direction = 2
 laser_length = 20
+timed_laser = null
+timed_laser_time = 2.0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -43,15 +41,15 @@ shape = SubResource( 1 )
 z_index = -1
 points = PoolVector2Array(  )
 width = 6.0
-default_color = Color( 0.798437, 1, 0.4, 1 )
-gradient = SubResource( 2 )
+default_color = Color( 0, 0, 0, 1 )
+gradient = ExtResource( 3 )
 texture_mode = 696638046
 joint_mode = 2
 begin_cap_mode = 1
 end_cap_mode = 2
 sharp_limit = 2.0
 round_precision = 8
-_sections_unfolded = [ "Border", "Capping", "Z Index" ]
+_sections_unfolded = [ "Border", "Capping", "Fill", "Z Index" ]
 
 [node name="LaserCollision" type="Area2D" parent="." index="3"]
 
@@ -64,6 +62,15 @@ audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
 
+[node name="TimedTimer" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = false
+autostart = true
+
 [connection signal="body_entered" from="LaserCollision" to="." method="_on_body_entered"]
+
+[connection signal="timeout" from="TimedTimer" to="." method="_on_timeout"]
 
 
