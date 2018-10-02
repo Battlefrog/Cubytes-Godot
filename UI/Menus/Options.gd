@@ -45,6 +45,13 @@ func _ready():
 	$TabContainer/Audio/MasterText/MasterSlider.set_value(master_slider)
 	$TabContainer/Audio/MusicText/MusicSlider.set_value(music_slider)
 	$TabContainer/Audio/SFXText/SFXSlider.set_value(sfx_slider)
+	
+	for i in cheats:
+		if ProjectSettings.get_setting(i):
+			var cheat_instance = cheat.instance()
+			cheat_instance.set_name(i)
+			cheat_instance.set_text(i)
+			activate_cheat(cheat_instance)
 
 func _on_BackButton_pressed():
 	save_config()
@@ -78,7 +85,8 @@ func activate_cheat(cheat):
 	$TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats.add_child(cheat)
 	$TabContainer/Gameplay/IncorrectCheatText.hide()
 	
-	ProjectSettings.set_setting(cheat.get_name(), true)
+	if not ProjectSettings.get_setting(cheat.get_name()):
+		ProjectSettings.set_setting(cheat.get_name(), true)
 
 func _on_Cheat_text_entered(new_text):
 	if cheats.has(new_text):
