@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Levels/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Interactables/EndBlock/EndBlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/BlockTiles.tres" type="TileSet" id=3]
+[ext_resource path="res://UI/In-Game/GameUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Interactables/Laser/Laser.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Interactables/DecreaseSize/DecreaseSize.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Interactables/Bombs/Bomb.tscn" type="PackedScene" id=7]
+
+[node name="root" type="Node"]
+
+[node name="Player" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 418, 515 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="EndBlock" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 963, 515 )
+_sections_unfolded = [ "Transform" ]
+next_level_name = "Level44"
+
+[node name="Blocks" type="TileMap" parent="." index="2"]
+
+position = Vector2( 705, -573 )
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = true
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 1703922, 0, 0, 1703923, 0, 0, 1703924, 0, 0, 1703925, 0, 0, 1703926, 0, 0, 1703927, 0, 0, 1703928, 0, 0, 1703929, 0, 0, 1703930, 0, 0, 1703931, 0, 0, 1703932, 0, 0, 1703933, 0, 0, 1703934, 0, 0, 1703935, 0, 0, 1638400, 0, 0, 1638401, 0, 0, 1638402, 0, 0, 1638403, 0, 0, 1638404, 0, 0, 1638405, 0, 0, 1638406, 0, 0, 1638407, 0, 0, 1638408, 0, 0, 1638409, 0, 0, 1638410, 0, 0, 1638411, 0, 0, 1638412, 0, 0, 1769458, 0, 0, 1703948, 0, 0, 1834994, 0, 0, 1769484, 0, 0, 1900530, 0, 0, 1835020, 0, 0, 1966066, 0, 0, 1966072, 0, 0, 1966073, 0, 0, 1966074, 0, 0, 1966075, 0, 0, 1966076, 0, 0, 1966077, 0, 0, 1966078, 0, 0, 1966079, 0, 0, 1900544, 0, 0, 1900545, 0, 0, 1900546, 0, 0, 1900547, 0, 0, 1900548, 0, 0, 1900549, 0, 0, 1900550, 0, 0, 1900556, 0, 0, 2031602, 0, 0, 2031608, 0, 0, 1966086, 0, 0, 1966092, 0, 0, 2097138, 0, 0, 2097144, 0, 0, 2031622, 0, 0, 2031628, 0, 0, 2162674, 0, 0, 2162680, 0, 0, 2097158, 0, 0, 2097164, 0, 0, 2228210, 0, 0, 2228216, 0, 0, 2162694, 0, 0, 2162700, 0, 0, 2293746, 0, 0, 2293752, 0, 0, 2228230, 0, 0, 2228236, 0, 0, 2359282, 0, 0, 2359283, 0, 0, 2359284, 0, 0, 2359285, 0, 0, 2359286, 0, 0, 2359287, 0, 0, 2359288, 0, 0, 2293766, 0, 0, 2293767, 0, 0, 2293768, 0, 0, 2293769, 0, 0, 2293770, 0, 0, 2293771, 0, 0, 2293772, 0, 0 )
+_sections_unfolded = [ "Cell", "Collision", "Material", "Occluder", "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="GameUI" parent="." index="3" instance=ExtResource( 4 )]
+
+current_level_num = 43
+
+[node name="Laser" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 315, 310 )
+laser_direction = 1
+laser_length = 49
+
+[node name="DecreaseSize" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 323, 430 )
+
+[node name="Bomb" parent="." index="6" instance=ExtResource( 7 )]
+
+position = Vector2( 418, 430 )
+
+[node name="Bomb2" parent="." index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 953, 420 )
+
+[node name="Bomb3" parent="." index="8" instance=ExtResource( 7 )]
+
+position = Vector2( 998, 420 )
+
+
