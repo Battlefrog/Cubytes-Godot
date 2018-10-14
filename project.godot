@@ -22,6 +22,7 @@ SFXPlayer="*res://Globals/SFXPlayer.tscn"
 MusicPlayer="*res://Globals/MusicPlayer.tscn"
 ParticlePlayer="*res://Globals/ParticlePlayer.gd"
 Background="*res://Effects/Background/Background.tscn"
+scores="*res://Globals/scores.gd"
 
 [debug]
 

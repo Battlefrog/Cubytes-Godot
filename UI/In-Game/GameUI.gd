@@ -83,3 +83,6 @@ func show_block_tutorial(block_text, texture_path, block_name):
 func _on_BlockTutorial_popup_hide():
 	get_tree().set_pause(false)
 	get_node("/root/MusicPlayer").play_level_music()
+
+func get_current_level_num():
+	return current_level_num

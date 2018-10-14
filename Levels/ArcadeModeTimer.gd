@@ -15,4 +15,4 @@ func on_level_complete():
 	
 	var finished_unix_time = ending_time - starting_time
 	
-	print("Ending Unix Time: " + str(finished_unix_time))
+	get_node("/root/scores").add_to_highscores(finished_unix_time, get_node("../GameUI").get_current_level_num())
