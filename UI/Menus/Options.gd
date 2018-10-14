@@ -7,9 +7,8 @@ var cheats = {
 
 var cheat = preload("res://UI/Menus/CheatDisplay.tscn")
 
-# TODO: Make this get the SAVE_PATH from Settings
-var config_file = "res://user_settings.cfg"
-var config = ConfigFile.new()
+onready var config_file = get_node("/root/Settings").get_config_file_path()
+onready var config = get_node("/root/Settings").get_config_file()
 
 var vsync
 var fullscreen
@@ -83,14 +82,16 @@ func _on_TabContainer_tab_selected(tab):
 
 func activate_cheat(cheat):
 	$TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats.add_child(cheat)
-	$TabContainer/Gameplay/IncorrectCheatText.hide()
+	$TabContainer/Gameplay/CheatWarning.hide()
 	
 	if not ProjectSettings.get_setting(cheat.get_name()):
 		ProjectSettings.set_setting(cheat.get_name(), true)
 
 func _on_Cheat_text_entered(new_text):
+	var b
+	
 	if cheats.has(new_text):
-			$TabContainer/Gameplay/IncorrectCheatText.hide()
+			$TabContainer/Gameplay/CheatWarning.hide()
 			var cheat_instance = cheat.instance()
 			cheat_instance.set_name(new_text)
 			cheat_instance.set_text(new_text)
@@ -99,12 +100,18 @@ func _on_Cheat_text_entered(new_text):
 				activate_cheat(cheat_instance)
 			else:
 				for child in $TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats.get_children():
-					if child.get_text() == "debug_mode" and new_text == "debug_mode":
-						break
-					elif child.get_text() == "click_teleport" and new_text == "click_teleport":
-						break
-					else:
-						activate_cheat(cheat_instance)
+					for cheat in cheats:
+						if child.get_text() == cheat and new_text == cheat:
+							$TabContainer/Gameplay/CheatWarning.set_text("Cheat already activated!")
+							$TabContainer/Gameplay/CheatWarning.show()
+							b = true
+							break
+						else:
+							continue
+							
+				if not b:
+					activate_cheat(cheat_instance)
 	else:
-		$TabContainer/Gameplay/IncorrectCheatText.show()
+		$TabContainer/Gameplay/CheatWarning.set_text("Incorrect cheat!")
+		$TabContainer/Gameplay/CheatWarning.show()
 	$TabContainer/Gameplay/CheatEnter.clear()

@@ -4,7 +4,6 @@ const SAVE_PATH = "res://user_settings.cfg"
 
 var directory = Directory.new()
 var fileExists = directory.file_exists(SAVE_PATH)
-
 var config_file = ConfigFile.new()
 
 # Default settings, also what the file looks like
@@ -45,4 +44,9 @@ func load_settings():
 	for section in settings.keys():
 		for key in settings[section]:
 			settings[section][key] = config_file.set_value(section, key, null)
-			print(settings[section][key])
+
+func get_config_file():
+	return config_file
+
+func get_config_file_path():
+	return SAVE_PATH

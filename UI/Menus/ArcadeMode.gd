@@ -1,6 +1,7 @@
 extends Control
 
 var wanted_level
+var wanted_level_num
 
 func _on_BackButton_pressed():
 	get_node("/root/SFXPlayer").play_sfx("SFXBack")
@@ -11,25 +12,13 @@ func level_pressed(num, description):
 	
 	$LevelDetails/LevelName.set_text("Level " + str(num))
 	$LevelDetails/LevelDescription.set_text(description)
+	
+	wanted_level_num = num
 
 func _on_PlayButton_pressed():
 	get_node("/root/SFXPlayer").play_sfx("SFXAccept")
-	
-	if $LevelDetails/LevelName.text == "Level 1":
-		wanted_level = "res://Levels/Arcade/Level1.tscn"
-		play_button_check()
-	elif $LevelDetails/LevelName.text == "Level 2":
-		wanted_level = "res://Levels/Arcade/Level2.tscn"
-		play_button_check()
-	elif $LevelDetails/LevelName.text == "Level 3":
-		wanted_level = "res://Levels/Arcade/Level3.tscn"
-		play_button_check()
-	elif $LevelDetails/LevelName.text == "Level 4":
-		wanted_level = "res://Levels/Arcade/Level4.tscn"
-		play_button_check()
-	elif $LevelDetails/LevelName.text == "Level 5":
-		wanted_level = "res://Levels/Arcade/Level5.tscn"
-		play_button_check()
+	wanted_level = "res://Levels/Arcade/Level" + str(wanted_level_num) + ".tscn"
+	play_button_check()
 
 func play_button_check():
 	if ProjectSettings.get_setting("completed_story_mode") == false:

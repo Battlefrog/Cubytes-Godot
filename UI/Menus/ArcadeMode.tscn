@@ -8,12 +8,6 @@
 [ext_resource path="res://UI/Menus/MenuHeader.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/DarkPanel.tres" type="StyleBox" id=7]
 
-
-
-
-
-
-
 [node name="Node2D" type="Control"]
 
 anchor_left = 0.0
@@ -31,6 +25,9 @@ size_flags_vertical = 1
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Theme" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="BackButton" type="Button" parent="." index="0"]
 
@@ -229,7 +226,7 @@ anchor_bottom = 0.0
 margin_left = 70.0
 margin_top = 110.0
 margin_right = 390.0
-margin_bottom = 560.0
+margin_bottom = 585.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -247,8 +244,8 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 20.0
 margin_top = 10.0
-margin_right = 310.0
-margin_bottom = 440.0
+margin_right = 300.0
+margin_bottom = 460.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -265,7 +262,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 290.0
+margin_right = 280.0
 margin_bottom = 90.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -334,7 +331,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 120.0
-margin_right = 290.0
+margin_right = 280.0
 margin_bottom = 210.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -404,7 +401,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 240.0
-margin_right = 290.0
+margin_right = 280.0
 margin_bottom = 330.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -437,6 +434,102 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 text = "5"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Level6" type="Button" parent="LevelList/Levels/row3" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 150.0
+margin_right = 280.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 130, 90 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "6"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="row4" type="HBoxContainer" parent="LevelList/Levels" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 360.0
+margin_right = 280.0
+margin_bottom = 450.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 20
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="Level7" type="Button" parent="LevelList/Levels/row4" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 130.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 130, 90 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "7"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Level8" type="Button" parent="LevelList/Levels/row4" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 150.0
+margin_right = 280.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 130, 90 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "8"
 flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
