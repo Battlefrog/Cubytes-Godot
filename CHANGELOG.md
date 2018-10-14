@@ -1,4 +1,4 @@
-# Cubytes Changelog
+# Cubytes Changelog (Alpha)
 
 ## Alpha 3
 
@@ -91,3 +91,12 @@
 - Fixed Player Death particles not playing everytime.
 - Increased Music Volume.
 - Switched Levels 23 and 25.
+
+## Alpha 7
+
+- Added 'debug_mode' and 'click_teleport' Cheat Codes.
+- Added Timed Laser and Laser blocks.
+- Added ability to press Enter instead of click to quit Block Tutorial.
+- Added Levels 40, 41, 42, 43, 44, 45.
+- Changed version to Alpha 7.
+- Fixed Cheats not showing up on load into Gameplay tab of the Options Menu.
