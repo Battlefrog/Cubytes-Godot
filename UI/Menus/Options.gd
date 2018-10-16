@@ -89,7 +89,6 @@ func activate_cheat(cheat):
 
 func _on_Cheat_text_entered(new_text):
 	var b
-	
 	if cheats.has(new_text):
 			$TabContainer/Gameplay/CheatWarning.hide()
 			var cheat_instance = cheat.instance()
@@ -108,7 +107,6 @@ func _on_Cheat_text_entered(new_text):
 							break
 						else:
 							continue
-							
 				if not b:
 					activate_cheat(cheat_instance)
 	else:

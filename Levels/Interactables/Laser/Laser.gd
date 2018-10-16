@@ -57,7 +57,6 @@ func _on_timeout():
 		if laser_on:
 			$Laser.set_visible(true)
 			$LaserCollision.shape_owner_set_disabled(collision_shape, false)
-			
 		else:
 			$Laser.set_visible(false)
 			$LaserCollision.shape_owner_set_disabled(collision_shape, true)
