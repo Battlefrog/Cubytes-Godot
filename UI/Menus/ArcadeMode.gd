@@ -3,6 +3,10 @@ extends Control
 var wanted_level
 var wanted_level_num
 
+func _ready():
+	$LevelDetails.show()
+	$HighScore.hide()
+
 func _on_BackButton_pressed():
 	get_node("/root/SFXPlayer").play_sfx("SFXBack")
 	get_node("/root/global").goto_scene("res://UI/Menus/ModeSelection.tscn")
@@ -12,6 +16,9 @@ func level_pressed(num, description):
 	
 	$LevelDetails/LevelName.set_text("Level " + str(num))
 	$LevelDetails/LevelDescription.set_text(description)
+	
+	if num != 0:
+		change_highscore_menu(num)
 	
 	wanted_level_num = num
 
@@ -33,11 +40,28 @@ func _on_YesButton_pressed():
 	load_arcade_level()
 
 func _on_NoButton_pressed():
-	$LevelLoadWarning.hide()
 	get_node("/root/SFXPlayer").play_sfx("SFXBack")
+	$LevelLoadWarning.hide()
 
 func load_arcade_level():
 	$LevelLoadWarning.hide()
 	get_node("/root/SFXPlayer").play_sfx("SFXAccept")
 	get_node("/root/MusicPlayer").play_level_music()
 	get_node("/root/global").goto_scene(wanted_level)
+
+func _on_HighScoreButton_pressed():
+	get_node("/root/SFXPlayer").play_sfx("SFXAccept")
+	$LevelDetails.hide()
+	$HighScore.show()
+
+func _on_HighScoreBack_pressed():
+	get_node("/root/SFXPlayer").play_sfx("SFXBack")
+	$LevelDetails.show()
+	$HighScore.hide()
+
+func change_highscore_menu(num):
+	var time = get_node("/root/scores").get_highscore(num)
+	print(time)
+	
+	$HighScore/Level.set_text("Level " + str(num) + ":")
+	$HighScore/Time.set_text(str(time) + " sec")

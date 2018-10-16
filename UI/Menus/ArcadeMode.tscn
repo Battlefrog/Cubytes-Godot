@@ -8,7 +8,7 @@
 [ext_resource path="res://UI/Menus/MenuHeader.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/DarkPanel.tres" type="StyleBox" id=7]
 
-[node name="Node2D" type="Control"]
+[node name="Node2D" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -106,9 +106,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 400.0
+margin_left = 395.0
 margin_top = 60.0
-margin_right = 630.0
+margin_right = 625.0
 margin_bottom = 280.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -124,9 +124,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 410.0
+margin_left = 405.0
 margin_top = 70.0
-margin_right = 620.0
+margin_right = 615.0
 margin_bottom = 270.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -652,9 +652,125 @@ flat = false
 align = 1
 _sections_unfolded = [ "Size Flags" ]
 
+[node name="HighScore" type="Panel" parent="." index="5"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 610.0
+margin_top = 110.0
+margin_right = 1250.0
+margin_bottom = 560.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Theme" ]
+
+[node name="Title" type="Label" parent="HighScore" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 640.0
+margin_bottom = 70.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+text = "High Score"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Level" type="Label" parent="HighScore" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 90.0
+margin_top = 170.0
+margin_right = 305.0
+margin_bottom = 231.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+text = "Level 0:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Time" type="Label" parent="HighScore" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 305.0
+margin_top = 170.0
+margin_right = 595.0
+margin_bottom = 231.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+text = "0 sec"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="HighScoreBack" type="Button" parent="HighScore" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 160.0
+margin_top = 350.0
+margin_right = 475.0
+margin_bottom = 435.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Back"
+flat = false
+align = 1
+
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 
 [connection signal="pressed" from="LevelDetails/PlayButton" to="." method="_on_PlayButton_pressed"]
+
+[connection signal="pressed" from="LevelDetails/HighScoreButton" to="." method="_on_HighScoreButton_pressed"]
 
 [connection signal="pressed" from="LevelList/Levels/row/Level1" to="." method="level_pressed" binds= [ 1, "Bombs, bombs, and bombs. Oh my!" ]]
 
@@ -669,5 +785,7 @@ _sections_unfolded = [ "Size Flags" ]
 [connection signal="pressed" from="LevelLoadWarning/HBoxContainer/YesButton" to="." method="_on_YesButton_pressed"]
 
 [connection signal="pressed" from="LevelLoadWarning/HBoxContainer/NoButton" to="." method="_on_NoButton_pressed"]
+
+[connection signal="pressed" from="HighScore/HighScoreBack" to="." method="_on_HighScoreBack_pressed"]
 
 
