@@ -51,12 +51,15 @@ func implement_settings():
 	get_config_file().load(get_config_file_path())
 	
 	OS.set_use_vsync(config_file.get_value("window", "v-sync"))
-	OS.set_window_fullscreen(config_file.get_value("window", "fullscreen"))
-	OS.set_window_size(config_file.get_value("window", "resolution"))
-	OS.center_window()
 	AudioServer.set_bus_volume_db(0, config_file.get_value("audio", "master_volume"))
 	AudioServer.set_bus_volume_db(1, config_file.get_value("audio", "sfx_volume"))
 	AudioServer.set_bus_volume_db(2, config_file.get_value("audio", "music_volume"))
+	
+	if config_file.get_value("window", "fullscreen") == true:
+		OS.set_window_fullscreen(config_file.get_value("window", "fullscreen"))
+	else:
+		OS.set_window_size(config_file.get_value("window", "resolution"))
+		OS.center_window()
 	
 	# Mute audio channels instead of being at -24db
 	for i in range(3):
