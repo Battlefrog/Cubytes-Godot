@@ -1,7 +1,7 @@
 extends Control
 
 var wanted_level
-var wanted_level_num
+var wanted_level_num = 0
 
 func _ready():
 	$LevelDetails.show()
@@ -50,9 +50,10 @@ func load_arcade_level():
 	get_node("/root/global").goto_scene(wanted_level)
 
 func _on_HighScoreButton_pressed():
-	get_node("/root/SFXPlayer").play_sfx("SFXAccept")
-	$LevelDetails.hide()
-	$HighScore.show()
+	if wanted_level_num != 0:
+		get_node("/root/SFXPlayer").play_sfx("SFXAccept")
+		$LevelDetails.hide()
+		$HighScore.show()
 
 func _on_HighScoreBack_pressed():
 	get_node("/root/SFXPlayer").play_sfx("SFXBack")
