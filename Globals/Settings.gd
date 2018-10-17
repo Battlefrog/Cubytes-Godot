@@ -2,8 +2,9 @@ extends Node
 
 const SAVE_PATH = "res://user_settings.cfg"
 
-var directory = Directory.new()
-var fileExists = directory.file_exists(SAVE_PATH)
+var dir = Directory.new()
+var fileExists = dir.file_exists(SAVE_PATH)
+
 var config_file = ConfigFile.new()
 
 # Default settings, also what the file looks like
@@ -24,8 +25,10 @@ func _ready():
 	if not fileExists:
 		save_settings()
 		load_settings()
+		implement_settings()
 	else:
 		load_settings()
+		implement_settings()
 
 func save_settings():
 	for section in settings.keys():
@@ -35,7 +38,6 @@ func save_settings():
 	config_file.save(SAVE_PATH)
 
 func load_settings():
-	# Open the file
 	var err = config_file.load(SAVE_PATH)
 	if err != OK:
 		printerr("Failed loading settings! Error code: " + err)
@@ -44,6 +46,23 @@ func load_settings():
 	for section in settings.keys():
 		for key in settings[section]:
 			settings[section][key] = config_file.set_value(section, key, null)
+
+func implement_settings():
+	get_config_file().load(get_config_file_path())
+	
+	OS.set_use_vsync(config_file.get_value("window", "v-sync"))
+	OS.set_window_fullscreen(config_file.get_value("window", "fullscreen"))
+	OS.set_window_size(config_file.get_value("window", "resolution"))
+	AudioServer.set_bus_volume_db(0, config_file.get_value("audio", "master_volume"))
+	AudioServer.set_bus_volume_db(1, config_file.get_value("audio", "sfx_volume"))
+	AudioServer.set_bus_volume_db(2, config_file.get_value("audio", "music_volume"))
+	
+	# Mute audio channels instead of being at -24db
+	for i in range(3):
+		if AudioServer.get_bus_volume_db(i) == -24:
+			AudioServer.set_bus_mute(i, true)
+		else:
+			AudioServer.set_bus_mute(i, false)
 
 func get_config_file():
 	return config_file

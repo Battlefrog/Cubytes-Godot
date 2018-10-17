@@ -23,6 +23,7 @@ func load_config():
 func save_config():
 	config.set_value("window", "v-sync", get_node("TabContainer/Graphics/VsyncToggle").is_pressed())
 	config.set_value("window", "fullscreen", get_node("TabContainer/Graphics/FullscreenToggle").is_pressed())
+	config.set_value("window", "resolution", resolution)
 	config.set_value("audio", "master_volume", get_node("TabContainer/Audio/MasterText/MasterSlider").get_value())
 	config.set_value("audio", "music_volume", get_node("TabContainer/Audio/MusicText/MusicSlider").get_value())
 	config.set_value("audio", "sfx_volume", get_node("TabContainer/Audio/SFXText/SFXSlider").get_value())
@@ -34,17 +35,19 @@ func _ready():
 	
 	vsync = config.get_value("window", "v-sync")
 	fullscreen = config.get_value("window", "fullscreen")
+	resolution = config.get_value("window", "resolution")
 	master_slider = config.get_value("audio", "master_volume")
 	music_slider = config.get_value("audio", "music_volume")
 	sfx_slider = config.get_value("audio", "sfx_volume")
 	
-	$TabContainer/Graphics/VsyncToggle.pressed = vsync
-	$TabContainer/Graphics/FullscreenToggle.pressed = fullscreen
-	
+	$TabContainer/Graphics/VsyncToggle.set_pressed(vsync)
+	$TabContainer/Graphics/FullscreenToggle.set_pressed(fullscreen)
 	$TabContainer/Audio/MasterText/MasterSlider.set_value(master_slider)
 	$TabContainer/Audio/MusicText/MusicSlider.set_value(music_slider)
 	$TabContainer/Audio/SFXText/SFXSlider.set_value(sfx_slider)
+	_on_resolution_changed(resolution.x, resolution.y)
 	
+	# Loading cheat display for cheats already activated beforehand
 	for i in cheats:
 		if ProjectSettings.get_setting(i):
 			var cheat_instance = cheat.instance()
@@ -76,6 +79,7 @@ func _on_resolution_changed(width, height):
 	if (!OS.is_window_fullscreen()):
 		OS.set_window_size(Vector2(width, height))
 		OS.center_window()
+		resolution = Vector2(width, height)
 
 func _on_TabContainer_tab_selected(tab):
 	get_node("/root/SFXPlayer").play_sfx("SFXAccept")
