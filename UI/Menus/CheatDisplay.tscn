@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Fonts/TextFont.tres" type="DynamicFont" id=1]
 
-[node name="cheat" type="Label" groups=[
+[node name="cheat" type="Label" index="0" groups=[
 "Cheats",
 ]]
 
@@ -19,11 +19,38 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 1 )
+custom_constants/line_spacing = 0
 text = "cheat"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Rect" ]
+
+[node name="deactivate" type="Button" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 320.0
+margin_right = 360.0
+margin_bottom = 35.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "*"
+flat = false
+align = 1
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 

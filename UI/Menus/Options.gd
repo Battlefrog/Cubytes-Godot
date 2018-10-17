@@ -88,8 +88,21 @@ func activate_cheat(cheat):
 	$TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats.add_child(cheat)
 	$TabContainer/Gameplay/CheatWarning.hide()
 	
+	var exit = cheat.get_child(0)
+	exit.connect("pressed", self, "on_cheat_clear_pressed", [cheat])
+	
 	if not ProjectSettings.get_setting(cheat.get_name()):
 		ProjectSettings.set_setting(cheat.get_name(), true)
+
+func deactivate_cheat(cheat):
+	$TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats.remove_child(cheat)
+	$TabContainer/Gameplay/CheatWarning.hide()
+	
+	if ProjectSettings.get_setting(cheat.get_name()):
+		ProjectSettings.set_setting(cheat.get_name(), false)
+
+func on_cheat_clear_pressed(cheat):
+	deactivate_cheat(cheat)
 
 func _on_Cheat_text_entered(new_text):
 	var b
