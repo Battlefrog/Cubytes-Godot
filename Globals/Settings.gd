@@ -53,6 +53,7 @@ func implement_settings():
 	OS.set_use_vsync(config_file.get_value("window", "v-sync"))
 	OS.set_window_fullscreen(config_file.get_value("window", "fullscreen"))
 	OS.set_window_size(config_file.get_value("window", "resolution"))
+	OS.center_window()
 	AudioServer.set_bus_volume_db(0, config_file.get_value("audio", "master_volume"))
 	AudioServer.set_bus_volume_db(1, config_file.get_value("audio", "sfx_volume"))
 	AudioServer.set_bus_volume_db(2, config_file.get_value("audio", "music_volume"))
