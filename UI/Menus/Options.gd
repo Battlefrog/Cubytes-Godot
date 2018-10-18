@@ -10,6 +10,9 @@ var cheat = preload("res://UI/Menus/CheatDisplay.tscn")
 onready var config_file = get_node("/root/Settings").get_config_file_path()
 onready var config = get_node("/root/Settings").get_config_file()
 
+onready var save_file = get_node("/root/Save").get_config_file_path()
+onready var save = get_node("/root/Save").get_config_file()
+
 var vsync
 var fullscreen
 var master_slider
@@ -19,6 +22,7 @@ var resolution
 
 func load_config():
 	config.load(config_file)
+	save.load(save_file)
 
 func save_config():
 	config.set_value("window", "v-sync", get_node("TabContainer/Graphics/VsyncToggle").is_pressed())
@@ -28,7 +32,11 @@ func save_config():
 	config.set_value("audio", "music_volume", get_node("TabContainer/Audio/MusicText/MusicSlider").get_value())
 	config.set_value("audio", "sfx_volume", get_node("TabContainer/Audio/SFXText/SFXSlider").get_value())
 	
+	if $TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats.get_children().size() > 0 and save.get_value("story", "used_cheats") == false:
+		save.set_value("story", "used_cheats", true)
+	
 	config.save(config_file)
+	save.save(save_file)
 
 func _ready():
 	load_config()

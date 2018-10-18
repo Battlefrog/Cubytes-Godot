@@ -18,3 +18,6 @@ func get_highscore(level):
 	var level_want = level - 1
 	
 	return highscores[level_want]
+
+func get_highscores():
+	return highscores

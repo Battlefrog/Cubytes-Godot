@@ -91,14 +91,13 @@ func collision_check(collisions):
 			change_respawn_position(collisions.collider)
 
 # When the Player dies
-# FIX: Particles don't play if the player dies too rapidly
 func die():
 	dead = true
 
 	# Update death count
-	var death = ProjectSettings.get_setting("PLAYER_DEATHS")
-	ProjectSettings.set_setting("PLAYER_DEATHS", death + 1)
-	death = ProjectSettings.get_setting("PLAYER_DEATHS")
+	var death = ProjectSettings.get_setting("player_deaths")
+	ProjectSettings.set_setting("player_deaths", death + 1)
+	death = ProjectSettings.get_setting("player_deaths")
 
 	#$PlayerDeathAnim.emitting = true
 	get_node("/root/ParticlePlayer").play_ptx("PTXPlayerDeath", get_transform())
@@ -120,7 +119,7 @@ func die():
 	else:
 		$BigCollisionShape2D.disabled = true
 		$SmallCollisionShape2D.disabled = false
-
+	
 	show()
 	set_process(true)
 	dead = false

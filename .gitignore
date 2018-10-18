@@ -14,3 +14,6 @@ export_presets.cfg
 *~
 *.import
 .vscode/settings.json
+
+/user_settings.cfg
+/user_save.save

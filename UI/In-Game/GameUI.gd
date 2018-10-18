@@ -5,7 +5,12 @@ export (int) var current_level_num
 var is_paused = false
 var block_tutorial_active = false
 
+onready var save_file = get_node("/root/Save").get_config_file_path()
+onready var save = get_node("/root/Save").get_config_file()
+
 func _ready():
+	save.load(save_file)
+	
 	get_tree().set_pause(false)
 	
 	get_node("../Player").connect("player_died", self, "update_death_display")
@@ -15,7 +20,8 @@ func _ready():
 		get_node("../BlockTutorial").connect("block_tutorial", self, "show_block_tutorial")
 	
 	# To make sure that the deaths are shown when the level is loaded
-	var death = ProjectSettings.get_setting("PLAYER_DEATHS")
+	var death = ProjectSettings.get_setting("player_deaths")
+	print(death)
 	update_death_display(death)
 	
 	$pause.hide()
@@ -86,3 +92,10 @@ func _on_BlockTutorial_popup_hide():
 
 func get_current_level_num():
 	return current_level_num
+
+func save_game():
+	var current_level = "Level" + str(get_current_level_num())
+	
+	save.set_value("story", "player_deaths", ProjectSettings.get_setting("player_deaths"))
+	save.set_value("story", "on_level", current_level)
+	save.save(save_file)

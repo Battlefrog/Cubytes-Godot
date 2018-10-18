@@ -4,16 +4,12 @@ var current_scene = null
 var audio_bus = preload("res://Misc/default_bus_layout.tres")
 
 func _ready():
-	ProjectSettings.set_setting("PLAYER_DEATHS", 0)
-	
 	if OS.is_debug_build():
 		ProjectSettings.set_setting("debug_mode", true)
 		ProjectSettings.set_setting("click_teleport", true)
 	else:
 		ProjectSettings.set_setting("debug_mode", false)
 		ProjectSettings.set_setting("click_teleport", false)
-		
-	ProjectSettings.set_setting("completed_story_mode", false)
 	
 	AudioServer.set_bus_layout(audio_bus)
 	

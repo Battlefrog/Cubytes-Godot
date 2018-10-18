@@ -10,7 +10,7 @@
 [ext_resource path="res://Levels/Interactables/DecreaseSize/DecreaseSize.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Levels/Interactables/Bombs/Bomb.tscn" type="PackedScene" id=9]
 
-[node name="root" type="Node" index="0"]
+[node name="root" type="Node"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -23,13 +23,7 @@ position = Vector2( 1028, 514 )
 _sections_unfolded = [ "Transform" ]
 next_level_name = "Level40"
 
-[node name="EndBlock2" parent="." index="2" instance=ExtResource( 2 )]
-
-position = Vector2( 1028, 514 )
-_sections_unfolded = [ "Transform" ]
-next_level_name = "Level40"
-
-[node name="Blocks" type="TileMap" parent="." index="3"]
+[node name="Blocks" type="TileMap" parent="." index="2"]
 
 position = Vector2( 644, -348 )
 mode = 0
@@ -54,39 +48,39 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="GameUI" parent="." index="4" instance=ExtResource( 4 )]
+[node name="GameUI" parent="." index="3" instance=ExtResource( 4 )]
 
 current_level_num = 39
 
-[node name="BlackHole2" parent="." index="5" instance=ExtResource( 5 )]
+[node name="BlackHole2" parent="." index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 515, 405 )
 
-[node name="BlackHole3" parent="." index="6" instance=ExtResource( 5 )]
+[node name="BlackHole3" parent="." index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 630, 405 )
 
-[node name="BlackHole4" parent="." index="7" instance=ExtResource( 5 )]
+[node name="BlackHole4" parent="." index="6" instance=ExtResource( 5 )]
 
 position = Vector2( 745, 405 )
 
-[node name="BlackHole5" parent="." index="8" instance=ExtResource( 5 )]
+[node name="BlackHole5" parent="." index="7" instance=ExtResource( 5 )]
 
 position = Vector2( 860, 405 )
 
-[node name="Flag" parent="." index="9" instance=ExtResource( 6 )]
+[node name="Flag" parent="." index="8" instance=ExtResource( 6 )]
 
 position = Vector2( 688, 304 )
 
-[node name="Point" parent="." index="10" instance=ExtResource( 7 )]
+[node name="Point" parent="." index="9" instance=ExtResource( 7 )]
 
 position = Vector2( 348, 584 )
 
-[node name="DecreaseSize" parent="." index="11" instance=ExtResource( 8 )]
+[node name="DecreaseSize" parent="." index="10" instance=ExtResource( 8 )]
 
 position = Vector2( 358, 194 )
 
-[node name="Bomb" parent="." index="12" instance=ExtResource( 9 )]
+[node name="Bomb" parent="." index="11" instance=ExtResource( 9 )]
 
 position = Vector2( 668, 604 )
 

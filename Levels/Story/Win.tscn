@@ -5,7 +5,7 @@
 [ext_resource path="res://UI/Menus/MenuHeader.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Fonts/TooltipFont.tres" type="DynamicFont" id=4]
 
-[node name="Node2D" type="Control" index="0"]
+[node name="Node2D" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -866,6 +866,8 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "BBCode", "Mouse", "Size Flags", "Theme", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[connection signal="tree_exiting" from="." to="." method="save_game"]
 
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
 

@@ -7,7 +7,7 @@
 [ext_resource path="res://UI/Menus/EmptyImage.png" type="Texture" id=5]
 [ext_resource path="res://Fonts/SmallFont.tres" type="DynamicFont" id=6]
 
-[node name="Node" type="Control"]
+[node name="Node" type="Control" index="0"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -382,6 +382,8 @@ text = "The very best block"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[connection signal="tree_exiting" from="." to="." method="save_game"]
 
 [connection signal="pressed" from="pause/VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
 

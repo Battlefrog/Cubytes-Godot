@@ -18,12 +18,13 @@ config/icon="res://Misc/ico.png"
 [autoload]
 
 global="*res://Globals/global.gd"
+scores="*res://Globals/scores.gd"
+Save="*res://Globals/Save.gd"
 Settings="*res://Globals/Settings.gd"
 SFXPlayer="*res://Globals/SFXPlayer.tscn"
 MusicPlayer="*res://Globals/MusicPlayer.tscn"
 ParticlePlayer="*res://Globals/ParticlePlayer.gd"
 Background="*res://Effects/Background/Background.tscn"
-scores="*res://Globals/scores.gd"
 
 [debug]
 
