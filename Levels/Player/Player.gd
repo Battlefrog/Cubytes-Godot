@@ -54,7 +54,8 @@ func _process(delta):
 		velocity.y += 1
 
 	# Pausing game
-	# TODO: Why is this in the player? Make another node for UI related process events, or just use the GameUI
+	# TODO: Why is this on the player? 
+	#       Make another node for UI related process events, or just use GameUI
 	if Input.is_action_pressed("ui_cancel"):
 		emit_signal("pause_game")
 
@@ -74,7 +75,7 @@ func collision_check(collisions):
 		if collisions.collider.name == "EndBlock":
 			collisions.collider.call("on_player_hit")
 		elif collisions.collider.name == "Blocks":
-			get_node("/root/SFXPlayer").play_sfx("SFXIntoWall")
+			get_node("/root/AudioPlayer").play_sfx("SFXIntoWall")
 			die()
 		elif collisions.collider.name == "Point":
 			EndBlockRef.point_collected = true
@@ -109,7 +110,7 @@ func die():
 
 	emit_signal("player_died", death)
 
-	get_node("/root/SFXPlayer").play_sfx("SFXPlayerRespawn")
+	get_node("/root/AudioPlayer").play_sfx("SFXPlayerRespawn")
 
 	position = respawn_position.get_origin()
 

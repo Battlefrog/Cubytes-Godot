@@ -25,7 +25,7 @@ func kill_player(player):
 	if not player.dead:
 		$Timer.stop()
 		player.call("die")
-		get_node("/root/SFXPlayer").play_sfx("SFXShooterShoot")
+		get_node("/root/AudioPlayer").play_sfx("SFXShooterShoot")
 		fade_out($AudioStreamPlayer2D)
 
 # Fade out SFX

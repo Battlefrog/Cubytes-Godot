@@ -16,19 +16,34 @@ var SFX = {
 	"SFXFlagHit": preload("res://Levels/Interactables/Flags/FlagHit.ogg")
 }
 
+func _ready():
+	play_menu_music()
+
 func play_sfx(var fx):
 	if SFX.has(fx):
-		print("SFXPlayer playing '" + fx + "' currently.")
+		print("AudioPlayer playing '" + fx + "' currently.")
 		
 		# Stop current playing sounds
-		$AudioStreamPlayer.stop()
-		$AudioStreamPlayer.stream = null
+		$SFXPlayer.stop()
+		$SFXPlayer.stream = null
 		
-		$AudioStreamPlayer.stream = SFX[fx]
-		$AudioStreamPlayer.play()
+		$SFXPlayer.stream = SFX[fx]
+		$SFXPlayer.play()
 	else:
 		printerr(fx + " is not a correct SFX.")
 
 func playing_sfx(var fx):
 	if SFX.has(fx):
-		return ($AudioStreamPlayer.stream == SFX[fx] and $AudioStreamPlayer.is_playing())
+		return ($SFXPlayer.stream == SFX[fx] and $SFXPlayer.is_playing())
+
+func play_level_music():
+	$MenuMusic.stop()
+	$LevelMusic.play($LevelMusic.get_playback_position())
+
+func play_menu_music():
+	$LevelMusic.stop()
+	$MenuMusic.play($MenuMusic.get_playback_position())
+
+func stop_music():
+	$MenuMusic.stop()
+	$LevelMusic.stop()

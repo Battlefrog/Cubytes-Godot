@@ -48,7 +48,7 @@ func _on_body_entered(body):
 func kill_player(player):
 	if not player.dead:
 		player.call("die")
-		get_node("/root/SFXPlayer").play_sfx("SFXShooterShoot")
+		get_node("/root/AudioPlayer").play_sfx("SFXShooterShoot")
 
 func _on_timeout():
 	if timed_laser == true:

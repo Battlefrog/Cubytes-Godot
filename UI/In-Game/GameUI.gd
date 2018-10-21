@@ -49,14 +49,14 @@ func update_death_display(death):
 
 func pause_game():
 	$PauseFade.show()
-	get_node("/root/MusicPlayer").stop_music()
+	get_node("/root/AudioPlayer").stop_music()
 	$pause.popup()
 	get_tree().set_pause(true)
 
 func _on_ResumeButton_pressed():
 	$PauseFade.hide()
-	get_node("/root/SFXPlayer").play_sfx("SFXAccept")
-	get_node("/root/MusicPlayer").play_level_music()
+	get_node("/root/AudioPlayer").play_sfx("SFXAccept")
+	get_node("/root/AudioPlayer").play_level_music()
 	$pause.hide()
 	get_tree().set_pause(false)
 
@@ -64,15 +64,15 @@ func _on_MainMenuButton_pressed():
 	$PauseFade.hide()
 	# So the Main Menu doesn't get paused!
 	get_tree().set_pause(false)
-	get_node("/root/SFXPlayer").play_sfx("SFXBack")
-	get_node("/root/MusicPlayer").play_menu_music()
+	get_node("/root/AudioPlayer").play_sfx("SFXBack")
+	get_node("/root/AudioPlayer").play_menu_music()
 	get_node("/root/global").goto_scene("res://UI/Menus/MainMenu.tscn")
 
 func _on_RestartButton_pressed():
 	$PauseFade.hide()
 	$pause.hide()
-	get_node("/root/MusicPlayer").play_level_music()
-	get_node("/root/SFXPlayer").play_sfx("SFXAccept")
+	get_node("/root/AudioPlayer").play_level_music()
+	get_node("/root/AudioPlayer").play_sfx("SFXAccept")
 	get_node("/root/global").goto_scene(get_tree().get_current_scene().get_filename())
 	get_tree().set_pause(false)
 
@@ -81,14 +81,14 @@ func show_block_tutorial(block_text, texture_path, block_name):
 	$BlockTutorial/BlockImage.texture = texture_path
 	$BlockTutorial/BlockName.text = block_name
 	
-	get_node("/root/MusicPlayer").stop_music()
+	get_node("/root/AudioPlayer").stop_music()
 	$BlockTutorial.popup()
 	get_tree().set_pause(true)
 	block_tutorial_active = true
 
 func _on_BlockTutorial_popup_hide():
 	get_tree().set_pause(false)
-	get_node("/root/MusicPlayer").play_level_music()
+	get_node("/root/AudioPlayer").play_level_music()
 
 func get_current_level_num():
 	return current_level_num

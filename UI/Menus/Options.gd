@@ -66,7 +66,7 @@ func _ready():
 func _on_BackButton_pressed():
 	save_config()
 	
-	get_node("/root/SFXPlayer").play_sfx("SFXBack")
+	get_node("/root/AudioPlayer").play_sfx("SFXBack")
 	get_node("/root/global").goto_scene("res://UI/Menus/MainMenu.tscn")
 
 func _on_VSync_toggled(button_pressed):
@@ -90,7 +90,7 @@ func _on_resolution_changed(width, height):
 		resolution = Vector2(width, height)
 
 func _on_TabContainer_tab_selected(tab):
-	get_node("/root/SFXPlayer").play_sfx("SFXAccept")
+	get_node("/root/AudioPlayer").play_sfx("SFXAccept")
 
 func activate_cheat(cheat):
 	$TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats.add_child(cheat)
