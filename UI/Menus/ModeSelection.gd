@@ -12,6 +12,8 @@ func _ready():
 	else:
 		$ButtonPanel/StoryModeButton.set_text("Story")
 		$DeleteSaveButton.hide()
+		
+	$DeleteWarning.hide()
 
 func _on_StoryModeButton_pressed():
 	get_node("/root/AudioPlayer").play_level_music()
@@ -30,7 +32,15 @@ func _on_ArcadeModeButton_pressed():
 	get_node("/root/AudioPlayer").play_sfx("SFXAccept")
 	get_node("/root/global").goto_scene("res://UI/Menus/ArcadeMode.tscn")
 
-func _on_DeleteSaveButton_pressed():
+func delete_game():
 	get_node("/root/Save").delete_save()
 	$ButtonPanel/StoryModeButton.set_text("Story")
 	$DeleteSaveButton.hide()
+
+func _on_DeleteNo_pressed():
+	get_node("/root/AudioPlayer").play_sfx("SFXBack")
+	$DeleteWarning.hide()
+
+func _on_DeleteSaveButton_pressed():
+	get_node("/root/AudioPlayer").play_sfx("SFXAccept")
+	$DeleteWarning.show()

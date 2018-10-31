@@ -8,7 +8,7 @@ var fileExists = dir.file_exists(SAVE_PATH)
 var config_file = ConfigFile.new()
 
 # Default save, also what the file looks like
-var save = {
+var default_save = {
 	"story": {
 		"on_level": "Level1",
 		"player_deaths": 0,
@@ -19,6 +19,8 @@ var save = {
 		"arcade_highscores": [0,0,0,0,0,0,0,0]
 	}
 }
+
+var save = default_save
 
 func _ready():
 	if not fileExists:
@@ -35,6 +37,11 @@ func save_game():
 			config_file.set_value(section, key, save[section][key])
 	
 	config_file.save(SAVE_PATH)
+
+func save_deleted_game():
+	save = default_save
+	
+	save_game()
 
 func load_game():
 	var err = config_file.load(SAVE_PATH)
@@ -74,6 +81,4 @@ func get_config_file_path():
 func delete_save():
 	if dir.file_exists(SAVE_PATH):
 		dir.remove(SAVE_PATH)
-		save_game()
-		load_game()
-		implement_save()
+		get_tree().quit()
