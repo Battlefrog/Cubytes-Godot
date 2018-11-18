@@ -71,4 +71,3 @@ func add_collision():
 	
 	collision_shape = $LaserCollision.create_shape_owner(self)
 	$LaserCollision.shape_owner_add_shape(collision_shape, shape)
-	

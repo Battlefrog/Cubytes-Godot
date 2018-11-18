@@ -21,12 +21,11 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 760, 350 )
 _sections_unfolded = [ "Transform" ]
-next_level_name = "Win"
+next_level_name = "Level46"
 
 [node name="Blocks" type="TileMap" parent="." index="2"]
 
 position = Vector2( 648, -703 )
-scale = Vector2( 1, 1 )
 mode = 0
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 32, 32 )

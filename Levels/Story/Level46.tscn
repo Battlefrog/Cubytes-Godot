@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Levels/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Interactables/EndBlock/EndBlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/BlockTiles.tres" type="TileSet" id=3]
+[ext_resource path="res://UI/In-Game/GameUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Interactables/Laser/Laser.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/Menus/BlockTutorial.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Interactables/Laser/TimedLaser.png" type="Texture" id=7]
+
+[node name="root" type="Node" index="0"]
+
+[node name="Player" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 464, 414 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="EndBlock" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 924, 414 )
+_sections_unfolded = [ "Transform" ]
+next_level_name = "Win"
+
+[node name="Blocks" type="TileMap" parent="." index="2"]
+
+position = Vector2( 712, -604 )
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = true
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 1900534, 0, 0, 1900535, 0, 0, 1900536, 0, 0, 1900537, 0, 0, 1900538, 0, 0, 1900539, 0, 0, 1900540, 0, 0, 1900541, 0, 0, 1900542, 0, 0, 1900543, 0, 0, 1835008, 0, 0, 1835009, 0, 0, 1835010, 0, 0, 1835011, 0, 0, 1835012, 0, 0, 1835013, 0, 0, 1835014, 0, 0, 1835015, 0, 0, 1835016, 0, 0, 1966070, 0, 0, 1900552, 0, 0, 2031606, 0, 0, 1966088, 0, 0, 2097142, 0, 0, 2031624, 0, 0, 2162678, 0, 0, 2097160, 0, 0, 2228214, 0, 0, 2162696, 0, 0, 2293750, 0, 0, 2228232, 0, 0, 2359286, 0, 0, 2359287, 0, 0, 2359288, 0, 0, 2359289, 0, 0, 2359290, 0, 0, 2359291, 0, 0, 2359292, 0, 0, 2359293, 0, 0, 2359294, 0, 0, 2359295, 0, 0, 2293760, 0, 0, 2293761, 0, 0, 2293762, 0, 0, 2293763, 0, 0, 2293764, 0, 0, 2293765, 0, 0, 2293766, 0, 0, 2293767, 0, 0, 2293768, 0, 0 )
+_sections_unfolded = [ "Cell", "Collision", "Material", "Occluder", "Visibility" ]
+
+[node name="GameUI" parent="." index="3" instance=ExtResource( 4 )]
+
+current_level_num = 45
+
+[node name="Laser" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 689, 344 )
+laser_direction = 3
+laser_length = 10
+timed_laser = true
+
+[node name="BlockTutorial" parent="." index="5" instance=ExtResource( 6 )]
+
+ui_name = "Timed Laser"
+ui_text = "The Timed Laser toggles on a 2 second interval. Other than that, it's the same as the Laser."
+ui_picture_path = ExtResource( 7 )
+
+

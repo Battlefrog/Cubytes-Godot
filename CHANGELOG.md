@@ -94,9 +94,15 @@
 
 ## Alpha 7
 
-- Added 'debug_mode' and 'click_teleport' Cheat Codes.
+- Added Saving of Story Mode progress.
+- Added Highscores for Arcade Mode Levels.
 - Added Timed Laser and Laser blocks.
-- Added ability to press Enter instead of click to quit Block Tutorial.
+- Added ability to press Enter instead of click to quit a Block Tutorial.
 - Added Levels 40, 41, 42, 43, 44, 45.
+- Added Cheat Warnings (Replaces the Incorrect Cheat Text).
 - Changed version to Alpha 7.
+- Changed the Win scene to add credits.
 - Fixed Cheats not showing up on load into Gameplay tab of the Options Menu.
+- Fixed resolution not saving to the Player Settings.
+- Fixed Player Settings not loading on first launch.
+- Implemented Cheat Codes.
