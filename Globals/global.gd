@@ -3,7 +3,24 @@ extends Node
 var current_scene = null
 var audio_bus = preload("res://Misc/default_bus_layout.tres")
 
+#var GAs = load("res://GameAnalytics.gd")
+#var GA = GAs.new()
+
 func _ready():
+#  GA.game_key = <your_game_key_supplied_by_GameAnalytics>
+#  GA.secret_key = <your_secret_key_supplied_by_GameAnalytics>
+#  GA.base_url = "http://api.gameanalytics.com"
+#
+#  # Run once per session
+#  init_response = GA.request_init()
+#
+#  # Add events to queue
+#  GA.add_to_event_queue(GA.get_test_design_event("player:new_level", 1))
+#  GA.add_to_event_queue(GA.get_test_design_event("player:new_level", 2))
+#
+#  # Submit events and flush queue - return code will indicate success (200) or failure (400, 401, 404)
+#  var returned = GA.submit_events()
+	
 	if OS.is_debug_build():
 		ProjectSettings.set_setting("debug_mode", true)
 		ProjectSettings.set_setting("click_teleport", true)
