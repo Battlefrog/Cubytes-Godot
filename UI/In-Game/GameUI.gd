@@ -77,9 +77,9 @@ func _on_RestartButton_pressed():
 	get_tree().set_pause(false)
 
 func show_block_tutorial(block_text, texture_path, block_name):
-	$BlockTutorial/BlockText.text = block_text
-	$BlockTutorial/BlockImage.texture = texture_path
-	$BlockTutorial/BlockName.text = block_name
+	$BlockTutorial/Container/BlockText.text = block_text
+	$BlockTutorial/Container/BlockImage.texture = texture_path
+	$BlockTutorial/Container/BlockName.text = block_name
 	
 	get_node("/root/AudioPlayer").stop_music()
 	$BlockTutorial.popup()

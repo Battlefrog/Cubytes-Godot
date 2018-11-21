@@ -69,8 +69,6 @@ func implement_save():
 	for score in highscores:
 		get_node("/root/scores").add_to_highscores(score, num)
 		num += 1
-		
-	print(ProjectSettings.get_setting("player_deaths"))
 
 func get_config_file():
 	return config_file

@@ -13,7 +13,7 @@ use_filter = true
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Node2D" type="Control"]
+[node name="Node2D" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -90,6 +90,7 @@ __meta__ = {
 
 [node name="Audio" type="Tabs" parent="TabContainer" index="0"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -409,8 +410,6 @@ _sections_unfolded = [ "custom_constants" ]
 
 [node name="Graphics" type="Tabs" parent="TabContainer" index="2"]
 
-editor/display_folded = true
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -508,32 +507,15 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="ResolutionList" type="VBoxContainer" parent="TabContainer/Graphics" index="3"]
+[node name="Resolutions" type="OptionButton" parent="TabContainer/Graphics/Resolution" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 636.0
-margin_top = 126.0
-margin_right = 916.0
-margin_bottom = 366.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-
-[node name="res0" type="Button" parent="TabContainer/Graphics/ResolutionList" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+margin_top = 40.0
 margin_right = 280.0
-margin_bottom = 44.0
+margin_bottom = 84.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -542,108 +524,16 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
+action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
 text = "1920x1080"
 flat = false
 align = 1
-
-[node name="res1" type="Button" parent="TabContainer/Graphics/ResolutionList" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 48.0
-margin_right = 280.0
-margin_bottom = 92.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "1600x900"
-flat = false
-align = 1
-
-[node name="res2" type="Button" parent="TabContainer/Graphics/ResolutionList" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 96.0
-margin_right = 280.0
-margin_bottom = 140.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "1336x768"
-flat = false
-align = 1
-
-[node name="res3" type="Button" parent="TabContainer/Graphics/ResolutionList" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 144.0
-margin_right = 280.0
-margin_bottom = 188.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "1280x720"
-flat = false
-align = 1
-
-[node name="res4" type="Button" parent="TabContainer/Graphics/ResolutionList" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 192.0
-margin_right = 280.0
-margin_bottom = 236.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "640x480"
-flat = false
-align = 1
+items = [  ]
+selected = -1
+_sections_unfolded = [ "Rect" ]
 
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 
@@ -661,14 +551,6 @@ align = 1
 
 [connection signal="pressed" from="TabContainer/Graphics/FullscreenToggle" to="." method="_on_FullscreenToggle_pressed"]
 
-[connection signal="pressed" from="TabContainer/Graphics/ResolutionList/res0" to="." method="_on_resolution_changed" binds= [ 1920, 1080 ]]
-
-[connection signal="pressed" from="TabContainer/Graphics/ResolutionList/res1" to="." method="_on_resolution_changed" binds= [ 1600, 900 ]]
-
-[connection signal="pressed" from="TabContainer/Graphics/ResolutionList/res2" to="." method="_on_resolution_changed" binds= [ 1336, 768 ]]
-
-[connection signal="pressed" from="TabContainer/Graphics/ResolutionList/res3" to="." method="_on_resolution_changed" binds= [ 1280, 720 ]]
-
-[connection signal="pressed" from="TabContainer/Graphics/ResolutionList/res4" to="." method="_on_resolution_changed" binds= [ 640, 480 ]]
+[connection signal="item_selected" from="TabContainer/Graphics/Resolution/Resolutions" to="." method="_on_Resolutions_selected"]
 
 

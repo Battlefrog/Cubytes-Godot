@@ -256,7 +256,6 @@ _sections_unfolded = [ "Pause", "Rect", "Size Flags", "Theme" ]
 
 [node name="BlockTutorial" type="PopupPanel" parent="." index="5"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -275,7 +274,20 @@ theme = ExtResource( 3 )
 popup_exclusive = false
 _sections_unfolded = [ "Popup", "Rect", "Theme" ]
 
-[node name="BlockText" type="Label" parent="BlockTutorial" index="0"]
+[node name="Container" type="Container" parent="BlockTutorial" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="BlockText" type="Label" parent="BlockTutorial/Container" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -292,7 +304,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
-text = "bro yo mamma gay xD"
+text = "this is some information about the very best block. wow, what a cool block."
 align = 3
 autowrap = true
 percent_visible = 1.0
@@ -300,7 +312,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="ColorBorder" type="ColorRect" parent="BlockTutorial" index="1"]
+[node name="ColorBorder" type="ColorRect" parent="BlockTutorial/Container" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -318,7 +330,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0, 0, 0, 1 )
 
-[node name="BlockImage" type="TextureRect" parent="BlockTutorial" index="2"]
+[node name="BlockImage" type="TextureRect" parent="BlockTutorial/Container" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -338,7 +350,7 @@ texture = ExtResource( 5 )
 expand = true
 stretch_mode = 0
 
-[node name="ClickText" type="Label" parent="BlockTutorial" index="3"]
+[node name="ClickText" type="Label" parent="BlockTutorial/Container" index="3"]
 
 anchor_left = 1.0
 anchor_top = 1.0
@@ -362,7 +374,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="BlockName" type="Label" parent="BlockTutorial" index="4"]
+[node name="BlockName" type="Label" parent="BlockTutorial/Container" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0

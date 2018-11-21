@@ -62,6 +62,11 @@ func _ready():
 			cheat_instance.set_name(i)
 			cheat_instance.set_text(i)
 			activate_cheat(cheat_instance)
+	
+	$TabContainer/Graphics/Resolution/Resolutions.add_item("1920x1080", 0)
+	$TabContainer/Graphics/Resolution/Resolutions.add_item("1600x900", 1)
+	$TabContainer/Graphics/Resolution/Resolutions.add_item("1336x768", 2)
+	$TabContainer/Graphics/Resolution/Resolutions.add_item("1280x720", 3)
 
 func _on_BackButton_pressed():
 	save_config()
@@ -138,3 +143,10 @@ func _on_Cheat_text_entered(new_text):
 		$TabContainer/Gameplay/CheatWarning.set_text("Incorrect cheat!")
 		$TabContainer/Gameplay/CheatWarning.show()
 	$TabContainer/Gameplay/CheatEnter.clear()
+
+func _on_Resolutions_selected(ID):
+	get_node("/root/AudioPlayer").play_sfx("SFXAccept")
+	var text = $TabContainer/Graphics/Resolution/Resolutions.get_item_text(ID)
+	var width = text.substr(0, text.findn("x"))
+	var height = text.right(text.findn("x") + 1)
+	_on_resolution_changed(width, height)
