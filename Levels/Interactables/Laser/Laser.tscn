@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Levels/Interactables/Laser/Laser.gd" type="Script" id=1]
 [ext_resource path="res://Levels/Interactables/Laser/Laser.png" type="Texture" id=2]
 [ext_resource path="res://Levels/Interactables/Laser/LaserGradient.tres" type="Gradient" id=3]
+[ext_resource path="res://Levels/Interactables/Laser/LaserLoop.ogg" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -68,6 +69,17 @@ process_mode = 1
 wait_time = 2.0
 one_shot = false
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="5"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="body_entered" from="LaserCollision" to="." method="_on_body_entered"]
 

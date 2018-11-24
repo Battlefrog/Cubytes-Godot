@@ -102,7 +102,7 @@ func _on_TabContainer_tab_selected(tab):
 
 func activate_cheat(cheat):
 	$TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats.add_child(cheat)
-	set_cheat_warning("Cheat activated!", true)
+	#set_cheat_warning("Cheat activated!", true)
 	
 	var exit = cheat.get_child(0)
 	exit.connect("pressed", self, "on_cheat_clear_pressed", [cheat])
@@ -156,10 +156,12 @@ func _on_ParticleSettings_item_selected(ID):
 	get_node("/root/Background").set_setting(ID)
 
 func set_cheat_warning(text, is_good):
-	if is_good:
-		$TabContainer/Gameplay/CheatWarning.add_color_override("font_color", Color(51, 204, 51, 255))
-	else:
-		$TabContainer/Gameplay/CheatWarning.add_color_override("font_color", Color(255, 0, 0, 255))
+	# TODO: This removes the oversampled text goodness and creates a pixelated mess.
+	# Hopefully 3.1 fixes this, it fixes 2 issues with oversampled text already.
+	#if is_good:
+		#$TabContainer/Gameplay/CheatWarning.add_color_override("font_color", Color(51, 204, 51, 255))
+	#else:
+		#$TabContainer/Gameplay/CheatWarning.add_color_override("font_color", Color(255, 0, 0, 255))
 	
 	$TabContainer/Gameplay/CheatWarning.set_text(text)
 	$TabContainer/Gameplay/CheatWarning.show()

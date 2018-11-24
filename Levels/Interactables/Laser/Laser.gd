@@ -16,6 +16,7 @@ var y_change = 0
 var laser_on = true
 
 var collision_shape
+var collision_a
 
 func _ready():
 	if timed_laser == true:
@@ -40,6 +41,14 @@ func _ready():
 		y_change += y_offset
 	
 	add_collision()
+	
+	var audio_x = (get_position().x + collision_a.x) / 2
+	var audio_y = (get_position().y + collision_a.y) / 2
+	
+	$AudioStreamPlayer2D.set_position(Vector2(audio_x, audio_y))
+	$AudioStreamPlayer2D.set_max_distance(1000)
+	$AudioStreamPlayer2D.set_bus("SFX")
+	$AudioStreamPlayer2D.play()
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
@@ -51,15 +60,18 @@ func kill_player(player):
 		get_node("/root/AudioPlayer").play_sfx("SFXShooterShoot")
 
 func _on_timeout():
-	if timed_laser == true:
+	if timed_laser:
 		laser_on = !laser_on
 		
 		if laser_on:
 			$Laser.set_visible(true)
 			$LaserCollision.shape_owner_set_disabled(collision_shape, false)
+			if not $AudioStreamPlayer2D.is_playing():
+				$AudioStreamPlayer2D.play()
 		else:
 			$Laser.set_visible(false)
 			$LaserCollision.shape_owner_set_disabled(collision_shape, true)
+			$AudioStreamPlayer2D.stop()
 		
 		$TimedTimer.stop()
 		$TimedTimer.start()
@@ -68,6 +80,8 @@ func add_collision():
 	var shape = SegmentShape2D.new()
 	shape.set_a(Vector2(self.x_change, self.y_change))
 	shape.set_b(Vector2(0, 0))
+	
+	collision_a = to_global(shape.get_a())
 	
 	collision_shape = $LaserCollision.create_shape_owner(self)
 	$LaserCollision.shape_owner_add_shape(collision_shape, shape)
