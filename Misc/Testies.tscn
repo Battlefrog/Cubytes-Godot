@@ -56,7 +56,8 @@ current_level_num = -999
 [node name="Laser" parent="." index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 690, 470 )
-laser_length = 10
+rotation = 0.631993
+laser_length = 15
 timed_laser = true
 
 
