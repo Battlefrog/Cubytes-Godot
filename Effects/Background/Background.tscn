@@ -5,15 +5,7 @@
 [ext_resource path="res://Effects/DefaultParticle.png" type="Texture" id=3]
 [ext_resource path="res://Effects/Background/BigCubes.tscn" type="PackedScene" id=4]
 
-
-
-
-
-
-
-
-
-[node name="Background" type="Node2D"]
+[node name="Background" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 

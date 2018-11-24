@@ -13,7 +13,7 @@ use_filter = true
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Node2D" type="Control" index="0"]
+[node name="Node2D" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -501,7 +501,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "Resolutions"
+text = "Resolution"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -528,7 +528,55 @@ action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "1920x1080"
+flat = false
+align = 1
+items = [  ]
+selected = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="BackgroundParticles" type="Label" parent="TabContainer/Graphics" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 636.0
+margin_top = 256.0
+margin_right = 925.0
+margin_bottom = 292.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Background Particles"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ParticleSettings" type="OptionButton" parent="TabContainer/Graphics/BackgroundParticles" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 40.0
+margin_right = 280.0
+margin_bottom = 84.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 2
+shortcut = null
+group = null
 flat = false
 align = 1
 items = [  ]
@@ -552,5 +600,7 @@ _sections_unfolded = [ "Rect" ]
 [connection signal="pressed" from="TabContainer/Graphics/FullscreenToggle" to="." method="_on_FullscreenToggle_pressed"]
 
 [connection signal="item_selected" from="TabContainer/Graphics/Resolution/Resolutions" to="." method="_on_Resolutions_selected"]
+
+[connection signal="item_selected" from="TabContainer/Graphics/BackgroundParticles/ParticleSettings" to="." method="_on_ParticleSettings_item_selected"]
 
 
