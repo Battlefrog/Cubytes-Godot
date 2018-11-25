@@ -13,7 +13,8 @@ var SFX = {
 	"SFXEndBlockCompleteLevel": preload("res://Levels/Interactables/EndBlock/EndBlockCompleteLevel.ogg"),
 	"SFXShooterShoot": preload("res://Levels/Interactables/Shooters/ShooterShoot.ogg"),
 	"SFXEndBlockRefusal": preload("res://Levels/Interactables/EndBlock/EndBlockRefusal.ogg"),
-	"SFXFlagHit": preload("res://Levels/Interactables/Flags/FlagHit.ogg")
+	"SFXFlagHit": preload("res://Levels/Interactables/Flags/FlagHit.ogg"),
+	"SFXDelete": preload("res://UI/Menus/UIDelete.ogg")
 }
 
 func _ready():

@@ -111,6 +111,7 @@ func activate_cheat(cheat):
 		ProjectSettings.set_setting(cheat.get_name(), true)
 
 func deactivate_cheat(cheat):
+	get_node("/root/AudioPlayer").play_sfx("SFXDelete")
 	$TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats.remove_child(cheat)
 	$TabContainer/Gameplay/CheatWarning.hide()
 	
@@ -153,10 +154,11 @@ func _on_Resolutions_selected(ID):
 	_on_resolution_changed(width, height)
 
 func _on_ParticleSettings_item_selected(ID):
+	get_node("/root/AudioPlayer").play_sfx("SFXAccept")
 	get_node("/root/Background").set_setting(ID)
 
 func set_cheat_warning(text, is_good):
-	# TODO: This removes the oversampled text goodness and creates a pixelated mess.
+	# TODO: Changing the font color removes the oversampling and creates a pixelated mess.
 	# Hopefully 3.1 fixes this, it fixes 2 issues with oversampled text already.
 	#if is_good:
 		#$TabContainer/Gameplay/CheatWarning.add_color_override("font_color", Color(51, 204, 51, 255))
