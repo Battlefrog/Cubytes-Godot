@@ -46,7 +46,7 @@ func _on_NoButton_pressed():
 func load_arcade_level():
 	$LevelLoadWarning.hide()
 	get_node("/root/AudioPlayer").play_sfx("SFXAccept")
-	get_node("/root/MusicPlayer").play_level_music()
+	get_node("/root/AudioPlayer").play_level_music()
 	get_node("/root/global").goto_scene(wanted_level)
 
 func _on_HighScoreButton_pressed():
