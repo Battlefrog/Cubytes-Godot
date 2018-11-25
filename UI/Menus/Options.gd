@@ -4,6 +4,7 @@ onready var config_file = get_node("/root/Settings").get_config_file_path()
 onready var config = get_node("/root/Settings").get_config_file()
 onready var save_file = get_node("/root/Save").get_config_file_path()
 onready var save = get_node("/root/Save").get_config_file()
+onready var active_cheats = get_node("TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats")
 
 var cheat = preload("res://UI/Menus/CheatDisplay.tscn")
 var vsync
@@ -13,6 +14,7 @@ var music_slider
 var sfx_slider
 var resolution
 var background_particles
+var show_fps
 
 var cheats = {
 	"debug_mode": 0,
@@ -29,12 +31,14 @@ func _ready():
 	music_slider = config.get_value("audio", "music_volume")
 	sfx_slider = config.get_value("audio", "sfx_volume")
 	background_particles = config.get_value("gameplay", "background_particles")
+	show_fps = config.get_value("gameplay", "show_fps")
 	
 	$TabContainer/Graphics/VsyncToggle.set_pressed(vsync)
 	$TabContainer/Graphics/FullscreenToggle.set_pressed(fullscreen)
 	$TabContainer/Audio/MasterText/MasterSlider.set_value(master_slider)
 	$TabContainer/Audio/MusicText/MusicSlider.set_value(music_slider)
 	$TabContainer/Audio/SFXText/SFXSlider.set_value(sfx_slider)
+	$TabContainer/Gameplay/FPS.set_pressed(show_fps)
 	_on_resolution_changed(resolution.x, resolution.y)
 	
 	# Loading cheat display for cheats already activated beforehand
@@ -58,7 +62,6 @@ func _ready():
 		else:
 			continue
 	
-	
 	$TabContainer/Graphics/BackgroundParticles/ParticleSettings.add_item("High", 0)
 	$TabContainer/Graphics/BackgroundParticles/ParticleSettings.add_item("Medium", 1)
 	$TabContainer/Graphics/BackgroundParticles/ParticleSettings.add_item("Low", 2)
@@ -77,8 +80,9 @@ func save_config():
 	config.set_value("audio", "music_volume", get_node("TabContainer/Audio/MusicText/MusicSlider").get_value())
 	config.set_value("audio", "sfx_volume", get_node("TabContainer/Audio/SFXText/SFXSlider").get_value())
 	config.set_value("gameplay", "background_particles", get_node("TabContainer/Graphics/BackgroundParticles/ParticleSettings").get_selected())
+	config.set_value("gameplay", "show_fps", get_node("TabContainer/Gameplay/FPS").is_pressed())
 	
-	if $TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats.get_children().size() > 0 and save.get_value("story", "used_cheats") == false:
+	if active_cheats.get_children().size() > 0 and save.get_value("story", "used_cheats") == false:
 		save.set_value("story", "used_cheats", true)
 	
 	config.save(config_file)
@@ -114,7 +118,7 @@ func _on_TabContainer_tab_selected(tab):
 	get_node("/root/AudioPlayer").play_sfx("SFXAccept")
 
 func activate_cheat(cheat):
-	$TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats.add_child(cheat)
+	active_cheats.add_child(cheat)
 	#set_cheat_warning("Cheat activated!", true)
 	
 	var exit = cheat.get_child(0)
@@ -125,7 +129,7 @@ func activate_cheat(cheat):
 
 func deactivate_cheat(cheat):
 	get_node("/root/AudioPlayer").play_sfx("SFXDelete")
-	$TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats.remove_child(cheat)
+	active_cheats.remove_child(cheat)
 	$TabContainer/Gameplay/CheatWarning.hide()
 	
 	if ProjectSettings.get_setting(cheat.get_name()):
@@ -142,10 +146,10 @@ func _on_Cheat_text_entered(new_text):
 			cheat_instance.set_name(new_text)
 			cheat_instance.set_text(new_text)
 			
-			if $TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats.get_children().size() == 0:
+			if active_cheats.get_children().size() == 0:
 				activate_cheat(cheat_instance)
 			else:
-				for child in $TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats.get_children():
+				for child in active_cheats.get_children():
 					for cheat in cheats:
 						if child.get_text() == cheat and new_text == cheat:
 							set_cheat_warning("Cheat already activated!", false)
@@ -180,3 +184,6 @@ func set_cheat_warning(text, is_good):
 	
 	$TabContainer/Gameplay/CheatWarning.set_text(text)
 	$TabContainer/Gameplay/CheatWarning.show()
+
+func _on_FPS_pressed():
+	ProjectSettings.set_setting("show_fps", !ProjectSettings.get_setting("show_fps"))

@@ -1,6 +1,6 @@
 extends Node
 
-# Dictionary for all SFX - Replacement for SampleLibrary in Godot 2
+# Dictionary for all SFX - Replacement for SampleLibrary in Godot 2 (rip)
 var SFX = {
 	"SFXAccept": preload("res://UI/Menus/UIAccept.ogg"),
 	"SFXBack": preload("res://UI/Menus/UIBack.ogg"),

@@ -34,7 +34,8 @@ func _ready():
 
 func _process(delta):
 	$LevelDisplay.set_text("Level: " + str(current_level_num))
-	$FPSDisplay.set_text("FPS: " + str(Performance.get_monitor(Performance.TIME_FPS)))
+	if ProjectSettings.get_setting("show_fps"):
+		$FPSDisplay.set_text("FPS: " + str(Performance.get_monitor(Performance.TIME_FPS)))
 	
 	if block_tutorial_active:
 		if Input.is_action_pressed("ui_accept"):

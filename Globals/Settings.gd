@@ -20,7 +20,8 @@ var settings = {
 		"resolution": Vector2(1336,768)
 	},
 	"gameplay": {
-		"background_particles": 1
+		"background_particles": 1,
+		"show_fps": true
 	}
 }
 
@@ -65,6 +66,8 @@ func implement_settings():
 	else:
 		OS.set_window_size(config_file.get_value("window", "resolution"))
 		OS.center_window()
+	
+	ProjectSettings.set_setting("show_fps", config_file.get_value("gameplay", "show_fps"))
 	
 	# Mute audio channels instead of being at -24db
 	for i in range(3):
