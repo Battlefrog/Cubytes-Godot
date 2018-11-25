@@ -96,12 +96,14 @@
 
 - Added Saving of Story Mode progress.
 - Added Highscores for Arcade Mode Levels.
-- Added Timed Laser and Laser blocks.
+- Added a Timed Laser and Laser.
 - Added ability to press Enter instead of click to quit a Block Tutorial.
 - Added Levels 40, 41, 42, 43, 44, 45.
-- Added Cheat Warnings (Replaces the Incorrect Cheat Text).
+- Added an option for modifying the Background particles to the Options Menu.
+- Added a Credits Scene.
 - Changed version to Alpha 7.
-- Changed the Win scene to add credits.
+- Changed the Win scene.
+- Changed resolution picker to a drop-down menu.
 - Fixed Cheats not showing up on load into Gameplay tab of the Options Menu.
 - Fixed resolution not saving to the Player Settings.
 - Fixed Player Settings not loading on first launch.

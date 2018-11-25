@@ -35,7 +35,7 @@ anchor_bottom = 0.0
 margin_left = 50.0
 margin_top = 120.0
 margin_right = 460.0
-margin_bottom = 725.0
+margin_bottom = 720.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -54,7 +54,7 @@ anchor_bottom = 0.5
 margin_left = 20.0
 margin_top = -282.5
 margin_right = 354.0
-margin_bottom = 287.5
+margin_bottom = 282.5
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -73,7 +73,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 375.0
-margin_bottom = 120.0
+margin_bottom = 89.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 hint_tooltip = "Play the game."
@@ -101,9 +101,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 150.0
+margin_top = 119.0
 margin_right = 375.0
-margin_bottom = 270.0
+margin_bottom = 208.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 hint_tooltip = "Configure the game."
@@ -131,9 +131,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 300.0
+margin_top = 238.0
 margin_right = 375.0
-margin_bottom = 420.0
+margin_bottom = 327.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 hint_tooltip = "Information on the game."
@@ -155,15 +155,40 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="QuitButton" type="Button" parent="Panel/MainMenuButtons" index="3"]
+[node name="CreditsButton" type="Button" parent="Panel/MainMenuButtons" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 450.0
+margin_top = 357.0
 margin_right = 375.0
-margin_bottom = 570.0
+margin_bottom = 446.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Credits"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "Size Flags", "Theme" ]
+
+[node name="QuitButton" type="Button" parent="Panel/MainMenuButtons" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 476.0
+margin_right = 375.0
+margin_bottom = 565.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 hint_tooltip = "Quit the game."
@@ -278,6 +303,8 @@ text = "Cubytes"
 [connection signal="pressed" from="Panel/MainMenuButtons/OptionsButton" to="Panel/MainMenuButtons" method="_on_OptionsButton_pressed"]
 
 [connection signal="pressed" from="Panel/MainMenuButtons/HelpButton" to="Panel/MainMenuButtons" method="_on_HelpButton_pressed"]
+
+[connection signal="pressed" from="Panel/MainMenuButtons/CreditsButton" to="Panel/MainMenuButtons" method="_on_CreditsButton_pressed"]
 
 [connection signal="pressed" from="Panel/MainMenuButtons/QuitButton" to="Panel/MainMenuButtons" method="_on_QuitButton_pressed"]
 

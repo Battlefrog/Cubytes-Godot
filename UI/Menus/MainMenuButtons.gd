@@ -14,3 +14,7 @@ func _on_OptionsButton_pressed():
 func _on_HelpButton_pressed():
 	get_node("/root/AudioPlayer").play_sfx("SFXAccept")
 	get_node("/root/global").goto_scene("res://UI/Menus/Help.tscn")
+
+func _on_CreditsButton_pressed():
+	get_node("/root/AudioPlayer").play_sfx("SFXAccept")
+	get_node("/root/global").goto_scene("res://UI/Menus/CreditsMenu.tscn")

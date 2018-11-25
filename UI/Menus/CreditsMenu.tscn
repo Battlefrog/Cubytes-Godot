@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://UI/UITheme.tres" type="Theme" id=1]
 [ext_resource path="res://UI/Menus/Win.gd" type="Script" id=2]
 [ext_resource path="res://UI/Menus/MenuHeader.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/Menus/Credits.tscn" type="PackedScene" id=4]
 
-[node name="Node2D" type="Control" index="0"]
+[node name="Node2D" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -51,34 +52,9 @@ _sections_unfolded = [ "Hint", "Rect", "Theme", "custom_colors", "custom_fonts" 
 
 [node name="Header" parent="." index="1" instance=ExtResource( 3 )]
 
-text = "You Won!"
+text = "Credits"
 
-[node name="Label" type="Label" parent="." index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = 30.0
-margin_top = -155.0
-margin_bottom = 154.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Congrats! You've beaten Cubytes!
-
-This is the final Public Alpha. After this, the game will go into closed development and be released on Steam in Q2 2019. There will be a demo.
-
-Have a fun time messing around with this, in the mean time.
-
-- Battlefrog, AKA Broc."
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+[node name="Credits" parent="." index="2" instance=ExtResource( 4 )]
 
 [connection signal="tree_exiting" from="." to="." method="save_game"]
 
