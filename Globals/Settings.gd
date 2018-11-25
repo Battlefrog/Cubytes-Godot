@@ -18,6 +18,9 @@ var settings = {
 		"fullscreen": false,
 		"v-sync": false,
 		"resolution": Vector2(1336,768)
+	},
+	"gameplay": {
+		"background_particles": 1
 	}
 }
 
@@ -54,6 +57,8 @@ func implement_settings():
 	AudioServer.set_bus_volume_db(0, config_file.get_value("audio", "master_volume"))
 	AudioServer.set_bus_volume_db(1, config_file.get_value("audio", "sfx_volume"))
 	AudioServer.set_bus_volume_db(2, config_file.get_value("audio", "music_volume"))
+	
+	get_node("/root/Background").set_setting(config_file.get_value("gameplay", "background_particles"))
 	
 	if config_file.get_value("window", "fullscreen") == true:
 		OS.set_window_fullscreen(config_file.get_value("window", "fullscreen"))

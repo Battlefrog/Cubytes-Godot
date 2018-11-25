@@ -12,6 +12,7 @@ var master_slider
 var music_slider
 var sfx_slider
 var resolution
+var background_particles
 
 var cheats = {
 	"debug_mode": 0,
@@ -27,6 +28,7 @@ func _ready():
 	master_slider = config.get_value("audio", "master_volume")
 	music_slider = config.get_value("audio", "music_volume")
 	sfx_slider = config.get_value("audio", "sfx_volume")
+	background_particles = config.get_value("gameplay", "background_particles")
 	
 	$TabContainer/Graphics/VsyncToggle.set_pressed(vsync)
 	$TabContainer/Graphics/FullscreenToggle.set_pressed(fullscreen)
@@ -48,10 +50,20 @@ func _ready():
 	$TabContainer/Graphics/Resolution/Resolutions.add_item("1336x768", 2)
 	$TabContainer/Graphics/Resolution/Resolutions.add_item("1280x720", 3)
 	
+	var resolution_string = str(resolution.x) + "x" + str(resolution.y)
+	for index in range($TabContainer/Graphics/Resolution/Resolutions.get_item_count()):
+		if $TabContainer/Graphics/Resolution/Resolutions.get_item_text(index) == resolution_string:
+			$TabContainer/Graphics/Resolution/Resolutions.select(index)
+			break
+		else:
+			continue
+	
+	
 	$TabContainer/Graphics/BackgroundParticles/ParticleSettings.add_item("High", 0)
 	$TabContainer/Graphics/BackgroundParticles/ParticleSettings.add_item("Medium", 1)
 	$TabContainer/Graphics/BackgroundParticles/ParticleSettings.add_item("Low", 2)
 	$TabContainer/Graphics/BackgroundParticles/ParticleSettings.add_item("Off", 3)
+	$TabContainer/Graphics/BackgroundParticles/ParticleSettings.select(background_particles)
 
 func load_config():
 	config.load(config_file)
@@ -64,6 +76,7 @@ func save_config():
 	config.set_value("audio", "master_volume", get_node("TabContainer/Audio/MasterText/MasterSlider").get_value())
 	config.set_value("audio", "music_volume", get_node("TabContainer/Audio/MusicText/MusicSlider").get_value())
 	config.set_value("audio", "sfx_volume", get_node("TabContainer/Audio/SFXText/SFXSlider").get_value())
+	config.set_value("gameplay", "background_particles", get_node("TabContainer/Graphics/BackgroundParticles/ParticleSettings").get_selected())
 	
 	if $TabContainer/Gameplay/CheatViewerPanelText/CheatViewerPanel/ActiveCheats.get_children().size() > 0 and save.get_value("story", "used_cheats") == false:
 		save.set_value("story", "used_cheats", true)
