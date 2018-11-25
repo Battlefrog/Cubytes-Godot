@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=16 format=2]
+[gd_resource type="Theme" load_steps=17 format=2]
 
 [ext_resource path="res://UI/PressedButton.tres" type="StyleBox" id=1]
 [ext_resource path="res://UI/HoveredButton.tres" type="StyleBox" id=2]
@@ -13,7 +13,8 @@
 [ext_resource path="res://UI/Slider.tres" type="StyleBox" id=11]
 [ext_resource path="res://UI/Panel.tres" type="StyleBox" id=12]
 [ext_resource path="res://Fonts/TooltipFont.tres" type="DynamicFont" id=13]
-[ext_resource path="res://Fonts/TextFont.tres" type="DynamicFont" id=14]
+[ext_resource path="res://UI/TooltipPanel.tres" type="StyleBox" id=14]
+[ext_resource path="res://Fonts/TextFont.tres" type="DynamicFont" id=15]
 
 [sub_resource type="StyleBoxFlat" id=1]
 
@@ -46,7 +47,7 @@ _sections_unfolded = [ "Shadow" ]
 
 [resource]
 
-default_font = ExtResource( 14 )
+default_font = ExtResource( 15 )
 Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
@@ -105,6 +106,6 @@ TooltipLabel/colors/font_color_shadow = Color( 0, 0, 0, 0.281765 )
 TooltipLabel/constants/shadow_offset_x = 1
 TooltipLabel/constants/shadow_offset_y = 1
 TooltipLabel/fonts/font = ExtResource( 13 )
-TooltipPanel/styles/panel = ExtResource( 3 )
+TooltipPanel/styles/panel = ExtResource( 14 )
 _sections_unfolded = [ "Button/constants", "Button/fonts", "Button/styles", "CheckBox/styles", "OptionButton/constants", "Panel/styles", "PopupPanel/styles", "TooltipLabel/constants", "TooltipLabel/fonts", "TooltipPanel", "TooltipPanel/styles" ]
 
