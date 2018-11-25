@@ -42,5 +42,5 @@ func _on_DeleteNo_pressed():
 	$DeleteWarning.hide()
 
 func _on_DeleteSaveButton_pressed():
-	get_node("/root/AudioPlayer").play_sfx("SFXAccept")
+	get_node("/root/AudioPlayer").play_sfx("SFXDelete")
 	$DeleteWarning.show()

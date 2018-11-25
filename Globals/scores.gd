@@ -12,7 +12,7 @@ func add_to_highscores(time, level):
 	
 	highscores[level_ins] = time
 	
-	print(highscores)
+	# print(highscores)
 
 func get_highscore(level):
 	var level_want = level - 1
