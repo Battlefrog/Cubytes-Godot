@@ -8,6 +8,9 @@ var block_tutorial_active = false
 onready var save_file = get_node("/root/Save").get_config_file_path()
 onready var save = get_node("/root/Save").get_config_file()
 
+signal game_unpaused
+signal game_paused
+
 func _ready():
 	save.load(save_file)
 	
@@ -49,6 +52,7 @@ func update_death_display(death):
 	$DeathDisplay.set_text("Deaths: " + str(death))
 
 func pause_game():
+	emit_signal("game_paused")
 	$PauseFade.show()
 	get_node("/root/AudioPlayer").stop_music()
 	$pause.popup()
@@ -60,6 +64,7 @@ func _on_ResumeButton_pressed():
 	get_node("/root/AudioPlayer").play_level_music()
 	$pause.hide()
 	get_tree().set_pause(false)
+	emit_signal("game_unpaused")
 
 func _on_MainMenuButton_pressed():
 	$PauseFade.hide()
@@ -68,6 +73,7 @@ func _on_MainMenuButton_pressed():
 	get_node("/root/AudioPlayer").play_sfx("SFXBack")
 	get_node("/root/AudioPlayer").play_menu_music()
 	get_node("/root/global").goto_scene("res://UI/Menus/MainMenu.tscn")
+	emit_signal("game_unpaused")
 
 func _on_RestartButton_pressed():
 	$PauseFade.hide()
@@ -76,6 +82,7 @@ func _on_RestartButton_pressed():
 	get_node("/root/AudioPlayer").play_sfx("SFXAccept")
 	get_node("/root/global").goto_scene(get_tree().get_current_scene().get_filename())
 	get_tree().set_pause(false)
+	emit_signal("game_unpaused")
 
 func show_block_tutorial(block_text, texture_path, block_name):
 	$BlockTutorial/Container/BlockText.text = block_text
@@ -86,10 +93,12 @@ func show_block_tutorial(block_text, texture_path, block_name):
 	$BlockTutorial.popup()
 	get_tree().set_pause(true)
 	block_tutorial_active = true
+	emit_signal("game_paused")
 
 func _on_BlockTutorial_popup_hide():
 	get_tree().set_pause(false)
 	get_node("/root/AudioPlayer").play_level_music()
+	emit_signal("game_unpaused")
 
 func get_current_level_num():
 	return current_level_num

@@ -19,6 +19,9 @@ var collision_shape
 var collision_a
 
 func _ready():
+	get_node("../GameUI").connect("game_unpaused", self, "not_paused")
+	get_node("../GameUI").connect("game_paused", self, "paused")
+	
 	if timed_laser == true:
 		$Laser.set_gradient(preload("res://Levels/Interactables/Laser/TimedLaserGradient.tres"))
 		$Sprite.set_texture(preload("res://Levels/Interactables/Laser/TimedLaser.png"))
@@ -46,7 +49,7 @@ func _ready():
 	var audio_y = (get_position().y + collision_a.y) / 2
 	
 	$AudioStreamPlayer2D.set_position(Vector2(audio_x, audio_y))
-	$AudioStreamPlayer2D.set_max_distance(750)
+	$AudioStreamPlayer2D.set_max_distance(1000)
 	$AudioStreamPlayer2D.set_bus("SFX")
 	$AudioStreamPlayer2D.play()
 
@@ -85,3 +88,9 @@ func add_collision():
 	
 	collision_shape = $LaserCollision.create_shape_owner(self)
 	$LaserCollision.shape_owner_add_shape(collision_shape, shape)
+
+func not_paused():
+	$AudioStreamPlayer2D.play()
+
+func paused():
+	$AudioStreamPlayer2D.stop()
