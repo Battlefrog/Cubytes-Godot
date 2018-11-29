@@ -100,3 +100,6 @@ func save_game():
 	save.set_value("story", "player_deaths", ProjectSettings.get_setting("player_deaths"))
 	save.set_value("story", "on_level", current_level)
 	save.save(save_file)
+
+func shake(duration = 0.2, frequency = 15, amplitude = 16, priority = 0):
+	$Camera2D/ScreenShake.start(duration, frequency, amplitude, priority)
