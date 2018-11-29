@@ -2,10 +2,7 @@
 
 [ext_resource path="res://Effects/Background/YellowStream.tres" type="Material" id=1]
 
-
-
-
-[node name="YellowStream" type="Particles2D" index="0"]
+[node name="YellowStream" type="Particles2D"]
 
 position = Vector2( 635, -70 )
 emitting = true

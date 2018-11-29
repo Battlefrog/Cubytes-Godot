@@ -1,19 +1,28 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Effects/Background/Background.gd" type="Script" id=1]
-[ext_resource path="res://Effects/Background/YellowStream.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Effects/DefaultParticle.png" type="Texture" id=3]
-[ext_resource path="res://Effects/Background/BigCubes.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Effects/Background/background-noise.png" type="Texture" id=2]
+[ext_resource path="res://Effects/Background/YellowStream.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Effects/DefaultParticle.png" type="Texture" id=4]
+[ext_resource path="res://Effects/Background/BigCubes.tscn" type="PackedScene" id=5]
 
-[node name="Background" type="Node2D" index="0"]
+[node name="Background" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
-[node name="YellowStream" parent="." index="0" instance=ExtResource( 2 )]
+[node name="Noise" type="Sprite" parent="." index="0"]
+
+z_index = -3
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+_sections_unfolded = [ "Focus", "Hint", "Material", "Mouse", "Pause", "Rect", "Region", "Size Flags", "Theme", "Visibility", "Z Index" ]
+
+[node name="YellowStream" parent="." index="1" instance=ExtResource( 3 )]
 
 z_index = -2
 
-[node name="strobe" type="Light2D" parent="." index="1"]
+[node name="strobe" type="Light2D" parent="." index="2"]
 
 visible = false
 position = Vector2( 695.2, 367.185 )
@@ -22,7 +31,7 @@ scale = Vector2( 125.938, 140.71 )
 z_index = -2
 enabled = true
 editor_only = false
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
 color = Color( 1, 1, 1, 1 )
@@ -43,21 +52,21 @@ shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Range", "Shadow", "Transform" ]
 
-[node name="Cubes_BIG" parent="." index="2" instance=ExtResource( 4 )]
+[node name="Cubes_BIG" parent="." index="3" instance=ExtResource( 5 )]
 
 z_index = -2
-amount = 250
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform", "Z Index" ]
 
-[node name="Cubes_BIG2" parent="." index="3" instance=ExtResource( 4 )]
+[node name="Cubes_BIG2" parent="." index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 1439.29, 558.514 )
 z_index = -2
-amount = 125
+amount = 25
 
-[node name="Cubes_BIG3" parent="." index="4" instance=ExtResource( 4 )]
+[node name="Cubes_BIG3" parent="." index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 1437.44, 155.078 )
 z_index = -2
-amount = 125
+amount = 25
 
 

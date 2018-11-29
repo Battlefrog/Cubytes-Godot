@@ -72,6 +72,6 @@ debug_mode_nextlevel=[ Object(InputEventKey,"resource_local_to_scene":false,"res
 
 quality/intended_usage/framebuffer_allocation=0
 quality/2d/use_pixel_snap=true
-environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_clear_color=Color( 0.00392157, 0.0352941, 0.25098, 1 )
 environment/default_environment="res://Misc/default_env.tres"
 quality/dynamic_fonts/use_oversampling=true

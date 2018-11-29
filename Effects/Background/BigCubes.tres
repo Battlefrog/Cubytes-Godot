@@ -3,7 +3,7 @@
 [resource]
 
 render_priority = 0
-trail_divisor = 50
+trail_divisor = 5
 emission_shape = 1
 emission_sphere_radius = 3.0
 flag_align_y = false
@@ -12,13 +12,13 @@ flag_disable_z = true
 spread = 180.0
 flatness = 0.0
 gravity = Vector3( 0, 98, 0 )
-initial_velocity = 40.0
+initial_velocity = 80.0
 initial_velocity_random = 0.0
-angular_velocity = 25.0
+angular_velocity = 0.0
 angular_velocity_random = 0.5
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-linear_accel = 10.0
+linear_accel = 50.0
 linear_accel_random = 0.0
 radial_accel = 0.0
 radial_accel_random = 0.0
@@ -26,17 +26,17 @@ tangential_accel = 0.0
 tangential_accel_random = 0.0
 damping = 5.0
 damping_random = 0.0
-angle = 180.0
+angle = 90.0
 angle_random = 0.0
 scale = 4.0
 scale_random = 0.0
-color = Color( 0.588235, 0, 0, 1 )
+color = Color( 0.156863, 0.333333, 0.564706, 1 )
 hue_variation = 0.0
-hue_variation_random = 0.0
+hue_variation_random = 0.05
 anim_speed = 0.0
 anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Damping", "Emission Shape", "Flags", "Hue Variation", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Scale", "Spread", "Trail" ]
+_sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Damping", "Emission Shape", "Flags", "Hue Variation", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Radial Accel", "Scale", "Spread", "Trail" ]
 

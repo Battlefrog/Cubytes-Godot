@@ -12,6 +12,7 @@ extents = Vector2( 16, 16 )
 
 [node name="Laser" type="StaticBody2D"]
 
+pause_mode = 1
 position = Vector2( 400, 600 )
 input_pickable = false
 collision_layer = 1
@@ -21,7 +22,7 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Pause", "Transform" ]
 laser_direction = 2
 laser_length = 20
 timed_laser = null
@@ -72,6 +73,7 @@ autostart = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="5"]
 
+pause_mode = 1
 stream = ExtResource( 4 )
 volume_db = 0.0
 pitch_scale = 1.0
@@ -80,6 +82,7 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+_sections_unfolded = [ "Pause" ]
 
 [connection signal="body_entered" from="LaserCollision" to="." method="_on_body_entered"]
 

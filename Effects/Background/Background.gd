@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 var settings = {
 	"HIGH": 0,
@@ -10,6 +10,7 @@ var settings = {
 var setting = 0
 
 func _ready():
+	$Noise.set_region_rect(Rect2(Vector2(0.0, 0.0), OS.get_window_size()))
 	set_setting(setting)
 
 func set_setting(ID):

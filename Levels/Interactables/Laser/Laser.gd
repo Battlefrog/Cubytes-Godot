@@ -46,7 +46,7 @@ func _ready():
 	var audio_y = (get_position().y + collision_a.y) / 2
 	
 	$AudioStreamPlayer2D.set_position(Vector2(audio_x, audio_y))
-	$AudioStreamPlayer2D.set_max_distance(1000)
+	$AudioStreamPlayer2D.set_max_distance(750)
 	$AudioStreamPlayer2D.set_bus("SFX")
 	$AudioStreamPlayer2D.play()
 
