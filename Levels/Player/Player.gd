@@ -7,6 +7,7 @@ export (int) var player_speed = 750
 
 # The EndBlock is always going to be in the level with the Player
 onready var EndBlockRef = get_node("../EndBlock")
+onready var GameUIRef = get_node("../GameUI")
 onready var PointRef = has_node("../Point")
 
 var velocity = Vector2()
@@ -76,12 +77,14 @@ func collision_check(collisions):
 			collisions.collider.call("on_player_hit")
 		elif collisions.collider.name == "Blocks":
 			get_node("/root/AudioPlayer").play_sfx("SFXIntoWall")
+			GameUIRef.shake(0.15, 15, 8, 0)
 			die()
 		elif collisions.collider.name == "Point":
 			EndBlockRef.point_collected = true
 			collisions.collider.call("on_player_hit")
 		# begins_with to allow for multiple bombs
 		elif collisions.collider.name.begins_with("Bomb"):
+			GameUIRef.shake(0.15, 15, 8, 0)
 			collisions.collider.call("on_player_hit")
 			die()
 		elif collisions.collider.name == "DecreaseSize":

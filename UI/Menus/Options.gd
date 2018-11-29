@@ -185,5 +185,5 @@ func set_cheat_warning(text, is_good):
 	$TabContainer/Gameplay/CheatWarning.set_text(text)
 	$TabContainer/Gameplay/CheatWarning.show()
 
-func _on_FPS_pressed():
+func _on_FPS_toggled(button_pressed):
 	ProjectSettings.set_setting("show_fps", !ProjectSettings.get_setting("show_fps"))
