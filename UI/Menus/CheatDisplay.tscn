@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Fonts/TextFont.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Misc/X.png" type="Texture" id=2]
+[ext_resource path="res://Misc/Circle.png" type="Texture" id=2]
+
 
 [node name="cheat" type="Label" index="0" groups=[
 "Cheats",
