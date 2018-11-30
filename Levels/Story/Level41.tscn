@@ -6,7 +6,7 @@
 [ext_resource path="res://UI/In-Game/GameUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Interactables/Laser/Laser.tscn" type="PackedScene" id=5]
 
-[node name="root" type="Node" index="0"]
+[node name="root" type="Node"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 

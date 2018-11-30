@@ -3,12 +3,12 @@
 [ext_resource path="res://Levels/Interactables/DecreaseSize/DecreaseSize.gd" type="Script" id=1]
 [ext_resource path="res://Levels/Interactables/DecreaseSize/DecreaseSize.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 16, 16 )
+radius = 14.0
 
-[node name="DecreaseSize" type="StaticBody2D"]
+[node name="DecreaseSize" type="StaticBody2D" index="0"]
 
 position = Vector2( 0, 0.209347 )
 z_index = -1

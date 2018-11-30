@@ -9,19 +9,6 @@
 [ext_resource path="res://UI/Menus/BlockTutorial.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Levels/Interactables/Flags/Flag.png" type="Texture" id=8]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 [node name="root" type="Node"]
 
 __meta__ = {
@@ -39,7 +26,6 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 1150, 370 )
 _sections_unfolded = [ "Transform" ]
 next_level_name = "Level28"
-arcade_mode = null
 
 [node name="Point" parent="." index="2" instance=ExtResource( 3 )]
 

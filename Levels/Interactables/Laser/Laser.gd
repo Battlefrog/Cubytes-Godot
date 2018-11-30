@@ -30,10 +30,13 @@ func _ready():
 	# Setting offset based on direction
 	if laser_direction == DIRECTIONS.Left:
 		x_offset = -SEGMENT_LENGTH
+		$Sprite.rotation = deg2rad(90)
 	elif laser_direction == DIRECTIONS.Right:
 		x_offset = SEGMENT_LENGTH
+		$Sprite.rotation = deg2rad(270)
 	elif laser_direction == DIRECTIONS.Up:
 		y_offset = -SEGMENT_LENGTH
+		$Sprite.rotation = deg2rad(180)
 	elif laser_direction == DIRECTIONS.Down:
 		y_offset = SEGMENT_LENGTH
 	

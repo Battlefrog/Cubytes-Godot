@@ -6,11 +6,26 @@ export (bool) var arcade_mode
 var point_collected = false
 
 onready var PlayerRef = get_node("../Player")
+onready var PointRef = has_node("../Point")
 onready var ArcadeTimerRef = has_node("../ArcadeModeTimer")
 
 func _ready():
+	if PointRef:
+		get_node("../Point").connect("point_hit", self, "on_point_hit")
+		$AnimatedSprite.hide()
+		$Sprite.show()
+	else:
+		$AnimatedSprite.show()
+		$Sprite.hide()
+	
 	if ArcadeTimerRef:
 		ArcadeTimerRef = get_node("../ArcadeModeTimer")
+	
+	$AnimatedSprite.set_animation("default")
+
+func on_point_hit():
+	$AnimatedSprite.show()
+	$Sprite.hide()
 
 func on_player_hit():
 	if point_collected and not arcade_mode:
