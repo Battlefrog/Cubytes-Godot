@@ -19,6 +19,10 @@ var SFX = {
 
 func _ready():
 	play_menu_music()
+	
+	$SFXPlayer.set_bus("SFX")
+	$MenuMusic.set_bus("Music")
+	$LevelMusic.set_bus("Music")
 
 func play_sfx(var fx):
 	if SFX.has(fx):

@@ -102,6 +102,7 @@ func _on_FullscreenToggle_pressed():
 
 func _on_slider_changed(value, slider_id):
 	AudioServer.set_bus_volume_db(slider_id, value)
+	# print(AudioServer.get_bus_volume_db(slider_id))
 	
 	if (value == -24):
 		AudioServer.set_bus_mute(slider_id, true)
