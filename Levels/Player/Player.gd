@@ -37,7 +37,7 @@ func _ready():
 	set_process(true)
 
 func _process(delta):
-	if ProjectSettings.get_setting("click_teleport"):
+	if ProjectSettings.get_setting("click_teleport") and not EndBlockRef.is_arcade_mode():
 		var mouse_pos = get_viewport().get_mouse_position()
 		if Input.is_mouse_button_pressed(BUTTON_LEFT):
 			position = mouse_pos

@@ -49,3 +49,6 @@ func on_player_hit():
 
 func get_next_level():
 	return next_level_name
+
+func is_arcade_mode():
+	return arcade_mode

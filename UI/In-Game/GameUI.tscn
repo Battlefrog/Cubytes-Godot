@@ -8,7 +8,7 @@
 [ext_resource path="res://Fonts/SmallFont.tres" type="DynamicFont" id=6]
 [ext_resource path="res://UI/In-Game/ScreenShake.tscn" type="PackedScene" id=7]
 
-[node name="Node" type="Control"]
+[node name="Node" type="Control" index="0"]
 
 pause_mode = 2
 anchor_left = 0.0

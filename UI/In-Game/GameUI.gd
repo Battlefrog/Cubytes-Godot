@@ -5,6 +5,7 @@ export (int) var current_level_num
 var is_paused = false
 var block_tutorial_active = false
 
+onready var EndBlock = get_node("../EndBlock")
 onready var save_file = get_node("/root/Save").get_config_file_path()
 onready var save = get_node("/root/Save").get_config_file()
 
@@ -23,9 +24,11 @@ func _ready():
 		get_node("../BlockTutorial").connect("block_tutorial", self, "show_block_tutorial")
 	
 	# To make sure that the deaths are shown when the level is loaded
-	var death = ProjectSettings.get_setting("player_deaths")
-	print(death)
-	update_death_display(death)
+	if not EndBlock.is_arcade_mode():
+		var death = ProjectSettings.get_setting("player_deaths")
+		update_death_display(death)
+	else:
+		$DeathDisplay.hide()
 	
 	$pause.hide()
 	$pause.set_exclusive(true)
@@ -34,9 +37,10 @@ func _ready():
 	$BlockTutorial.set_exclusive(false)
 	
 	$PauseFade.hide()
+	
+	$LevelDisplay.set_text("Level: " + str(current_level_num))
 
 func _process(delta):
-	$LevelDisplay.set_text("Level: " + str(current_level_num))
 	if ProjectSettings.get_setting("show_fps"):
 		$FPSDisplay.set_text("FPS: " + str(Performance.get_monitor(Performance.TIME_FPS)))
 	
@@ -44,12 +48,13 @@ func _process(delta):
 		if Input.is_action_pressed("ui_accept"):
 			$BlockTutorial.hide()
 	
-	if Input.is_action_just_pressed("debug_mode_nextlevel"):
+	if Input.is_action_just_pressed("debug_mode_nextlevel") and not EndBlock.is_arcade_mode():
 		if ProjectSettings.get_setting("debug_mode"):
-			get_node("/root/global").goto_scene("res://Levels/Story/" + get_node("../EndBlock").get_next_level() + ".tscn")
+			get_node("/root/global").goto_scene("res://Levels/Story/" + EndBlock.get_next_level() + ".tscn")
 
 func update_death_display(death):
-	$DeathDisplay.set_text("Deaths: " + str(death))
+	if not EndBlock.is_arcade_mode():
+		$DeathDisplay.set_text("Deaths: " + str(death))
 
 func pause_game():
 	emit_signal("game_paused")
@@ -104,11 +109,11 @@ func get_current_level_num():
 	return current_level_num
 
 func save_game():
-	var current_level = "Level" + str(get_current_level_num())
-	
-	save.set_value("story", "player_deaths", ProjectSettings.get_setting("player_deaths"))
-	save.set_value("story", "on_level", current_level)
-	save.save(save_file)
+	if not EndBlock.is_arcade_mode():
+		var current_level = "Level" + str(get_current_level_num())
+		save.set_value("story", "player_deaths", ProjectSettings.get_setting("player_deaths"))
+		save.set_value("story", "on_level", current_level)
+		save.save(save_file)
 
 func shake(duration = 0.2, frequency = 15, amplitude = 16, priority = 0):
 	$Camera2D/ScreenShake.start(duration, frequency, amplitude, priority)
