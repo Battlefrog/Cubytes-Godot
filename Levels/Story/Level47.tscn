@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Levels/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Interactables/EndBlock/EndBlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/BlockTiles.tres" type="TileSet" id=3]
+[ext_resource path="res://UI/In-Game/GameUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Interactables/Laser/Laser.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Interactables/Bombs/Bomb.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Interactables/Points/Point.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/Interactables/DecreaseSize/DecreaseSize.tscn" type="PackedScene" id=8]
+
+[node name="root" type="Node" index="0"]
+
+[node name="Player" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 585, 275 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="EndBlock" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 890, 265 )
+_sections_unfolded = [ "Transform" ]
+next_level_name = "Level48"
+arcade_mode = false
+
+[node name="Blocks" type="TileMap" parent="." index="2"]
+
+position = Vector2( 712, -604 )
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = true
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 1703929, 0, 0, 1703930, 0, 0, 1703931, 0, 0, 1703932, 0, 0, 1703933, 0, 0, 1703934, 0, 0, 1703935, 0, 0, 1638400, 0, 0, 1638401, 0, 0, 1638402, 0, 0, 1638403, 0, 0, 1638404, 0, 0, 1638405, 0, 0, 1638406, 0, 0, 1638407, 0, 0, 1769465, 0, 0, 1703938, 0, 0, 1703943, 0, 0, 1835001, 0, 0, 1769474, 0, 0, 1769479, 0, 0, 1900534, 0, 0, 1900535, 0, 0, 1900536, 0, 0, 1900537, 0, 0, 1835010, 0, 0, 1835015, 0, 0, 1966070, 0, 0, 1966078, 0, 0, 1966079, 0, 0, 1900544, 0, 0, 1900545, 0, 0, 1900546, 0, 0, 1900551, 0, 0, 2031606, 0, 0, 2031614, 0, 0, 1966087, 0, 0, 2097142, 0, 0, 2097150, 0, 0, 2031623, 0, 0, 2162678, 0, 0, 2162686, 0, 0, 2097159, 0, 0, 2228214, 0, 0, 2228222, 0, 0, 2162695, 0, 0, 2293750, 0, 0, 2228231, 0, 0, 2359286, 0, 0, 2293767, 0, 0, 2424822, 0, 0, 2424830, 0, 0, 2424831, 0, 0, 2359296, 0, 0, 2359297, 0, 0, 2359298, 0, 0, 2359299, 0, 0, 2359300, 0, 0, 2359301, 0, 0, 2359302, 0, 0, 2359303, 0, 0, 2490358, 0, 0, 2490366, 0, 0, 2555894, 0, 0, 2555902, 0, 0, 2621430, 0, 0, 2621431, 0, 0, 2621432, 0, 0, 2621433, 0, 0, 2621434, 0, 0, 2621435, 0, 0, 2621436, 0, 0, 2621437, 0, 0, 2621438, 0, 0 )
+_sections_unfolded = [ "Cell", "Collision", "Material", "Occluder", "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="GameUI" parent="." index="3" instance=ExtResource( 4 )]
+
+current_level_num = 47
+
+[node name="Laser" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 483.545, 373.652 )
+rotation = 4.71239
+laser_direction = 3
+laser_length = 10
+timed_laser = true
+
+[node name="Laser2" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 505, 605 )
+laser_length = 10
+timed_laser = false
+
+[node name="Laser3" parent="." index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 595, 605 )
+laser_length = 10
+timed_laser = false
+
+[node name="Laser4" parent="." index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 450, 520 )
+laser_direction = 1
+laser_length = 15
+timed_laser = true
+
+[node name="Bomb" parent="." index="8" instance=ExtResource( 6 )]
+
+position = Vector2( 725, 395 )
+scale = Vector2( 1.125, 1 )
+
+[node name="Bomb2" parent="." index="9" instance=ExtResource( 6 )]
+
+position = Vector2( 890, 395 )
+scale = Vector2( 1.125, 1 )
+
+[node name="Point" parent="." index="10" instance=ExtResource( 7 )]
+
+position = Vector2( 550, 605 )
+
+[node name="DecreaseSize" parent="." index="11" instance=ExtResource( 8 )]
+
+position = Vector2( 735, 275 )
+
+

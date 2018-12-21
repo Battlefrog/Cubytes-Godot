@@ -19,7 +19,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 924, 414 )
 _sections_unfolded = [ "Transform" ]
-next_level_name = "Win"
+next_level_name = "Level47"
 
 [node name="Blocks" type="TileMap" parent="." index="2"]
 
@@ -45,7 +45,7 @@ _sections_unfolded = [ "Cell", "Collision", "Material", "Occluder", "Visibility"
 
 [node name="GameUI" parent="." index="3" instance=ExtResource( 4 )]
 
-current_level_num = 45
+current_level_num = 46
 
 [node name="Laser" parent="." index="4" instance=ExtResource( 5 )]
 
