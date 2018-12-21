@@ -1,5 +1,8 @@
 extends Node
 
+signal game_unpaused
+signal game_paused
+
 export (int) var current_level_num
 
 var is_paused = false
@@ -9,16 +12,12 @@ onready var EndBlock = get_node("../EndBlock")
 onready var save_file = get_node("/root/Save").get_config_file_path()
 onready var save = get_node("/root/Save").get_config_file()
 
-signal game_unpaused
-signal game_paused
-
 func _ready():
 	save.load(save_file)
 	
 	get_tree().set_pause(false)
 	
 	get_node("../Player").connect("player_died", self, "update_death_display")
-	get_node("../Player").connect("pause_game", self, "pause_game")
 	
 	if has_node("../BlockTutorial"):
 		get_node("../BlockTutorial").connect("block_tutorial", self, "show_block_tutorial")
@@ -32,10 +31,8 @@ func _ready():
 	
 	$pause.hide()
 	$pause.set_exclusive(true)
-	
 	$BlockTutorial.hide()
 	$BlockTutorial.set_exclusive(false)
-	
 	$PauseFade.hide()
 	
 	$LevelDisplay.set_text("Level: " + str(current_level_num))
@@ -51,6 +48,13 @@ func _process(delta):
 	if Input.is_action_just_pressed("debug_mode_nextlevel") and not EndBlock.is_arcade_mode():
 		if ProjectSettings.get_setting("debug_mode"):
 			get_node("/root/global").goto_scene("res://Levels/Story/" + EndBlock.get_next_level() + ".tscn")
+	
+	if !is_paused:
+		if Input.is_action_just_pressed("ui_cancel"):
+			pause_game()
+	else:
+		if Input.is_action_just_pressed("ui_cancel"):
+			unpause_game()
 
 func update_death_display(death):
 	if not EndBlock.is_arcade_mode():
@@ -62,14 +66,19 @@ func pause_game():
 	get_node("/root/AudioPlayer").stop_music()
 	$pause.popup()
 	get_tree().set_pause(true)
+	is_paused = true
 
 func _on_ResumeButton_pressed():
-	$PauseFade.hide()
 	get_node("/root/AudioPlayer").play_sfx("SFXAccept")
+	unpause_game()
+
+func unpause_game():
 	get_node("/root/AudioPlayer").play_level_music()
+	$PauseFade.hide()
 	$pause.hide()
 	get_tree().set_pause(false)
 	emit_signal("game_unpaused")
+	is_paused = false
 
 func _on_MainMenuButton_pressed():
 	$PauseFade.hide()
