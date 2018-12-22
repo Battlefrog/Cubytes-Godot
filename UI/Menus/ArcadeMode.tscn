@@ -8,7 +8,7 @@
 [ext_resource path="res://UI/Menus/MenuHeader.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/DarkPanel.tres" type="StyleBox" id=7]
 
-[node name="Node2D" type="Control"]
+[node name="Node2D" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -781,6 +781,12 @@ align = 1
 [connection signal="pressed" from="LevelList/Levels/row2/Level4" to="." method="level_pressed" binds= [ 4, "Multiple paths, one seemly better than the other..." ]]
 
 [connection signal="pressed" from="LevelList/Levels/row3/Level5" to="." method="level_pressed" binds= [ 5, "Better go quick, or the black holes'll get you!" ]]
+
+[connection signal="pressed" from="LevelList/Levels/row3/Level6" to="." method="level_pressed" binds= [ 6, "Level 6 description" ]]
+
+[connection signal="pressed" from="LevelList/Levels/row4/Level7" to="." method="level_pressed" binds= [ 7, "Level 7 description" ]]
+
+[connection signal="pressed" from="LevelList/Levels/row4/Level8" to="." method="level_pressed" binds= [ 8, "Level 8 description" ]]
 
 [connection signal="pressed" from="LevelLoadWarning/HBoxContainer/YesButton" to="." method="_on_YesButton_pressed"]
 
