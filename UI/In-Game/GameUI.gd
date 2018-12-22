@@ -14,9 +14,7 @@ onready var save = get_node("/root/Save").get_config_file()
 
 func _ready():
 	save.load(save_file)
-	
 	get_tree().set_pause(false)
-	
 	get_node("../Player").connect("player_died", self, "update_death_display")
 	
 	if has_node("../BlockTutorial"):
