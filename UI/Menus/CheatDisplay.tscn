@@ -1,10 +1,19 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Fonts/TextFont.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Misc/Circle.png" type="Texture" id=2]
 
+[sub_resource type="Gradient" id=1]
 
-[node name="cheat" type="Label" index="0" groups=[
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 0.144531, 0.135498, 0.135498, 0.348078 )
+
+[sub_resource type="GradientTexture" id=2]
+
+flags = 4
+gradient = SubResource( 1 )
+width = 2048
+
+[node name="cheat" type="Label" groups=[
 "Cheats",
 ]]
 
@@ -35,26 +44,25 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 320.0
 margin_right = 360.0
-margin_bottom = 40.0
+margin_bottom = 35.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 2 )
-texture_hover = ExtResource( 2 )
-texture_disabled = ExtResource( 2 )
-texture_focused = ExtResource( 2 )
+texture_normal = SubResource( 2 )
+texture_pressed = SubResource( 2 )
+texture_hover = SubResource( 2 )
+texture_disabled = SubResource( 2 )
+texture_focused = SubResource( 2 )
 expand = true
-_sections_unfolded = [ "Textures" ]
+_sections_unfolded = [ "Size Flags", "Textures" ]
 
 

@@ -107,5 +107,5 @@ TooltipLabel/constants/shadow_offset_x = 1
 TooltipLabel/constants/shadow_offset_y = 1
 TooltipLabel/fonts/font = ExtResource( 13 )
 TooltipPanel/styles/panel = ExtResource( 14 )
-_sections_unfolded = [ "Button/constants", "Button/fonts", "Button/styles", "CheckBox", "CheckBox/styles", "OptionButton/constants", "Panel/styles", "PopupPanel/styles", "TooltipLabel/constants", "TooltipLabel/fonts", "TooltipPanel", "TooltipPanel/styles" ]
+_sections_unfolded = [ "Button/constants", "Button/fonts", "Button/styles", "HSlider", "HSlider/icons", "HSlider/styles", "OptionButton/constants", "Panel/styles", "PopupPanel/styles", "TooltipLabel/constants", "TooltipLabel/fonts", "TooltipPanel/styles" ]
 
