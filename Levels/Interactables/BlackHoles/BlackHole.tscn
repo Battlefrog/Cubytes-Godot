@@ -8,14 +8,14 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 45.0
+radius = 40.0
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 6, 6 )
 
-[node name="BlackHole" type="Area2D" index="0"]
+[node name="BlackHole" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

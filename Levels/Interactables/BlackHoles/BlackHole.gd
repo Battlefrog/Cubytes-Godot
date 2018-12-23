@@ -3,6 +3,12 @@ extends Area2D
 func _ready():
 	$AudioStreamPlayer2D.set_bus("SFX")
 
+func _process(delta):
+	if $Sprite2.rotation <= 360:
+		$Sprite2.rotation = $Sprite2.rotation + (rand_range(24.0, 26.0) * delta)
+	else:
+		$Sprite2.rotation = 0
+
 func _on_BlackHole_entered(body):
 	if body.is_in_group("Player"):
 		body.call("decrease_speed")
