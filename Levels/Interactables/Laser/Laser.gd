@@ -15,8 +15,9 @@ var y_change = 0
 
 var laser_on = true
 
-var collision_shape
+var collision_shape_id
 var collision_a
+var seg_shape
 
 func _ready():
 	get_node("../GameUI").connect("game_unpaused", self, "not_paused")
@@ -41,18 +42,34 @@ func _ready():
 		y_offset = SEGMENT_LENGTH
 	
 	# Setting points based on offset and laser length
-	for i in range(0, laser_length):
+	for i in range(laser_length):
 		$Laser.add_point(Vector2(x_offset * i, y_offset * i))
 		x_change += x_offset
 		y_change += y_offset
 	
 	add_collision()
 	
+	var xx = seg_shape.get_a().x
+	var yy = seg_shape.get_a().y
+	# Finetuning the collision shape
+	if (x_change != 0):
+		if (x_change < 0):
+			xx += SEGMENT_LENGTH
+		elif (x_change > 0):
+			xx -= SEGMENT_LENGTH
+	elif (y_change != 0):
+		if (y_change < 0):
+			yy += SEGMENT_LENGTH
+		elif (y_change > 0):
+			yy -= SEGMENT_LENGTH
+	
+	seg_shape.set_a(Vector2(xx, yy))
+	collision_a = seg_shape.a
+	
 	var audio_x = (get_position().x + collision_a.x) / 2
 	var audio_y = (get_position().y + collision_a.y) / 2
 	
 	$AudioStreamPlayer2D.set_position(Vector2(audio_x, audio_y))
-	$AudioStreamPlayer2D.set_max_distance(1000)
 	$AudioStreamPlayer2D.set_bus("SFX")
 	$AudioStreamPlayer2D.play()
 
@@ -71,26 +88,26 @@ func _on_timeout():
 		
 		if laser_on:
 			$Laser.set_visible(true)
-			$LaserCollision.shape_owner_set_disabled(collision_shape, false)
+			$LaserCollision.shape_owner_set_disabled(collision_shape_id, false)
 			if not $AudioStreamPlayer2D.is_playing():
 				$AudioStreamPlayer2D.play()
 		else:
 			$Laser.set_visible(false)
-			$LaserCollision.shape_owner_set_disabled(collision_shape, true)
+			$LaserCollision.shape_owner_set_disabled(collision_shape_id, true)
 			$AudioStreamPlayer2D.stop()
 		
 		$TimedTimer.stop()
 		$TimedTimer.start()
 
 func add_collision():
-	var shape = SegmentShape2D.new()
-	shape.set_a(Vector2(self.x_change, self.y_change))
-	shape.set_b(Vector2(0, 0))
+	seg_shape = SegmentShape2D.new()
+	seg_shape.set_a(Vector2(self.x_change, self.y_change))
+	seg_shape.set_b(Vector2(0, 0))
 	
-	collision_a = to_global(shape.get_a())
+	collision_a = to_global(seg_shape.get_a())
 	
-	collision_shape = $LaserCollision.create_shape_owner(self)
-	$LaserCollision.shape_owner_add_shape(collision_shape, shape)
+	collision_shape_id = $LaserCollision.create_shape_owner(self)
+	$LaserCollision.shape_owner_add_shape(collision_shape_id, seg_shape)
 
 func not_paused():
 	$AudioStreamPlayer2D.play()
