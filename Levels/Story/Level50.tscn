@@ -1,0 +1,149 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Levels/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Interactables/EndBlock/EndBlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/BlockTiles.tres" type="TileSet" id=3]
+[ext_resource path="res://UI/In-Game/GameUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Interactables/DecreaseSize/DecreaseSize.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Interactables/Laser/Laser.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Interactables/Points/Point.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/Interactables/Bombs/Bomb.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Levels/Interactables/BlackHoles/BlackHole.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Levels/Interactables/Flags/Flag.tscn" type="PackedScene" id=10]
+
+[node name="root" type="Node" index="0"]
+
+[node name="Player" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 660, 430 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="EndBlock" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 720, 410 )
+_sections_unfolded = [ "Transform" ]
+next_level_name = "Win"
+
+[node name="Blocks" type="TileMap" parent="." index="2"]
+
+position = Vector2( 938, -636 )
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = true
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 1638377, 0, 0, 1638378, 0, 0, 1638379, 0, 0, 1638380, 0, 0, 1638381, 0, 0, 1638382, 0, 0, 1638383, 0, 0, 1638384, 0, 0, 1638385, 0, 0, 1638386, 0, 0, 1638387, 0, 0, 1638388, 0, 0, 1638389, 0, 0, 1638390, 0, 0, 1638391, 0, 0, 1638392, 0, 0, 1638393, 0, 0, 1638394, 0, 0, 1638395, 0, 0, 1638396, 0, 0, 1638397, 0, 0, 1638398, 0, 0, 1638399, 0, 0, 1572864, 0, 0, 1572865, 0, 0, 1572866, 0, 0, 1572867, 0, 0, 1572868, 0, 0, 1572869, 0, 0, 1572870, 0, 0, 1703913, 0, 0, 1638406, 0, 0, 1769447, 0, 0, 1769448, 0, 0, 1769449, 0, 0, 1703942, 0, 0, 1703943, 0, 0, 1703944, 0, 0, 1834981, 0, 0, 1834982, 0, 0, 1834983, 0, 0, 1834994, 0, 0, 1834995, 0, 0, 1835004, 0, 0, 1835005, 0, 0, 1769480, 0, 0, 1769481, 0, 0, 1769482, 0, 0, 1900517, 0, 0, 1900529, 0, 0, 1900530, 0, 0, 1900541, 0, 0, 1900542, 0, 0, 1835018, 0, 0, 1966053, 0, 0, 1966064, 0, 0, 1966065, 0, 0, 1966078, 0, 0, 1966079, 0, 0, 1900554, 0, 0, 2031589, 0, 0, 2031592, 0, 0, 2031593, 0, 0, 2031594, 0, 0, 2031595, 0, 0, 2031596, 0, 0, 2031597, 0, 0, 2031598, 0, 0, 2031599, 0, 0, 2031600, 0, 0, 2031615, 0, 0, 1966080, 0, 0, 1966081, 0, 0, 1966082, 0, 0, 1966083, 0, 0, 1966084, 0, 0, 1966085, 0, 0, 1966086, 0, 0, 1966087, 0, 0, 1966090, 0, 0, 2097125, 0, 0, 2097128, 0, 0, 2097135, 0, 0, 2097142, 0, 0, 2097143, 0, 0, 2097144, 0, 0, 2097145, 0, 0, 2031616, 0, 0, 2031626, 0, 0, 2162661, 0, 0, 2162671, 0, 0, 2097152, 0, 0, 2097162, 0, 0, 2228197, 0, 0, 2228200, 0, 0, 2228207, 0, 0, 2162688, 0, 0, 2162695, 0, 0, 2162698, 0, 0, 2293733, 0, 0, 2293736, 0, 0, 2293737, 0, 0, 2293738, 0, 0, 2293739, 0, 0, 2293740, 0, 0, 2293741, 0, 0, 2293742, 0, 0, 2293743, 0, 0, 2293744, 0, 0, 2293750, 0, 0, 2293751, 0, 0, 2293752, 0, 0, 2293753, 0, 0, 2293759, 0, 0, 2228224, 0, 0, 2228225, 0, 0, 2228226, 0, 0, 2228227, 0, 0, 2228228, 0, 0, 2228229, 0, 0, 2228230, 0, 0, 2228231, 0, 0, 2228234, 0, 0, 2359269, 0, 0, 2359280, 0, 0, 2359281, 0, 0, 2359294, 0, 0, 2359295, 0, 0, 2293770, 0, 0, 2424805, 0, 0, 2424817, 0, 0, 2424818, 0, 0, 2424829, 0, 0, 2424830, 0, 0, 2359306, 0, 0, 2490341, 0, 0, 2490342, 0, 0, 2490343, 0, 0, 2490354, 0, 0, 2490355, 0, 0, 2490364, 0, 0, 2490365, 0, 0, 2424840, 0, 0, 2424841, 0, 0, 2424842, 0, 0, 2555879, 0, 0, 2555880, 0, 0, 2555881, 0, 0, 2490374, 0, 0, 2490375, 0, 0, 2490376, 0, 0, 2621417, 0, 0, 2555910, 0, 0, 2686953, 0, 0, 2686954, 0, 0, 2686955, 0, 0, 2686956, 0, 0, 2686957, 0, 0, 2686958, 0, 0, 2686959, 0, 0, 2686960, 0, 0, 2686961, 0, 0, 2686962, 0, 0, 2686963, 0, 0, 2686964, 0, 0, 2686965, 0, 0, 2686966, 0, 0, 2686967, 0, 0, 2686968, 0, 0, 2686969, 0, 0, 2686970, 0, 0, 2686971, 0, 0, 2686972, 0, 0, 2686973, 0, 0, 2686974, 0, 0, 2686975, 0, 0, 2621440, 0, 0, 2621441, 0, 0, 2621442, 0, 0, 2621443, 0, 0, 2621444, 0, 0, 2621445, 0, 0, 2621446, 0, 0 )
+_sections_unfolded = [ "Cell", "Collision", "Material", "Occluder", "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="GameUI" parent="." index="3" instance=ExtResource( 4 )]
+
+current_level_num = 50
+
+[node name="DecreaseSize" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 990, 375 )
+
+[node name="Laser" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 1140, 435 )
+laser_length = 5
+timed_laser = true
+
+[node name="Laser2" parent="." index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 135, 290 )
+laser_direction = 3
+laser_length = 16
+timed_laser = true
+
+[node name="Point" parent="." index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 375, 375 )
+
+[node name="Bomb" parent="." index="8" instance=ExtResource( 8 )]
+
+position = Vector2( 570, 280 )
+
+[node name="Bomb2" parent="." index="9" instance=ExtResource( 8 )]
+
+position = Vector2( 790, 275 )
+
+[node name="Bomb3" parent="." index="10" instance=ExtResource( 8 )]
+
+position = Vector2( 790, 530 )
+
+[node name="Bomb4" parent="." index="11" instance=ExtResource( 8 )]
+
+position = Vector2( 575, 535 )
+
+[node name="Bomb5" parent="." index="12" instance=ExtResource( 8 )]
+
+position = Vector2( 625, 535 )
+
+[node name="Bomb6" parent="." index="13" instance=ExtResource( 8 )]
+
+position = Vector2( 745, 530 )
+
+[node name="Bomb7" parent="." index="14" instance=ExtResource( 8 )]
+
+position = Vector2( 275, 510 )
+
+[node name="Bomb10" parent="." index="15" instance=ExtResource( 8 )]
+
+position = Vector2( 980, 520 )
+
+[node name="Bomb8" parent="." index="16" instance=ExtResource( 8 )]
+
+position = Vector2( 380, 510 )
+
+[node name="Bomb11" parent="." index="17" instance=ExtResource( 8 )]
+
+position = Vector2( 1070, 515 )
+
+[node name="Bomb9" parent="." index="18" instance=ExtResource( 8 )]
+
+position = Vector2( 320, 555 )
+
+[node name="Bomb12" parent="." index="19" instance=ExtResource( 8 )]
+
+position = Vector2( 1040, 560 )
+
+[node name="BlackHole" parent="." index="20" instance=ExtResource( 9 )]
+
+position = Vector2( 600, 595 )
+
+[node name="BlackHole2" parent="." index="21" instance=ExtResource( 9 )]
+
+position = Vector2( 765, 595 )
+
+[node name="Flag" parent="." index="22" instance=ExtResource( 10 )]
+
+position = Vector2( 685, 620 )
+
+[node name="Laser3" parent="." index="23" instance=ExtResource( 6 )]
+
+position = Vector2( 265, 195 )
+laser_direction = 3
+laser_length = 6
+
+[node name="Laser4" parent="." index="24" instance=ExtResource( 6 )]
+
+position = Vector2( 1100, 195 )
+laser_direction = 3
+laser_length = 6
+
+
