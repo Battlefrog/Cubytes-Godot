@@ -1,5 +1,8 @@
 extends Area2D
 
+func _ready():
+	$AudioStreamPlayer2D.set_bus("SFX")
+
 func _on_BlackHole_entered(body):
 	if body.is_in_group("Player"):
 		body.call("decrease_speed")
