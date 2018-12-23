@@ -51,17 +51,20 @@ func _ready():
 	
 	var xx = seg_shape.get_a().x
 	var yy = seg_shape.get_a().y
+	
+	var cutoff = SEGMENT_LENGTH / 1.3
+	
 	# Finetuning the collision shape
-	if (x_change != 0):
-		if (x_change < 0):
-			xx += SEGMENT_LENGTH
-		elif (x_change > 0):
-			xx -= SEGMENT_LENGTH
-	elif (y_change != 0):
-		if (y_change < 0):
-			yy += SEGMENT_LENGTH
-		elif (y_change > 0):
-			yy -= SEGMENT_LENGTH
+	if (x_change != 0): # Horizontal
+		if (x_change < 0): # Left
+			xx += cutoff
+		elif (x_change > 0): # Right
+			xx -= cutoff
+	elif (y_change != 0): # Vertical
+		if (y_change < 0): # Up
+			yy += cutoff
+		elif (y_change > 0): # Down
+			yy -= cutoff
 	
 	seg_shape.set_a(Vector2(xx, yy))
 	collision_a = seg_shape.a
