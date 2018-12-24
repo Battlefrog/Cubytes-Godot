@@ -2,10 +2,11 @@ extends Area2D
 
 func _ready():
 	$AudioStreamPlayer2D.set_bus("SFX")
+	$Sprite2.rotation = rand_range(0.0, 360.0)
 
 func _process(delta):
 	if $Sprite2.rotation <= 360:
-		$Sprite2.rotation = $Sprite2.rotation + (rand_range(24.0, 26.0) * delta)
+		$Sprite2.rotation = $Sprite2.rotation + (rand_range(24.0, 27.0) * delta)
 	else:
 		$Sprite2.rotation = 0
 
