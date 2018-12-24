@@ -4,7 +4,7 @@
 [ext_resource path="res://UI/Menus/Win.gd" type="Script" id=2]
 [ext_resource path="res://UI/Menus/MenuHeader.tscn" type="PackedScene" id=3]
 
-[node name="Node2D" type="Control"]
+[node name="Node2D" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -22,16 +22,43 @@ theme = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Rect", "Theme" ]
 
-[node name="MainMenuButton" type="Button" parent="." index="0"]
+[node name="CreditsButton" type="Button" parent="." index="0"]
 
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -168.0
-margin_top = -128.0
-margin_right = 182.0
-margin_bottom = -38.0
+margin_left = -413.0
+margin_top = -123.0
+margin_right = -63.0
+margin_bottom = -33.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+hint_tooltip = "Go to the Main Menu."
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Watch the Credits..."
+flat = false
+align = 1
+_sections_unfolded = [ "Hint", "Rect", "Theme", "custom_colors", "custom_fonts" ]
+
+[node name="MainMenuButton" type="Button" parent="." index="1"]
+
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 37.0
+margin_top = -123.0
+margin_right = 387.0
+margin_bottom = -33.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 hint_tooltip = "Go to the Main Menu."
@@ -49,20 +76,20 @@ flat = false
 align = 1
 _sections_unfolded = [ "Hint", "Rect", "Theme", "custom_colors", "custom_fonts" ]
 
-[node name="Header" parent="." index="1" instance=ExtResource( 3 )]
+[node name="Header" parent="." index="2" instance=ExtResource( 3 )]
 
 text = "You Won!"
 
-[node name="Label" type="Label" parent="." index="2"]
+[node name="Label" type="Label" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = 30.0
-margin_top = -155.0
-margin_right = -76.0
-margin_bottom = 154.0
+margin_left = 35.0
+margin_top = -254.0
+margin_right = -71.0
+margin_bottom = 211.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -71,9 +98,12 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 text = "Congrats! You've beaten Cubytes!
 
-This is the final Public Alpha. After this, the game will go into closed development and be released on Steam in Q2 2019. There will be a demo.
+This is the final Public Alpha. After this, the game will go into closed development (with exception to a few playtesters) and be released on Steam in Q2 2019. 
+There will be a demo.
 
-In the mean time, enjoy.
+Thanks for the support. Even though Cubytes has taken way to long to come this way (I started development around February 2018), it's nice to know that people still care.
+
+In the mean time, enjoy. 
 
 - Battlefrog, AKA Broc."
 align = 1
@@ -83,6 +113,8 @@ lines_skipped = 0
 max_lines_visible = -1
 
 [connection signal="tree_exiting" from="." to="." method="save_game"]
+
+[connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
 
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
 

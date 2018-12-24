@@ -7,6 +7,11 @@ func _ready():
 	save.load(save_file)
 	
 	ProjectSettings.set_setting("completed_story_mode", true)
+	save_game()
+
+func _on_CreditsButton_pressed():
+	get_node("/root/AudioPlayer").play_sfx("SFXAccept")
+	get_node("/root/global").goto_scene("res://UI/Menus/CreditsMenu.tscn")
 
 func _on_MainMenuButton_pressed():
 	get_node("/root/AudioPlayer").play_sfx("SFXBack")
