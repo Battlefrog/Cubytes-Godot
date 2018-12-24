@@ -10,7 +10,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 16, 16 )
 
-[node name="Laser" type="StaticBody2D" index="0"]
+[node name="Laser" type="StaticBody2D"]
 
 pause_mode = 1
 position = Vector2( 400, 600 )

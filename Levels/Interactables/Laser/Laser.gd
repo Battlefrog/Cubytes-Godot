@@ -3,18 +3,19 @@ extends StaticBody2D
 const DIRECTIONS = {Left = 0, Right = 1, Up = 2, Down = 3}
 const SEGMENT_LENGTH = 16
 
+onready var PlayerRef = get_node("../Player")
+
 export(DIRECTIONS) var laser_direction
 export(int) var laser_length
 export(bool) var timed_laser
 export(float) var timed_laser_time
 
+var att_scale = 40.8
 var x_offset = 0
 var y_offset = 0
 var x_change = 0
 var y_change = 0
-
 var laser_on = true
-
 var collision_shape_id
 var collision_a
 var seg_shape
@@ -51,7 +52,6 @@ func _ready():
 	
 	var xx = seg_shape.get_a().x
 	var yy = seg_shape.get_a().y
-	
 	var cutoff = SEGMENT_LENGTH / 1.3
 	
 	# Finetuning the collision shape
@@ -67,7 +67,7 @@ func _ready():
 			yy -= cutoff
 	
 	seg_shape.set_a(Vector2(xx, yy))
-	collision_a = seg_shape.a
+	collision_a = seg_shape.get_a()
 	
 	var audio_x = (get_position().x + collision_a.x) / 2
 	var audio_y = (get_position().y + collision_a.y) / 2
@@ -75,6 +75,10 @@ func _ready():
 	$AudioStreamPlayer2D.set_position(Vector2(audio_x, audio_y))
 	$AudioStreamPlayer2D.set_bus("SFX")
 	$AudioStreamPlayer2D.play()
+
+func _process(delta):
+	var distance = PlayerRef.position.distance_to(self.position)
+	$AudioStreamPlayer2D.set_attenuation(distance / att_scale)
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
