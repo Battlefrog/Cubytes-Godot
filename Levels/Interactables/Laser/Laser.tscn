@@ -3,14 +3,14 @@
 [ext_resource path="res://Levels/Interactables/Laser/Laser.gd" type="Script" id=1]
 [ext_resource path="res://Levels/Interactables/Laser/Laser.png" type="Texture" id=2]
 [ext_resource path="res://Levels/Interactables/Laser/LaserGradient.tres" type="Gradient" id=3]
-[ext_resource path="res://Levels/Interactables/Laser/LaserLoop.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Levels/Interactables/Laser/LaserLoop.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 16, 16 )
 
-[node name="Laser" type="StaticBody2D"]
+[node name="Laser" type="StaticBody2D" index="0"]
 
 pause_mode = 1
 position = Vector2( 400, 600 )
