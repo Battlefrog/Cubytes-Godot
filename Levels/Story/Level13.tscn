@@ -1,30 +1,56 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Levels/Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Levels/Interactables/EndBlock/EndBlock.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Levels/BlockTiles.tres" type="TileSet" id=3]
+[ext_resource path="res://Levels/BlockTiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Levels/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Interactables/EndBlock/EndBlock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/Interactables/Bombs/Bomb.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Interactables/Points/Point.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/In-Game/GameUI.tscn" type="PackedScene" id=6]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
-[node name="Player" parent="." index="0" instance=ExtResource( 1 )]
+[node name="Floor" type="TileMap" parent="." index="0"]
+
+position = Vector2( 176, -70 )
+z_index = -1
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 458772, 1, 0, 458773, 1, 0, 458774, 1, 0, 458775, 1, 0, 458776, 1, 0, 458777, 1, 0, 458778, 1, 0, 458779, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 1, 0, 524304, 1, 0, 524305, 1, 0, 524306, 1, 0, 524308, 1, 0, 524309, 1, 0, 524310, 1, 0, 524311, 1, 0, 524312, 1, 0, 524313, 1, 0, 524314, 1, 0, 524315, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589844, 1, 0, 589845, 1, 0, 589846, 1, 0, 589847, 1, 0, 589848, 1, 0, 589849, 1, 0, 589850, 1, 0, 589851, 1, 0, 655370, 1, 0, 655371, 1, 0, 655372, 1, 0, 655373, 1, 0, 655374, 1, 0, 655375, 1, 0, 655376, 1, 0, 655377, 1, 0, 655378, 1, 0, 655380, 1, 0, 655381, 1, 0, 655382, 1, 0, 655383, 1, 0, 655384, 1, 0, 655385, 1, 0, 655386, 1, 0, 655387, 1, 0, 720906, 1, 0, 720907, 1, 0, 720908, 1, 0, 720909, 1, 0, 720916, 1, 0, 720917, 1, 0, 720918, 1, 0, 786440, 1, 0, 786441, 1, 0, 786442, 1, 0, 786443, 1, 0, 786444, 1, 0, 786445, 1, 0, 786446, 1, 0, 786447, 1, 0, 786448, 1, 0, 786449, 1, 0, 786450, 1, 0, 786451, 1, 0, 786452, 1, 0, 786453, 1, 0, 786454, 1, 0, 851976, 1, 0, 851977, 1, 0, 851978, 1, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 917512, 1, 0, 917513, 1, 0, 917514, 1, 0, 917515, 1, 0, 917516, 1, 0, 917517, 1, 0, 917518, 1, 0, 917519, 1, 0, 917520, 1, 0, 917521, 1, 0, 917522, 1, 0, 917523, 1, 0, 917524, 1, 0, 917525, 1, 0, 917526, 1, 0, 983048, 1, 0, 983049, 1, 0, 983050, 1, 0, 983051, 1, 0, 983052, 1, 0, 983053, 1, 0, 983054, 1, 0, 983055, 1, 0, 983056, 1, 0, 983057, 1, 0, 983058, 1, 0, 983059, 1, 0, 983060, 1, 0, 983061, 1, 0, 983062, 1, 0, 1048584, 1, 0, 1048585, 1, 0, 1048586, 1, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 1, 0, 1114116, 1, 0, 1114117, 1, 0, 1114118, 1, 0, 1114119, 1, 0, 1114120, 1, 0, 1114121, 1, 0, 1114122, 1, 0, 1114123, 1, 0, 1114124, 1, 0, 1114125, 1, 0, 1179652, 1, 0, 1179653, 1, 0, 1179654, 1, 0, 1179655, 1, 0, 1179656, 1, 0, 1179657, 1, 0, 1179658, 1, 0, 1179659, 1, 0, 1179660, 1, 0, 1179661, 1, 0, 1245188, 1, 0, 1245189, 1, 0, 1245190, 1, 0, 1245191, 1, 0, 1245192, 1, 0, 1245193, 1, 0, 1310724, 1, 0, 1310725, 1, 0, 1310726, 1, 0, 1310727, 1, 0, 1310728, 1, 0, 1310729, 1, 0, 1376260, 1, 0, 1376261, 1, 0, 1376262, 1, 0, 1376263, 1, 0, 1376264, 1, 0, 1376265, 1, 0 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 344, 592 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="EndBlock" parent="." index="1" instance=ExtResource( 2 )]
+[node name="EndBlock" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 1034, 182 )
+position = Vector2( 1040, 185 )
 _sections_unfolded = [ "Transform" ]
 next_level_name = "Level14"
 
-[node name="Blocks" type="TileMap" parent="." index="2"]
+[node name="Blocks" type="TileMap" parent="." index="3"]
 
 position = Vector2( 176, -70 )
 mode = 0
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -40,37 +66,39 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 393239, 0, 0, 393240, 0, 0, 393241, 0, 0, 393242, 0, 0, 393243, 0, 0, 393244, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458780, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524307, 0, 0, 524316, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589843, 0, 0, 589852, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655379, 0, 0, 655388, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786455, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851991, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917527, 0, 0, 983043, 0, 0, 983044, 0, 0, 983045, 0, 0, 983046, 0, 0, 983047, 0, 0, 983063, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1114115, 0, 0, 1114126, 0, 0, 1179651, 0, 0, 1179662, 0, 0, 1245187, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1310723, 0, 0, 1310730, 0, 0, 1376259, 0, 0, 1376266, 0, 0, 1441795, 0, 0, 1441796, 0, 0, 1441797, 0, 0, 1441798, 0, 0, 1441799, 0, 0, 1441800, 0, 0, 1441801, 0, 0, 1441802, 0, 0 )
-_sections_unfolded = [ "Cell", "Collision", "Material", "Occluder", "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Bomb" parent="." index="3" instance=ExtResource( 4 )]
+[node name="Bomb" parent="." index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 334, 502 )
 
-[node name="Bomb2" parent="." index="4" instance=ExtResource( 4 )]
+[node name="Bomb2" parent="." index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 454, 382 )
 
-[node name="Bomb3" parent="." index="5" instance=ExtResource( 4 )]
+[node name="Bomb3" parent="." index="6" instance=ExtResource( 4 )]
 
 position = Vector2( 584, 502 )
 
-[node name="Bomb4" parent="." index="6" instance=ExtResource( 4 )]
+[node name="Bomb4" parent="." index="7" instance=ExtResource( 4 )]
 
 position = Vector2( 524, 222 )
 
-[node name="Bomb5" parent="." index="7" instance=ExtResource( 4 )]
+[node name="Bomb5" parent="." index="8" instance=ExtResource( 4 )]
 
 position = Vector2( 664, 412 )
 
-[node name="Bomb6" parent="." index="8" instance=ExtResource( 4 )]
+[node name="Bomb6" parent="." index="9" instance=ExtResource( 4 )]
 
 position = Vector2( 854, 182 )
 
-[node name="Point" parent="." index="9" instance=ExtResource( 5 )]
+[node name="Point" parent="." index="10" instance=ExtResource( 5 )]
 
 position = Vector2( 754, 222 )
 
-[node name="GameUI" parent="." index="10" instance=ExtResource( 6 )]
+[node name="GameUI" parent="." index="11" instance=ExtResource( 6 )]
 
 current_level_num = 13
 

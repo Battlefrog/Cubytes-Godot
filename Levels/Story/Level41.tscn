@@ -1,29 +1,55 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Levels/Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Levels/Interactables/EndBlock/EndBlock.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Levels/BlockTiles.tres" type="TileSet" id=3]
+[ext_resource path="res://Levels/BlockTiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Levels/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Interactables/EndBlock/EndBlock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/In-Game/GameUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Interactables/Laser/Laser.tscn" type="PackedScene" id=5]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
-[node name="Player" parent="." index="0" instance=ExtResource( 1 )]
+[node name="Floor" type="TileMap" parent="." index="0"]
+
+position = Vector2( 626, -426 )
+z_index = -1
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 1441783, 1, 0, 1441784, 1, 0, 1441785, 1, 0, 1441786, 1, 0, 1441787, 1, 0, 1441788, 1, 0, 1441789, 1, 0, 1441790, 1, 0, 1441791, 1, 0, 1376256, 1, 0, 1376257, 1, 0, 1376258, 1, 0, 1376259, 1, 0, 1376260, 1, 0, 1376261, 1, 0, 1376262, 1, 0, 1376263, 1, 0, 1376264, 1, 0, 1376265, 1, 0, 1376266, 1, 0, 1376267, 1, 0, 1507319, 1, 0, 1507320, 1, 0, 1507321, 1, 0, 1507322, 1, 0, 1507323, 1, 0, 1507324, 1, 0, 1507325, 1, 0, 1507326, 1, 0, 1507327, 1, 0, 1441792, 1, 0, 1441793, 1, 0, 1441794, 1, 0, 1441795, 1, 0, 1441796, 1, 0, 1441797, 1, 0, 1441798, 1, 0, 1441799, 1, 0, 1441800, 1, 0, 1441801, 1, 0, 1441802, 1, 0, 1441803, 1, 0, 1572855, 1, 0, 1572856, 1, 0, 1572857, 1, 0, 1572858, 1, 0, 1572859, 1, 0, 1572861, 1, 0, 1572862, 1, 0, 1572863, 1, 0, 1507328, 1, 0, 1507329, 1, 0, 1507330, 1, 0, 1507331, 1, 0, 1507332, 1, 0, 1507333, 1, 0, 1507335, 1, 0, 1507336, 1, 0, 1507337, 1, 0, 1507338, 1, 0, 1507339, 1, 0, 1638391, 1, 0, 1638392, 1, 0, 1638393, 1, 0, 1638394, 1, 0, 1638395, 1, 0, 1638397, 1, 0, 1638398, 1, 0, 1638399, 1, 0, 1572864, 1, 0, 1572865, 1, 0, 1572866, 1, 0, 1572867, 1, 0, 1572868, 1, 0, 1572869, 1, 0, 1572871, 1, 0, 1572872, 1, 0, 1572873, 1, 0, 1572874, 1, 0, 1572875, 1, 0, 1703927, 1, 0, 1703928, 1, 0, 1703929, 1, 0, 1703930, 1, 0, 1703931, 1, 0, 1703933, 1, 0, 1703934, 1, 0, 1703935, 1, 0, 1638400, 1, 0, 1638401, 1, 0, 1638402, 1, 0, 1638403, 1, 0, 1638404, 1, 0, 1638405, 1, 0, 1638407, 1, 0, 1638408, 1, 0, 1638409, 1, 0, 1638410, 1, 0, 1638411, 1, 0, 1769463, 1, 0, 1769464, 1, 0, 1769465, 1, 0, 1769466, 1, 0, 1769467, 1, 0, 1769469, 1, 0, 1769470, 1, 0, 1769471, 1, 0, 1703936, 1, 0, 1703937, 1, 0, 1703938, 1, 0, 1703939, 1, 0, 1703940, 1, 0, 1703941, 1, 0, 1703943, 1, 0, 1703944, 1, 0, 1703945, 1, 0, 1703946, 1, 0, 1703947, 1, 0, 1834999, 1, 0, 1835000, 1, 0, 1835001, 1, 0, 1835002, 1, 0, 1835003, 1, 0, 1835005, 1, 0, 1835006, 1, 0, 1835007, 1, 0, 1769472, 1, 0, 1769473, 1, 0, 1769474, 1, 0, 1769475, 1, 0, 1769476, 1, 0, 1769477, 1, 0, 1769479, 1, 0, 1769480, 1, 0, 1769481, 1, 0, 1769482, 1, 0, 1769483, 1, 0, 1900535, 1, 0, 1900536, 1, 0, 1900537, 1, 0, 1900538, 1, 0, 1900539, 1, 0, 1900540, 1, 0, 1900541, 1, 0, 1900542, 1, 0, 1900543, 1, 0, 1835008, 1, 0, 1835009, 1, 0, 1835010, 1, 0, 1835011, 1, 0, 1835012, 1, 0, 1835013, 1, 0, 1835014, 1, 0, 1835015, 1, 0, 1835016, 1, 0, 1835017, 1, 0, 1835018, 1, 0, 1835019, 1, 0, 1966071, 1, 0, 1966072, 1, 0, 1966073, 1, 0, 1966074, 1, 0, 1966075, 1, 0, 1966076, 1, 0, 1966077, 1, 0, 1966078, 1, 0, 1966079, 1, 0, 1900544, 1, 0, 1900545, 1, 0, 1900546, 1, 0, 1900547, 1, 0, 1900548, 1, 0, 1900549, 1, 0, 1900550, 1, 0, 1900551, 1, 0, 1900552, 1, 0, 1900553, 1, 0, 1900554, 1, 0, 1900555, 1, 0 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 370, 380 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="EndBlock" parent="." index="1" instance=ExtResource( 2 )]
+[node name="EndBlock" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 965, 380 )
 _sections_unfolded = [ "Transform" ]
 next_level_name = "Level42"
 
-[node name="Blocks" type="TileMap" parent="." index="2"]
+[node name="Blocks" type="TileMap" parent="." index="3"]
 
 position = Vector2( 626, -426 )
 mode = 0
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -39,22 +65,21 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 1376246, 0, 0, 1376247, 0, 0, 1376248, 0, 0, 1376249, 0, 0, 1376250, 0, 0, 1376251, 0, 0, 1376252, 0, 0, 1376253, 0, 0, 1376254, 0, 0, 1376255, 0, 0, 1310720, 0, 0, 1310721, 0, 0, 1310722, 0, 0, 1310723, 0, 0, 1310724, 0, 0, 1310725, 0, 0, 1310726, 0, 0, 1310727, 0, 0, 1310728, 0, 0, 1310729, 0, 0, 1310730, 0, 0, 1310731, 0, 0, 1310732, 0, 0, 1441782, 0, 0, 1376268, 0, 0, 1507318, 0, 0, 1441804, 0, 0, 1572854, 0, 0, 1572860, 0, 0, 1507334, 0, 0, 1507340, 0, 0, 1638390, 0, 0, 1638396, 0, 0, 1572870, 0, 0, 1572876, 0, 0, 1703926, 0, 0, 1703932, 0, 0, 1638406, 0, 0, 1638412, 0, 0, 1769462, 0, 0, 1769468, 0, 0, 1703942, 0, 0, 1703948, 0, 0, 1834998, 0, 0, 1835004, 0, 0, 1769478, 0, 0, 1769484, 0, 0, 1900534, 0, 0, 1835020, 0, 0, 1966070, 0, 0, 1900556, 0, 0, 2031606, 0, 0, 2031607, 0, 0, 2031608, 0, 0, 2031609, 0, 0, 2031610, 0, 0, 2031611, 0, 0, 2031612, 0, 0, 2031613, 0, 0, 2031614, 0, 0, 2031615, 0, 0, 1966080, 0, 0, 1966081, 0, 0, 1966082, 0, 0, 1966083, 0, 0, 1966084, 0, 0, 1966085, 0, 0, 1966086, 0, 0, 1966087, 0, 0, 1966088, 0, 0, 1966089, 0, 0, 1966090, 0, 0, 1966091, 0, 0, 1966092, 0, 0 )
-_sections_unfolded = [ "Cell", "Collision", "Material", "Occluder", "Visibility" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="GameUI" parent="." index="3" instance=ExtResource( 4 )]
+[node name="GameUI" parent="." index="4" instance=ExtResource( 4 )]
 
 current_level_num = 41
 
-[node name="Laser" parent="." index="4" instance=ExtResource( 5 )]
+[node name="Laser" parent="." index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 675, 265 )
 laser_direction = 3
 laser_length = 6
 
-[node name="Laser2" parent="." index="5" instance=ExtResource( 5 )]
+[node name="Laser2" parent="." index="6" instance=ExtResource( 5 )]
 
 position = Vector2( 675, 510 )
 laser_length = 6

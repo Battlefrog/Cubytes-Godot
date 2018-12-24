@@ -2,9 +2,7 @@
 
 [ext_resource path="res://Levels/Interactables/Bombs/BombExplosion.tres" type="Material" id=1]
 
-
-
-[node name="Particles2D" type="Particles2D" index="0"]
+[node name="Particles2D" type="Particles2D"]
 
 position = Vector2( 675, 405 )
 emitting = false
@@ -25,6 +23,6 @@ texture = null
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Drawing", "Process Material", "Time" ]
+_sections_unfolded = [ "Drawing", "Process Material", "Time", "Z Index" ]
 
 
