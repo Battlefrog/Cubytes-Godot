@@ -8,7 +8,7 @@
 [ext_resource path="res://UI/Menus/MenuHeader.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/DarkPanel.tres" type="StyleBox" id=7]
 
-[node name="Node2D" type="Control"]
+[node name="Node2D" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0

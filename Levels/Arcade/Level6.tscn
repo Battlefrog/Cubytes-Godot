@@ -1,0 +1,141 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Levels/BlockTiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Levels/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Interactables/EndBlock/EndBlock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/Interactables/Points/Point.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/In-Game/GameUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/ArcadeModeTimer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Interactables/Laser/Laser.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/Interactables/DecreaseSize/DecreaseSize.tscn" type="PackedScene" id=8]
+
+[node name="root" type="Node" index="0"]
+
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="Floor" type="TileMap" parent="." index="0"]
+
+position = Vector2( -5, -10 )
+z_index = -1
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 458764, 1, 0, 458765, 1, 0, 458766, 1, 0, 458767, 1, 0, 458768, 1, 0, 458769, 1, 0, 458770, 1, 0, 458771, 1, 0, 458772, 1, 0, 458773, 1, 0, 458774, 1, 0, 458775, 1, 0, 458776, 1, 0, 458777, 1, 0, 458778, 1, 0, 458779, 1, 0, 458780, 1, 0, 458781, 1, 0, 458782, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 1, 0, 524304, 1, 0, 524305, 1, 0, 524306, 1, 0, 524307, 1, 0, 524308, 1, 0, 524309, 1, 0, 524310, 1, 0, 524311, 1, 0, 524312, 1, 0, 524313, 1, 0, 524314, 1, 0, 524315, 1, 0, 524316, 1, 0, 524317, 1, 0, 524318, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 1, 0, 589844, 1, 0, 589845, 1, 0, 589846, 1, 0, 589847, 1, 0, 589848, 1, 0, 589849, 1, 0, 589850, 1, 0, 589851, 1, 0, 589852, 1, 0, 589853, 1, 0, 589854, 1, 0, 655372, 1, 0, 655373, 1, 0, 655374, 1, 0, 655375, 1, 0, 655376, 1, 0, 655377, 1, 0, 655378, 1, 0, 655379, 1, 0, 655380, 1, 0, 655381, 1, 0, 655382, 1, 0, 655383, 1, 0, 655384, 1, 0, 655385, 1, 0, 655386, 1, 0, 655387, 1, 0, 655388, 1, 0, 655389, 1, 0, 655390, 1, 0, 720908, 1, 0, 720909, 1, 0, 720910, 1, 0, 720911, 1, 0, 720912, 1, 0, 720913, 1, 0, 720914, 1, 0, 720915, 1, 0, 720916, 1, 0, 720917, 1, 0, 720918, 1, 0, 720919, 1, 0, 720920, 1, 0, 720921, 1, 0, 720922, 1, 0, 720923, 1, 0, 720924, 1, 0, 720925, 1, 0, 720926, 1, 0, 786444, 1, 0, 786445, 1, 0, 786446, 1, 0, 786447, 1, 0, 786448, 1, 0, 786449, 1, 0, 786450, 1, 0, 786451, 1, 0, 786452, 1, 0, 786453, 1, 0, 786454, 1, 0, 786455, 1, 0, 786456, 1, 0, 786457, 1, 0, 786458, 1, 0, 786459, 1, 0, 786460, 1, 0, 786461, 1, 0, 786462, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 851991, 1, 0, 851992, 1, 0, 851993, 1, 0, 851994, 1, 0, 851995, 1, 0, 851996, 1, 0, 851997, 1, 0, 851998, 1, 0, 917516, 1, 0, 917517, 1, 0, 917518, 1, 0, 917519, 1, 0, 917520, 1, 0, 917521, 1, 0, 917522, 1, 0, 917523, 1, 0, 917524, 1, 0, 917525, 1, 0, 917526, 1, 0, 917527, 1, 0, 917528, 1, 0, 917529, 1, 0, 917530, 1, 0, 917531, 1, 0, 917532, 1, 0, 917533, 1, 0, 917534, 1, 0, 983052, 1, 0, 983053, 1, 0, 983054, 1, 0, 983055, 1, 0, 983056, 1, 0, 983057, 1, 0, 983058, 1, 0, 983059, 1, 0, 983060, 1, 0, 983061, 1, 0, 983062, 1, 0, 983063, 1, 0, 983064, 1, 0, 983065, 1, 0, 983066, 1, 0, 983067, 1, 0, 983068, 1, 0, 983069, 1, 0, 983070, 1, 0, 1048588, 1, 0, 1048589, 1, 0, 1048590, 1, 0, 1048591, 1, 0, 1048592, 1, 0, 1048593, 1, 0, 1048594, 1, 0, 1048595, 1, 0, 1048596, 1, 0, 1048597, 1, 0, 1048598, 1, 0, 1048599, 1, 0, 1048600, 1, 0, 1048601, 1, 0, 1048602, 1, 0, 1048603, 1, 0, 1048604, 1, 0, 1048605, 1, 0, 1048606, 1, 0, 1114124, 1, 0, 1114125, 1, 0, 1114126, 1, 0, 1114127, 1, 0, 1114128, 1, 0, 1114129, 1, 0, 1114130, 1, 0, 1114131, 1, 0, 1114132, 1, 0, 1114133, 1, 0, 1114134, 1, 0, 1114135, 1, 0, 1114136, 1, 0, 1114137, 1, 0, 1114138, 1, 0, 1114139, 1, 0, 1114140, 1, 0, 1114141, 1, 0, 1114142, 1, 0, 1179660, 1, 0, 1179661, 1, 0, 1179662, 1, 0, 1179663, 1, 0, 1179664, 1, 0, 1179665, 1, 0, 1179666, 1, 0, 1179667, 1, 0, 1179668, 1, 0, 1179669, 1, 0, 1179670, 1, 0, 1179671, 1, 0, 1179672, 1, 0, 1179673, 1, 0, 1179674, 1, 0, 1179675, 1, 0, 1179676, 1, 0, 1179677, 1, 0, 1179678, 1, 0 )
+
+[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 480, 295 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="EndBlock" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 910, 515 )
+_sections_unfolded = [ "Transform" ]
+next_level_name = ""
+arcade_mode = true
+
+[node name="Point" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 910, 290 )
+
+[node name="GameUI" parent="." index="4" instance=ExtResource( 5 )]
+
+current_level_num = 6
+
+[node name="ArcadeModeTimer" parent="." index="5" instance=ExtResource( 6 )]
+
+[node name="Laser" parent="." index="6" instance=ExtResource( 7 )]
+
+position = Vector2( 395, 230 )
+laser_direction = 3
+
+[node name="Laser2" parent="." index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 955, 230 )
+laser_direction = 0
+laser_length = 34
+
+[node name="Laser3" parent="." index="8" instance=ExtResource( 7 )]
+
+position = Vector2( 395, 560 )
+laser_direction = 1
+laser_length = 35
+
+[node name="Laser4" parent="." index="9" instance=ExtResource( 7 )]
+
+position = Vector2( 960, 560 )
+
+[node name="Laser10" parent="." index="10" instance=ExtResource( 7 )]
+
+position = Vector2( 840, 480 )
+laser_length = 7
+
+[node name="Laser11" parent="." index="11" instance=ExtResource( 7 )]
+
+position = Vector2( 730, 430 )
+rotation = -0.785398
+laser_length = 7
+
+[node name="Laser5" parent="." index="12" instance=ExtResource( 7 )]
+
+position = Vector2( 685, 270 )
+laser_direction = 3
+laser_length = 17
+timed_laser = true
+
+[node name="Laser7" parent="." index="13" instance=ExtResource( 7 )]
+
+position = Vector2( 430, 385 )
+laser_direction = 1
+laser_length = 17
+timed_laser = true
+
+[node name="Laser8" parent="." index="14" instance=ExtResource( 7 )]
+
+position = Vector2( 840, 270 )
+laser_direction = 3
+laser_length = 6
+timed_laser = true
+
+[node name="Laser9" parent="." index="15" instance=ExtResource( 7 )]
+
+position = Vector2( 920, 360 )
+laser_direction = 0
+laser_length = 6
+timed_laser = true
+
+[node name="Laser6" parent="." index="16" instance=ExtResource( 7 )]
+
+position = Vector2( 480, 450 )
+laser_direction = 1
+laser_length = 30
+timed_laser = false
+
+[node name="Laser12" parent="." index="17" instance=ExtResource( 7 )]
+
+position = Vector2( 430, 515 )
+laser_direction = 1
+laser_length = 27
+timed_laser = true
+
+[node name="DecreaseSize" parent="." index="18" instance=ExtResource( 8 )]
+
+position = Vector2( 920, 395 )
+
+

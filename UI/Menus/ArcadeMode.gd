@@ -6,12 +6,12 @@ var wanted_level_num = 0
 func _ready():
 	$LevelList/Levels/row/Level1.connect("pressed", self, "level_pressed", [1, "Bombs, bombs, and bombs. Oh my!"])
 	$LevelList/Levels/row/Level2.connect("pressed", self, "level_pressed", [2, "One block gaps aren't really hard to get through... right?"])
-	$LevelList/Levels/row2/Level3.connect("pressed", self, "level_pressed", [3, "Patterns and figures. Like DMT."])
+	$LevelList/Levels/row2/Level3.connect("pressed", self, "level_pressed", [3, "Has some cool patterns and figures. Like any psychedelic."])
 	$LevelList/Levels/row2/Level4.connect("pressed", self, "level_pressed", [4, "Multiple paths, one seemly better than the other..."])
 	$LevelList/Levels/row3/Level5.connect("pressed", self, "level_pressed", [5, "Better go quick, or the black holes will suck you in!"])
-	$LevelList/Levels/row3/Level6.connect("pressed", self, "level_pressed", [6, "Level 6 description"])
-	$LevelList/Levels/row4/Level7.connect("pressed", self, "level_pressed", [7, "Level 7 description"])
-	$LevelList/Levels/row4/Level8.connect("pressed", self, "level_pressed", [8, "Level 8 description"])
+	$LevelList/Levels/row3/Level6.connect("pressed", self, "level_pressed", [6, "Hey. Lasers can perform the same function as blocks - keeping players out!"])
+	$LevelList/Levels/row4/Level7.connect("pressed", self, "level_pressed", [7, "Players like to be spawned in from the End Block as far away as possible...right?"])
+	$LevelList/Levels/row4/Level8.connect("pressed", self, "level_pressed", [8, "Difficulty through simplicity."])
 	$LevelDetails.show()
 	$HighScore.hide()
 	
