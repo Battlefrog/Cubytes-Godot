@@ -94,17 +94,34 @@
 
 ## Alpha 7
 
-- Added Saving of Story Mode progress.
+- Added a floor to all Arcade and Story Levels.
+- Added Saving of Story Mode progress (Does not currently save progress within a level, just what level you're on and some statistics).
 - Added Highscores for Arcade Mode Levels.
 - Added a Timed Laser and Laser.
-- Added ability to press Enter instead of click to quit a Block Tutorial.
-- Added Levels 40, 41, 42, 43, 44, 45.
+- Added ability to press Enter instead of click to quit a Block Tutorial (You can still click).
+- Added Levels 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50.
+- Added Arcade Levels 6, 7, 8.
 - Added an option for modifying the Background particles to the Options Menu.
 - Added a Credits Scene.
+- Added screen shake for colliding into Blocks and Bombs.
+- Added (but not implemented) GameAnalytics.
+- Added the ability to remove the FPS Counter.
+- Added the ability to remove Cheat Codes.
+- Changed the majority of the Graphics (Point, black hole, decrease size, Bombs, Background, EndBlock).
 - Changed version to Alpha 7.
 - Changed the Win scene.
 - Changed resolution picker to a drop-down menu.
+- Changed the appearance of the slider.
+- Changed Player Movement (Slightly more controllable, slower).
+- Changed the Pause Menu slightly.
 - Fixed Cheats not showing up on load into Gameplay tab of the Options Menu.
 - Fixed resolution not saving to the Player Settings.
 - Fixed Player Settings not loading on first launch.
+- Fixed the Black hole sound effect not being on the SFX bus.
+- Fixed the window not being centered when resizing.
+- Fixed Arcade Mode not presenting a level on loading.
+- Decreased the maximum amount of Background particles.
+- Made the Black Hole spin.
 - Implemented Cheat Codes.
+- Removed the button outline when clicking a Checkbox.
+- Removed the Deaths UI in Arcade Mode.
