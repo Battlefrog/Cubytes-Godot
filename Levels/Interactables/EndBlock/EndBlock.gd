@@ -40,6 +40,7 @@ func on_player_hit():
 		get_node("/root/AudioPlayer").play_sfx("SFXEndBlockCompleteLevel")
 		get_node("/root/ParticlePlayer").play_ptx("PTXEndBlockCompleteLevel", get_transform())
 		yield(get_tree().create_timer(1.2), "timeout")
+		get_node("/root/AudioPlayer").play_menu_music()
 		get_node("/root/global").goto_scene("res://UI/Menus/ArcadeMode.tscn")
 	else:
 		if get_node("/root/AudioPlayer").playing_sfx("SFXEndBlockRefusal"):
